@@ -1,0 +1,25 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+    global mpi_bin
+
+    puts stderr "\tThis module sets environment variables for using"
+    puts stderr "\tOpenMPI 2.1.4 with the GNU/GCC 5.4.0 family of compilers."
+    puts stderr ""`
+}
+
+module-whatis   "OpenMPI 2.1.4 with GCC/G++/GFORTRAN 5.4.0 built on AMD64"
+
+# OpenMPI 2.1.4
+#
+set     mpi_base        /packages/mpi/openmpi-2.1.4-gcc-5.4.0
+set     mpi_man         $mpi_base/man
+set     mpi_lib         $mpi_base/lib
+set     mpi_bin         $mpi_base/bin
+
+prepend-path    PATH            $mpi_bin
+prepend-path    MANPATH         $mpi_man
+prepend-path    LD_LIBRARY_PATH $mpi_lib
+setenv		MPI_HOME   	$mpi_base

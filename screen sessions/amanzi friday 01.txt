@@ -1,0 +1,1190 @@
+Last login: Fri Oct 12 14:40:09 on ttys000
+source ~/.bashrc
+pn1249300:~ l127914$ source ~/.bashrc
+Fri Oct 12 16:00:30 MDT 2018 /Users/l127914/.bashrc
+Fri Oct 12 16:00:30 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/platforms.sh
+directory of core scripts = ${core} = /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/master.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/info.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/gcc.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/info-git.sh
+-bash: gonode: command not found
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/git.sh
+fatal: Not a git repository (or any of the parent directories): .git
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/ssh.sh
+fatal: Not a git repository (or any of the parent directories): .git
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/vim.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/bash.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/finds.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/cmake.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/fortran.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/copy-configuration.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/bookmarks.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/disk.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/info.sh
+[1]   Done                    source ${core}/info-git.sh
+[2]+  Done                    source "${core}/copy-configuration.sh"
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/spack.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/info-git.sh
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/uname.sh
+/Volumes/Tlaltecuhtli/repos/node-queries
+Fri Oct 12 16:00:31 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/modules.sh
+uname: illegal option -- i
+usage: uname [-amnprsv]
+[3]+  Exit 127                module available >> ${my_log} 2>&1
+uname: illegal option -- o
+usage: uname [-amnprsv]
+Fri Oct 12 16:00:32 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/alias.sh
+[2]-  Done                    source "${core}/uname.sh"
+[3]+  Exit 127                module list >> ${my_log} 2>&1
+Fri Oct 12 16:00:32 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/environment.sh
+[master 25785297f] Cauchy.Schwarz-log.in-pn1249300 Fri Oct 12 16:00:35 MDT 2018
+ 6 files changed, 83 insertions(+), 83 deletions(-)
+[1]+  Done                    source ${core}/info-git.sh
+Fri Oct 12 16:00:36 MDT 2018, /Users/l127914/.bash-platform-specific
+Fri Oct 12 16:00:36 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/apple.sh
+[1]+  Done                    cp ${HOME}/${extras} ${vault}
+l127914@pn1249300.lanl.gov:~ $ amanzi
+-bash: amanzi: command not found
+l127914@pn1249300.lanl.gov:~ $ cd
+l127914@pn1249300.lanl.gov:~ $ lss
+total 70736
+drwxr-x---+  86 l127914  staff   2.9K Oct 11 22:06 .
+drwxr-xr-x    8 root     admin   272B Jun 14  2017 ..
+-r--------    1 l127914  staff     7B Jun  6  2017 .CFUserTextEncoding
+-rw-r--r--@   1 l127914  staff    26K Oct 12 15:59 .DS_Store
+drwxr-xr-x    3 l127914  staff   102B Jul  5  2017 .TeamCity-Eclipse-Plugin
+drwx------    2 l127914  staff    68B Oct 10 10:49 .Trash
+-rw-------    1 l127914  staff   112B Sep  1  2017 .Xauthority
+-rwxr-xr-x@   1 l127914  staff   1.2K May 23 17:22 .Xbashrc
+drwxr-xr-x   18 l127914  staff   612B Aug  7  2017 .atom
+-rwxr-xr-x@   1 l127914  staff   866B Jun  6 14:10 .bash-platform-specific
+-rwxr-xr-x@   1 l127914  staff   696B May 23 17:37 .bash=extras
+-rw-------    1 l127914  staff   8.4K Oct 11 21:24 .bash_history
+-rw-r--r--    1 l127914  staff    22B Aug 20  2017 .bash_profile.
+drwx------  509 l127914  staff    17K Oct 12 16:00 .bash_sessions
+-rw-r--r--@   1 l127914  staff   1.3K Jul  3 21:56 .bashrc
+drwxr-xr-x    7 l127914  staff   238B Nov 15  2017 .cache
+drwxr-xr-x    4 l127914  staff   136B Oct  6  2017 .cmake
+drwx------    6 l127914  staff   204B Nov 15  2017 .config
+drwx------    3 l127914  staff   102B Jun  6  2017 .cups
+drwx------    3 l127914  staff   102B Feb  6  2018 .dbus-keyrings
+drwxr-xr-x    4 l127914  staff   136B Aug  6 08:37 .docker
+drwx------   14 l127914  staff   476B May 27 22:19 .dropbox
+drwxr-xr-x    6 l127914  staff   204B Oct  9 20:13 .dropbox-dist
+drwxr-xr-x    6 l127914  staff   204B Oct  6  2017 .eclipse
+drwxr-xr-x    4 l127914  staff   136B Oct  9 20:13 .gem
+-rw-r--r--    1 l127914  staff   498B Oct  3 15:04 .gitconfig
+-rw-r--r--@   1 l127914  staff    82B Oct  3 15:04 .gitflow_export
+-rw-r--r--@   1 l127914  staff    13B Sep  1  2017 .gitignore_global
+drwx------   17 l127914  staff   578B Sep 28 10:14 .gnupg
+drwx------   12 l127914  staff   408B Dec 15  2017 .gnupg_pre_2.1
+-rw-r--r--    1 l127914  staff   219B Feb  6  2018 .gtk-bookmarks
+-rw-r--r--@   1 l127914  staff    27B Sep  1  2017 .hgignore_global
+drwxr-xr-x   22 l127914  staff   748B Oct  9 20:13 .jenkins
+-rw-------    1 l127914  staff    40B Aug  3  2017 .lesshst
+drwx------    4 l127914  staff   136B Oct  6  2017 .local
+drwxr-xr-x    3 l127914  staff   102B Jul 21  2017 .macports
+drwxr-xr-x   13 l127914  staff   442B Jul  3 22:20 .oracle_jre_usage
+drwxr-xr-x    6 l127914  staff   204B Oct  6  2017 .p2
+-rw-r--r--@   1 l127914  staff   1.9K Oct  9 12:33 .profile
+-rw-r--r--@   1 l127914  staff   609B Jul  4  2017 .profile-anaconda2.bak
+-rw-r--r--@   1 l127914  staff   1.3K Oct  9 10:55 .profile-anaconda3.bak
+-rw-------    1 l127914  staff   1.0K Sep 30 20:27 .rnd
+-rw-------    1 l127914  staff   189B Feb  9  2018 .serverauth.17545
+-rw-------    1 l127914  staff   189B Sep 30 20:27 .serverauth.43223
+-rw-------    1 l127914  staff    63B Sep  1  2017 .serverauth.82090
+drwxr-xr-x    5 l127914  staff   170B Oct  9 20:13 .spack
+drwx------    5 l127914  staff   170B Jun 15  2017 .ssh
+-rw-r--r--@   1 l127914  staff     0B Apr 26 16:31 .stCommitMsg
+drwxr-x---    6 l127914  staff   204B Oct 11 18:44 .stonix
+drwxr-xr-x    6 root     staff   204B Jun 20  2017 .subversion
+drwxr-xr-x   11 l127914  staff   374B Oct  9 20:13 .vagrant.d
+drwxr-xr-x    3 l127914  staff   102B Oct  9 10:56 .vim
+-rw-------    1 root     staff   4.9K Nov 15  2017 .viminfo
+-rw-r--r--    1 l127914  staff   5.6K Jun  6  2017 .vimrc
+drwxr-xr-x    4 l127914  staff   136B Oct  9 20:13 .vscode
+-rw-r--r--    1 l127914  staff   769B Oct 11 22:54 .wget-hsts
+-rw-r--r--    1 l127914  staff    97B Jun 14  2017 .wgetrc
+drwx------@   5 l127914  staff   170B Oct  9 14:00 Applications
+drwx------   26 l127914  staff   884B May 27 17:06 Box Sync
+drwxrwxr-x@   3 l127914  staff   102B Jun  6 12:10 Creative Cloud Files
+drwx------+   9 l127914  staff   306B Oct 12 15:41 Desktop
+drwx------+  14 l127914  staff   476B Oct  9 20:28 Documents
+drwx------+ 363 l127914  staff    12K Oct 12 15:32 Downloads
+drwx------@  39 l127914  staff   1.3K Aug 29 18:30 Dropbox
+drwx------@  11 l127914  staff   374B Oct 11 18:18 Google Drive
+drwx------@  72 l127914  staff   2.4K Oct  9 12:33 Library
+lrwxr-xr-x    1 l127914  staff    26B Nov 28  2017 Mathematica_files -> /Users/l127914/Dropbox/_mm
+drwx------+   3 l127914  staff   102B Jun  6  2017 Movies
+drwx------+   5 l127914  staff   170B Oct  6  2017 Music
+drwxr-xr-x   14 l127914  staff   476B Jul 27  2017 NVIDIA_CUDA-8.0_Samples
+drwx------@   8 l127914  staff   272B Sep 28 10:16 OneDrive
+drwx------+   7 l127914  staff   238B Oct 19  2017 Pictures
+drwxr-xr-x   16 l127914  staff   544B Oct 12 15:51 Prime95
+drwxr-xr-x+   6 l127914  staff   204B Oct  6  2017 Public
+drwxr-xr-x    6 l127914  staff   204B Aug 14 16:22 VirtualBox VMs
+-rw-rw-rw-    1 l127914  staff    11K Jun 12  2017 \Users\l127914\Desktop\poly.png
+-rw-r--r--    1 l127914  staff    35K Jun 23  2017 apple_profiler.txt
+-rw-r--r--    1 l127914  staff   1.0K Jun 12 12:15 arXive.gitconfig
+drwxr-xr-x    4 l127914  staff   136B Oct  9 14:49 ascem
+drwxr-xr-x    5 l127914  staff   170B Oct  9 20:28 closet
+-rw-------    1 l127914  staff   750K Aug 29  2017 gnupg-backup.tar
+drwxr-xr-x    6 l127914  staff   204B Oct  9 12:48 local
+-rw-r--r--    1 l127914  staff   2.9K May 31 13:23 package.py
+-rw-r--r--@   1 l127914  staff    11M Aug 21 22:13 v0.2.20.tar.gz
+-rw-r--r--@   1 l127914  staff    11M Aug 21 22:12 v0.3.0.tar.gz
+-rw-r--r--@   1 l127914  staff    11M Aug 21 22:13 v0.3.2.tar.gz
+l127914@pn1249300.lanl.gov:~ $ cd ascem/
+l127914@pn1249300.lanl.gov:ascem $ cd amanzi/
+l127914@pn1249300.lanl.gov:amanzi $ cd repos/
+l127914@pn1249300.lanl.gov:repos $ cd amanzi/
+l127914@pn1249300.lanl.gov:amanzi $ pwd
+/Users/l127914/ascem/amanzi/repos/amanzi
+l127914@pn1249300.lanl.gov:amanzi $ v
+vi /Users/l127914/.bashrc
+l127914@pn1249300.lanl.gov:amanzi $ sr
+Fri Oct 12 16:02:47 MDT 2018 /Users/l127914/.bashrc
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/platforms.sh
+directory of core scripts = ${core} = /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/master.sh
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/info.sh
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/gcc.sh
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/info-git.sh
+/Volumes/Tlaltecuhtli/repos/node-queries
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/git.sh
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/ssh.sh
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/vim.sh
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/bash.sh
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/finds.sh
+Fri Oct 12 16:02:47 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/cmake.sh
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/fortran.sh
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/copy-configuration.sh
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/bookmarks.sh
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/disk.sh
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/info.sh
+[2]+  Done                    source "${core}/copy-configuration.sh"
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/info-git.sh
+/Volumes/Tlaltecuhtli/repos/node-queries
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/spack.sh
+fatal: Unable to create '/Volumes/Tlaltecuhtli/repos/node-queries/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/uname.sh
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/modules.sh
+[4]+  Exit 127                module available >> ${my_log} 2>&1
+uname: illegal option -- i
+usage: uname [-amnprsv]
+fatal: Unable to create '/Volumes/Tlaltecuhtli/repos/node-queries/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+uname: illegal option -- o
+usage: uname [-amnprsv]
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/alias.sh
+[2]   Done                    source ${core}/info-git.sh
+[4]+  Exit 127                module list >> ${my_log} 2>&1
+Fri Oct 12 16:02:48 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/environment.sh
+[3]+  Done                    source "${core}/uname.sh"
+[master 3277ac24c] Cauchy.Schwarz-log.in-pn1249300 Fri Oct 12 16:02:48 MDT 2018
+ 2 files changed, 74 insertions(+), 82 deletions(-)
+[1]+  Done                    source ${core}/info-git.sh
+Fri Oct 12 16:02:49 MDT 2018, /Users/l127914/.bash-platform-specific
+Fri Oct 12 16:02:49 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/apple.sh
+[1]+  Done                    cp ${HOME}/${extras} ${vault}
+l127914@pn1249300.lanl.gov:amanzi $ gospack
+/Volumes/Tlaltecuhtli/spack.macpro.current
+l127914@pn1249300.lanl.gov:spack.macpro.current $ lss
+total 2040
+drwxr-xr-x  13 l127914  staff   1.5K Sep 19 09:24 .
+drwxrwxr-x  14 l127914  staff   680B Oct  9 13:49 ..
+-rw-r--r--@  1 l127914  staff   8.0K Sep  5 13:05 .DS_Store
+-rw-r--r--   1 l127914  staff   690B May  9 12:51 .codecov.yml
+-rw-r--r--   1 l127914  staff   746B May  9 12:51 .coveragerc
+-rw-r--r--   1 l127914  staff   648B May  9 12:51 .flake8
+-rw-r--r--   1 l127914  staff   831B May  9 12:51 .flake8_packages
+drwxr-xr-x   9 l127914  staff   646B Aug 18 22:00 .git
+-rw-r--r--   1 l127914  staff   370B May  9 12:51 .gitignore
+-rw-r--r--   1 l127914  staff   6.0K May  9 12:51 .mailmap
+-rw-r--r--   1 l127914  staff   5.3K May  9 12:51 .travis.yml
+-rw-r--r--   1 l127914  staff   3.1K May  9 12:51 CODE_OF_CONDUCT.md
+-rw-r--r--   1 l127914  staff   214B May  9 12:51 CONTRIBUTING.md
+-rw-r--r--   1 l127914  staff    26K May  9 12:51 LICENSE
+-rw-r--r--   1 l127914  staff   1.6K May  9 12:51 NOTICE
+-rw-r--r--   1 l127914  staff   4.5K May  9 12:51 README.md
+-rw-r--r--   1 l127914  staff   1.7K Sep  5 13:52 arm-blas.sh
+drwxr-xr-x   2 l127914  staff   170B May  9 12:51 bin
+-rw-r--r--@  1 l127914  staff   5.5K May 11 13:33 build-open-mpi.sh
+-rw-r--r--@  1 l127914  staff   5.5K May 11 13:34 build-test-latest.sh
+-rw-r--r--   1 l127914  staff    56K Aug 27 10:39 config.log
+-rw-r--r--   1 l127914  staff   2.1K May  9 12:51 conftest.py
+drwxr-xr-x   3 l127914  staff   136B May 11 15:50 etc
+-rw-r--r--   1 l127914  staff   1.0K May  9 12:51 issue_template.md
+drwxr-xr-x   3 l127914  staff   136B May 11 15:50 lib
+-rw-r--r--@  1 l127914  staff   2.3K May 11 13:33 load-ompi-versions-spack.sh
+-rw-r--r--   1 l127914  staff   1.5K May 10 10:05 load-spack-compilers-null_space-fe.sh
+-rw-r--r--   1 l127914  staff   474B May 12 01:19 null_space-spack-compilers.dat
+-rw-r--r--   1 l127914  staff    14K May 12 01:19 openmpi-pn1249300.lanl.gov-2018-05-11-timings.txt
+drwxr-xr-x   3 l127914  staff   136B May 11 15:50 opt
+-rw-r--r--@  1 l127914  staff   4.2K May  9 12:52 parallel-snapshot.sh
+-rw-r--r--   1 l127914  staff   293B May  9 12:51 pytest.ini
+drwxr-xr-x   2 l127914  staff    68B Aug 17 10:14 sbatch
+drwxr-xr-x   3 l127914  staff   408B Aug 17 15:01 scripts
+drwxr-xr-x   3 l127914  staff   136B May 11 15:50 share
+-rw-r--r--   1 l127914  staff   4.5K May  9 12:52 snapshot.sh
+-rw-r--r--   1 l127914  staff    12K Sep 19 09:24 spack-cc-libelf-jpkhboa.in.log
+-rw-r--r--   1 l127914  staff    17K Sep 19 09:24 spack-cc-libelf-jpkhboa.out.log
+-rw-r--r--   1 l127914  staff    40K May 12 01:19 spack-commands.txt
+-rw-r--r--   1 l127914  staff   3.5K May 12 01:19 spack-find-ldf-openmpi.txt
+-rw-r--r--   1 l127914  staff   622B May 12 01:19 spack-find-openmpi.dat
+drwxr-xr-x   2 l127914  staff    68B Sep  5 12:45 spack-logs
+drwxr-xr-x   4 l127914  staff   170B May 11 15:50 templates
+-rw-r--r--   1 l127914  staff   386B Jun  8 15:04 tester.sh
+drwxr-xr-x   3 l127914  staff   136B May 11 15:50 var
+-rw-r--r--   1 l127914  staff   706K Aug 27 10:37 zoltan-383-build.out
+l127914@pn1249300.lanl.gov:spack.macpro.current $ git pull
+remote: Enumerating objects: 2275, done.
+remote: Counting objects: 100% (2275/2275), done.
+remote: Compressing objects: 100% (33/33), done.
+remote: Total 9213 (delta 2238), reused 2263 (delta 2231), pack-reused 6938
+Receiving objects: 100% (9213/9213), 3.48 MiB | 12.08 MiB/s, done.
+Resolving deltas: 100% (2906/2906), completed with 1192 local objects.
+From https://github.com/spack/spack
+ * [new branch]          PR/pymock                                   -> origin/PR/pymock
+ * [new branch]          balay/jthies/xsdk-add-phist                 -> origin/balay/jthies/xsdk-add-phist
+ * [new branch]          balay/test                                  -> origin/balay/test
+ * [new branch]          balay/xsdk-0.4.0                            -> origin/balay/xsdk-0.4.0
+ + 56aefd784...a4c0e5912 balay/xsdk-develop                          -> origin/balay/xsdk-develop  (forced update)
+ * [new branch]          bugfix/correct_install_path_scheme_defaults -> origin/bugfix/correct_install_path_scheme_defaults
+ * [new branch]          bugfix/travis-timeouts                      -> origin/bugfix/travis-timeouts
+ * [new branch]          cdash_report_docs                           -> origin/cdash_report_docs
+   6d45831ea..e1094b4e1  cwsmith/simmodsuite                         -> origin/cwsmith/simmodsuite
+   add0c8fe1..028391c0a  develop                                     -> origin/develop
+ * [new branch]          docs/linux-containers-on-cray               -> origin/docs/linux-containers-on-cray
+ * [new branch]          enh/py-h5py                                 -> origin/enh/py-h5py
+ * [new branch]          features/allow-overwrite-nonexistent        -> origin/features/allow-overwrite-nonexistent
+   0c03d3dca..7e98ae2a4  features/ccache                             -> origin/features/ccache
+ + 3b14f6f3c...136c7a8bc features/configurable-package-permissions   -> origin/features/configurable-package-permissions  (forced update)
+   d97f39a0e..548b1c143  features/flag-handlers-in-package-scope     -> origin/features/flag-handlers-in-package-scope
+ + 5996968a5...120fa2eb3 features/use-module-interface               -> origin/features/use-module-interface  (forced update)
+ * [new branch]          packages/cabana                             -> origin/packages/cabana
+ * [new branch]          packages/matplotlib-3.0.0                   -> origin/packages/matplotlib-3.0.0
+ * [new branch]          packages/miniamr                            -> origin/packages/miniamr
+ * [new branch]          packages/pfunit                             -> origin/packages/pfunit
+ * [new branch]          relicense-to-apache2-mit                    -> origin/relicense-to-apache2-mit
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> openmpi-add-v3.0.2
+
+l127914@pn1249300.lanl.gov:spack.macpro.current $ git pull https://github.com/spack/spack develop
+From https://github.com/spack/spack
+ * branch                develop    -> FETCH_HEAD
+error: Your local changes to the following files would be overwritten by merge:
+	etc/spack/defaults/modules.yaml
+	etc/spack/defaults/packages.yaml
+Please commit your changes or stash them before you merge.
+Aborting
+l127914@pn1249300.lanl.gov:spack.macpro.current $ git stash
+Saved working directory and index state WIP on openmpi-add-v3.0.2: b0f307ed6 Add support for Open MPI 3.0.2 just released
+l127914@pn1249300.lanl.gov:spack.macpro.current $ cd etc/
+.DS_Store  spack/     
+l127914@pn1249300.lanl.gov:spack.macpro.current $ cd etc/spack/defaults/
+l127914@pn1249300.lanl.gov:defaults $ lss
+total 80
+drwxr-xr-x  3 l127914  staff   442B Oct 12 16:13 .
+drwxr-xr-x  3 l127914  staff   102B May  9 12:51 ..
+-rw-r--r--@ 1 l127914  staff   661B Sep  5 13:14 arXive-packages.yaml
+-rw-r--r--  1 l127914  staff   3.1K May 29 16:35 config.yaml
+drwxr-xr-x  2 l127914  staff   102B May  9 12:51 darwin
+-rw-r--r--  1 l127914  staff   2.8K Aug 17 10:14 lmod-modules.yaml
+-rw-r--r--  1 l127914  staff   209B Oct 12 16:13 mirrors.yaml
+-rw-r--r--  1 l127914  staff   1.1K Oct 12 16:13 modules.yaml
+-rw-r--r--  1 l127914  staff   695B Oct 12 16:13 packages.yaml
+-rw-r--r--  1 l127914  staff   653B Sep  5 13:52 packages.yaml-e
+-rw-r--r--  1 l127914  staff   546B May  9 12:51 repos.yaml
+-rw-r--r--@ 1 l127914  staff   1.3K Aug 17 10:14 system-packages.yaml
+-rw-r--r--  1 l127914  staff   3.1K Aug 17 10:14 tcl-modules.yaml
+l127914@pn1249300.lanl.gov:defaults $ mv modules.yaml Xmodules.yaml 
+l127914@pn1249300.lanl.gov:defaults $ mv packages.yaml Xpackages.yaml
+l127914@pn1249300.lanl.gov:defaults $ sp
+-bash: sp: command not found
+l127914@pn1249300.lanl.gov:defaults $ cd ../../
+l127914@pn1249300.lanl.gov:etc $ cd ..
+l127914@pn1249300.lanl.gov:spack.macpro.current $ git pull https://github.com/spack/spack develop
+From https://github.com/spack/spack
+ * branch                develop    -> FETCH_HEAD
+Removing var/spack/repos/builtin/packages/py-dev/__init__.py.patch
+Auto-merging var/spack/repos/builtin/packages/py-avro/package.py
+Removing var/spack/repos/builtin/packages/petsc/xlc-test-3.9.0.diff
+Auto-merging var/spack/repos/builtin/packages/openmpi/package.py
+CONFLICT (content): Merge conflict in var/spack/repos/builtin/packages/openmpi/package.py
+Removing var/spack/repos/builtin/packages/mumps/mumps-5.1.1-spectrum-mpi-xl.patch
+Removing var/spack/repos/builtin/packages/mumps/mumps-5.0.2-spectrum-mpi-xl.patch
+Auto-merging var/spack/repos/builtin/packages/libhio/package.py
+Removing var/spack/repos/builtin/packages/flux/package.py
+Auto-merging var/spack/repos/builtin/packages/charmpp/package.py
+Auto-merging var/spack/repos/builtin.mock/packages/svn-top-level/package.py
+Removing var/spack/repos/builtin.mock/packages/patch-a-dependency/foo.patch
+Auto-merging share/spack/templates/modules/modulefile.tcl
+Auto-merging share/spack/templates/modules/modulefile.lua
+Removing share/spack/docker/spack_ubuntu/modules.yaml
+Removing share/spack/docker/spack_ubuntu/handle-ssh.sh
+Removing share/spack/docker/spack_ubuntu/handle-prompt.sh
+Removing share/spack/docker/spack_opensuse/modules.yaml
+Removing share/spack/docker/spack_opensuse/handle-ssh.sh
+Removing share/spack/docker/spack_fedora/modules.yaml
+Removing share/spack/docker/spack_fedora/handle-ssh.sh
+Removing share/spack/docker/spack_fedora/handle-prompt.sh
+Removing share/spack/docker/spack_centos/modules.yaml
+Removing share/spack/docker/spack_centos/handle-ssh.sh
+Removing share/spack/docker/spack_centos/handle-prompt.sh
+Removing share/spack/docker/spack_arch/handle-prompt.sh
+Auto-merging share/spack/docker/build/ubuntu.dockerfile
+Auto-merging share/spack/docker/build/opensuse.dockerfile
+Auto-merging share/spack/docker/build/fedora.dockerfile
+Auto-merging share/spack/docker/build/common/handle-prompt.sh
+Auto-merging share/spack/docker/build/centos.dockerfile
+Auto-merging share/spack/docker/build/arch.dockerfile
+Auto-merging lib/spack/spack/test/pytest.ini
+Auto-merging lib/spack/spack/test/cmd/print_shell_vars.py
+Auto-merging lib/spack/spack/test/cmd/mirror.py
+Auto-merging lib/spack/llnl/util/multiproc.py
+Removing lib/spack/external/yaml/lib3/yaml/tokens.py
+Removing lib/spack/external/yaml/lib3/yaml/serializer.py
+Removing lib/spack/external/yaml/lib3/yaml/scanner.py
+Removing lib/spack/external/yaml/lib3/yaml/resolver.py
+Removing lib/spack/external/yaml/lib3/yaml/representer.py
+Removing lib/spack/external/yaml/lib3/yaml/parser.py
+Removing lib/spack/external/yaml/lib3/yaml/nodes.py
+Removing lib/spack/external/yaml/lib3/yaml/loader.py
+Removing lib/spack/external/yaml/lib3/yaml/events.py
+Removing lib/spack/external/yaml/lib3/yaml/error.py
+Removing lib/spack/external/yaml/lib3/yaml/emitter.py
+Removing lib/spack/external/yaml/lib3/yaml/dumper.py
+Removing lib/spack/external/yaml/lib3/yaml/cyaml.py
+Removing lib/spack/external/yaml/lib3/yaml/constructor.py
+Removing lib/spack/external/yaml/lib3/yaml/composer.py
+Removing lib/spack/external/yaml/lib/yaml/tokens.py
+Removing lib/spack/external/yaml/lib/yaml/serializer.py
+Removing lib/spack/external/yaml/lib/yaml/resolver.py
+Removing lib/spack/external/yaml/lib/yaml/representer.py
+Removing lib/spack/external/yaml/lib/yaml/reader.py
+Removing lib/spack/external/yaml/lib/yaml/nodes.py
+Removing lib/spack/external/yaml/lib/yaml/loader.py
+Removing lib/spack/external/yaml/lib/yaml/dumper.py
+Removing lib/spack/external/yaml/lib/yaml/cyaml.py
+Removing lib/spack/external/yaml/lib/yaml/constructor.py
+Removing lib/spack/external/yaml/lib/yaml/__init__.py
+Removing lib/spack/external/yaml/README
+Auto-merging lib/spack/external/ruamel/yaml/scanner.py
+Auto-merging lib/spack/external/ruamel/yaml/reader.py
+Auto-merging lib/spack/external/ruamel/yaml/parser.py
+Auto-merging lib/spack/external/ruamel/yaml/main.py
+Auto-merging lib/spack/external/ruamel/yaml/events.py
+Auto-merging lib/spack/external/ruamel/yaml/error.py
+Auto-merging lib/spack/external/ruamel/yaml/emitter.py
+Auto-merging lib/spack/external/ruamel/yaml/composer.py
+Auto-merging lib/spack/external/ordereddict_backport.py
+Auto-merging lib/spack/external/_pytest/LICENSE
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/versions.html
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/theme.conf
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/js/theme.js
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/js/modernizr.min.js
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/fontawesome-webfont.woff
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/fontawesome-webfont.ttf
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/fontawesome-webfont.svg
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/fontawesome-webfont.eot
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/RobotoSlab-Regular.ttf
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/RobotoSlab-Bold.ttf
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/Lato-Regular.ttf
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/Lato-Bold.ttf
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/Inconsolata.ttf
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/Inconsolata-Bold.ttf
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/fonts/FontAwesome.otf
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/css/theme.css.map
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/css/theme.css
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/css/badge_only.css.map
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/static/css/badge_only.css
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/searchbox.html
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/search.html
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/layout_old.html
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/layout.html
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/footer.html
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/breadcrumbs.html
+Removing lib/spack/docs/_themes/sphinx_rtd_theme/__init__.py
+Auto-merging etc/spack/defaults/packages.yaml
+CONFLICT (content): Merge conflict in etc/spack/defaults/packages.yaml
+Auto-merging .github/ISSUE_TEMPLATE/bug_report.md
+Recorded preimage for 'etc/spack/defaults/packages.yaml'
+Recorded preimage for 'var/spack/repos/builtin/packages/openmpi/package.py'
+Automatic merge failed; fix conflicts and then commit the result.
+l127914@pn1249300.lanl.gov:spack.macpro.current $ gospackp
+. share/spack/setup-env.sh
+l-spack
+Fri Oct 12 16:15:27 MDT 2018, /Volumes/Tlaltecuhtli/repos/bash-scripts/core-scripts/spack-init.sh
+l127914@pn1249300.lanl.gov:spack.macpro.current $ sp
+/Volumes/Tlaltecuhtli/spack.macpro.current
+l127914@pn1249300.lanl.gov:spack.macpro.current $ spack find
+==> 335 installed packages.
+-- darwin-sierra-x86_64 / clang@4.0.1 ---------------------------
+hwloc@1.11.9  libxml2@2.9.4  openblas@0.2.20  pkg-config@0.29.2  xz@5.2.3  zlib@1.2.11
+hwloc@1.11.9  libxml2@2.9.8  openmpi@1.10.7   pkg-config@0.29.2  xz@5.2.4
+
+-- darwin-sierra-x86_64 / clang@9.0.0-apple ---------------------
+autoconf@2.69  hypre@2.10.0b  hypre@2.10.1  hypre@2.11.2  hypre@2.12.1  hypre@2.13.0  intel-mkl@2018.2.199  openmpi@2.0.3  openmpi@3.1.1
+bzip2@1.0.6    hypre@2.10.0b  hypre@2.10.1  hypre@2.11.2  hypre@2.12.1  hypre@2.13.0  json-c@0.13.1         openmpi@2.0.4  openssl@1.0.2n
+cmake@3.11.2   hypre@2.10.0b  hypre@2.10.1  hypre@2.11.2  hypre@2.12.1  hypre@2.13.0  libelf@0.8.13         openmpi@2.1.0  perl@5.26.2
+cvs@1.12.13    hypre@2.10.0b  hypre@2.11.1  hypre@2.11.2  hypre@2.12.1  hypre@2.14.0  libsigsegv@2.11       openmpi@2.1.1  pkg-config@0.29.2
+gdbm@1.14.1    hypre@2.10.0b  hypre@2.11.1  hypre@2.11.2  hypre@2.12.1  hypre@2.14.0  libxml2@2.9.4         openmpi@2.1.2  pkg-config@0.29.2
+hdf5@1.10.2    hypre@2.10.0b  hypre@2.11.1  hypre@2.11.2  hypre@2.12.1  hypre@2.14.0  libxml2@2.9.8         openmpi@2.1.3  pkgconf@1.4.2
+hdf5@1.10.2    hypre@2.10.0b  hypre@2.11.1  hypre@2.11.2  hypre@2.12.1  hypre@2.14.0  libxml2@2.9.8         openmpi@2.1.5  readline@7.0
+hwloc@1.11.9   hypre@2.10.1   hypre@2.11.1  hypre@2.11.2  hypre@2.13.0  hypre@2.14.0  libxml2@2.9.8         openmpi@3.0.0  silo@4.10.2
+hwloc@1.11.9   hypre@2.10.1   hypre@2.11.1  hypre@2.11.2  hypre@2.13.0  hypre@2.14.0  m4@1.4.18             openmpi@3.0.0  veclibfort@0.4.2
+hwloc@1.11.9   hypre@2.10.1   hypre@2.11.1  hypre@2.11.2  hypre@2.13.0  hypre@2.14.0  ncurses@6.1           openmpi@3.0.1  xz@5.2.3
+hwloc@1.11.9   hypre@2.10.1   hypre@2.11.1  hypre@2.11.2  hypre@2.13.0  hypre@2.14.0  netlib-lapack@3.8.0   openmpi@3.0.1  xz@5.2.4
+hypre@2.10.0b  hypre@2.10.1   hypre@2.11.1  hypre@2.12.1  hypre@2.13.0  hypre@2.14.0  openblas@0.2.20       openmpi@3.0.2  xz@5.2.4
+hypre@2.10.0b  hypre@2.10.1   hypre@2.11.1  hypre@2.12.1  hypre@2.13.0  hypre@2.14.0  openmpi@1.10.7        openmpi@3.1.0  zlib@1.2.11
+hypre@2.10.0b  hypre@2.10.1   hypre@2.11.1  hypre@2.12.1  hypre@2.13.0  hypre@2.14.0  openmpi@2.0.0         openmpi@3.1.0
+hypre@2.10.0b  hypre@2.10.1   hypre@2.11.1  hypre@2.12.1  hypre@2.13.0  hypre@2.14.0  openmpi@2.0.1         openmpi@3.1.0
+hypre@2.10.0b  hypre@2.10.1   hypre@2.11.2  hypre@2.12.1  hypre@2.13.0  hypre@2.14.0  openmpi@2.0.2         openmpi@3.1.0
+
+-- darwin-sierra-x86_64 / gcc@4.3.6 -----------------------------
+hwloc@1.11.9   ncurses@6.1    openmpi@3.0.1  openmpi@3.1.0   pkg-config@0.29.2  zlib@1.2.11
+libxml2@2.9.8  openmpi@3.0.0  openmpi@3.0.2  openssl@1.0.2n  xz@5.2.4
+
+-- darwin-sierra-x86_64 / gcc@4.7.4 -----------------------------
+hwloc@1.11.9   ncurses@6.1    openmpi@3.0.1  openmpi@3.1.0   pkg-config@0.29.2  zlib@1.2.11
+libxml2@2.9.8  openmpi@3.0.0  openmpi@3.0.2  openssl@1.0.2n  xz@5.2.4
+
+-- darwin-sierra-x86_64 / gcc@4.8.5 -----------------------------
+autoconf@2.69    gmp@6.1.2     libsigsegv@2.11  m4@1.4.18   ncurses@6.1    openmpi@3.0.2   perl@5.26.2        xz@5.2.4
+automake@1.16.1  hwloc@1.11.9  libtool@2.4.6    mpc@1.1.0   openmpi@3.0.0  openmpi@3.1.0   pkg-config@0.29.2  zlib@1.2.11
+gdbm@1.14.1      isl@0.19      libxml2@2.9.8    mpfr@4.0.1  openmpi@3.0.1  openssl@1.0.2n  readline@7.0
+
+-- darwin-sierra-x86_64 / gcc@5.5.0 -----------------------------
+hwloc@1.11.9   ncurses@6.1    openmpi@3.0.1  openmpi@3.1.0   pkg-config@0.29.2  zlib@1.2.11
+libxml2@2.9.8  openmpi@3.0.0  openmpi@3.0.2  openssl@1.0.2n  xz@5.2.4
+
+-- darwin-sierra-x86_64 / gcc@6.1.0 -----------------------------
+pkg-config@0.29.2
+
+-- darwin-sierra-x86_64 / gcc@6.2.0 -----------------------------
+pkg-config@0.29.2
+
+-- darwin-sierra-x86_64 / gcc@6.3.0 -----------------------------
+pkg-config@0.29.2
+
+-- darwin-sierra-x86_64 / gcc@6.4.0 -----------------------------
+hwloc@1.11.9   hypre@2.10.0b  hypre@2.11.1  hypre@2.11.2  hypre@2.12.1  hypre@2.13.0   libxml2@2.9.8  openmpi@3.0.2      veclibfort@0.4.2
+hwloc@1.11.9   hypre@2.10.1   hypre@2.11.1  hypre@2.11.2  hypre@2.12.1  hypre@2.14.0   ncurses@6.1    openmpi@3.1.0      xz@5.2.4
+hypre@2.10.0b  hypre@2.10.1   hypre@2.11.1  hypre@2.11.2  hypre@2.13.0  hypre@2.14.0   openmpi@2.1.5  openssl@1.0.2n     xz@5.2.4
+hypre@2.10.0b  hypre@2.10.1   hypre@2.11.1  hypre@2.12.1  hypre@2.13.0  hypre@2.14.0   openmpi@3.0.0  pkg-config@0.29.2  zlib@1.2.11
+hypre@2.10.0b  hypre@2.10.1   hypre@2.11.2  hypre@2.12.1  hypre@2.13.0  libxml2@2.9.8  openmpi@3.0.1  pkgconf@1.4.2
+
+-- darwin-sierra-x86_64 / gcc@7.1.0 -----------------------------
+pkg-config@0.29.2
+
+-- darwin-sierra-x86_64 / gcc@7.2.0 -----------------------------
+hwloc@1.11.9   hypre@2.10.1  hypre@2.11.1  hypre@2.11.2  hypre@2.12.1  hypre@2.14.0   openmpi@3.0.1      veclibfort@0.4.2
+hypre@2.10.0b  hypre@2.10.1  hypre@2.11.1  hypre@2.11.2  hypre@2.13.0  hypre@2.14.0   openmpi@3.0.2      xz@5.2.4
+hypre@2.10.0b  hypre@2.10.1  hypre@2.11.1  hypre@2.12.1  hypre@2.13.0  libxml2@2.9.8  openmpi@3.1.0      zlib@1.2.11
+hypre@2.10.0b  hypre@2.10.1  hypre@2.11.2  hypre@2.12.1  hypre@2.13.0  ncurses@6.1    openssl@1.0.2n
+hypre@2.10.0b  hypre@2.11.1  hypre@2.11.2  hypre@2.12.1  hypre@2.13.0  openmpi@3.0.0  pkg-config@0.29.2
+
+-- darwin-sierra-x86_64 / gcc@7.3.0 -----------------------------
+pkg-config@0.29.2
+
+-- darwin-sierra-x86_64 / gcc@8-20170604 ------------------------
+hwloc@1.11.9   hypre@2.10.1  hypre@2.11.1  hypre@2.11.2  hypre@2.12.1  hypre@2.14.0   ncurses@6.1    openssl@1.0.2n
+hypre@2.10.0b  hypre@2.10.1  hypre@2.11.1  hypre@2.11.2  hypre@2.13.0  hypre@2.14.0   openmpi@3.0.0  pkg-config@0.29.2
+hypre@2.10.0b  hypre@2.10.1  hypre@2.11.1  hypre@2.12.1  hypre@2.13.0  hypre@2.14.0   openmpi@3.0.1  veclibfort@0.4.2
+hypre@2.10.0b  hypre@2.10.1  hypre@2.11.2  hypre@2.12.1  hypre@2.13.0  hypre@2.14.0   openmpi@3.0.2  xz@5.2.4
+hypre@2.10.0b  hypre@2.11.1  hypre@2.11.2  hypre@2.12.1  hypre@2.13.0  libxml2@2.9.8  openmpi@3.1.0  zlib@1.2.11
+l127914@pn1249300.lanl.gov:spack.macpro.current $ spack install tcl
+==> Error: Error parsing yaml  in "/Volumes/Tlaltecuhtli/spack.macpro.current/etc/spack/defaults/packages.yaml", line 22, column 1: could not find expected ':'
+l127914@pn1249300.lanl.gov:spack.macpro.current $ vpa
+l127914@pn1249300.lanl.gov:spack.macpro.current $ scgpa
+packages:
+  all:
+    compiler:
+    - clang
+    - gcc
+    - intel
+    - pgi
+    - xl
+    - nag
+    providers:
+      awk:
+      - gawk
+      blas:
+      - openblas
+      daal:
+      - intel-daal
+      elf:
+      - libelf
+      - elfutils
+      golang:
+      - gcc
+      ipp:
+      - intel-ipp
+      java:
+      - jdk
+      lapack:
+      - openblas
+      mkl:
+      - intel-mkl
+      mpe:
+      - mpe2
+      mpi:
+      - openmpi
+      - mpich
+      opencl:
+      - pocl
+      openfoam:
+      - openfoam-com
+      - openfoam-org
+      - foam-extend
+      pil:
+      - py-pillow
+      scalapack:
+      - netlib-scalapack
+      szip:
+      - libszip
+      - libaec
+      tbb:
+      - intel-tbb
+      jpeg:
+      - libjpeg-turbo
+      - libjpeg
+      unwind:
+      - apple-libunwind
+    buildable: true
+    version: []
+    paths: {}
+    modules: {}
+  llvm:
+    variants: build_type=Release
+    buildable: true
+    version: []
+    providers: {}
+    paths: {}
+    modules: {}
+    compiler: []
+  openssl:
+    paths:
+      openssl: /usr/bin
+    buildable: false
+    version: []
+    providers: {}
+    modules: {}
+    compiler: []
+  apple-libunwind:
+    paths:
+      apple-libunwind@35.3: /usr
+    buildable: false
+    version: []
+    providers: {}
+    modules: {}
+    compiler: []
+l127914@pn1249300.lanl.gov:spack.macpro.current $ spack install tcl
+==> Error: invalid syntax in /Volumes/Tlaltecuhtli/spack.macpro.current/var/spack/repos/builtin/packages/openmpi/package.py, line 92
+l127914@pn1249300.lanl.gov:spack.macpro.current $ vpa
+pi/package.py9300.lanl.gov:spack.macpro.current $ vi /Volumes/Tlaltecuhtli/spack.macpro.current/var/spack/repos/builtin/packages/openm 
+l127914@pn1249300.lanl.gov:spack.macpro.current $ cd ..
+l127914@pn1249300.lanl.gov:Tlaltecuhtli $ lss
+total 24
+drwxrwxr-x  14 l127914  staff   680B Oct  9 13:49 .
+drwxr-xr-x@  5 root     wheel   170B Oct 12 14:24 ..
+-rw-r--r--@  1 l127914  staff    10K Oct 12 16:03 .DS_Store
+d--x--x--x   7 l127914  staff   306B Sep 28 10:15 .DocumentRevisions-V100
+drwxr-xr-x   2 l127914  staff    68B Oct  9 10:55 .PKInstallSandboxManager
+drwx------   4 l127914  staff   170B May  2 10:42 .Spotlight-V100
+d-wx-wx-wt   4 l127914  staff   136B Jun  4 14:00 .TemporaryItems
+d-wx-wx-wt   3 l127914  staff   102B Aug  7 12:50 .Trashes
+-rw-r--r--@  1 l127914  staff     0B Aug 14 15:37 .com.apple.timemachine.donotpresent
+drwx------   2 l127914  staff    11K Oct 12 16:15 .fseventsd
+drwxr-xr-x   3 l127914  staff   102B Oct  9 10:55 Library
+drwxr-xr-x   3 l127914  staff   136B Aug 16 10:38 flag
+drwxr-xr-x   3 l127914  staff   102B Oct  9 10:37 local
+drwxr-xr-x  25 l127914  staff   918B Oct  9 20:28 pangea
+drwxr-xr-x  17 l127914  staff   646B Aug 31 23:20 repos
+drwxr-xr-x  14 l127914  staff   1.5K Oct 12 16:15 spack.macpro.current
+l127914@pn1249300.lanl.gov:Tlaltecuhtli $ pwd
+/Volumes/Tlaltecuhtli
+l127914@pn1249300.lanl.gov:Tlaltecuhtli $ git clone https://github.com/spack/spack spack.macpro.office
+Cloning into 'spack.macpro.office'...
+remote: Enumerating objects: 112, done.
+remote: Counting objects: 100% (112/112), done.
+remote: Compressing objects: 100% (74/74), done.
+remote: Total 133153 (delta 57), reused 62 (delta 25), pack-reused 133041
+Receiving objects: 100% (133153/133153), 46.13 MiB | 11.05 MiB/s, done.
+Resolving deltas: 100% (62953/62953), done.
+Checking out files: 100% (4152/4152), done.
+l127914@pn1249300.lanl.gov:Tlaltecuhtli $ goamanzi 
+-bash: go: command not found
+-bash: cd: amanzi/repos/amanzi: No such file or directory
+/Volumes/Tlaltecuhtli
+l127914@pn1249300.lanl.gov:Tlaltecuhtli $ cd
+l127914@pn1249300.lanl.gov:~ $ go ascem/amanzi/repos/amanzi/
+-bash: go: command not found
+l127914@pn1249300.lanl.gov:~ $ cd ascem/amanzi/repos/amanzi/
+l127914@pn1249300.lanl.gov:amanzi $ cd bin
+-bash: cd: bin: No such file or directory
+l127914@pn1249300.lanl.gov:amanzi $ lss
+total 176
+drwxr-xr-x  19 l127914  staff   646B Oct 12 15:42 .
+drwxr-xr-x   4 l127914  staff   136B Oct  9 14:49 ..
+-rw-r--r--@  1 l127914  staff   8.0K Oct 12 16:46 .DS_Store
+drwxr-xr-x  13 l127914  staff   442B Oct  9 11:49 .git
+-rw-r--r--   1 l127914  staff   469B Oct  9 10:50 .travis.yml
+-rw-r--r--   1 l127914  staff   5.7K Oct  9 10:50 CMakeLists.txt
+-rw-r--r--   1 l127914  staff   5.2K Oct  9 10:50 COPYRIGHT
+-rw-r--r--   1 l127914  staff   531B Oct  9 10:50 CTestConfig.cmake
+drwxr-xr-x   6 l127914  staff   204B Oct  9 10:50 Docker
+-rw-r--r--   1 l127914  staff   3.8K Oct  9 10:50 README.md
+-rwxr-xr-x   1 l127914  staff    44K Oct  9 10:50 bootstrap.sh
+drwxr-xr-x   6 l127914  staff   204B Oct  9 15:12 build
+drwxr-xr-x   8 l127914  staff   272B Oct  9 10:50 config
+drwxr-xr-x   5 l127914  staff   170B Oct  9 10:50 demos
+drwxr-xr-x  14 l127914  staff   476B Oct  9 10:50 doc
+drwxr-xr-x   5 l127914  staff   170B Oct  9 20:14 install
+drwxr-xr-x  22 l127914  staff   748B Oct  9 10:50 src
+drwxr-xr-x   6 l127914  staff   204B Oct  9 10:50 test_suites
+drwxr-xr-x  17 l127914  staff   578B Oct 12 15:37 tools
+l127914@pn1249300.lanl.gov:amanzi $ pdw
+-bash: pdw: command not found
+l127914@pn1249300.lanl.gov:amanzi $ pwd
+/Users/l127914/ascem/amanzi/repos/amanzi
+d_recharge_1d/300.lanl.gov:amanzi $ cd  /Users/l127914/ascem/amanzi/repos/amanzi/doc/user_guide/verification/unconfined_flow/unconfine 
+l127914@pn1249300.lanl.gov:unconfined_recharge_1d $ lss
+total 96
+drwxr-xr-x  12 l127914  staff   408B Oct 12 17:16 .
+drwxr-xr-x   7 l127914  staff   238B Oct 12 17:16 ..
+-rw-r--r--   1 l127914  staff   1.9K Oct  9 10:50 .petsc
+-rw-r--r--   1 l127914  staff   477B Oct  9 10:50 CMakeLists.txt
+-rw-r--r--   1 l127914  staff   8.3K Oct  9 10:50 amanzi_unconfined_recharge_1d-s.xml
+-rw-r--r--   1 l127914  staff    12K Oct  9 10:50 amanzi_unconfined_recharge_1d-u.xml
+-rw-r--r--   1 l127914  staff   2.5K Oct  9 10:50 amanzi_unconfined_recharge_1d.py
+-rw-r--r--   1 l127914  staff    92B Oct 12 17:16 collect.log
+-rw-r--r--   1 l127914  staff   1.7K Oct  9 10:50 convergence_test.py
+drwxr-xr-x   5 l127914  staff   170B Oct 12 17:16 golden_output
+drwxr-xr-x   4 l127914  staff   136B Oct 12 17:16 output-u
+drwxr-xr-x   3 l127914  staff   102B Oct 12 17:16 schematic
+l127914@pn1249300.lanl.gov:unconfined_recharge_1d $ echo $AMANZI_INSTALL_DIR
+
+l127914@pn1249300.lanl.gov:unconfined_recharge_1d $ history
+   50  cd etc/spack/
+   51  cd defaults/
+   52  cat repos.yaml 
+   53  cat config.yaml 
+   54  spackinfo libpciaccess
+   55  spack info libpciaccess
+   56  cd repos.yaml 
+   57  gorepos 
+   58  lss
+   59  gowsdb 
+   60  grep -r "curl: (37)" .
+   61  spack versions openmpi
+   62  spack info openmpi
+   63  gorepos 
+   64  lss
+   65  cd transfer-spack/
+   66  kss
+   67  lss
+   68  cd open
+   69  cd openmpi/
+   70  lss
+   71  wget http://www.open-mpi.org/software/ompi/v3.1/downloads/openmpi-3.1.2.tar.bz2
+   72  git pull
+   73  gorepos 
+   74  cd transfer-spack/
+   75  git pull
+   76  git add 
+   77  git add  .
+   78  git commit -m "openmpi@3.1.2"
+   79  git push
+   80  cd openmpi/
+   81  lss
+   82  git pull
+   83  goperformance 
+   84  git pull
+   85  golap
+   86  git pull
+   87  git add .
+   88  git commit -m "tag summaries with SPACK_ROOT"
+   89  git push
+   90  sp
+   91  spack edit openblas
+   92  spack info openblas
+   93  spack info boost
+   94  spack edit boost
+   95  pwd
+   96  spack providers
+   97  spack providers blas
+   98  goperformance 
+   99  git pull
+  100  spack versions zoltan
+  101  spack graph zoltan
+  102  golap 
+  103  git pull
+  104  git add .
+  105  git commit -m "zoltan build script"
+  106  git push
+  107  git pull
+  108  git add .
+  109  git commit -m "update scripts to launch without Spack initialization"
+  110  git push
+  111  git pull
+  112  goperformance 
+  113  git pull
+  114  git status
+  115  git add .
+  116  git commit -m "push FLAG briefing"
+  117  git push
+  118  spack info libpciaccess
+  119  spack info kokkos
+  120  spack graph kokkos
+  121  git pull
+  122  git pull
+  123  gobottom
+  124  gitpull
+  125  git pull
+  126  git status
+  127  git add .
+  128  git commit -m "components/tables/problem/tab problem lines slope.tex"
+  129  git push
+  130  goperformance 
+  131  git pull
+  132  golap
+  133  gitpull
+  134  git add .
+  135  git commit -m "safety commit: lunch break"
+  136  git push
+  137  spack info
+  138  spack info hypre
+  139  spack graph hypre
+  140  git pull
+  141  sp
+  142  spack graph zoltan
+  143  spack info zoltan
+  144  spack versions hypre
+  145  spack versions intel-mkl
+  146  spack versions cmake
+  147  spack versions intel-mkl
+  148  q
+  149  golap
+  150  git pull
+  151  git add .
+  152  git commit -m "update mirror"
+  153  git push
+  154  spack versions zoltan
+  155  spack info zoltan
+  156  golap 
+  157  git status
+  158  goperformance 
+  159  git status
+  160  git add .
+  161  git commit -m "final presentation"
+  162  git push
+  163  git pull
+  164  sp
+  165  spack info zoltan
+  166  git pull
+  167  cd
+  168  gorepos 
+  169  cd transfer-spack/
+  170  lss
+  171  mkdir gcc
+  172  cd gcc/
+  173  wget http://ftp.gnu.org/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.xz
+  174  git pull
+  175  git add .
+  176  git commit -m "http://ftp.gnu.org/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.xz"
+  177  git push
+  178  gospack
+  179  lss
+  180  goperformance 
+  181  git pull
+  182  sp3
+  183  sp
+  184  spack versions openmpi
+  185  spack compilers
+  186  spack providers pkgconf
+  187  spack providers pkgconfig
+  188  sp
+  189  cat etc/spack/defaults/packages.yaml 
+  190  spack info openmpi
+  191  esp
+  192  spack graph libpciaccess
+  193  spack info libpciaccess
+  194  spack graph hypre
+  195  spack graph intel-mkl
+  196  spack compilers
+  197  spack versions pgi
+  198  sp
+  199  spack versions hypre
+  200  vi arm-blas.sh
+  201  pwd
+  202  . arm-blas.sh 
+  203  vpa
+  204  vpa
+  205  . arm-blas.sh 
+  206  . arm-blas.sh 
+  207  sed -n "s/.*blas:.*/      blas: [${b}]/" "${packages}"
+  208  vpa
+  209  sed -n "s/.*blas:.*/      blas: [boo]/" "${packages}"
+  210  vpa
+  211  sed -n 's/.*blas:.*/      blas: [boo]/' "${packages}"
+  212  vpa
+  213  echo $packages 
+  214  sed -n 's/.*blas:.*/      blas: [boo]/' ${packages}
+  215  vpa
+  216  sed 's/.*blas:.*/      blas: [boo]/' ${packages}
+  217  sed 's/.*blas:.*/      blas: [hoo]/' ${packages}
+  218  . arm-blas.sh 
+  219  spack providers mkl
+  220  . arm-blas.sh 
+  221  . arm-blas.sh 
+  222  . arm-blas.sh 
+  223  . arm-blas.sh 
+  224  . arm-blas.sh 
+  225  . arm-blas.sh 
+  226  . arm-blas.sh 
+  227  . arm-blas.sh 
+  228  . arm-blas.sh 
+  229  . arm-blas.sh 
+  230  . arm-blas.sh 
+  231  . arm-blas.sh 
+  232  . arm-blas.sh 
+  233    sed -i -e 's/.*blas:.*/      blas: [${b}]/' "${packages}"
+  234    sed -i -e 's/.*blas:.*/      blas: [${b}]/' ${packages}
+  235    sed -i -e 's/.*blas:.*/      blas: [abc]/' ${packages}
+  236  echo $packages 
+  237    sed -i -e 's/.*blas:.*/      blas: [abc]/' ${packages}
+  238    sed -i -e 's/.*blas:.*/      blas: [abc]/' /Volumes/Tlaltecuhtli/spack.macpro.current/etc/spack/defaults/packages.yaml
+  239    sed -i -e "s/.*blas:.*/      blas: [abc]/" /Volumes/Tlaltecuhtli/spack.macpro.current/etc/spack/defaults/packages.yaml
+  240  cat /Volumes/Tlaltecuhtli/spack.macpro.current/etc/spack/defaults/packages.yaml
+  241   ${packages}
+  242  sed -i -e 's/.*blas:.*/      blas: [dan]/' ${packages}
+  243  cat $packages 
+  244  sed 7,7p $packages
+  245  sed -i -e -n 's/.*blas:.*/      blas: [bob]/' ${packages}
+  246  cat $packages 
+  247  vi etc/spack/defaults/packages.yaml
+  248  cat $packages 
+  249  sed -i -e -n 's/.*blas:.*/      blas: [bob]/' ${packages}
+  250  cat $packages 
+  251  sed -i -e 's/.*blas:.*/      blas: [bob]/' ${packages}
+  252  cat $packages 
+  253  . arm-blas.sh 
+  254  cat $packages 
+  255  . arm-blas.sh 
+  256  vi $packages 
+  257  . arm-blas.sh 
+  258  . arm-blas.sh 
+  259  . arm-blas.sh 
+  260  . arm-blas.sh 
+  261  . arm-blas.sh 
+  262  cat $packages 
+  263  . arm-blas.sh 
+  264  . arm-blas.sh 
+  265  vpa
+  266  . arm-blas.sh 
+  267  vpa
+  268  . arm-blas.sh 
+  269  . arm-blas.sh 
+  270  spack versions hypre
+  271  spack dependencies openmpi
+  272  spack graph hypre
+  273  spack edit openmpi
+  274  git pull
+  275  spack edit openmpi
+  276  spack edit zlib
+  277  spack versions libpciaccess
+  278  spack versions intel parallel studio
+  279  spack versions intel-parallel-studio
+  280  spack info hwloc
+  281  spack install --fake hypre
+  282  scgpa
+  283  vpa
+  284  vpa
+  285  scgpa
+  286  spack install --fake hypre
+  287  spack install --fake hypre ^openblas
+  288  spack info boost
+  289  spack graph boost
+  290  spack info hypre
+  291  spack -sd install -v libelf
+  292  lss
+  293  spack install silo
+  294  spack info py-setuptools
+  295  spack graph openmpi
+  296  golap
+  297  git pull
+  298  git status
+  299  git add .
+  300  git commit -m "modified:   notes/LaTeX/building ompi/building-open-mpi.tex"
+  301  gobottom 
+  302  git pull
+  303  goshuttle 
+  304  lss
+  305  cd spack-mirror/
+  306  lss
+  307  wget https://cmake.org/files/v3.12/cmake-3.12.2.tar.gz
+  308  git pull
+  309  git add .
+  310  git commit -m "curl: (37) cmake 3.12.2"
+  311  git push
+  312  gobottom
+  313  git pull
+  314  git status
+  315  git add .
+  316  git commit -m "components/tables/other/tab other lines three system of equations generic.tex"
+  317  git push
+  318  spack info zoltan
+  319  goshuttle 
+  320  lss
+  321  cp zoltan_distrib_v3.8* /Users/l127914/Documents/sandbox/zoltan/
+  322  spack info cmake
+  323  spack versions cmake
+  324  gobottom 
+  325  git pull
+  326  git status
+  327  git add .
+  328  git commit -m "modified:   content/chapters/ch lines three lines.tex"
+  329  git push
+  330  git pull
+  331  git status
+  332  git add .
+  333  git commit -m "components/figures/fig lines three condition number.tex"
+  334  git push
+  335  git pull
+  336  git status
+  337  git add .
+  338  git commit -m "modified:   content/chapters/ch zonal curl.tex"
+  339  git push
+  340  goperformance 
+  341  git pull
+  342  git stash
+  343  git pull
+  344  cd /Volumes/Tlaltecuhtli/repos/GitHub/
+  345  pwd
+  346  spack versions googletest test
+  347  spack versions googletest 
+  348  spack edit boost
+  349  goshuttle 
+  350  git add .
+  351  git status
+  352  git commit -m "new file:   cray-libsci-package.py"
+  353  git push
+  354  gorepos 
+  355  cd GitLab/
+  356  lss
+  357  cd Cray-LibSci/
+  358  git init
+  359  git remote add origin git@gitlab.lanl.gov:dantopa/Cray-LibSci.git
+  360  git add .
+  361  git commit -m "Initial commit"
+  362  git push -u origin master
+  363  pdw
+  364  pwd
+  365  git pull
+  366  git add l
+  367  git add .
+  368  git status
+  369  mv ners-libsci.txt nersc-libsci.txt 
+  370  git add .
+  371  git commit -m "new file:   revised-cray-libsci-package.py"
+  372  git push
+  373  sp
+  374  cd etc/spack/defaults/
+  375  vi config.yaml 
+  376  gorepos 
+  377  lss
+  378  lsssp
+  379  sp
+  380  cd etc/spack/defaults/
+  381  vi config.yaml 
+  382  gorepos 
+  383  lss
+  384  cd GitLab/
+  385  cd Cray-LibSci/
+  386  git add .
+  387  git status
+  388  git commit -m "new file:   bash/mover.sh"
+  389  git push
+  390  pwd
+  391  git pull
+  392  git add .
+  393  git status
+  394  git commit -m "modified:   bash/mover.sh"
+  395  git push
+  396  spack info sqlite
+  397  spack edit sqlite
+  398  spack graph sqlite
+  399  pwd
+  400  git pull
+  401  git add .
+  402  git status
+  403  git commit -m "modified:   python/revised-cray-libsci-package.py"
+  404  git push
+  405  vpa
+  406  sp
+  407  spack install readline
+  408  c d/Volumes/Tlaltecuhtli/spack.macpro.current/opt/spack/darwin-sierra-x86_64/clang-9.0.0-apple/readline-7.0-rlf32tidff644qnvuovz4xqwues5aggi
+  409  cd /Volumes/Tlaltecuhtli/spack.macpro.current/opt/spack/darwin-sierra-x86_64/clang-9.0.0-apple/readline-7.0-rlf32tidff644qnvuovz4xqwues5aggi
+  410  lss
+  411  cdbijn
+  412  cd bin
+  413  lss
+  414  cd ..
+  415  ld bin
+  416  cd lib/
+  417  lss
+  418  cd ..
+  419  readline
+  420  spack find
+  421  spack edit sqlite
+  422  spack editboost
+  423  spack edit boost
+  424  source ~/.bashrc
+  425  trinititey 
+  426  source ~/.bashrc
+  427  trinititey 
+  428  source ~/.bashrc
+  429  source ~/.bashrc
+  430  snowy
+  431  snowy
+  432  source ~/.bashrc
+  433  snowy
+  434  source ~/.bashrc
+  435  snowy
+  436  source ~/.bashrc
+  437  snowy
+  438  source ~/.bashrc
+  439  snowy
+  440  grab-compute
+  441  v
+  442  grab-compute
+  443  sr
+  444  source ~/.bashrc
+  445  trinititey 
+  446  source ~/.bashrc
+  447  trinititey 
+  448  source ~/.bashrc
+  449  trinititey 
+  450  source ~/.bashrc
+  451  trinititey 
+  452  dsource ~/.bashrc
+  453  arwin
+  454  source ~/.bashrc
+  455  darwin
+  456  source ~/.bashrc
+  457   darwin
+  458  source ~/.bashrc
+  459   darwin
+  460  source ~/.bashrc
+  461   darwin
+  462  source ~/.bashrc
+  463   darwin
+  464  source ~/.bashrc
+  465   darwin
+  466  source ~/.bashrc
+  467   darwin
+  468  source ~/.bashrc
+  469  snowy
+  470  source ~/.bashrc
+  471  snowy
+  472  source ~/.bashrc
+  473  snowy
+  474  source ~/.bashrc
+  475  snowy
+  476  source ~/.bashrc
+  477  snowy
+  478  source ~/.bashrc
+  479  snoy
+  480  snowy
+  481  source ~/.bashrc
+  482  snowy
+  483  source ~/.bashrc
+  484  trinititey 
+  485  source ~/.bashrc
+  486  darwin
+  487  source ~/.bashrc
+  488  darwin
+  489  source ~/.bashrc
+  490  darwin
+  491  source ~/.bashrc
+  492  darwin
+  493  source ~/.bashrc
+  494  darwin
+  495  source ~/.bashrc
+  496  darwin
+  497  source ~/.bashrc
+  498  darwin
+  499  source ~/.bashrc
+  500  darwin
+  501  source ~/.bashrc
+  502  amanzi
+  503  cd
+  504  lss
+  505  cd ascem/
+  506  cd amanzi/
+  507  cd repos/
+  508  cd amanzi/
+  509  pwd
+  510  v
+  511  sr
+  512  gospack
+  513  lss
+  514  git pull
+  515  git pull https://github.com/spack/spack develop
+  516  git stash
+  517  cd etc/spack/defaults/
+  518  lss
+  519  mv modules.yaml Xmodules.yaml 
+  520  mv packages.yaml Xpackages.yaml
+  521  sp
+  522  cd ../../
+  523  cd ..
+  524  git pull https://github.com/spack/spack develop
+  525  gospackp
+  526  sp
+  527  spack find
+  528  spack install tcl
+  529  vpa
+  530  scgpa
+  531  spack install tcl
+  532  vpa
+  533  vi /Volumes/Tlaltecuhtli/spack.macpro.current/var/spack/repos/builtin/packages/openmpi/package.py
+  534  cd ..
+  535  lss
+  536  pwd
+  537  git clone https://github.com/spack/spack spack.macpro.office
+  538  goamanzi 
+  539  cd
+  540  go ascem/amanzi/repos/amanzi/
+  541  cd ascem/amanzi/repos/amanzi/
+  542  cd bin
+  543  lss
+  544  pdw
+  545  pwd
+  546  cd  /Users/l127914/ascem/amanzi/repos/amanzi/doc/user_guide/verification/unconfined_flow/unconfined_recharge_1d/
+  547  lss
+  548  echo $AMANZI_INSTALL_DIR
+  549  history
+l127914@pn1249300.lanl.gov:unconfined_recharge_1d $ vi /Users/l127914/ascem/amanzi/repos/amanzi/doc/user_guide/verification/confined_flow/butler_strip_2d/amanzi-output/stdout.out
+l127914@pn1249300.lanl.gov:unconfined_recharge_1d $ 

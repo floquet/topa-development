@@ -1,0 +1,58 @@
+  518  export mpi_home=$(spack location -i /yp3kc3a)
+  519  echo $mpi_home
+  520  cd $mpi_home 
+  521  lss
+  522  sp
+  523  cd
+  524  lss
+  525  mkdir -p ascem/repos/amanzi
+  526  rm -rf ascem/repos/amanzi/
+  527  rm -rf ascem/amanzi/repos
+  528  lss
+  529  mkdir -p ascem/amanzi/repos
+  530  cd ascem/amanzi/
+  531  lss
+  532  cd repos/
+  533  git clone http://github.com/amanzi/amanzi 
+  534  lss
+  535  cd amanzi/
+  536  lss
+  537  ./bootstrap.sh --with-mpi=$mpi_home 
+  538  ./bootstrap.sh --with-mpi=$mpi_home --parallel=12
+  539  vi /Users/l127914/ascem/amanzi/repos/amanzi/build/tpls/superlu_dist/superlu_dist-timestamps/
+  540  cd /Users/l127914/ascem/amanzi/repos/amanzi/build/tpls/superlu_dist/superlu_dist-timestamps/
+  541  lss
+  542  cd superlu_dist-configure-err.log 
+  543  vi superlu_dist-configure-err.log 
+  544  vi superlu_dist-configure-err.log cat
+  545  cat superlu_dist-configure-err.log cat
+  546  cd Cauchy.Schwarz-log.in-pn1249300
+  547  show_names
+  548  echo $prefix
+  549  export prefix=""
+  550  echo $prefix
+  551  unset $prefix
+  552  cd ../../..
+  553  pwd
+  554  cd tpls/
+  555  lss
+  556  rm -rf superlu_dist/
+  557  cd ../../
+  558  pwd
+  559  ./bootstrap.sh --with-mpi=$mpi_home 
+  560  ./bootstrap.sh --with-mpi=$mpi_home 
+  561  vi /Users/l127914/ascem/amanzi/repos/amanzi/build/tpls/CMakeFiles/CMakeOutput.log
+  562  lss
+  563  rm -rf build install 
+  564  lss
+  565  ./bootstrap.sh --with-mpi=$mpi_home --parallel=12
+  566  lss
+  567  cd tools/
+  568  cd input/
+  569  cd ..
+  570  ;ss
+  571  lss
+  572  history
+  573  sp
+  574  spack edit openmpi 
+  575  history

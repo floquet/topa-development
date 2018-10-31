@@ -1,0 +1,18 @@
+Videos:
+
+Accelerate and Sparse Solvers
+https://developer.apple.com/videos/play/wwdc2017/711/
+
+Using Accelerate and simd
+https://developer.apple.com/videos/play/wwdc2018/701
+
+Web pages:
+
+Framework
+Accelerate
+Make large-scale mathematical computations and image calculations, optimized for high performance.
+https://developer.apple.com/documentation/accelerate
+
+vecLib
+Perform computations on large vectors.
+https://developer.apple.com/documentation/accelerate/veclib

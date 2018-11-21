@@ -23,9 +23,9 @@ class C(object):
         print( "self._x = ", self._x )
 
 c = C()
-c.x = 'foo'  # setter called
-foo = c.x    # getter called
-del c.x      # deleter called
+c.x = "my value"    # setter called
+foo = c.x           # getter called
+del c.x             # deleter called
 
 # l127914@pn1249300.lanl.gov:class $ python objects-python-A.py
 # setter of x called: self._x =  foo

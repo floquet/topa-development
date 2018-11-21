@@ -1,0 +1,143 @@
+\mode<presentation> {\usetheme{Malmoe}}
+\usecolortheme{beaver}
+\usefonttheme{structurebold}
+%\hypersetup{colorlinks=true,linkcolor=blue, linktocpage}
+%
+%\usepackage[final]		{pdfpages}
+%\usepackage 			{colortbl}
+%\usepackage[abs]		{overpic}
+%\usepackage{pifont} % cmark, xmark
+%\newcommand{\cmark}		{\bl{\ding{51}}}%
+%\newcommand{\xmark}		{\rd{\ding{55}}}%
+%\newcommand{\zmark}		{\bl{\ding{55}}}%
+%\usepackage 			{xcolor,varwidth}
+%\usepackage{rotating}
+%\usepackage{tikz}
+%\usepackage{amssymb}
+%\usepackage[pscoord]{eso-pic} % https://tex.stackexchange.com/questions/24663/how-to-place-a-floating-text-box-at-a-specified-location-in-page-coordinates
+%\newcommand{\now}[0]				{July 2018}
+%\newcommand{\bluecheck}[0]			{{\color{blue}{\checkmark}}}
+%\newcommand{\boldcheck}[0]			{\bf{\checkmark}}
+%\newcommand{\bolddash}[0]			{\bf{$-$}}
+%	
+%\input{\pathcommon delimiters}
+\input{\pathcommon colors}
+\input{\pathcommon code}
+
+%http://tex.stackexchange.com/questions/73718/frame-numbering-in-warsaw-theme
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+    \insertshorttitle\hfill\insertframenumber\,/\,\inserttotalframenumber}
+\expandafter\def\expandafter\insertauthor\expandafter{%
+    \insertauthor\hfill\text{rev 12}}
+
+% http://tex.stackexchange.com/questions/53784/overlay-images-and-block-in-beamer
+%\tikzset{visib/.style={rectangle,color=blue,fill=blue!10,text=black,draw,text opacity=0.4, text width=#1,align=flush center}}
+%\tikzset{invisib/.style={rectangle,color=gray,fill=gray!10,text=black,draw,text opacity=0.4, text width=#1,align=flush center}}
+
+% stray commands
+\newcommand{\authorTopa}[0]	{\href{mailto:dantopa@lanl.gov}{Daniel Topa}}
+\newcommand{\authorNam}[0]	{\href{mailto:hnam@lanl.gov}{Hai Ah Nam}}
+\newcommand{\authorKT}[0]	{\href{mailto:kgt@lanl.gov}{Kelly Thompson}}
+\newcommand{\Topa}[0] 		{\href{mailto:dantopa@lanl.gov}{Topa}}
+\newcommand{\Nam}[0] 		{\href{mailto:hnam@lanl.gov}{Nam}}
+\newcommand{\KT}[0] 		{\href{mailto:kgt@lanl.gov}{Thompson}}
+\newcommand{\lanl}[0]		{Los Alamos National Laboratory\\CCS-2: Computational Physics and Methods}
+
+% http://tex.stackexchange.com/questions/34921/how-to-overlap-images-in-a-beamer-slide
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+\newenvironment{myfancyblock}%
+{\begin{center}\begin{tikzpicture}}%
+{\end{tikzpicture}\end{center}}%
+
+\newcommand{\spaces}[0]		{\phantom{m}}
+\newcommand{\myslash}[0]	{\phantom{m}\textbackslash}
+
+\newcommand{\opaqueblock}[4]{
+\node<#1>[#2=#3] (X) {#4};
+}
+\colorlet{gray_med}{gray!70}
+% http://int.lanl.gov/communication-standards/brand-and-identity/color-palette/print/index.shtml
+% http://int.lanl.gov/communication-standards/brand-and-identity/color-palette/public-website/index.shtml
+% http://int.lanl.gov/communication-standards/brand-and-identity/color-palette/intranet-website/index.shtml
+% http://int.lanl.gov/communication-standards/brand-and-identity/logo-usage/logo-downloads-official.shtml
+\definecolor{lanlblue}{RGB}{11,98,173}
+\definecolor{lanlgold}{RGB}{255,198,30}
+% http://int.lanl.gov/communication-standards/brand-and-identity/logo-usage/official-logo/index.shtml
+\definecolor{logoblue}{RGB}{11,98,173}
+\definecolor{logogold}{RGB}{255,198,30}
+% https://tex.stackexchange.com/questions/368784/change-color-in-beamer-theme
+\setbeamercolor{titlelike}{parent=structure,fg=lanlblue}
+\setbeamercolor{title}{bg=lanlblue,fg=lanlgold}
+% http://mirror.unl.edu/ctan/macros/latex/contrib/beamer/base/themes/color/beamercolorthemebeaver.sty
+\setbeamercolor*{palette primary}{fg=lanlblue!60!black,bg=gray!30!white}
+\setbeamercolor*{palette secondary}{fg=lanlblue!70!black,bg=gray!15!white}
+\setbeamercolor*{palette tertiary}{bg=lanlblue!80!black,fg=gray!10!white}
+\setbeamercolor*{palette quaternary}{fg=lanlblue,bg=gray!5!white}
+
+% https://tex.stackexchange.com/questions/78464/background-image-in-beamer-slides
+% \setbeamertemplate{background canvas}{\includegraphics[width=2 in]{../graphics/lanl-logo-electrons}} % only for the image: http://ctan.org/pkg/mwe
+
+% http://tex.stackexchange.com/questions/237396/logo-top-right-latex-beamer-warsaw-presentation
+\addtobeamertemplate{headline}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+%\node at([shift={(.25\paperwidth,-.42)}]current page.north) {\includegraphics[ height=.5cm, width=.7cm]{../graphics/logos/HPCMP}};
+%\node at([shift={(0.42\paperwidth,-0.47)}]current page.north) {\includegraphics[ height = 0.85cm]{../graphics/logos/HPTi}};
+\node at([shift={(0.41\paperwidth,-0.42)}]current page.north) 	{\href{https://nnsa.energy.gov}{\includegraphics[ height = 0.60 cm ]{../graphics/NNSA_Logo-blue}}};
+%
+\node at([shift={(-0.42\paperwidth,-0.45)}]current page.north)	{\href{https://www.lanl.gov/}{\includegraphics[ height = 0.775 cm ]{../graphics/"lanl-75-logo"}}};
+%
+%\node at([shift={(-0.41\paperwidth,-0.45)}]current page.north)	{\href{https://www.lanl.gov/}{\includegraphics[ height = 0.775 cm ]{../graphics/"lanl logo short"}}};
+%
+\end{tikzpicture}}
+
+\newcommand{\spack}[0]  
+{ \href{https://github.com/spack/spack/wiki}{Spack} }
+
+\newcommand{\onedot}[0]  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+   {\color{medgray}{.}}
+  \end{textblock*} 
+}
+
+\newcommand{\twodots}[0]  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+   {\color{medgray}{..}}
+  \end{textblock*} 
+}
+
+\newcommand{\donedot}[0]  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+   {\color{darkgray}{.}}
+  \end{textblock*} 
+}
+
+\newcommand{\dtwodots}[0]  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+   {\color{darkgray}{..}}
+  \end{textblock*} 
+}
+
+\newcommand{\bdoton}[0]  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,1.0cm)%
+   {\color{medgray}{.}}
+  \end{textblock*} 
+}
+
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
+%\tiny
+%\scriptsize
+%\footnotesize
+%\small
+%\normalsize
+%\large
+%\Large
+%\LARGE
+%\huge
+%\Huge

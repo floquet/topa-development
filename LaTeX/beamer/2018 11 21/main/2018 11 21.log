@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 NOV 2018 13:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 NOV 2018 14:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -667,7 +667,10 @@ emewhale.sty))
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/color/beamercolorth
 emebeaver.sty)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/font/beamerfontthem
-estructurebold.sty) (../common/colors.tex) (../common/code.tex))
+estructurebold.sty)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4.
+Package hyperref Info: Option `linktocpage' set `true' on input line 4.
+ (../common/colors.tex) (../common/code.tex))
 (../common/packages.tex
 (/usr/local/texlive/2017/texmf-dist/tex/latex/datetime/datetime.sty
 Package: datetime 2015/03/20 v2.60 Date Time Package
@@ -1090,7 +1093,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box93
-Package hyperref Info: Link coloring OFF on input line 22.
+Package hyperref Info: Link coloring ON on input line 22.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1230,7 +1233,7 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@ttwidth=\dimen294
 \SOUL@uldp=\dimen295
 \SOUL@ulht=\dimen296
-)) (./2018 11 21.nav) <../graphics/NNSA_Logo-blue.png, id=44, 200.75pt x 63.236
+)) (./2018 11 21.nav) <../graphics/NNSA_Logo-blue.png, id=53, 200.75pt x 63.236
 25pt>
 File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
 
@@ -1238,7 +1241,7 @@ File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
 Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 22.
 (pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
 
-<../graphics/"lanl-75-logo".jpg, id=47, 932.48375pt x 422.57875pt>
+<../graphics/"lanl-75-logo".jpg, id=56, 932.48375pt x 422.57875pt>
 File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
 
 <use ../graphics/"lanl-75-logo".jpg>
@@ -1268,7 +1271,7 @@ Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 26.
 
  <../graphics/NNSA_Logo-blue.png> <../graphics/lanl-75-logo.jpg>]
 (../sections/sec done.tex
-<../graphics/"topa-development".png, id=93, 1495.5875pt x 984.67876pt>
+<../graphics/"topa-development".png, id=105, 1495.5875pt x 984.67876pt>
 File: ../graphics/"topa-development".png Graphic file (type png)
 
 <use ../graphics/"topa-development".png>
@@ -1304,4 +1307,145 @@ line 24.
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-File: ../graphics/NNSA_Logo-blue.png Graphic file (type pn
+File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
+ <use ../graphics/NNSA_Logo-blue.png>
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 24.
+(pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
+File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
+ <use ../graphics/"lanl-75-logo".jpg>
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 24.
+(pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
+
+[3
+
+]
+File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
+ <use ../graphics/NNSA_Logo-blue.png>
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 35.
+(pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
+File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
+ <use ../graphics/"lanl-75-logo".jpg>
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 35.
+(pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
+
+[4
+
+]
+File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
+ <use ../graphics/NNSA_Logo-blue.png>
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 45.
+(pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
+File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
+ <use ../graphics/"lanl-75-logo".jpg>
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 45.
+(pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
+
+[5
+
+]
+File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
+ <use ../graphics/NNSA_Logo-blue.png>
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 58.
+(pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
+File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
+ <use ../graphics/"lanl-75-logo".jpg>
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 58.
+(pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
+
+[6
+
+]) (../sections/sec object model.tex
+File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
+ <use ../graphics/NNSA_Logo-blue.png>
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 14.
+(pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
+File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
+
+<use ../graphics/"lanl-75-logo".jpg>
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 14.
+(pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
+ [7
+
+]
+File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
+ <use ../graphics/NNSA_Logo-blue.png>
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 88.
+(pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
+File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
+
+<use ../graphics/"lanl-75-logo".jpg>
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 88.
+(pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
+ [8
+
+]) (../sections/sec python.tex
+File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
+
+<use ../graphics/NNSA_Logo-blue.png>
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 8.
+(pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
+File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
+ <use ../graphics/"lanl-75-logo".jpg>
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 8.
+(pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
+
+[9
+
+]
+File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
+ <use ../graphics/NNSA_Logo-blue.png>
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 21.
+(pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
+File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
+ <use ../graphics/"lanl-75-logo".jpg>
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 21.
+(pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
+
+[10
+
+])
+\tf@nav=\write7
+\openout7 = `"2018 11 21.nav"'.
+
+\tf@toc=\write8
+\openout8 = `"2018 11 21.toc"'.
+
+\tf@snm=\write9
+\openout9 = `"2018 11 21.snm"'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 32.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
+ (./2018 11 21.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 32.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 32.
+Package rerunfilecheck Info: File `"2018 11 21".out' has not changed.
+(rerunfilecheck)             Checksum: 1A7E29FD5E4589E0B64D3224297596CE;430.
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 25618 strings out of 492995
+ 515008 string characters out of 6132704
+ 594698 words of memory out of 5000000
+ 28537 multiletter control sequences out of 15000+600000
+ 13418 words of font info for 50 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 56i,19n,62p,1056b,1152s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "2018 11 21.pdf" (10 pages, 405702 bytes).
+PDF statistics:
+ 477 PDF objects out of 1000 (max. 8388607)
+ 432 compressed objects within 5 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 122 words of extra memory for PDF output out of 10000 (max. 10000000)
+

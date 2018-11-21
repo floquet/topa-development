@@ -12,7 +12,7 @@ import sys          # python version
 import datetime     # https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python
 import xlsxwriter   # API for Excel
 
-# Create an new Excel file and add a worksheet.
+##   ##   ##  provenance
 workbook = xlsxwriter.Workbook( "Amanzi Requirements.xlsx" )
 worksheet = workbook.add_worksheet( "provenance" )
 
@@ -42,7 +42,8 @@ worksheet.write( row, 1, os.environ[ "HOME" ] )
 row += 2
 worksheet.write( row, 0, "timestamp" )
 worksheet.write( row, 1, datetime.datetime.now( ) )
-# cell_format = workbook.add_format({'bold': True, 'font_color': 'red'})
-# worksheet.add_format( row, 1, cell_format )
+
+##   ##   ##  Data
+worksheet = workbook.add_worksheet( "chapter: Initial conditions" )
 
 workbook.close()

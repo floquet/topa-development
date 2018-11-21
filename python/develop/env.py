@@ -35,7 +35,7 @@ except KeyError:
 # $USER      =  dantopa
 # $HOSTNAME  =  MacBookPro11,3
 # $host_name =  Lax-Millgram
-# 
+#
 # all environment variables
 # Variable:  bold  =
 # Variable:  master  =  /Users/dantopa/Documents/GitHub/LLNL-master-open-mpi

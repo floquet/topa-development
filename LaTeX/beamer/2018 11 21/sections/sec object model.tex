@@ -1,0 +1,133 @@
+\section{Object Model}
+
+
+\subsection{Hierarchy}
+\begin{frame}
+	\frametitle{Components}
+	\begin{itemize}
+		\item \bl{Book}
+		\item Book has \bl{chapters}
+		\item Chapter has \bl{sections}
+		\item Section has \bl{requirements}
+		\item \mg{Do Chapters have requirements?}
+	\end{itemize}
+\end{frame}
+
+%\begin{frame}
+%	\frametitle{Hierarchy: Example}
+%	$\bullet$ \bl{myBook} \mg{chapters} \\
+%	$\bullet$$\bullet$ Initial Conditions \\
+%	$\bullet$$\bullet$ Boundary Conditions \\
+%	$\bullet$$\bullet$ Sources \\
+%	$\bullet$$\bullet$ Outputs \\
+%	\begin{itemize}
+%		\item \bl{$\bullet$ myBook} \mg{chapters}
+%		\begin{itemize}
+%			\item Initial Conditions \mg{sections}
+%			\begin{itemize}
+%				\item Assigned regions
+%				\item Liquid phase  \mg{requirements}
+%				\begin{itemize}
+%					\item required: liquid_component
+%					\item required: geochemistry_component
+%				\end{itemize}
+%				\item Solid phase  \mg{requirements}
+%			\end{itemize}
+%			\item Boundary Conditions
+%			\item Sources
+%			\item Outputs
+%		\end{itemize}
+%	\end{itemize}
+%\end{frame}
+
+%\begin{frame}
+%	\frametitle{Hierarchy: Example Detailed}
+%	$\bullet$ \bl{myBook} \\
+%	$\bullet$$\bullet$ Initial Conditions \mg{chapter} \\
+%	$\bullet$$\bullet$$\bullet$ Assigned regions \mg{section} \\
+%	$\bullet$$\bullet$$\bullet$ Liquid phase \mg{section} \\
+%	$\bullet$$\bullet$$\bullet$$\bullet$ required: liquid\_component \\
+%	$\bullet$$\bullet$$\bullet$$\bullet$ optional: geochemistry\_component \\
+%	$\bullet$$\bullet$$\bullet$ Solid phase  \mg{section}\\
+%	$\bullet$$\bullet$$\bullet$$\bullet$ required: geochemistry \\
+%	$\bullet$$\bullet$$\bullet$$\bullet$ optional: mineral \\
+%\end{frame}
+
+
+\begin{frame}
+	\frametitle{Foundation: Book}
+	\begin{enumerate}
+		\item chapter: Initial Conditions
+			%
+		\begin{enumerate}
+			\item section: Assigned Regions
+			\item section: Liquid Phase
+			%
+			\begin{enumerate}
+				\item required: liquid\_component
+				\item optional: geochemistry\_component
+			\end{enumerate}
+			%
+			\item section: Solid Phase
+			%
+			\begin{enumerate}
+				\item required: geochemistry
+				\item optional: mineral, geochemistry
+			\end{enumerate}
+		\end{enumerate}
+			%
+		\item chapter: Boundary Conditions
+			%
+		\begin{enumerate}
+			\item section: Assigned Regions
+			\item section: Liquid Phase
+			\item \sg{section: Solid Phase}
+		\end{enumerate}
+			%
+	\end{enumerate}
+\end{frame}
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
+
+
+%\section      [Name]{Section Name}  %    S    S    S    S
+%\subsection   [Name]{Section Name}  %   SS   SS   SS   SS
+%\subsubsection[Name]{Section Name}  %  SSS  SSS  SSS  SSS
+
+
+%\input{\pathtables    subdir/"my blob"}  %%  %%  %%  %%  %%  %%
+%\input{\pathgraphics  subdir/"my blob"}  %%  %%  %%  %%  %%  %%
+%\input{\pathfigures   subdir/"my blob"}  %%  %%  %%  %%  %%  %%
+%\input{\patheps       subdir/"my blob"}  %%  %%  %%  %%  %%  %%
+%\input{\pathequations subdir/"my blob"}  %%  %%  %%  %%  %%  %%
+%
+
+%\begin{equation}
+%	%\begin{split}
+%	a = b
+%	%\end{split}
+%\end{equation}
+%
+
+%\begin{table}[htp]
+%	\caption{default}
+%	\begin{center}
+%		\begin{tabular}{|c|c|}
+%			
+%		\end{tabular}
+%	\end{center}
+%\label{default}
+%\end{table}%
+
+
+%  \tiny
+%  \scriptsize
+%  \footnotesize
+%  \small
+%  \normalsize
+%  \large
+%  \Large
+%  \LARGE
+%  \huge
+%  \Huge

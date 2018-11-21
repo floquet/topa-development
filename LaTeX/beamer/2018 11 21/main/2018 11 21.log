@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 NOV 2018 15:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 NOV 2018 16:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1271,7 +1271,7 @@ Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 26.
 
  <../graphics/NNSA_Logo-blue.png> <../graphics/lanl-75-logo.jpg>]
 (../sections/sec done.tex
-<../graphics/"topa-development".png, id=105, 1495.5875pt x 984.67876pt>
+<../graphics/"topa-development".png, id=104, 1495.5875pt x 984.67876pt>
 File: ../graphics/"topa-development".png Graphic file (type png)
 
 <use ../graphics/"topa-development".png>
@@ -1318,26 +1318,32 @@ Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 24.
 
 [3
 
-]
+] <../graphics/"xlsx-out".png, id=188, 571.13374pt x 337.26pt>
+File: ../graphics/"xlsx-out".png Graphic file (type png)
+
+<use ../graphics/"xlsx-out".png>
+Package pdftex.def Info: ../graphics/"xlsx-out".png used on input line 35.
+(pdftex.def)             Requested size: 252.94499pt x 149.36748pt.
 File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
  <use ../graphics/NNSA_Logo-blue.png>
 Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 35.
 (pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
 File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
- <use ../graphics/"lanl-75-logo".jpg>
+
+<use ../graphics/"lanl-75-logo".jpg>
 Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 35.
 (pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
+ [4
 
-[4
-
-]
+ <../graphics/xlsx-out.png>]
 File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
- <use ../graphics/NNSA_Logo-blue.png>
-Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 45.
+
+<use ../graphics/NNSA_Logo-blue.png>
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 46.
 (pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
 File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
  <use ../graphics/"lanl-75-logo".jpg>
-Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 45.
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 46.
 (pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
 
 [5
@@ -1345,14 +1351,26 @@ Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 45.
 ]
 File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
  <use ../graphics/NNSA_Logo-blue.png>
-Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 58.
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 56.
 (pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
 File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
  <use ../graphics/"lanl-75-logo".jpg>
-Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 58.
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 56.
 (pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
 
 [6
+
+]
+File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
+ <use ../graphics/NNSA_Logo-blue.png>
+Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 69.
+(pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
+File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
+ <use ../graphics/"lanl-75-logo".jpg>
+Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 69.
+(pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
+
+[7
 
 ]) (../sections/sec object model.tex
 File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
@@ -1364,7 +1382,7 @@ File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
 <use ../graphics/"lanl-75-logo".jpg>
 Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 14.
 (pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
- [7
+ [8
 
 ]
 File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
@@ -1376,7 +1394,7 @@ File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
 <use ../graphics/"lanl-75-logo".jpg>
 Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 88.
 (pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
- [8
+ [9
 
 ]) (../sections/sec python.tex
 File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
@@ -1389,7 +1407,7 @@ File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
 Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 21.
 (pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
 
-[9
+[10
 
 ])
 \tf@nav=\write7
@@ -1406,23 +1424,38 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
  (./2018 11 21.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 32.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 32.
-Package rerunfilecheck Info: File `"2018 11 21".out' has not changed.
-(rerunfilecheck)             Checksum: 1A7E29FD5E4589E0B64D3224297596CE;430.
 
+
+Package rerunfilecheck Warning: File `"2018 11 21".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `"2018 11 21".out':
+(rerunfilecheck)             Before: 1A7E29FD5E4589E0B64D3224297596CE;430
+(rerunfilecheck)             After:  F2980BDF89BF8E81D86EB471A4AB9CF1;430.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 25617 strings out of 492995
- 515001 string characters out of 6132704
- 594698 words of memory out of 5000000
- 28537 multiletter control sequences out of 15000+600000
+ 25626 strings out of 492995
+ 515183 string characters out of 6132704
+ 594649 words of memory out of 5000000
+ 28540 multiletter control sequences out of 15000+600000
  13418 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,19n,62p,1056b,1152s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Navigation10} has been referenced but does not ex
+pdfTeX warning (dest): name{Outline0.2.1.7} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.1.4.5} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.1.3.4} has been referenced but does not ex
 ist, replaced by a fixed one
 
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
@@ -1433,10 +1466,10 @@ r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/
 local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "2018 11 21.pdf" (9 pages, 403615 bytes).
+Output written on "2018 11 21.pdf" (10 pages, 434416 bytes).
 PDF statistics:
- 443 PDF objects out of 1000 (max. 8388607)
- 400 compressed objects within 4 object streams
- 29 named destinations out of 1000 (max. 500000)
- 122 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 489 PDF objects out of 1000 (max. 8388607)
+ 442 compressed objects within 5 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 127 words of extra memory for PDF output out of 10000 (max. 10000000)
 

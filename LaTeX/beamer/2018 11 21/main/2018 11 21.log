@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 NOV 2018 14:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 NOV 2018 15:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1382,18 +1382,6 @@ Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 88.
 File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
 
 <use ../graphics/NNSA_Logo-blue.png>
-Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 8.
-(pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
-File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
- <use ../graphics/"lanl-75-logo".jpg>
-Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 8.
-(pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
-
-[9
-
-]
-File: ../graphics/NNSA_Logo-blue.png Graphic file (type png)
- <use ../graphics/NNSA_Logo-blue.png>
 Package pdftex.def Info: ../graphics/NNSA_Logo-blue.png used on input line 21.
 (pdftex.def)             Requested size: 54.19708pt x 17.07182pt.
 File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
@@ -1401,7 +1389,7 @@ File: ../graphics/"lanl-75-logo".jpg Graphic file (type jpg)
 Package pdftex.def Info: ../graphics/"lanl-75-logo".jpg used on input line 21.
 (pdftex.def)             Requested size: 48.64737pt x 22.0507pt.
 
-[10
+[9
 
 ])
 \tf@nav=\write7
@@ -1427,25 +1415,28 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 25618 strings out of 492995
- 515008 string characters out of 6132704
+ 25617 strings out of 492995
+ 515001 string characters out of 6132704
  594698 words of memory out of 5000000
  28537 multiletter control sequences out of 15000+600000
  13418 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,19n,62p,1056b,1152s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "2018 11 21.pdf" (10 pages, 405702 bytes).
+pdfTeX warning (dest): name{Navigation10} has been referenced but does not ex
+ist, replaced by a fixed one
+
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "2018 11 21.pdf" (9 pages, 403615 bytes).
 PDF statistics:
- 477 PDF objects out of 1000 (max. 8388607)
- 432 compressed objects within 5 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 443 PDF objects out of 1000 (max. 8388607)
+ 400 compressed objects within 4 object streams
+ 29 named destinations out of 1000 (max. 500000)
  122 words of extra memory for PDF output out of 10000 (max. 10000000)
 

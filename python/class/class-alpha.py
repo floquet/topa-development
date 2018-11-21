@@ -1,3 +1,4 @@
+# https://medium.com/the-renaissance-developer/python-101-object-oriented-programming-part-1-7d5d06833f26
 class Vehicle:
     def __init__(self, number_of_wheels, type_of_tank, seating_capacity, maximum_velocity):
         self.number_of_wheels = number_of_wheels

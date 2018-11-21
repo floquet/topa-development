@@ -18,24 +18,50 @@ dingbat_block = "* * *"
 class Book:
     """parsed, structured contents of #.rst file"""
 
-    def __init__( self, file_name, file_path, number_lines, number_sections ):
-        self.file_name       = file_name
-        self.file_path       = file_path
-        self.file_source     = file_path + file_name
-        self.number_lines    = number_lines
-        self.number_sections = number_sections
+    def __init__( self ): #, file_name, file_path, number_lines, number_sections ):
+        self._file_name       = ""
+        self._file_path       = ""
+        self._file_source     = file_path + file_name
+        self._number_lines    = -1
+        self._number_sections = -1
+    # getters
+    @property
+    def file_name( self ):
+        """I'm the file_name property."""
+        print( "getter of file_name called: self.file_name = ", self._file_name )
+        return self._file_name;
+
+    def file_path( self ):
+        """I'm the file_path property."""
+        print( "getter of file_path called: self.file_path = ", self._file_path )
+        return self._file_path;
+
+    def number_lines( self ):
+        """I'm the number_lines property."""
+        print( "getter of number_lines called: self.number_lines = ", self._number_lines )
+        return self._number_lines;
+
     # setters
     # @number_lines.setter
     # def number_lines( self, count ):
     #     self.number_lines = count
-    # getters
+
+    @file_name.setter
+    def file_name( self, myFile ):
+        self._file_name = myFile
+
+    @file_path.setter
+    def file_path( self, myPath ):
+        self._file_path = myPath
 
 # # program blocks
 def rst_file_harvest( myFile ):
     print( "\n", dingbat_block, "rst_file_harvest ", datetime.datetime.now( ) )
 
     file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"
-    myBook = Book( myFile, file_path, -1, -1 )  # instantiate Book object
+    myBook = Book( )  # instantiate Book object
+    myBook.file_name = myFile
+    myBook.file_path = myPath
 
     ## ## read source file
     print ( "reading file %s" % myBook.file_source )
@@ -87,7 +113,7 @@ if __name__ == "__main__":
     session_tag( )
 
 # l127914@pn1249300.lanl.gov:prototype $ python argon.py
-# 
+#
 #  * * * rst_file_harvest  2018-11-21 10:30:29.947896
 # reading file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/sample.txt
 # 22 lines found

@@ -1,9 +1,26 @@
 \section{Python Code}
 
+\renewcommand{\spaces}[0]		{\phantom{mmmm}}
+
 \begin{frame}
 	\frametitle{Boo}
 	Boo
 \end{frame}
+
+\myFrame{Object: {\href{https://github.com/floquet/topa-development/blob/master/python/prototype/argon.py}{Book}}
+{\scriptsize{
+\scrv{\# \# classes} \\
+\scrw{class }\scrp{Book}\scrv{:} \\
+\scrz{\spaces """parsed, structured contents of \#.rst file"""} \\
+\scrw{\spaces def}\scrc{ \_\_init\_\_}\scrg{( self, file\_name, file\_path, number\_lines, number\_sections ):} \\
+\scrg{\spaces \spaces self.}\scry{file\_name}\scrg{\phantom{mmmmmm} = file\_name} \\
+\scrg{\spaces \spaces self.}\scry{file\_path}\scrg{\phantom{mmmmmm} = file\_path} \\
+\scrg{\spaces \spaces self.}\scry{file\_source}\scrg{\phantom{mmmm} = file\_path + file\_name} \\
+\scrg{\spaces \spaces self.}\scry{number\_lines}\scrg{\phantom{mmm} = number\_lines} \\
+\scrg{\spaces \spaces self.}\scry{number\_sections}\scrg{ = number\_sections}
+}}
+
+
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
 
 

@@ -1,10 +1,22 @@
 \section{Progress Report}
 
+\subsection{GitHub}
+\begin{frame}
+	\frametitle{GitHub Repo}
+	\begin{figure}[htbp]
+		\begin{center}
+			\href{https://github.com/floquet/topa-development}{\includegraphics[ width = 3.5in ]{\pathgraphics "topa-development"}}
+		%\caption{default}
+	\label{fig:github t-d}
+	\end{center}
+	\end{figure}
+\end{frame}
+
 \subsection{Completed}
 \begin{frame}
 	\frametitle{Completed}
 		\begin{itemize}
-			\item Structure
+			\item Object Model - Basic
 			\item Python object: Book()
 			\item Writing to XLSX
 			\item Forensics
@@ -15,10 +27,34 @@
 \begin{frame}
 	\frametitle{Next Up}
 		\begin{itemize}
+			\item Book attribute and methods
 			\item Python object: chapter
 			\item Python object: section
 			\item Python module: simulate parsing
 		\end{itemize}
+\end{frame}
+
+\subsection{Big Picture}
+\begin{frame}
+	\frametitle{Primary Actions}
+	\begin{enumerate}
+		\item Harvest  \mg{(first parse of \texttt{*.rst})}
+		\item Process  \mg{(full parse, load myBook)}
+		\item Publish  \mg{(write XLSX)}
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Primary Actions: Details}
+	\begin{enumerate}
+		\item Harvest  \mg{(first parse of \texttt{*.rst})}
+		\begin{enumerate}
+			\item Specify \texttt{*.rst}
+			\item \texttt{read().splitlines()}
+		\end{enumerate}
+		\item Process  \mg{(full parse, load myBook)}
+		\item Publish  \mg{(write XLSX)}
+	\end{enumerate}
 \end{frame}
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

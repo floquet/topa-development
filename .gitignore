@@ -3,7 +3,7 @@
 *.gz
 ~*
 *.aux
-*.log
+.log
 *.nav
 *.snm
 *.toc

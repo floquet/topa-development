@@ -20,17 +20,15 @@ import xlsxwriter   # API for Excel
 
 workbook_title = "workseet-tester.xlsx"
 workbook_object = xlsxwriter.Workbook( workbook_title )
+print( "\nopened workbook ", workbook_title )
 
 worksheet_title = "my worksheet"
 worksheet_object = workbook_object.add_worksheet( worksheet_title )
+print( "\nopened worksheet ", worksheet_title )
 
-header3 = '&LPage &P of &N' + '&CFilename: &F' + '&RSheetname: &A'
-footer3 = '&LCurrent date: &D' + '&RCurrent time: &T'
+myheader = "&C&12&A" # fontsize 12
+myfooter = "&L&8&T\n&8&D" + "&C &P / &N" + "&R&8&Z\n&8&F" # fontsize 8
+worksheet_object.set_header( myheader )
+worksheet_object.set_footer( myfooter )
 
-myheader = "&A"
-myfooter = "&L&D" + "&C &P / &N" + "&RCurrent time: &T"
-worksheet_object.set_header( header3 )
-worksheet_object.set_footer( footer3 )
-
-
-workbook_object.close()
+workbook_object.close( )

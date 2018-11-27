@@ -1,0 +1,116 @@
+#! /usr/bin/python
+
+# # Write to Excel worksheet
+
+# # Daniel Topa  LANL/CCS-2  dantopa@lanl.gov  505 667 0817
+
+# # imports
+import os           # probe, change directories
+import sys          # python version
+import datetime     # https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python
+import xlsxwriter   # API for Excel
+
+# # modules
+def xl_new_workbook( workbook_title ):
+
+    my_workbook = xlsxwriter.Workbook( workbook_title )
+    print ( "created workbook %s" % my_workbook )
+
+    # provenance sheet
+    xl_sheet_provenance( my_workbook )
+
+    return my_workbook;
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+def xl_sheet_provenance( this_workbook ):
+
+    # forensic info
+    sheet_provenance = this_workbook.add_worksheet( "provenance" )
+    xl_sheet_header_footer( sheet_provenance )
+
+    #  #  os/system information
+    # widen first column
+    sheet_provenance.set_column( "A:A", 15 )
+
+    # python workbook which creates workbook
+    sheet_provenance.write( "A1", "python source" )
+    sheet_provenance.write( "B1", os.path.basename( __file__ ) ) # charlie.py
+
+    # current working directory
+    sheet_provenance.write( "A2", "directory" )
+    sheet_provenance.write( "B2", os.getcwd( ) ) # /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/xlsx
+
+    # python version
+    sheet_provenance.write( "A3", "python version" )
+    sheet_provenance.write( "B3", sys.version ) # "3.7.0 (default, Jun 28 2018, 07:39:16) [Clang 4.0.1 (tags/RELEASE_401/final)]"
+
+    #  #  environment variables
+    # practise row, col notation
+    col = 0 # starting column
+    row = 4 # starting row
+    sheet_provenance.write( row, col, "Environment variables" ); row += 1
+
+    sheet_provenance.write( row, col, "$USER" ) # l127914
+    sheet_provenance.write( row, col + 1, os.environ[ "USER" ] ); row += 1
+
+    sheet_provenance.write( row, col, "$HOSTNAME" ) # Cauchy.Schwarz
+    sheet_provenance.write( row, col + 1, os.environ[ "HOSTNAME" ] ); row += 1
+
+    sheet_provenance.write( row, col, "$HOME" ) # /Users/l127914
+    sheet_provenance.write( row, col + 1, os.environ[ "HOME" ] ); row += 1
+
+    sheet_provenance.write( row, col, "timestamp" ) # 11/21/18 16:18
+    sheet_provenance.write( row, col + 1, datetime.datetime.now( ) ); row += 1
+
+    # #  Excel info routines
+    # https://xlsxwriter.readthedocs.io/working_with_formulas.html
+
+    row += 2 # jump
+    sheet_provenance.write_formula( row, col, directory ); row += 1
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "directory" )' )
+
+    sheet_provenance.write_formula( row, col, osversion ); row += 1
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "osversion" )' )
+
+    sheet_provenance.write_formula( row, col, recalc ); row += 1
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "recalc" )' )
+
+    sheet_provenance.write_formula( row, col, release ); row += 1
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "release" )' )
+
+    sheet_provenance.write_formula( row, col, system ); row += 1
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "system" )' )
+
+    sheet_provenance.write_formula( row, col, numfile ); row += 1
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "numfile" )' )
+
+    sheet_provenance.write_formula( row, col, origin ); row += 1
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "origin" )' )
+
+    print ( "created worksheet provenance" )
+
+    return;
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+def xl_sheet_header_footer( this_worksheet ):
+
+    # header: sheet name (center)
+    # footer: date/time, page number, path/file
+
+    myheader = "&C&12&A" # fontsize 12
+    myfooter = "&L&8&T\n&8&D" + "&C &P / &N" + "&R&8&Z\n&8&F" # fontsize 8
+
+    this_worksheet.set_header( myheader )
+    this_worksheet.set_footer( myfooter )
+
+    return;
+
+# #    # #    # #    # #    # #    # #
+
+if __name__ == "__main__":
+
+    workbook_title = "python XL test.xlsx"
+    myWorkbook = xl_new_workbook( workbook_title )
+    myWorkbook.close( )

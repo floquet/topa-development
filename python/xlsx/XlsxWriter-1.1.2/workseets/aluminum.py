@@ -2,9 +2,7 @@
 
 # # Write to Excel worksheet
 
-# # Daniel Topa
-# # dantopa@lanl.gov
-# # 505 667 0817
+# # Daniel Topa  dantopa@lanl.gov  505 667 0817
 
 # # # References
 # Example: Adding Headers and Footers to Worksheets
@@ -16,6 +14,7 @@
 # import os           # probe, change directories
 # import sys          # python version
 # import datetime     # https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python
+
 import xlsxwriter   # API for Excel
 
 workbook_title = "workseet-tester.xlsx"

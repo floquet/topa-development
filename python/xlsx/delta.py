@@ -29,30 +29,47 @@ def xl_sheet_provenance( this_workbook ):
     sheet_provenance = this_workbook.add_worksheet( "provenance" )
     xl_sheet_header_footer( sheet_provenance )
 
-    #  #  os/system information
-    # widen first column
+    #  # special formats
+    # https://xlsxwriter.readthedocs.io/format.html?highlight=bold
+
+    # method 1
+    # setting the property as a dictionary of key/value pairs in the constructor
+    format_title = this_workbook.add_format( )
+    format_title.set_bold( )
+    format_title.set_font_color( "blue" )
+
+    # method 2
+    # passing a dictionary of properties to the add_format() constructor
+    format_time = this_workbook.add_format( {'num_format': 'yy/mm/dd hh:mm'} ) # https://xlsxwriter.readthedocs.io/working_with_dates_and_time.html
+
+    # widen first columns
     sheet_provenance.set_column( "A:A", 15 )
+    sheet_provenance.set_column( "B:B", 13 )
+
+    # https://xlsxwriter.readthedocs.io/worksheet.html
+    sheet_provenance.write_url( "A1", "https://github.com/amanzi/amanzi", string = "AMANZI: The Multi-Process HPC Simulator" )
 
     #  #  provencance
-    sheet_provenance.write( "A1", "Created by" )
+    sheet_provenance.write( "A3", "Workbook created by", format_title )
+    #sheet_provenance.write( "A1", tip, "boo" )
 
     # python notebook which creates workbook
-    sheet_provenance.write( "A2", "python source" )
-    sheet_provenance.write( "B2", os.path.basename( __file__ ) ) # charlie.py
+    sheet_provenance.write( "A4", "python source" )
+    sheet_provenance.write( "B4", os.path.basename( __file__ ) ) # charlie.py
 
     # current working directory
-    sheet_provenance.write( "A3", "directory" )
-    sheet_provenance.write( "B3", os.getcwd( ) ) # /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/xlsx
+    sheet_provenance.write( "A5", "directory" )
+    sheet_provenance.write( "B5", os.getcwd( ) ) # /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/xlsx
 
     # python version
-    sheet_provenance.write( "A4", "python version" )
-    sheet_provenance.write( "B4", sys.version ) # "3.7.0 (default, Jun 28 2018, 07:39:16) [Clang 4.0.1 (tags/RELEASE_401/final)]"
+    sheet_provenance.write( "A6", "python version" )
+    sheet_provenance.write( "B6", sys.version ) # "3.7.0 (default, Jun 28 2018, 07:39:16) [Clang 4.0.1 (tags/RELEASE_401/final)]"
 
     #  #  environment variables
     # practise row, col notation
     col = 0 # starting column
-    row = 5 # starting row
-    sheet_provenance.write( row, col, "Environment variables" ); row += 1
+    row = 7 # starting row
+    sheet_provenance.write( row, col, "Environment variables", format_title ); row += 1
 
     sheet_provenance.write( row, col, "$USER" ) # l127914
     sheet_provenance.write( row, col + 1, os.environ[ "USER" ] ); row += 1
@@ -64,13 +81,13 @@ def xl_sheet_provenance( this_workbook ):
     sheet_provenance.write( row, col + 1, os.environ[ "HOME" ] ); row += 1
 
     sheet_provenance.write( row, col, "timestamp" ) # 11/21/18 16:18
-    sheet_provenance.write( row, col + 1, datetime.datetime.now( ) ); row += 1
+    sheet_provenance.write( row, col + 1, datetime.datetime.now( ), format_time ); row += 1
 
     # #  Excel info routines
     # https://xlsxwriter.readthedocs.io/working_with_formulas.html
 
-    row += 2 # jump
-    sheet_provenance.write( row, col, "XL info function" ); row += 1
+    row += 1 # jump
+    sheet_provenance.write( row, col, "XL info function", format_title ); row += 1
 
     sheet_provenance.write( row, col, "platform" ) # mac
     sheet_provenance.write_formula( row, col + 1, '= INFO( "system" )' ); row += 1

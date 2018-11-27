@@ -1,18 +1,47 @@
+#! /usr/bin/python
+
+# # Write chapters
+
+# # Daniel Topa  LANL/CCS-2  dantopa@lanl.gov  505 667 0817
+
+# # imports
 # https://www.youtube.com/watch?v=ZDa-Z5JzLYM
 import datetime     # https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python
 
 
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+class Requirement:
+    """Optional or required"""
+
+    def __init__( self, flavor, title, index, status ):
+        self.flavor = flavor  # required or optional
+        self.title  = title  # liquid_component
+        self.idex   = index
+        self.status = status # PASS, FAIL, NULL
+        # generated
+        self.key    = flavor + "-" + str( index ).zfill( 2 )
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
 class Section:
+    """Sections, subsections, subsubsections, ..."""
+
     def __init__( self, level, title ):
         self.level = 1  # 1, 2, 3, ... indent level
         self.title = title  # 8
 
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
 class Chapter:
+    """A collection of sections"""
+
     def __init__( self, chap_num, chap_title, chap_initials, chap_sections ):
         self.chap_num      = chap_num  # 8
         self.chap_title    = chap_title   # Boundary conditions
         self.chap_initials = chap_initials   # Boundary conditions
         self.chap_sections = chap_sections
+        # generated
         # https://stackoverflow.com/questions/134934/display-number-with-leading-zeros
         self.chap_key      = str( chap_num ).zfill( 2 ) + "-" + chap_initials
 
@@ -36,7 +65,6 @@ if __name__ == "__main__":
     # https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops
     for sec in chap_bc.chap_sections:
         print( "section = ", sec )
-
 
     print( datetime.datetime.now( ) )
 

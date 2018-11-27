@@ -33,22 +33,25 @@ def xl_sheet_provenance( this_workbook ):
     # widen first column
     sheet_provenance.set_column( "A:A", 15 )
 
-    # python workbook which creates workbook
-    sheet_provenance.write( "A1", "python source" )
-    sheet_provenance.write( "B1", os.path.basename( __file__ ) ) # charlie.py
+    #  #  provencance
+    sheet_provenance.write( "A1", "Created by" )
+
+    # python notebook which creates workbook
+    sheet_provenance.write( "A2", "python source" )
+    sheet_provenance.write( "B2", os.path.basename( __file__ ) ) # charlie.py
 
     # current working directory
-    sheet_provenance.write( "A2", "directory" )
-    sheet_provenance.write( "B2", os.getcwd( ) ) # /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/xlsx
+    sheet_provenance.write( "A3", "directory" )
+    sheet_provenance.write( "B3", os.getcwd( ) ) # /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/xlsx
 
     # python version
-    sheet_provenance.write( "A3", "python version" )
-    sheet_provenance.write( "B3", sys.version ) # "3.7.0 (default, Jun 28 2018, 07:39:16) [Clang 4.0.1 (tags/RELEASE_401/final)]"
+    sheet_provenance.write( "A4", "python version" )
+    sheet_provenance.write( "B4", sys.version ) # "3.7.0 (default, Jun 28 2018, 07:39:16) [Clang 4.0.1 (tags/RELEASE_401/final)]"
 
     #  #  environment variables
     # practise row, col notation
     col = 0 # starting column
-    row = 4 # starting row
+    row = 5 # starting row
     sheet_provenance.write( row, col, "Environment variables" ); row += 1
 
     sheet_provenance.write( row, col, "$USER" ) # l127914
@@ -67,26 +70,28 @@ def xl_sheet_provenance( this_workbook ):
     # https://xlsxwriter.readthedocs.io/working_with_formulas.html
 
     row += 2 # jump
-    sheet_provenance.write_formula( row, col, directory ); row += 1
-    sheet_provenance.write_formula( row, col + 1, '= INFO( "directory" )' )
+    sheet_provenance.write( row, col, "XL info function" ); row += 1
 
-    sheet_provenance.write_formula( row, col, osversion ); row += 1
-    sheet_provenance.write_formula( row, col + 1, '= INFO( "osversion" )' )
+    sheet_provenance.write( row, col, "platform" ) # mac
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "system" )' ); row += 1
 
-    sheet_provenance.write_formula( row, col, recalc ); row += 1
-    sheet_provenance.write_formula( row, col + 1, '= INFO( "recalc" )' )
+    sheet_provenance.write( row, col, "recalculation mode" ) # Automatic
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "recalc" )' ); row += 1
 
-    sheet_provenance.write_formula( row, col, release ); row += 1
-    sheet_provenance.write_formula( row, col + 1, '= INFO( "release" )' )
+    sheet_provenance.write( row, col, "active sheets" ) # 1
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "numfile" )' ); row += 1
 
-    sheet_provenance.write_formula( row, col, system ); row += 1
-    sheet_provenance.write_formula( row, col + 1, '= INFO( "system" )' )
+    sheet_provenance.write( row, col, "cursor" ) # $A:$A$1
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "origin" )' ); row += 1
 
-    sheet_provenance.write_formula( row, col, numfile ); row += 1
-    sheet_provenance.write_formula( row, col + 1, '= INFO( "numfile" )' )
+    sheet_provenance.write( row, col, "XL release" ) # 16.16
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "release" )' ); row += 1
 
-    sheet_provenance.write_formula( row, col, origin ); row += 1
-    sheet_provenance.write_formula( row, col + 1, '= INFO( "origin" )' )
+    sheet_provenance.write( row, col, "application directory" ) # /Users/dantopa/Library/Containers/com.microsoft.Excel/Data/Documents/
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "directory" )' ); row += 1
+
+    sheet_provenance.write( row, col, "operating systems" ) # Macintosh (Intel) Version 10.13.3 (Build 17D47)
+    sheet_provenance.write_formula( row, col + 1, '= INFO( "osversion" )' ); row += 1
 
     print ( "created worksheet provenance" )
 

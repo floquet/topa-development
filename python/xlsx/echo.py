@@ -36,17 +36,17 @@ def xl_sheet_requirements( this_workbook ):
     # PASS
     sheet_requirements_pass = this_workbook.add_worksheet( "requirements - PASS" )
     xl_sheet_header_footer( sheet_requirements_pass )
-    sheet_requirements_pass.write( row, col, "Summary or requirements PASSED", format_title ); row += 2
+    sheet_requirements_pass.write( row, col, "Summary or requirements PASSED", format_title )
 
     # FAIL
     sheet_requirements_fail = this_workbook.add_worksheet( "requirements - FAIL" )
     xl_sheet_header_footer( sheet_requirements_fail )
-    sheet_requirements_fail.write( row, col, "Summary or requirements FAIL", format_title ); row += 2
+    sheet_requirements_fail.write( row, col, "Summary or requirements FAIL", format_title )
 
     # NULL
     sheet_requirements_null = this_workbook.add_worksheet( "requirements - NULL" )
     xl_sheet_header_footer( sheet_requirements_null )
-    sheet_requirements_null.write( row, col, "Summary or requirements NULL", format_title ); row += 2
+    sheet_requirements_null.write( row, col, "Summary or requirements NULL", format_title )
 
     print ( "created requirements summary worksheets" )
 

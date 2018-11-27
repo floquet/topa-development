@@ -83,7 +83,7 @@ def xl_sheet_provenance( this_workbook ):
     sheet_provenance.write( row, col, "timestamp" ) # 11/21/18 16:18
     sheet_provenance.write( row, col + 1, datetime.datetime.now( ), format_time ); row += 1
 
-    # #  Excel info routines
+    #  #  Excel info routines
     # https://xlsxwriter.readthedocs.io/working_with_formulas.html
 
     row += 1 # jump
@@ -129,10 +129,17 @@ def xl_sheet_header_footer( this_worksheet ):
 
     return;
 
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+def xl_sheet_new_chapter( this_workbook, chapter_details ):
+
+    return;
+
 # #    # #    # #    # #    # #    # #
 
 if __name__ == "__main__":
 
     workbook_title = "python XL test.xlsx"
     myWorkbook = xl_new_workbook( workbook_title )
+    xl_sheet_new_chapter( myWorkbook, chapter_details )
     myWorkbook.close( )

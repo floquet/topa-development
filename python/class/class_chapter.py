@@ -33,11 +33,19 @@ if __name__ == "__main__":
     print( "chap_bc.chap_key: ",        chap_bc.chap_key )
     print( "chap_bc.chap_sections: ",   chap_bc.chap_sections )
 
+    # https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops
+    for sec in chap_bc.chap_sections:
+        print( "section = ", sec )
+
+
     print( datetime.datetime.now( ) )
 
 # dantopa@Lax-Millgram:class $ python class_chapter.py
 # chap_bc.chap_num:  8
 # chap_bc.chap_title:  Boundary Conditions
 # chap_bc.chap_key:  08-BC
-# chap_bc.chap_sections:  [<__main__.Section object at 0x109a542b0>, <__main__.Section object at 0x10962d5c0>, <__main__.Section object at 0x10962d5f8>]
-# 2018-11-26 22:39:39.771564
+# chap_bc.chap_sections:  [<__main__.Section object at 0x10aab0320>, <__main__.Section object at 0x10a688668>, <__main__.Section object at 0x10a6886a0>]
+# section =  <__main__.Section object at 0x10aab0320>
+# section =  <__main__.Section object at 0x10a688668>
+# section =  <__main__.Section object at 0x10a6886a0>
+# 2018-11-26 22:47:39.235447

@@ -35,6 +35,9 @@ def xl_sheet_requirements( this_workbook ):
     # # summary sheets
     msg = "Summary of requirements "
     req = "requirements - "
+    test = [ a, b, c ]
+    for k
+
     # PASS
     sheet_requirements_pass = this_workbook.add_worksheet( req + "PASS" )
     xl_sheet_header_footer( sheet_requirements_pass )

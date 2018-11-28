@@ -1,5 +1,5 @@
 class C(object):
-    def __init__(self):
+    def __init__( self ):
         self._file_name = None
 
     @property

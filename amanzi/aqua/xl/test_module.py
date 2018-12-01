@@ -32,8 +32,9 @@ if __name__ == "__main__":
     # #    # #    # #    # #    # #    # #  Create worksheet
     mySheet = tools_xl.xl_sheet_generate( myWorkbook, chap_bc.chap_key ) # 08-BC
     # cell indices
-    row = 0
+    row = 0 # make relative jumps in rows
     col = 0
+    col_key = 0 # column for posting keys
     mySheet.write( row, col, chap_bc.chap_ego ) # # 08-Boundary Conditions
 
     row += 2
@@ -41,11 +42,10 @@ if __name__ == "__main__":
 
     for sec in chap_bc.chap_sections:
         print( "section = ", sec )
+        print( "section title = ", sec.title )
         myKey = chap_bc.chap_key
-        mySheet.write( row, col, myKey   ) # # 08-BC.S01-01
-
+        mySheet.write( row, col_key, myKey   ) # # 08-BC.S01-01
 
     myWorkbook.close( )
-
 
     print( datetime.datetime.now( ) )

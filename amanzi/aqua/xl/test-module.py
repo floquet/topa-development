@@ -32,6 +32,7 @@ if __name__ == "__main__":
     print( "chap_bc.chap_sections: ",   chap_bc.chap_sections )
 
     # #    # #    # #    # #    # #    # #  Create worksheet
+    mySheet = echo.xl_sheet_generate( chap_bc.key )
 
     # https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops
     for sec in chap_bc.chap_sections:

@@ -36,9 +36,14 @@ if __name__ == "__main__":
     col = 0
     mySheet.write( row, col, chap_bc.chap_ego ) # # 08-Boundary Conditions
 
+    row += 2
     # https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops
+
     for sec in chap_bc.chap_sections:
         print( "section = ", sec )
+        myKey = chap_bc.chap_key
+        mySheet.write( row, col, myKey   ) # # 08-BC.S01-01
+
 
     myWorkbook.close( )
 

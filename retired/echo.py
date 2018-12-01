@@ -1,8 +1,12 @@
 #! /usr/bin/python
-# # Amanzi - David Moulton T-5
 # # Daniel Topa  LANL/CCS-2  dantopa@lanl.gov  505 667 0817
 
-# # Excel tools
+# # Write to Excel worksheet
+
+#  #  # xl_new_workbook( workbook_title )           # return workbook object
+#  #  # xl_sheet_requirements( this_workbook )      # create requirements summary worksheets
+#  #  # xl_sheet_provenance( this_workbook )        # create provenance worksheet
+#  #  # xl_sheet_header_footer( this_worksheet )    # stamp worksheet with header & footer
 
 # # imports
 import os           # probe, change directories
@@ -14,9 +18,10 @@ import xlsxwriter   # API for Excel
 def xl_new_workbook( workbook_title ):
 
     my_workbook = xlsxwriter.Workbook( workbook_title )
+    print ( "created workbook %s" % my_workbook )
 
-    xl_sheet_provenance( my_workbook ) # provenance sheet
     xl_sheet_requirements( my_workbook ) # summarize requirements by type
+    xl_sheet_provenance( my_workbook ) # provenance sheet
 
     return my_workbook;
 
@@ -32,39 +37,36 @@ def xl_sheet_requirements( this_workbook ):
     format_title.set_bold( )
     format_title.set_font_color( "blue" )
 
+    # # summary sheets
+    msg = "Summary of requirements "
+    req = "requirements - "
+
     # PASS
-    sheet_requirements_pass = this_workbook.add_worksheet( "requirements - PASS" )
+    sheet_requirements_pass = this_workbook.add_worksheet( req + "PASS" )
     xl_sheet_header_footer( sheet_requirements_pass )
-    sheet_requirements_pass.write( row, col, "Summary or requirements PASSED", format_title )
+    sheet_requirements_pass.write( row, col, msg + "PASSED", format_title )
 
     # FAIL
-    sheet_requirements_fail = this_workbook.add_worksheet( "requirements - FAIL" )
+    sheet_requirements_fail = this_workbook.add_worksheet( req + "FAIL" )
     xl_sheet_header_footer( sheet_requirements_fail )
-    sheet_requirements_fail.write( row, col, "Summary or requirements FAIL", format_title )
+    sheet_requirements_fail.write( row, col,  msg + "FAIL", format_title )
 
     # NULL
-    sheet_requirements_null = this_workbook.add_worksheet( "requirements - NULL" )
+    sheet_requirements_null = this_workbook.add_worksheet( req + "NULL" )
     xl_sheet_header_footer( sheet_requirements_null )
-    sheet_requirements_null.write( row, col, "Summary or requirements NULL", format_title )
+    sheet_requirements_null.write( row, col,  msg + "NULL", format_title )
+
+    print ( "created requirements summary worksheets" )
 
     return;
-
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
-
-def xl_sheet_generate( this_workbook, title_sheet ):
-
-    # insure every worksheet has a header and footer
-    mySheet = this_workbook.add_worksheet( title_sheet )
-    xl_sheet_header_footer( mySheet )
-
-    return mySheet;
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 def xl_sheet_provenance( this_workbook ):
 
     # forensic info
-    sheet_provenance = xl_sheet_generate( this_workbook, "provenance" )
+    sheet_provenance = this_workbook.add_worksheet( "provenance" )
+    xl_sheet_header_footer( sheet_provenance )
 
     #  # special formats
     # https://xlsxwriter.readthedocs.io/format.html?highlight=bold
@@ -147,6 +149,8 @@ def xl_sheet_provenance( this_workbook ):
     sheet_provenance.write( row, col, "operating systems" ) # Macintosh (Intel) Version 10.13.3 (Build 17D47)
     sheet_provenance.write_formula( row, col + 1, '= INFO( "osversion" )' ); row += 1
 
+    print ( "created worksheet provenance" )
+
     return;
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
@@ -163,3 +167,22 @@ def xl_sheet_header_footer( this_worksheet ):
     this_worksheet.set_footer( myfooter )
 
     return;
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+# #    # #    # #    # #    # #    # #
+
+if __name__ == "__main__":
+
+    workbook_title = "python XL test.xlsx"
+    myWorkbook = xl_new_workbook( workbook_title )
+    # xl_sheet_new_chapter( myWorkbook, chapter_details )
+    myWorkbook.close( )
+
+    print( datetime.datetime.now( ) )
+
+# dantopa@Lax-Millgram:xlsx $ python delta.py
+# created workbook <xlsxwriter.workbook.Workbook object at 0x1088ac668>
+# created worksheet provenance
+# created requirements summary worksheets
+# 2018-11-27 05:08:38.873184

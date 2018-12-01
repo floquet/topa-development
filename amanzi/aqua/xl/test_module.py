@@ -27,20 +27,22 @@ if __name__ == "__main__":
     # #    # #    # #    # #    # #    # #  Create worksheet
     mySheet = tools_xl.xl_sheet_generate( myWorkbook, chap_bc.chap_key ) # 08-BC
     mySheet.set_column( "A:A", 18.5 ) # column width
+
     # cell indices
     row = 0 # make relative jumps in rows
     col = 0
     col_key = 0 # column for posting keys
+    col_key_descriptor = col_key + 1 # column for posting keys
     mySheet.write( row, col, chap_bc.chap_ego ) # # 08-Boundary Conditions
 
     row += 2
     # https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops
 
+    # sweep through sections
     for sec in chap_bc.chap_sections:
-        print( "section = ", sec )
-        print( "section title = ", sec.title )
         myKey = chap_bc.chap_key + "." + sec.sec_key
-        mySheet.write( row, col_key, myKey  ) # # 08-BC.S01-01
+        mySheet.write( row, col_key, myKey  ) # 08-BC.S01-01
+        mySheet.write( row, col_key_descriptor, sec.title  ); row += 1 # # liquid_phase
 
     myWorkbook.close( )
 

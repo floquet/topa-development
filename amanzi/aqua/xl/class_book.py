@@ -40,6 +40,7 @@ class Chapter:
         self.chap_sections = chap_sections
         # generated
         # https://stackoverflow.com/questions/134934/display-number-with-leading-zeros
+        self.chap_ego      = str( chap_num ).zfill( 2 ) + "-" + chap_title
         self.chap_key      = str( chap_num ).zfill( 2 ) + "-" + chap_initials
 
 # #    # #    # #    # #    # #    # #

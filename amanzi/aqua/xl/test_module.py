@@ -8,12 +8,10 @@ import tools_xl     # xl routines
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-# #    # #    # #    # #    # #    # #
-
 if __name__ == "__main__":
 
     workbook_title = "test.xlsx"
-    myWorkbook = echo.xl_new_workbook( workbook_title )
+    myWorkbook = tools_xl.xl_new_workbook( workbook_title )
     # xl_sheet_new_chapter( myWorkbook, chapter_details )
 
     # #    # #    # #    # #    # #    # #  Fake a chapter
@@ -26,13 +24,17 @@ if __name__ == "__main__":
     chap_bc = class_book.Chapter( 8, "Boundary Conditions", "BC",
                 [ sec_bc_assigned_region, sec_bc_liquid_phase, sec_bc_solid_phase] )
 
-    print( "chap_bc.chap_num: ",        chap_bc.chap_num )
-    print( "chap_bc.chap_title: ",      chap_bc.chap_title )
-    print( "chap_bc.chap_key: ",        chap_bc.chap_key )
-    print( "chap_bc.chap_sections: ",   chap_bc.chap_sections )
+    print( "chap_bc.chap_num: ",      chap_bc.chap_num )
+    print( "chap_bc.chap_title: ",    chap_bc.chap_title )
+    print( "chap_bc.chap_key: ",      chap_bc.chap_key )
+    print( "chap_bc.chap_sections: ", chap_bc.chap_sections )
 
     # #    # #    # #    # #    # #    # #  Create worksheet
-    mySheet = echo.xl_sheet_generate( chap_bc.key )
+    mySheet = tools_xl.xl_sheet_generate( myWorkbook, chap_bc.chap_key ) # 08-BC
+    # cell indices
+    row = 0
+    col = 0
+    mySheet.write( row, col, chap_bc.chap_ego ) # # 08-Boundary Conditions
 
     # https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops
     for sec in chap_bc.chap_sections:

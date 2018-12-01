@@ -3,6 +3,11 @@
 
 # # Write to Excel worksheet
 
+#  #  # xl_new_workbook( workbook_title )           # return workbook object
+#  #  # xl_sheet_requirements( this_workbook )      # create requirements summary worksheets
+#  #  # xl_sheet_provenance( this_workbook )        # create provenance worksheet
+#  #  # xl_sheet_header_footer( this_worksheet )    # stamp worksheet with header & footer
+
 # # imports
 import os           # probe, change directories
 import sys          # python version
@@ -35,8 +40,6 @@ def xl_sheet_requirements( this_workbook ):
     # # summary sheets
     msg = "Summary of requirements "
     req = "requirements - "
-    test = [ a, b, c ]
-    for k
 
     # PASS
     sheet_requirements_pass = this_workbook.add_worksheet( req + "PASS" )
@@ -166,10 +169,6 @@ def xl_sheet_header_footer( this_worksheet ):
     return;
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
-
-# def xl_sheet_new_chapter( this_workbook, chapter_details ):
-#     pass
-#     return;
 
 # #    # #    # #    # #    # #    # #
 

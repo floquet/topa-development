@@ -168,26 +168,3 @@ def xl_sheet_header_footer( this_worksheet ):
     this_worksheet.set_footer( myfooter )
 
     return;
-
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
-
-# def xl_sheet_new_chapter( this_workbook, chapter_details ):
-#     pass
-#     return;
-
-# #    # #    # #    # #    # #    # #
-
-if __name__ == "__main__":
-
-    workbook_title = "python XL test.xlsx"
-    myWorkbook = xl_new_workbook( workbook_title )
-    # xl_sheet_new_chapter( myWorkbook, chapter_details )
-    myWorkbook.close( )
-
-    print( datetime.datetime.now( ) )
-
-# dantopa@Lax-Millgram:xlsx $ python delta.py
-# created workbook <xlsxwriter.workbook.Workbook object at 0x1088ac668>
-# created worksheet provenance
-# created requirements summary worksheets
-# 2018-11-27 05:08:38.873184

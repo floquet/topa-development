@@ -1,10 +1,7 @@
-#! /Volumes/Tlaltecuhtli/local/anaconda/anaconda3/bin/python
+#! /usr/bin/python
+# # Daniel Topa dantopa@lanl.gov 505 667 0817
 
 # # Read Amanzi *.rst files, extract header hierarchy
-
-# # Daniel Topa
-# # dantopa@lanl.gov
-# # 505 667 0817
 
 # # imports
 import os           # probe, change directories

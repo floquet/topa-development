@@ -24,13 +24,9 @@ if __name__ == "__main__":
     chap_bc = class_book.Chapter( 8, "Boundary Conditions", "BC",
                 [ sec_bc_assigned_region, sec_bc_liquid_phase, sec_bc_solid_phase] )
 
-    print( "chap_bc.chap_num: ",      chap_bc.chap_num )
-    print( "chap_bc.chap_title: ",    chap_bc.chap_title )
-    print( "chap_bc.chap_key: ",      chap_bc.chap_key )
-    print( "chap_bc.chap_sections: ", chap_bc.chap_sections )
-
     # #    # #    # #    # #    # #    # #  Create worksheet
     mySheet = tools_xl.xl_sheet_generate( myWorkbook, chap_bc.chap_key ) # 08-BC
+    mySheet.set_column( "A:A", 18.5 ) # column width
     # cell indices
     row = 0 # make relative jumps in rows
     col = 0
@@ -43,8 +39,8 @@ if __name__ == "__main__":
     for sec in chap_bc.chap_sections:
         print( "section = ", sec )
         print( "section title = ", sec.title )
-        myKey = chap_bc.chap_key
-        mySheet.write( row, col_key, myKey   ) # # 08-BC.S01-01
+        myKey = chap_bc.chap_key + "." + sec.sec_key
+        mySheet.write( row, col_key, myKey  ) # # 08-BC.S01-01
 
     myWorkbook.close( )
 

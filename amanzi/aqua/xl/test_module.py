@@ -27,6 +27,7 @@ if __name__ == "__main__":
     # #    # #    # #    # #    # #    # #  Create worksheet
     mySheet = tools_xl.xl_sheet_generate( myWorkbook, chap_bc.chap_key ) # 08-BC
     mySheet.set_column( "A:A", 18.5 ) # column width
+    mySheet.set_column( "D:D", 18.0 ) # column width
 
     # cell indices
     row = 0 # make relative jumps in rows
@@ -42,7 +43,8 @@ if __name__ == "__main__":
     for sec in chap_bc.chap_sections:
         myKey = chap_bc.chap_key + "." + sec.sec_key
         mySheet.write( row, col_key, myKey  ) # 08-BC.S01-01
-        mySheet.write( row, col_key_descriptor, sec.title  ); row += 1 # # liquid_phase
+        myEntry = str( sec.index ) + ". " + sec.title  # 1 liquid_phase
+        mySheet.write( row, col_key_descriptor, myEntry ); row += 1
 
     myWorkbook.close( )
 

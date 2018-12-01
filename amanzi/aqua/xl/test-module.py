@@ -16,7 +16,7 @@ if __name__ == "__main__":
     myWorkbook = echo.xl_new_workbook( workbook_title )
     # xl_sheet_new_chapter( myWorkbook, chapter_details )
 
-    # # Fake a chapter
+    # #    # #    # #    # #    # #    # #  Fake a chapter
     # create sections
     count_section = 1
     sec_bc_assigned_region = class_book.Section( 1, "assigned_region", count_section ); count_section +=1
@@ -30,6 +30,8 @@ if __name__ == "__main__":
     print( "chap_bc.chap_title: ",      chap_bc.chap_title )
     print( "chap_bc.chap_key: ",        chap_bc.chap_key )
     print( "chap_bc.chap_sections: ",   chap_bc.chap_sections )
+
+    # #    # #    # #    # #    # #    # #  Create worksheet
 
     # https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops
     for sec in chap_bc.chap_sections:

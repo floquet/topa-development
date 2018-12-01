@@ -26,7 +26,7 @@ class Section:
         self.title = title  # 8
         self.index = index
         # generated
-        self.sec_key = "S" * level + str( level ).zfill( 2 )
+        self.sec_key = "S" * level + "-" + str( index ).zfill( 2 ) # SSS-03
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

@@ -1,13 +1,7 @@
 #! /usr/bin/python
 # # Daniel Topa  LANL/CCS-2  dantopa@lanl.gov  505 667 0817
 
-
-# # Write chapters
-
 # # imports
-# https://www.youtube.com/watch?v=ZDa-Z5JzLYM
-import datetime     # https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python
-
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

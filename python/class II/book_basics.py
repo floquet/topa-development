@@ -24,30 +24,35 @@ class Book(object):
     def file_name( self ):
         print( "deleter of x called" )
         del self._file_name
-        print( "\nattempting to print self._file_name: disaster entails" )
-        print( "self._file_name = ", self._file_name )
 
-myBook = Book()
-myBook.file_name = "file.rst"    # setter called
-foo = myBook.file_name           # getter called
-print( "foo = ", foo )
-del myBook.file_name             # deleter called
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-# l127914@pn1249300.lanl.gov:class $ python objects-python-A.py
-# setter of x called: self._file_name =  foo
-# getter of x called: self._file_name =  foo
+if __name__ == "__main__":
+
+    myBook = Book()
+    myBook.file_name = "file.rst"    # setter called
+    foo = myBook.file_name           # getter called
+    print( "myBook.file_name = ", myBook.file_name )
+    print( "foo = ", foo )
+    del myBook.file_name             # deleter called
+    print( "myBook.file_name = ", myBook.file_name )
+
+# l127914@pn1249300.lanl.gov:class II $ python book_basics.py
+# setter of _file_name called: self._file_name =  file.rst
+# getter of file_name called: self._file_name =  file.rst
+# getter of file_name called: self._file_name =  file.rst
+# myBook.file_name =  file.rst
+# foo =  file.rst
 # deleter of x called
-#
-# attempting to print self._file_name: disaster entails
 # Traceback (most recent call last):
-#   File "objects-python-A.py", line 28, in <module>
-#     del c.x      # deleter called
-#   File "objects-python-A.py", line 23, in x
-#     print( "self._file_name = ", self._file_name )
-# AttributeError: 'C' object has no attribute '_file_name'
+#   File "book_basics.py", line 38, in <module>
+#     print( "myBook.file_name = ", myBook.file_name )
+#   File "book_basics.py", line 11, in file_name
+#     print( "getter of file_name called: self._file_name = ", self._file_name )
+# AttributeError: 'Book' object has no attribute '_file_name'
 
-# l127914@pn1249300.lanl.gov:class $ date
-# Wed Nov 21 10:25:02 MST 2018
+# l127914@pn1249300.lanl.gov:class II $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/class II
 
-# l127914@pn1249300.lanl.gov:class $ pwd
-# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/class
+# l127914@pn1249300.lanl.gov:class II $ date
+# Mon Dec  3 12:09:29 MST 2018

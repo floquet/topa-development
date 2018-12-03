@@ -1,11 +1,13 @@
 #! /usr/bin/python
+# # Amanzi: The Multi-Process HPC Simulator - https://github.com/amanzi/amanzi
+# # David Moulton DGL LANL/T-5
 # # Daniel Topa  LANL/CCS-2  dantopa@lanl.gov  505 667 0817
 
 # # imports
-import datetime     # https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python
-import class_book   # class definitions
-import os           # probe, change directories
-import tools_xl     # xl routines
+import datetime         # https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python
+import class_01_book    # class definitions
+import os               # probe, change directories
+import tools_xl         # Excel routines
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -16,12 +18,15 @@ if __name__ == "__main__":
     # xl_sheet_new_chapter( myWorkbook, chapter_details )
 
     # #    # #    # #    # #    # #    # #  Fake a chapter
-    # create sections
+    # create sections level 1
     count_section = 1
     sec_bc_assigned_region = class_book.Section( 1, "assigned_region", count_section ); count_section +=1
     sec_bc_liquid_phase    = class_book.Section( 1, "liquid_phase",    count_section ); count_section +=1
     sec_bc_solid_phase     = class_book.Section( 1, "solid_phase",     count_section ); count_section +=1
-    # create chapter
+
+    # create sections level 2
+
+    # byndle into chapter
     chap_bc = class_book.Chapter( 8, "Boundary Conditions", "BC",
                 [ sec_bc_assigned_region, sec_bc_liquid_phase, sec_bc_solid_phase] )
 

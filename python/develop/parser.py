@@ -5,7 +5,7 @@ def Main():
     with open(file_name, 'r') as file:
         file_lines = file.readlines()
 
-    # Get tht titles and subtitles
+    # Get the titles and subtitles
     cur_title_number = 0
     titles = []
     subtitles = []

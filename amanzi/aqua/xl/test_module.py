@@ -4,6 +4,7 @@
 # # imports
 import datetime     # https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python
 import class_book   # class definitions
+import os           # probe, change directories
 import tools_xl     # xl routines
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
@@ -43,9 +44,10 @@ if __name__ == "__main__":
     for sec in chap_bc.chap_sections:
         myKey = chap_bc.chap_key + "." + sec.sec_key
         mySheet.write( row, col_key, myKey  ) # 08-BC.S01-01
-        myEntry = str( sec.index ) + ". " + sec.title  # 1 liquid_phase
+        myEntry = str( sec.index ) + "." + sec.title  # 1 liquid_phase
         mySheet.write( row, col_key_descriptor, myEntry ); row += 1
 
     myWorkbook.close( )
 
+    print( "output: %s/%s" % ( os.getcwd( ), workbook_title ) )
     print( datetime.datetime.now( ) )

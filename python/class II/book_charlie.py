@@ -7,40 +7,14 @@
 
 # # imports
 import datetime         # timestamps
-import os               # probe, change directories
-
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
-
-class Book(object):
-    def __init__(self):
-        self._file_name = None
-#        self._file_path = None
-
-    @property
-    def file_name( self ):
-        """I'm the file_name property."""
-        print( "getter of file_name called: self._file_name = ", self._file_name )
-        return self._file_name
-    # def file_path( self ):
-    #     """I'm the file_path property."""
-    #     print( "getter of file_path called: self._file_path = ", self._file_path )
-    #     return self._file_path
-
-    @file_name.setter
-    def file_name( self, value ):
-        print("setter of _file_name called: self._file_name = ", value )
-        self._file_name = value
-
-    @file_name.deleter
-    def file_name( self ):
-        print( "deleter of x called" )
-        del self._file_name
+import os               # opeating system
+import classes          # Book, Chapter, Section, etc.
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 if __name__ == "__main__":
 
-    myBook = Book()
+    myBook = classes.Book()
     myBook.file_name = "file.rst"    # setter called
     foo = myBook.file_name           # getter called
     print( "myBook.file_name = ", myBook.file_name )

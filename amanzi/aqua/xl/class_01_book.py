@@ -45,4 +45,28 @@ class Chapter:
         self.chap_ego      = str( chap_num ).zfill( 2 ) + "-" + chap_title
         self.chap_key      = str( chap_num ).zfill( 2 ) + "-" + chap_initials
 
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+class Book:
+    """A collection of chapters"""
+
+    def __init__( self, book_title, chap_sections, num_sections, book_census_requirements, book_census_optionals ):
+        self.book_title               = book_title  # 8
+        self.chap_sections            = chap_sections   # Boundary conditions
+        self.num_sections             = num_sections
+        self.book_census_requirements = book_census_requirements
+        self.book_census_optionals    = book_census_optionals
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+class Census:
+    """Census of requirements"""
+
+    def __init__( self, num_total, num_PASS, num_FAIL, num_NULL ):
+        self.num_PASS  = num_PASS # number of PASSes
+        self.num_FAIL  = num_FAIL # number of FAILs
+        self.num_NULL  = num_NULL # number of NULL tests
+        self.num_total = num_total # sum of the above
+        self.flavor    = flavor  # required or optional
+
 # #    # #    # #    # #    # #    # #

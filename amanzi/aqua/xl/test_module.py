@@ -17,6 +17,9 @@ if __name__ == "__main__":
     myWorkbook = tools_xl.xl_new_workbook( workbook_title )
     # xl_sheet_new_chapter( myWorkbook, chapter_details )
 
+    # # Book
+    myBook = Book( book_title = "Amanzi XML Input Specification (Version 2.3-draft)" )
+
     # #    # #    # #    # #    # #    # #  Fake a chapter
     # create sections level 1
     count_section = 1
@@ -27,7 +30,7 @@ if __name__ == "__main__":
     # create sections level 2
 
     # byndle into chapter
-    chap_bc = class_book.Chapter( 8, "Boundary Conditions", "BC",
+    chap_bc = class_book.Chapter( chap_num=8, chap_title="Boundary Conditions", chap_initial="BC",
                 [ sec_bc_assigned_region, sec_bc_liquid_phase, sec_bc_solid_phase] )
 
     # #    # #    # #    # #    # #    # #  Create worksheet
@@ -40,6 +43,7 @@ if __name__ == "__main__":
     col = 0
     col_key = 0 # column for posting keys
     col_key_descriptor = col_key + 1 # column for posting keys
+
     mySheet.write( row, col, chap_bc.chap_ego ) # # 08-Boundary Conditions
 
     row += 2

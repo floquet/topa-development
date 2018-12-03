@@ -15,14 +15,16 @@ import classes          # Book, Chapter, Section, etc.
 if __name__ == "__main__":
 
     myBook = classes.Book()
-    myBook.file_name = "file.rst"    # setter called
+    myBook.file_name = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst"    # setter called
     foo = myBook.file_name           # getter called
+    bar = os.path.basename( myBook.file_name )
     print( "myBook.file_name = ", myBook.file_name )
     print( "foo = ", foo )
+    print( "bar = ", bar )
     del myBook.file_name             # deleter called
-    print( datetime.datetime.now( ) )
+
+    print( "\n", datetime.datetime.now( ) )
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
-    print( "myBook.file_name = ", myBook.file_name )
 
 # l127914@pn1249300.lanl.gov:class II $ python book_basics.py
 # setter of _file_name called: self._file_name =  file.rst

@@ -19,12 +19,14 @@ import xlsxwriter   # API for Excel
 
 if __name__ == "__main__":
 
+    # # source data
     mySource = cls_Source_file.Source_file( ) # instantiate
     mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/"    # setter called
     mySource.file_name = "short.rst"    # setter called
     mySource.path_name = mySource.file_path + mySource.file_name # setter called
+    # # output file
     mySource.output_xl = Path( mySource.file_name ).stem + ".xlsx" # https://stackoverflow.com/questions/2900035/changing-file-extension-in-python
-    print( "mySource.output_xl = ", mySource.output_xl )
+    print( "**   **   mySource.output_xl = ", mySource.output_xl )
 
     myBook = cls_Book.Book( ) # instantiate
     myBook.file_name = mySource.file_path + mySource.file_name
@@ -37,8 +39,9 @@ if __name__ == "__main__":
     print( "myBook.source_file.file_name = %s" % myBook.source_file.file_name )
     print( "myBook.source_file.output_xl = %s" % myBook.source_file.output_xl )
     print( "myBook.source_file.output_xl = ",    myBook.source_file.output_xl )
+    print( "creating ",mySource.path_name )
 
-    my_workbook = xlsxwriter.Workbook( mySource.file_path + "test.xlsx" )
+    my_workbook = tools_xl.xl_new_workbook( mySource.file_path + mySource.output_xl )
     my_workbook.close( )
     # print( "open Excel file for output" )
     # tools_xl.xl_new_workbook( "delete.xlsx" )

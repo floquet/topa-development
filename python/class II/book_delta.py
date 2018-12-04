@@ -8,13 +8,15 @@
 # # imports
 import datetime         # timestamps
 import os               # opeating system
-import cls_Book         # Book, Chapter, Section, etc.
+import cls_Book         # Book (constains sections, contains requirements)
+import cls_Source_file  # e.q. Amanzi XML Input Specification (Version 2.3-draft)
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 if __name__ == "__main__":
 
-    myBook = cls_Book.Book()
+    mySource = cls_Source_file.Source_file( ) # instantiate
+    myBook = cls_Book.Book( ) # instantiate
     myBook.file_name = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst"    # setter called
     foo = myBook.file_name           # getter called
     bar = os.path.basename( myBook.file_name )

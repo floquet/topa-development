@@ -19,7 +19,10 @@ if __name__ == "__main__":
     mySource = cls_Source_file.Source_file( ) # instantiate
     mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/"    # setter called
     mySource.file_name = "short.rst"    # setter called
-    #print( "mySource.path_name = %s", mySource.path_name )
+
+    myBook = cls_Book.Book( ) # instantiate
+    myBook.file_name = mySource.file_path + mySource.file_name
+    print( "myBook.file_name = %s", myBook.file_name )
     # https://docs.python.org/3/library/uuid.html
     # uuid4: random - more secure
     print( "uuid = %s" % uuid.uuid4( ) ) # https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
@@ -40,8 +43,14 @@ if __name__ == "__main__":
 # l127914@pn1249300.lanl.gov:class $ python darmstadtium.py
 # setter of _file_path called: self._file_path =  /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/
 # setter of _file_name called: self._file_name =  short.rst
-# uuid = 13edb554-4ebe-47d9-a542-0b0d36adf332
-
-#  2018-12-03 20:49:23.239271
+# getter of file_path called: self._file_path =  /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/
+# getter of file_name called: self._file_name =  short.rst
+# setter of _file_name called: self._file_name =  /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
+# getter of file_name called: self._file_name =  /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
+# myBook.file_name = %s /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
+# uuid = 22858a93-e065-43be-9842-7219ec7d2d0c
+#
+#  2018-12-03 21:43:09.574302
 # source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/class/darmstadtium.py
 # python version 3.7.0 (default, Jun 28 2018, 07:39:16)
+# [Clang 4.0.1 (tags/RELEASE_401/final)]

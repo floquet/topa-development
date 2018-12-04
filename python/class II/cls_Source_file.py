@@ -6,29 +6,55 @@
 # Source_file class
 #  Amanzi manual to be parsed
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
-
 class Source_file( object ):
     def __init__(self):
         self._file_name = None
-#        self._file_path = None
+        self._file_path = None
+        self._path_name = None
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     @property
     def file_name( self ):
         """Name of source file."""
         print( "getter of file_name called: self._file_name = ", self._file_name )
         return self._file_name
-    # def file_path( self ):
-    #     """I'm the file_path property."""
-    #     print( "getter of file_path called: self._file_path = ", self._file_path )
-    #     return self._file_path
+    def file_path( self ):
+        """File path."""
+        print( "getter of file_path called: self._file_path = ", self._file_path )
+        return self._file_path
+    def path_name( self ):
+        """File path and name."""
+        print( "getter of file_path called: self._path_name = ", self._path_name )
+        return self._path_name
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     @file_name.setter
     def file_name( self, value ):
         print("setter of _file_name called: self._file_name = ", value )
         self._file_name = value
+    @file_name.setter
+    def file_path( self, value ):
+        print("setter of _file_path called: self._file_path = ", value )
+        self._file_path = value
+    @path_name.setter
+    def file_path( self ):
+        self._file_path = self._file_path + self._file_name
+        print("setter of _file_path called: self._file_path = ", self._file_path )
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     @file_name.deleter
     def file_name( self ):
-        print( "deleter of x called" )
+        print( "deleter of file_name called" )
         del self._file_name
+        del self._path_name
+    @file_path.deleter
+    def file_path( self ):
+        print( "deleter of file_path called" )
+        del self._file_path
+        del self._path_name
+    @file_path_name.deleter
+    def path_name( self ):
+        print( "deleter of path_name called" )

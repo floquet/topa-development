@@ -16,14 +16,18 @@ import cls_Source_file  # e.q. Amanzi XML Input Specification (Version 2.3-draft
 if __name__ == "__main__":
 
     mySource = cls_Source_file.Source_file( ) # instantiate
-    myBook = cls_Book.Book( ) # instantiate
-    myBook.file_name = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst"    # setter called
-    foo = myBook.file_name           # getter called
-    bar = os.path.basename( myBook.file_name )
-    print( "myBook.file_name = ", myBook.file_name )
-    print( "foo = ", foo )
-    print( "bar = ", bar )
-    del myBook.file_name             # deleter called
+    mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/"    # setter called
+    mySource.file_name = "short.rst"    # setter called
+    print( "mySource.path_name = %s", mySource.path_name )
+
+    # myBook = cls_Book.Book( ) # instantiate
+    # mySource.file_name = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst"    # setter called
+    # foo = mySource.file_name           # getter called
+    # bar = os.path.basename( mySource.file_name )
+    # print( "myBook.file_name = ", mySource.file_name )
+    # print( "foo = ", foo )
+    # print( "bar = ", bar )
+    # del mySource.file_name             # deleter called
 
     print( "\n", datetime.datetime.now( ) )
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )

@@ -10,7 +10,7 @@ class Source_file( object ):
     def __init__(self):
         self._file_name = None
         self._file_path = None
-        #self._path_name = None
+        self._title     = None
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -19,18 +19,16 @@ class Source_file( object ):
         """Name of source file."""
         print( "getter of file_name called: self._file_name = ", self._file_name )
         return self._file_name
-
     @property
     def file_path( self ):
         """Path (absolute) to source file."""
         print( "getter of file_path called: self._file_path = ", self._file_path )
         return self._file_path
-
-    # @property
-    # def path_name( self, file_name, path_name ):
-    #     """File path and name."""
-    #     print( "getter of file_path called: self._path_name = ", self._path_name )
-    #     return self._path_name
+    @property
+    def title( self ):
+        """Title of source file."""
+        print( "getter of file_path called: self._title = ", self._title )
+        return self._title
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -38,33 +36,29 @@ class Source_file( object ):
     def file_name( self, value ):
         print("setter of _file_name called: self._file_name = ", value )
         self._file_name = value
-
     @file_path.setter
     def file_path( self, value ):
         print("setter of _file_path called: self._file_path = ", value )
         self._file_path = value
-
-    # @path_name.setter
-    # def file_path( self ):
-    #     self._path_name = self.file_path + self.file_name
-    #     print("setter of _file_path called: self._file_path = ", self._path_name )
+    @title.setter
+    def title( self, value ):
+        self._title = value
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    # @file_name.deleter
-    # def file_name( self ):
-    #     print( "deleter of file_name called" )
-    #     del self._file_name
-    #     #del self._path_name # delete because file name is no longer valid
-    #
-    # @file_path.deleter
-    # def file_path( self ):
-    #     print( "deleter of file_path called" )
-    #     del self._file_path
-        #del self._path_name # delete because file path is no longer valid
-    # @file_path_name.deleter
-    # def path_name( self ):
-    #     print( "deleter of path_name called" )
+    @file_name.deleter
+    def file_name( self ):
+        print( "deleter of file_name called" )
+        del self._file_name
+        #del self._path_name # delete because file name is no longer valid
+    @file_path.deleter
+    def file_path( self ):
+        print( "deleter of file_path called" )
+        del self._file_path
+    @title.deleter
+    def path_name( self ):
+        print( "deleter of title called" )
+        del self._title
 
 # l127914@pn1249300.lanl.gov:class II $ python cls_Source_file.py
 

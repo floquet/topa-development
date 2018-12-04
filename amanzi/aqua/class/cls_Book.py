@@ -23,10 +23,9 @@
 class Book( object ):
     def __init__(self):
         self._source_file = None
-#        self._file_path = None
 
     @property
-    def file_name( self ):
+    def source_file( self ):
         """Source file."""
         print( "getter of source_file called: self._source_file = ", self._source_file )
         return self._source_file
@@ -35,14 +34,14 @@ class Book( object ):
     #     print( "getter of file_path called: self._file_path = ", self._file_path )
     #     return self._file_path
 
-    @file_name.setter
-    def file_name( self, value ):
-        print("setter of _file_name called: self._file_name = ", value )
+    @source_file.setter
+    def source_file( self, value ):
+        print("setter of _file_name called: self._source_file = ", value )
         self._source_file = value
 
-    @file_name.deleter
-    def file_name( self ):
-        print( "deleter of x called" )
+    @source_file.deleter
+    def source_file( self ):
+        print( "deleter of source_file called" )
         del self._source_file
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

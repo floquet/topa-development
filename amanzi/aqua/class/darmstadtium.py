@@ -47,11 +47,11 @@ if __name__ == "__main__":
 # getter of file_path called: self._file_path =  /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/
 # getter of file_name called: self._file_name =  short.rst
 # setter of _file_name called: self._file_name =  /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
-# getter of file_name called: self._file_name =  /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
-# myBook.file_name = %s /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
-# uuid = 22858a93-e065-43be-9842-7219ec7d2d0c
-#
-#  2018-12-03 21:43:09.574302
+# uuid = 5dc86d74-1865-4e05-9f58-6e174a26ac03
+# getter of file_name called: self._file_name =  short.rst
+# myBook.source_file.file_name = short.rst
+
+#  2018-12-04 09:51:44.149161
 # source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/class/darmstadtium.py
 # python version 3.7.0 (default, Jun 28 2018, 07:39:16)
 # [Clang 4.0.1 (tags/RELEASE_401/final)]

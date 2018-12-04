@@ -9,11 +9,12 @@ import os                   # opeating system
 import sys                  # python version
 import uuid                 # Universal Unique IDentifier
 from pathlib import Path    # rename file
+import xlsxwriter           # API for Excel
 # home brew
 import cls_Book             # Book (constains sections, contains requirements)
 import cls_Source_file      # e.q. Amanzi XML Input Specification (Version 2.3-draft)
+import tools_parse          # file parsing tools
 import tools_xl             # spreadsheet authoring tools
-import xlsxwriter   # API for Excel
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -24,29 +25,21 @@ if __name__ == "__main__":
     mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/"    # setter called
     mySource.file_name = "short.rst"    # setter called
     mySource.path_name = mySource.file_path + mySource.file_name # setter called
+    print( "mySource.path_name = ", mySource.path_name )
     # # output file
     mySource.output_xl = Path( mySource.file_name ).stem + ".xlsx" # https://stackoverflow.com/questions/2900035/changing-file-extension-in-python
-    print( "**   **   mySource.output_xl = ", mySource.output_xl )
 
     myBook = cls_Book.Book( ) # instantiate
-    myBook.file_name = mySource.file_path + mySource.file_name
+    myBook.source_object = mySource
     # https://docs.python.org/3/library/uuid.html
     # uuid4: random - more secure
     print( "uuid = %s" % uuid.uuid4( ) ) # https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
 
-    myBook = cls_Book.Book( ) # instantiate
-    myBook.source_file = mySource
-    print( "myBook.source_file.file_name = %s" % myBook.source_file.file_name )
-    print( "myBook.source_file.output_xl = %s" % myBook.source_file.output_xl )
-    print( "myBook.source_file.output_xl = ",    myBook.source_file.output_xl )
-    print( "creating ",mySource.path_name )
-
     my_workbook = tools_xl.xl_new_workbook( mySource.file_path + mySource.output_xl )
+    print( "created ", mySource.file_path + mySource.output_xl )
+    print( "mySource.path_name = ", mySource.path_name )
+    ( numLines, myLines ) = tools_parse.reader( mySource.path_name ) # read file as split lines
     my_workbook.close( )
-    # print( "open Excel file for output" )
-    # tools_xl.xl_new_workbook( "delete.xlsx" )
-    #tools_xl.xl_new_workbook( mySource.output_xl )
-    #tools_xl.xl_new_workbook( myBook.source_file.output_xl )
 
     print( "\n", datetime.datetime.now( ) )
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )

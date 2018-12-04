@@ -10,7 +10,7 @@ class Source_file( object ):
     def __init__(self):
         self._file_name = None
         self._file_path = None
-        #self._path_name = None
+        self._path_name = None
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -20,14 +20,17 @@ class Source_file( object ):
         print( "getter of file_name called: self._file_name = ", self._file_name )
         return self._file_name
 
+    @property
     def file_path( self ):
         """Path (absolute) to source file."""
         print( "getter of file_path called: self._file_path = ", self._file_path )
         return self._file_path
-    # def path_name( self ): # https://stackoverflow.com/questions/10381967/how-does-the-python-setter-decorator-work
-    #     """File path and name."""
-    #     print( "getter of file_path called: self._path_name = ", self._path_name )
-    #     return self._path_name
+
+    @property
+    def path_name( self ): # https://stackoverflow.com/questions/10381967/how-does-the-python-setter-decorator-work
+        """File path and name."""
+        print( "getter of file_path called: self._path_name = ", self._path_name )
+        return self._path_name
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -40,10 +43,11 @@ class Source_file( object ):
     def file_path( self, value ):
         print("setter of _file_path called: self._file_path = ", value )
         self._file_path = value
-    # @path_name.setter
-    # def file_path( self ):
-    #     self._path_name = self._file_path + self._file_name
-    #     print("setter of _file_path called: self._file_path = ", self._path_name )
+
+    @path_name.setter
+    def file_path( self ):
+        self._path_name = self._file_path + self._file_name
+        print("setter of _file_path called: self._file_path = ", self._path_name )
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -61,3 +65,11 @@ class Source_file( object ):
     # @file_path_name.deleter
     # def path_name( self ):
     #     print( "deleter of path_name called" )
+
+# l127914@pn1249300.lanl.gov:class II $ python cls_Source_file.py
+
+# l127914@pn1249300.lanl.gov:class II $ date
+# Mon Dec  3 19:20:31 MST 2018
+
+# l127914@pn1249300.lanl.gov:class II $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/class II

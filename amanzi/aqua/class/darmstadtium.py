@@ -22,12 +22,13 @@ if __name__ == "__main__":
 
     myBook = cls_Book.Book( ) # instantiate
     myBook.file_name = mySource.file_path + mySource.file_name
-    print( "myBook.file_name = %s", myBook.file_name )
     # https://docs.python.org/3/library/uuid.html
     # uuid4: random - more secure
     print( "uuid = %s" % uuid.uuid4( ) ) # https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
 
-    # myBook = cls_Book.Book( ) # instantiate
+    myBook = cls_Book.Book( ) # instantiate
+    myBook.source_file = mySource
+    print( "myBook.source_file.file_name = %s" % myBook.source_file.file_name )
     # mySource.file_name = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst"    # setter called
     # foo = mySource.file_name           # getter called
     # bar = os.path.basename( mySource.file_name )

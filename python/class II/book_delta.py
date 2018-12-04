@@ -8,6 +8,9 @@
 # # imports
 import datetime         # timestamps
 import os               # opeating system
+import sys              # python version
+import uuid             # Universal Unique IDentifier
+# home brew
 import cls_Book         # Book (constains sections, contains requirements)
 import cls_Source_file  # e.q. Amanzi XML Input Specification (Version 2.3-draft)
 
@@ -18,7 +21,9 @@ if __name__ == "__main__":
     mySource = cls_Source_file.Source_file( ) # instantiate
     mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/"    # setter called
     mySource.file_name = "short.rst"    # setter called
-    print( "mySource.path_name = %s", mySource.path_name )
+    #print( "mySource.path_name = %s", mySource.path_name )
+    # https://docs.python.org/3/library/uuid.html
+    print( "uuid = %s" % uuid.uuid4( ) ) # https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
 
     # myBook = cls_Book.Book( ) # instantiate
     # mySource.file_name = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst"    # setter called
@@ -31,19 +36,13 @@ if __name__ == "__main__":
 
     print( "\n", datetime.datetime.now( ) )
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
+    print( "python version %s" % sys.version )
 
-# l127914@pn1249300.lanl.gov:class II $ python book_basics.py
-# setter of _file_name called: self._file_name =  file.rst
-# getter of file_name called: self._file_name =  file.rst
-# getter of file_name called: self._file_name =  file.rst
-# myBook.file_name =  file.rst
-# foo =  file.rst
-# deleter of x called
-# 2018-12-03 12:16:34.725406
-# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/class II/book_basics.py
-# Traceback (most recent call last):
-#   File "book_basics.py", line 46, in <module>
-#     print( "myBook.file_name = ", myBook.file_name )
-#   File "book_basics.py", line 17, in file_name
-#     print( "getter of file_name called: self._file_name = ", self._file_name )
-# AttributeError: 'Book' object has no attribute '_file_name'
+# l127914@pn1249300.lanl.gov:class II $ python book_delta.py
+# setter of _file_path called: self._file_path =  /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/
+# setter of _file_name called: self._file_name =  short.rst
+# uuid = 174f8440-5e59-4710-9272-3db669e832ba
+#
+#  2018-12-03 20:12:42.908499
+# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/class II/book_delta.py
+# python version 3.7.0 (default, Jun 28 2018, 07:39:16)

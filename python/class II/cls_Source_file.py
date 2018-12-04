@@ -10,7 +10,7 @@ class Source_file( object ):
     def __init__(self):
         self._file_name = None
         self._file_path = None
-        self._path_name = None
+        #self._path_name = None
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -26,11 +26,11 @@ class Source_file( object ):
         print( "getter of file_path called: self._file_path = ", self._file_path )
         return self._file_path
 
-    @property
-    def path_name( self ): # https://stackoverflow.com/questions/10381967/how-does-the-python-setter-decorator-work
-        """File path and name."""
-        print( "getter of file_path called: self._path_name = ", self._path_name )
-        return self._path_name
+    # @property
+    # def path_name( self, file_name, path_name ):
+    #     """File path and name."""
+    #     print( "getter of file_path called: self._path_name = ", self._path_name )
+    #     return self._path_name
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -44,10 +44,10 @@ class Source_file( object ):
         print("setter of _file_path called: self._file_path = ", value )
         self._file_path = value
 
-    @path_name.setter
-    def file_path( self ):
-        self._path_name = self._file_path + self._file_name
-        print("setter of _file_path called: self._file_path = ", self._path_name )
+    # @path_name.setter
+    # def file_path( self ):
+    #     self._path_name = self.file_path + self.file_name
+    #     print("setter of _file_path called: self._file_path = ", self._path_name )
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

@@ -3,13 +3,12 @@
 # # David Moulton   DGL LANL/T-5  moulton@lanl.gov  505 665 4712
 # # Daniel Topa     LANL/CCS-2    dantopa@lanl.gov  505 667 0817
 
-# class structures for Amanzi matrix
-
-# # imports
+# Book class
+#  composed of sections
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-class Book(object):
+class Book( object ):
     def __init__(self):
         self._file_name = None
 #        self._file_path = None

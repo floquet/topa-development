@@ -23,6 +23,7 @@ if __name__ == "__main__":
     mySource.file_name = "short.rst"    # setter called
     #print( "mySource.path_name = %s", mySource.path_name )
     # https://docs.python.org/3/library/uuid.html
+    # uuid4: random - more secure
     print( "uuid = %s" % uuid.uuid4( ) ) # https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
 
     # myBook = cls_Book.Book( ) # instantiate

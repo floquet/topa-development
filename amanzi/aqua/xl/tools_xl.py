@@ -4,6 +4,11 @@
 # # Daniel Topa  LANL/CCS-2  dantopa@lanl.gov  505 667 0817
 
 # # Excel tools
+# xl_new_workbook( workbook_title )
+# xl_sheet_requirements( this_workbook )
+# xl_sheet_generate( this_workbook, title_sheet )
+# xl_sheet_provenance( this_workbook )
+# xl_sheet_header_footer( this_worksheet )
 
 # # imports
 import os           # probe, change directories

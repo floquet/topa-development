@@ -4,13 +4,16 @@
 # # Daniel Topa     LANL/CCS-2    dantopa@lanl.gov  505 667 0817
 
 # # imports
-import datetime         # timestamps
-import os               # opeating system
-import sys              # python version
-import uuid             # Universal Unique IDentifier
+import datetime             # timestamps
+import os                   # opeating system
+import sys                  # python version
+import uuid                 # Universal Unique IDentifier
+from pathlib import Path    # rename file
 # home brew
-import cls_Book         # Book (constains sections, contains requirements)
-import cls_Source_file  # e.q. Amanzi XML Input Specification (Version 2.3-draft)
+import cls_Book             # Book (constains sections, contains requirements)
+import cls_Source_file      # e.q. Amanzi XML Input Specification (Version 2.3-draft)
+import tools_xl             # spreadsheet authoring tools
+import xlsxwriter   # API for Excel
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -19,6 +22,9 @@ if __name__ == "__main__":
     mySource = cls_Source_file.Source_file( ) # instantiate
     mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/"    # setter called
     mySource.file_name = "short.rst"    # setter called
+    mySource.path_name = mySource.file_path + mySource.file_name # setter called
+    mySource.output_xl = Path( mySource.file_name ).stem + ".xlsx" # https://stackoverflow.com/questions/2900035/changing-file-extension-in-python
+    print( "mySource.output_xl = ", mySource.output_xl )
 
     myBook = cls_Book.Book( ) # instantiate
     myBook.file_name = mySource.file_path + mySource.file_name
@@ -29,13 +35,15 @@ if __name__ == "__main__":
     myBook = cls_Book.Book( ) # instantiate
     myBook.source_file = mySource
     print( "myBook.source_file.file_name = %s" % myBook.source_file.file_name )
-    # mySource.file_name = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/short.rst"    # setter called
-    # foo = mySource.file_name           # getter called
-    # bar = os.path.basename( mySource.file_name )
-    # print( "myBook.file_name = ", mySource.file_name )
-    # print( "foo = ", foo )
-    # print( "bar = ", bar )
-    # del mySource.file_name             # deleter called
+    print( "myBook.source_file.output_xl = %s" % myBook.source_file.output_xl )
+    print( "myBook.source_file.output_xl = ",    myBook.source_file.output_xl )
+
+    my_workbook = xlsxwriter.Workbook( mySource.file_path + "test.xlsx" )
+    my_workbook.close( )
+    # print( "open Excel file for output" )
+    # tools_xl.xl_new_workbook( "delete.xlsx" )
+    #tools_xl.xl_new_workbook( mySource.output_xl )
+    #tools_xl.xl_new_workbook( myBook.source_file.output_xl )
 
     print( "\n", datetime.datetime.now( ) )
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )

@@ -18,7 +18,7 @@ class Book:
     def __init__( self ): #, file_name, file_path, number_lines, number_sections ):
         self._file_name       = ""
         self._file_path       = ""
-        self._file_source     = file_path + file_name
+        self._file_source     = self.file_path + self.file_name
         self._number_lines    = -1
         self._number_sections = -1
     # getters

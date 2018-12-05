@@ -39,7 +39,7 @@ class Source_file( object ):
     @property
     def output_xl( self ):
         """Title of Excel output file."""
-        print( "getter of file_path called: self._title = ", self._output_xl )
+        print( "getter of file_path called: self._output_xl = ", self._output_xl )
         return self._output_xl
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

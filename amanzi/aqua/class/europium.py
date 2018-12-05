@@ -24,20 +24,23 @@ if __name__ == "__main__":
     mySource = cls_Source_file.Source_file( ) # instantiate
     mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/"    # setter called
     mySource.file_name = "short.rst"    # setter called
+    print( "b" )
     mySource.path_name = mySource.file_path + mySource.file_name # setter called
     print( "mySource.path_name = ", mySource.path_name )
     # # output file
     mySource.output_xl = Path( mySource.file_name ).stem + ".xlsx" # https://stackoverflow.com/questions/2900035/changing-file-extension-in-python
+    print( "c" )
 
     myBook = cls_Book.Book( ) # instantiate
     myBook.source_object = mySource
     # https://docs.python.org/3/library/uuid.html
     # uuid4: random - more secure
-    print( "uuid = %s" % uuid.uuid4( ) ) # https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
+    # print( "uuid = %s" % uuid.uuid4( ) ) # https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
 
     my_workbook = tools_xl.xl_new_workbook( mySource.file_path + mySource.output_xl )
     print( "created ", mySource.file_path + mySource.output_xl )
     print( "mySource.path_name = ", mySource.path_name )
+    print( "# # # mySource.path_name = ", mySource.path_name )
     ( numLines, myLines ) = tools_parse.reader( mySource.path_name ) # read file as split lines
     my_workbook.close( )
 

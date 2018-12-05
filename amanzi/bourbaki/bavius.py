@@ -52,7 +52,7 @@ if __name__ == "__main__":
     myBook.source_object.numLines = numLines
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )
-    tools_debug.xl_numbered_lines( myWorkbook, myLines )
+    tools_debug.xl_numbered_lines( myWorkbook, myBook )
 
     # write workbook
     myWorkbook.close( )

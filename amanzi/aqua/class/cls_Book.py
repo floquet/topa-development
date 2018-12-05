@@ -45,3 +45,11 @@ class Book( object ):
         del self._source_object
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+# dantopa@Lax-Millgram:class $ mypy cls_Book.py
+
+# dantopa@Lax-Millgram:class $ date
+# Tue Dec  4 20:26:53 MST 2018
+
+# dantopa@Lax-Millgram:class $ pwd
+# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/class

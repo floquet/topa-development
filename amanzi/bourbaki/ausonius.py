@@ -25,12 +25,9 @@ if __name__ == "__main__":
     # mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
     mySource.file_path = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"    # setter called
     mySource.file_name = "short.rst"    # setter called
-    print( "b" )
     mySource.path_name = mySource.file_path + mySource.file_name # setter called
-    print( "mySource.path_name = ", mySource.path_name )
     # # output file
     mySource.output_xl = Path( mySource.file_name ).stem + ".xlsx" # https://stackoverflow.com/questions/2900035/changing-file-extension-in-python
-    print( "c" )
 
     myBook = cls_Book.Book( ) # instantiate
     myBook.source_object = mySource

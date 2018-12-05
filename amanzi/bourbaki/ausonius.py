@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     # # source data
     mySource = cls_Source_file.Source_file( ) # instantiate
-    # mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/aqua/data/"    # setter called
-    mySource.file_path = "/Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/"    # setter called
+    # mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
+    mySource.file_path = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"    # setter called
     mySource.file_name = "short.rst"    # setter called
     print( "b" )
     mySource.path_name = mySource.file_path + mySource.file_name # setter called
@@ -53,24 +53,24 @@ if __name__ == "__main__":
 # setter of _input_rst called: self._input_rst =  short.rst
 # b
 # getter of file_name called: self._input_rst =  short.rst
-# setter of _path_rst called: self._full_rst =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
-# getter of file_path called: self._full_rst =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
-# mySource.path_name =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
+# setter of _path_rst called: self._full_rst =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/data/short.rst
+# getter of file_path called: self._full_rst =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/data/short.rst
+# mySource.path_name =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/data/short.rst
 # getter of file_name called: self._input_rst =  short.rst
 # c
 # setter of _file_name called: self._source_object =  <cls_Source_file.Source_file object at 0x10feb94a8>
 # getter of file_path called: self._output_xl =  short.xlsx
 # getter of file_path called: self._output_xl =  short.xlsx
-# created  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/short.xlsx
-# getter of file_path called: self._full_rst =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
-# mySource.path_name =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
-# getter of file_path called: self._full_rst =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
-# # # # mySource.path_name =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
-# getter of file_path called: self._full_rst =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
-# reading file /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/data/short.rst
+# created  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/data/short.xlsx
+# getter of file_path called: self._full_rst =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/data/short.rst
+# mySource.path_name =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/data/short.rst
+# getter of file_path called: self._full_rst =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/data/short.rst
+# # # # mySource.path_name =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/data/short.rst
+# getter of file_path called: self._full_rst =  /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/data/short.rst
+# reading file /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/data/short.rst
 # 231 lines found
 #
 #  2018-12-04 20:29:35.635061
-# source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/class/europium.py
+# source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/class/europium.py
 # python version 3.6.7 (default, Oct 21 2018, 09:26:25)
 # [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]

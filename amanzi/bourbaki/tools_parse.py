@@ -4,13 +4,13 @@
 # # Daniel Topa  LANL/CCS-2  dantopa@lanl.gov  505 667 0817
 
 # # File parsing tools
-# xl_new_workbook( workbook_title )
+# reader( file_source )
 
 # # imports
 
 def reader( file_source ):
     ## ## read source file
-    print ( "reading file %s" % file_source )
+    print ( "reading source file %s" % file_source )
     # https://stackoverflow.com/questions/3277503/in-python-how-do-i-read-a-file-line-by-line-into-a-list
     with open( file_source ) as f:
         myLines = f.read().splitlines()  # remove \n

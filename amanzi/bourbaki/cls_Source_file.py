@@ -10,6 +10,7 @@
 class Source_file( object ):
     def __init__( self ):
         self._title     = None # from *.rst, line 2
+        self._numLines  = None
         # source
         self._input_rst = None # AmanziInputSpec-v2.3.2-draft.rst
         self._path_rst  = None
@@ -25,6 +26,10 @@ class Source_file( object ):
     def title( self ):
         """Title from source file."""
         return self._title
+    @property
+    def numLines( self ):
+        """Number of lines read in source file."""
+        return self._numLines
     # source
     @property
     def input_rst( self ):
@@ -57,9 +62,12 @@ class Source_file( object ):
     @title.setter
     def title( self, value ):
         self._title = value
+    @numLines.setter
+    def numLines( self, value ):
+        self._numLines = value
     # sink
-    @input_rst .setter
-    def file_name( self, value ):
+    @input_rst.setter
+    def input_rst( self, value ):
         self._input_rst = value
     @path_rst.setter
     def path_rst( self, value ):

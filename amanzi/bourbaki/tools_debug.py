@@ -12,6 +12,26 @@ import tools_xl             # spreadsheet authoring tools
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+def xl_numbered_lines( thisWorkbook, thisBook ):
+
+    sheet_numbered_lines = tools_xl.xl_sheet_generate( thisWorkbook, "numbered lines" )
+
+    # address worksheet in row, col form
+    row = 0;
+    col = 0;
+
+    # https://stackabuse.com/read-a-file-line-by-line-in-python/
+    with open( thisBook.source_object.full_rst ) as f:
+       for cnt, line in enumerate( f ):
+           # line number
+           sheet_numbered_lines.write( row, col,     "{}".format( cnt ) )
+           # text
+           sheet_numbered_lines.write( row, col + 1, "{}".format( line ) ); row += 1
+
+    return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
 def xl_dramatis_personae( thisWorkbook, thisBook ):
 
     sheet_dramatis_personae = tools_xl.xl_sheet_generate( thisWorkbook, "dramatis personae" )

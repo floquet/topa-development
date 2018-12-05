@@ -27,8 +27,8 @@ if __name__ == "__main__":
     # # source data
     mySource = cls_Source_file.Source_file( ) # instantiate
     mySource.input_rst = "short.rst"    # setter called
-    mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
-    # mySource.file_path = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
+    #mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
+    mySource.path_rst = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
     mySource.full_rst  = mySource.path_rst + mySource.input_rst
 
     # # output file
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     myBook.source_object.numLines = numLines
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )
-    tools_debug.xl_numbered_lines( myWorkbook, myBook )
+    tools_debug.xl_numbered_lines( myWorkbook, myLines )
 
     # write workbook
     myWorkbook.close( )

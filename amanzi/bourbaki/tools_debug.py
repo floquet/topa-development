@@ -26,7 +26,7 @@ def xl_numbered_lines( thisWorkbook, thisBook ):
             # line number
             sheet_numbered_lines.write( row, col,     cnt )
             # text
-            sheet_numbered_lines.write( row, col + 1, line ); row += 1
+            sheet_numbered_lines.write( row, col + 1, "{}".format( line ) ); row += 1
 
     return
 

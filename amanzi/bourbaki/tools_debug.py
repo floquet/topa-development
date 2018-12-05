@@ -22,11 +22,11 @@ def xl_numbered_lines( thisWorkbook, thisBook ):
 
     # https://stackabuse.com/read-a-file-line-by-line-in-python/
     with open( thisBook.source_object.full_rst ) as f:
-       for cnt, line in enumerate( f ):
-           # line number
-           sheet_numbered_lines.write( row, col,     "{}".format( cnt ) )
-           # text
-           sheet_numbered_lines.write( row, col + 1, "{}".format( line ) ); row += 1
+        for cnt, line in enumerate( f ):
+            # line number
+            sheet_numbered_lines.write( row, col,     cnt )
+            # text
+            sheet_numbered_lines.write( row, col + 1, line ); row += 1
 
     return
 

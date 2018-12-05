@@ -45,6 +45,7 @@ if __name__ == "__main__":
     myWorkbook = tools_xl.xl_new_workbook( mySource.full_xl )
     ( numLines, myLines ) = tools_parse.reader( mySource.path_name ) # read file as split lines
     myBook.source_object.numLines = numLines
+    print( "myBook.source_object.numLines = %s" % myBook.source_object.numLines )
 
     # write workbook
     myWorkbook.close( )

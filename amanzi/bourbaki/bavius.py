@@ -15,6 +15,7 @@ import xlsxwriter           # API for Excel
 import cls_Book             # Book (constains sections, contains requirements)
 import cls_Source_file      # e.q. Amanzi XML Input Specification (Version 2.3-draft)
 # tools
+import tools_debug
 import tools_parse          # file parsing tools
 import tools_xl             # spreadsheet authoring tools
 
@@ -43,9 +44,9 @@ if __name__ == "__main__":
 
     # first read rst
     myWorkbook = tools_xl.xl_new_workbook( mySource.full_xl )
+    tools_debug.xl_dramatis_personae( myWorkbook, myBook )
     ( numLines, myLines ) = tools_parse.reader( mySource.path_name ) # read file as split lines
     myBook.source_object.numLines = numLines
-    print( "myBook.source_object.numLines = %s" % myBook.source_object.numLines )
 
     # write workbook
     myWorkbook.close( )

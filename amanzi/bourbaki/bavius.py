@@ -44,9 +44,11 @@ if __name__ == "__main__":
 
     # first read rst
     myWorkbook = tools_xl.xl_new_workbook( mySource.full_xl )
-    tools_debug.xl_dramatis_personae( myWorkbook, myBook )
     ( numLines, myLines ) = tools_parse.reader( mySource.path_name ) # read file as split lines
+    print( "myLines[ 1 ] % s" % myLines[ 1 ] )
+    myBook.source_object.title = myLines[ 1 ]
     myBook.source_object.numLines = numLines
+    tools_debug.xl_dramatis_personae( myWorkbook, myBook )
 
     # write workbook
     myWorkbook.close( )

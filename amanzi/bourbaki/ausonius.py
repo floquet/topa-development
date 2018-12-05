@@ -61,3 +61,9 @@ if __name__ == "__main__":
 # source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/ausonius.py
 # python version 3.6.7 (default, Oct 21 2018, 09:26:25)
 # [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+
+#  Decimus or Decimius Magnus Ausonius was a Roman poet and teacher of rhetoric
+# from Burdigala in Aquitaine, modern Bordeaux, France. For a time he was tutor
+# to the future emperor Gratian, who afterwards bestowed the consulship on him.
+# His best-known poems are Mosella, a description of the river Moselle,
+# and Ephemeris, an account of a typical day in his life. 

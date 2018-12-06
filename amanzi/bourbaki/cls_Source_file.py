@@ -31,6 +31,8 @@ class Source_file( object ):
         self._count_PASS = 0
         self._count_FAIL = 0
         self._count_NULL = 0
+        # line numbers
+        self._list_header0 = None
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -96,7 +98,10 @@ class Source_file( object ):
     def count_NULL( self ):
         """Number of requirements NULLed."""
         return self._count_NULL
-
+    # line numbers
+    def list_header0( self ):
+        """Culled list of === headers."""
+        return self._list_header0
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -134,6 +139,10 @@ class Source_file( object ):
     @row_NULL.setter
     def row_NULL( self, value ):
         self._row_NULL = value
+    # line numbers
+    @list_header0.setter
+    def list_header0( self, value ):
+        self._list_header0 = value
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -186,6 +195,10 @@ class Source_file( object ):
     # @count_NULL.deleter
     # def count_NULL( self ):
     #     del self._count_NULL
+    # line numbers
+    # @list_header0.deleter
+    # def list_header0( self ):
+    #     del self._list_header0
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -254,30 +267,16 @@ class Source_file( object ):
                 print( "header found in line {}: {} ".format( lineNum - 2, myLines[ lineNum - 2 ] ) )
         return
 
-# l127914@pn1249300.lanl.gov:bourbaki $ python catullus.py
-# mySource.uuid = 6ca4262b-74c7-4ba8-afe2-ea6e67cb6123
-# reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
-# 231 lines found
-# 16 xml blocks found; locations [28, 38, 56, 81, 101, 113, 122, 128, 134, 140, 149, 162, 170, 185, 198, 207]
-# 6 header0 '===' candidates found; locations [1, 3, 9, 18, 34, 97]
-# 8 header1 '---' candidates found; locations [48, 65, 69, 71, 73, 75, 109, 145]
-# 8 header2 '___' candidates found; locations [48, 65, 69, 71, 73, 75, 109, 145]
-# header found in line 7: Overview
-# header found in line 16: Amanzi Input
-# header found in line 32: Model Description
-# header found in line 95: Definitions
-# header found in line 46: Units
-# header found in line 67: | length_unit    | m or cm        |
-# header found in line 69: | time_unit      | y, d, h, or s  |
-# header found in line 71: | mass_unit      | kg             |
-# header found in line 73: | conc_unit      | molar, SI      |
-# header found in line 107: Constants
-# header found in line 143: Macros
-# header found in line 156: Time_macro
-# header found in line 178: Cycle_macro
-# header found in line 192: Variable_macro
+# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py
+# Traceback (most recent call last):
+#   File "cls_Source_file.py", line 13, in <module>
+#     class Source_file( object ):
+#   File "cls_Source_file.py", line 143, in Source_file
+#     @list_header0.setter
+# AttributeError: 'function' object has no attribute 'setter'
 
-#  2018-12-06 14:39:25.069898
-# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki/catullus.py
-# python version 3.7.0 (default, Jun 28 2018, 07:39:16)
-# [Clang 4.0.1 (tags/RELEASE_401/final)]
+# l127914@pn1249300.lanl.gov:bourbaki $ date
+# Thu Dec  6 15:27:50 MST 2018
+
+# l127914@pn1249300.lanl.gov:bourbaki $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki

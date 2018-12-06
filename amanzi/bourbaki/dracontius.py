@@ -40,8 +40,9 @@ if __name__ == "__main__":
     myBook = cls_Book.Book( ) # instantiate
     myBook.source_object = mySource
 
-    # first read rst
+    # open Excel file for results and intermediate data
     myWorkbook = tools_xl.xl_new_workbook( mySource.full_xl )
+    # parse rst file into a collection of text lines
     ( numLines, myLines ) = tools_parse.reader( mySource.path_name ) # read file as split lines
     myBook.source_object.title = myLines[ 1 ] # harvest title line
     myBook.source_object.numLines = numLines
@@ -49,11 +50,7 @@ if __name__ == "__main__":
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )
     tools_debug.xl_numbered_lines( myWorkbook, myLines )
 
-    # continue parsing - compile lists of target locations
-    # ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = mySource.parse_candidates( myLines )  # first parse: candidate headers
-    # mySource.parse_match_lengths( myLines, loc_candidate_header0 )
-    # mySource.parse_match_lengths( myLines, loc_candidate_header1 )
-    # mySource.parse_match_lengths( myLines, loc_candidate_header2 )
+    # finish parsing - compile lists of target locations
     mySource.parse_master( myLines )
 
     # write workbook

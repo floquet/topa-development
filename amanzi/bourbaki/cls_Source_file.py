@@ -12,27 +12,27 @@ import uuid                 # Universal Unique IDentifier
 
 class Source_file( object ):
     def __init__( self ):
-        self._title      = None # from *.rst, line 2
-        self._numLines   = None
-        self._uuid       = uuid.uuid4( ) # de facto time stamp
+        self._title         = None # from *.rst, line 2
+        self._numLines      = None
+        self._uuid          = uuid.uuid4( ) # de facto time stamp
         # source
-        self._input_rst  = None # AmanziInputSpec-v2.3.2-draft.rst
-        self._path_rst   = None
-        self._full_rst   = None # path + file name
+        self._input_rst     = None # AmanziInputSpec-v2.3.2-draft.rst
+        self._path_rst      = None
+        self._full_rst      = None # path + file name
         # sink
-        self._output_xl  = None # AmanziInputSpec-v2.3.2-draft.xlsx
-        self._path_xl    = None
-        self._full_xl    = None # path + file name
+        self._output_xl     = None # AmanziInputSpec-v2.3.2-draft.xlsx
+        self._path_xl       = None
+        self._full_xl       = None # path + file name
         # Excel rows
-        self._row_PASS   = 0
-        self._row_FAIL   = 0
-        self._row_NULL   = 0
+        self._row_PASS      = None
+        self._row_FAIL      = None
+        self._row_NULL      = None
         # census
-        self._count_PASS = 0
-        self._count_FAIL = 0
-        self._count_NULL = 0
+        self._count_PASS    = None
+        self._count_FAIL    = None
+        self._count_NULL    = None
         # line numbers
-        self._list_header0 = None
+        self._list_header0  = None
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -160,9 +160,9 @@ class Source_file( object ):
     def uuid( self ):
         del self._uuid
     # source
-    # @input_rst.deleter
-    # def input_rst( self ):
-    #     del self._input_rst
+    @input_rst.deleter
+    def input_rst( self ):
+        del self._input_rst
     @path_rst.deleter
     def path_rst( self ):
         del self._path_rst
@@ -190,19 +190,19 @@ class Source_file( object ):
     def row_NULL( self ):
         del self._row_NULL
     # census values
-    # @count_PASS.deleter
-    # def count_PASS( self ):
-    #     del self._count_PASS
-    # @count_FAIL.deleter
-    # def count_FAIL( self ):
-    #     del self._count_FAIL
-    # @count_NULL.deleter
-    # def count_NULL( self ):
-    #     del self._count_NULL
+    @count_PASS.deleter
+    def count_PASS( self ):
+        del self._count_PASS
+    @count_FAIL.deleter
+    def count_FAIL( self ):
+        del self._count_FAIL
+    @count_NULL.deleter
+    def count_NULL( self ):
+        del self._count_NULL
     # line numbers
-    # @list_header0.deleter
-    # def list_header0( self ):
-    #     del self._list_header0
+    @list_header0.deleter
+    def list_header0( self ):
+        del self._list_header0
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -274,7 +274,7 @@ class Source_file( object ):
 # l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py
 
 # l127914@pn1249300.lanl.gov:bourbaki $ date
-# Thu Dec  6 15:59:19 MST 2018
+# Thu Dec  6 16:03:57 MST 2018
 
 # l127914@pn1249300.lanl.gov:bourbaki $ pwd
 # /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki

@@ -225,10 +225,6 @@ class Source_file( object ):
                 print( "possible header 2 in line %s" % lineNum )
                 loc_candidate_header2.append( lineNum )
 
-        print ( "{} xml blocks found; locations {}".format( len( loc_xml ), loc_xml ) )
-        print ( "{} header0 candidates found; locations {}".format( len( loc_candidate_header0 ), loc_candidate_header0 ) )
-        print ( "{} header1 candidates found; locations {}".format( len( loc_candidate_header1 ), loc_candidate_header1 ) )
-
         return ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 );
 
 # l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py

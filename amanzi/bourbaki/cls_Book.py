@@ -29,10 +29,6 @@ class Book( object ):
     def source_object( self ):
         """Source file."""
         return self._source_object
-    # def file_path( self ):
-    #     """I'm the file_path property."""
-    #     print( "getter of file_path called: self._file_path = ", self._file_path )
-    #     return self._file_path
 
     @source_object.setter
     def source_object( self, value ):

@@ -189,7 +189,7 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def parse1( self, myLines ):
+    def parse_candidates( self, myLines ):
         # marker library
         xml = ".. code-block:: xml"   # xml
         header0 = "=="                # major heading
@@ -227,17 +227,44 @@ class Source_file( object ):
 
         return ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 );
 
-# l127914@pn1249300.lanl.gov:bourbaki $ python catullus.py
-# mySource.uuid = 93274f3b-f6f7-4741-90c3-971f5d93538d
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+    def parse_match_lengths( self, myLines, loc_list ): # vet candidates
+        loc = list( )  # location
+        txt = list( )  # text
+        for lineNum in loc_list:
+            lineLengthA = len( myLines[ lineNum - 1 ] )
+            lineLengthB = len( myLines[ lineNum - 2 ] )
+            if lineLengthA == lineLengthB:
+                loc.append( lineNum - 2 )
+                txt.append( myLines[ lineNum - 2 ] )
+                print( "header found in line {}: {} ".format( lineNum - 2, myLines[ lineNum - 2 ] ) )
+        return
+
+# l127914@pn1249300.lanl.gov:bourbaki $ python catullus.py
+# mySource.uuid = 6ca4262b-74c7-4ba8-afe2-ea6e67cb6123
 # reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
 # 231 lines found
 # 16 xml blocks found; locations [28, 38, 56, 81, 101, 113, 122, 128, 134, 140, 149, 162, 170, 185, 198, 207]
 # 6 header0 '===' candidates found; locations [1, 3, 9, 18, 34, 97]
 # 8 header1 '---' candidates found; locations [48, 65, 69, 71, 73, 75, 109, 145]
 # 8 header2 '___' candidates found; locations [48, 65, 69, 71, 73, 75, 109, 145]
+# header found in line 7: Overview
+# header found in line 16: Amanzi Input
+# header found in line 32: Model Description
+# header found in line 95: Definitions
+# header found in line 46: Units
+# header found in line 67: | length_unit    | m or cm        |
+# header found in line 69: | time_unit      | y, d, h, or s  |
+# header found in line 71: | mass_unit      | kg             |
+# header found in line 73: | conc_unit      | molar, SI      |
+# header found in line 107: Constants
+# header found in line 143: Macros
+# header found in line 156: Time_macro
+# header found in line 178: Cycle_macro
+# header found in line 192: Variable_macro
 
-#  2018-12-06 14:13:44.717383
+#  2018-12-06 14:39:25.069898
 # source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki/catullus.py
 # python version 3.7.0 (default, Jun 28 2018, 07:39:16)
 # [Clang 4.0.1 (tags/RELEASE_401/final)]

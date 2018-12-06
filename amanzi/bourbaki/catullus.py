@@ -50,8 +50,10 @@ if __name__ == "__main__":
     tools_debug.xl_numbered_lines( myWorkbook, myLines )
 
     # continue parsing - compile lists of target locations
-    ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = mySource.parse1( myLines )  # first parse: candidate headers
-    #parse_header_0( myLines, loc_candidate_header0 )
+    ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = mySource.parse_candidates( myLines )  # first parse: candidate headers
+    mySource.parse_match_lengths( myLines, loc_candidate_header0 )
+    mySource.parse_match_lengths( myLines, loc_candidate_header1 )
+    mySource.parse_match_lengths( myLines, loc_candidate_header2 )
 
     # write workbook
     myWorkbook.close( )
@@ -60,7 +62,7 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-# l127914@pn1249300.lanl.gov:bourbaki $ python catullus.py 
+# l127914@pn1249300.lanl.gov:bourbaki $ python catullus.py
 # mySource.uuid = 54e586ec-8315-49d2-8b80-802a41a9f5d0
 # reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
 # 231 lines found

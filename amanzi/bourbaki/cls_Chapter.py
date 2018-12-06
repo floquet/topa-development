@@ -24,6 +24,27 @@ class Chapter( object ):
     def title( self ):
         """Chapter title."""
         return self._title
+    def key( self ):
+        """Chapter title."""
+        return self._key
+    def loc_start( self ):
+        """Chapter title."""
+        return self._loc_start
+    def num_sections( self ):
+        """Chapter title."""
+        return self._num_sections
+    def num_required( self ):
+        """Chapter title."""
+        return self._num_required
+    def num_optional( self ):
+        """Chapter title."""
+        return self._num_optional
+    def list_required( self ):
+        """Chapter title."""
+        return self._list_required
+    def list_optional( self ):
+        """Chapter title."""
+        return self._list_optional
 
     @title.setter
     def title( self, value ):
@@ -64,7 +85,7 @@ class Chapter( object ):
 # l127914@pn1249300.lanl.gov:bourbaki $ python cls_Chapter.py
 
 # l127914@pn1249300.lanl.gov:bourbaki $ date
-# Thu Dec  6 15:43:26 MST 2018
+# Thu Dec  6 15:46:44 MST 2018
 
 # l127914@pn1249300.lanl.gov:bourbaki $ pwd
 # /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki

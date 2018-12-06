@@ -205,40 +205,39 @@ class Source_file( object ):
         lineNum = 0
         for line in myLines:
             lineNum += 1
-            print ( "Line {}: {}".format( lineNum, line ) )
             # xml blocks
             if line.find( xml ) != -1:
-                print( "xml found in line %s" % lineNum )
                 loc_xml.append( lineNum )
                 # header 0 blocks ==========
             elif line.find( header0 ) != -1:
                 if line.find( "+" ) != -1:
                     continue
-                print( "possible header 0 in line %s" % lineNum )
                 loc_candidate_header0.append( lineNum )
             # header 1 blocks ----------
             elif line.find( header1 ) != -1:
-                print( "possible header 1 in line %s" % lineNum )
                 loc_candidate_header1.append( lineNum )
             # header 2 blocks __________
             elif line.find( header2 ) != -1:
-                print( "possible header 2 in line %s" % lineNum )
                 loc_candidate_header2.append( lineNum )
+
+        print ( "{} xml blocks found; locations {}".format( len( loc_xml ), loc_xml ) )
+        print ( "{} header0 '===' candidates found; locations {}".format( len( loc_candidate_header0 ), loc_candidate_header0 ) )
+        print ( "{} header1 '---' candidates found; locations {}".format( len( loc_candidate_header1 ), loc_candidate_header1 ) )
+        print ( "{} header2 '___' candidates found; locations {}".format( len( loc_candidate_header1 ), loc_candidate_header1 ) )
 
         return ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 );
 
-# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py
-# Traceback (most recent call last):
-#   File "cls_Source_file.py", line 13, in <module>
-#     class Source_file( object ):
-#   File "cls_Source_file.py", line 183, in Source_file
-#     @count_FAIL.deleter
-# AttributeError: 'function' object has no attribute 'deleter'
+# l127914@pn1249300.lanl.gov:bourbaki $ python catullus.py
+# mySource.uuid = 93274f3b-f6f7-4741-90c3-971f5d93538d
 
-# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py
+# reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
+# 231 lines found
+# 16 xml blocks found; locations [28, 38, 56, 81, 101, 113, 122, 128, 134, 140, 149, 162, 170, 185, 198, 207]
+# 6 header0 '===' candidates found; locations [1, 3, 9, 18, 34, 97]
+# 8 header1 '---' candidates found; locations [48, 65, 69, 71, 73, 75, 109, 145]
+# 8 header2 '___' candidates found; locations [48, 65, 69, 71, 73, 75, 109, 145]
 
-# l127914@pn1249300.lanl.gov:bourbaki $ date
-# Thu Dec  6 12:32:47 MST 2018
-
-# l127914@pn1249300.lanl.gov:bourbaki $ pwd
-# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki
+#  2018-12-06 14:13:44.717383
+# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki/catullus.py
+# python version 3.7.0 (default, Jun 28 2018, 07:39:16)
+# [Clang 4.0.1 (tags/RELEASE_401/final)]

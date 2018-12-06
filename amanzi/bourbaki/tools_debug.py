@@ -12,7 +12,7 @@ import tools_xl             # spreadsheet authoring tools
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-def xl_numbered_lines( thisWorkbook, thisBook ):
+def xl_numbered_lines( thisWorkbook, theseLines ):
 
     sheet_numbered_lines = tools_xl.xl_sheet_generate( thisWorkbook, "numbered lines" )
 
@@ -20,11 +20,12 @@ def xl_numbered_lines( thisWorkbook, thisBook ):
     row = 0;
     col = 0;
 
-    # counter = 0;
-    # for line in myLines:
-    #     sheet_numbered_lines.write( row, col, counter )
-    #     sheet_numbered_lines.write( row, col + 1, myLines[ counter ] ); row += 1
-    #     counter += 1;
+    counter = 0;
+    for line in theseLines:
+        sheet_numbered_lines.write( row, col, counter )
+        myString = '= TEXT( "' + line + '", "=" )'
+        sheet_numbered_lines.write_formula( row, col + 1, myString ); row += 1
+        counter += 1;
     # https://stackabuse.com/read-a-file-line-by-line-in-python/
     # with open( thisBook.source_object.full_rst ) as f:
     #     for cnt, line in enumerate( f ):
@@ -33,14 +34,14 @@ def xl_numbered_lines( thisWorkbook, thisBook ):
     #         # text
     #         sheet_numbered_lines.write( row, col + 1, "{}".format( line ) ); row += 1
     # https://stackabuse.com/read-a-file-line-by-line-in-python/
-    with open( thisBook.source_object.full_rst ) as f:
-        for cnt, line in enumerate( f ):
-            # line number
-            sheet_numbered_lines.write( row, col, cnt )
-            # text
-            myString = '= TEXT( "' + line + '", "=" )'
-            print( "myString = %s" % myString )
-            sheet_numbered_lines.write_formula( row, col + 1, myString ); row += 1
+    # with open( thisBook.source_object.full_rst ) as f:
+    #     for cnt, line in enumerate( f ):
+    #         # line number
+    #         sheet_numbered_lines.write( row, col, cnt )
+    #         # text
+    #         myString = '= TEXT( "' + line + '", "=" )'
+    #         print( "myString = %s" % myString )
+    #         sheet_numbered_lines.write_formula( row, col + 1, myString ); row += 1
     return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

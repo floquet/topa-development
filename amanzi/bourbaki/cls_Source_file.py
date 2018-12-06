@@ -189,6 +189,15 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+    def parse_master( self, myLines ):
+        ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = self.parse_candidates( myLines )  # first parse: candidate headers
+        self.parse_match_lengths( myLines, loc_candidate_header0 )
+        self.parse_match_lengths( myLines, loc_candidate_header1 )
+        self.parse_match_lengths( myLines, loc_candidate_header2 )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
     def parse_candidates( self, myLines ):
         # marker library
         xml = ".. code-block:: xml"   # xml

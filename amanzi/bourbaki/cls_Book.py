@@ -23,27 +23,38 @@
 
 class Book( object ):
     def __init__(self):
-        self._source_object = None
+        self._source_object       = None # source file, meta data
+        self._collection_chapters = None # collection of chapter objects
 
     @property
     def source_object( self ):
-        """Source file."""
+        """Source file object."""
         return self._source_object
+    @property
+    def collection_chapters( self ):
+        """Collection of chapter objects."""
+        return self._collection_chapters
 
     @source_object.setter
     def source_object( self, value ):
         self._source_object = value
+    @collection_chapters.setter
+    def collection_chapters( self, value ):
+        self._collection_chapters = value
 
     @source_object.deleter
     def source_object( self ):
         del self._source_object
+    @collection_chapters.deleter
+    def collection_chapters( self ):
+        del self.collection_chapters
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-# dantopa@Lax-Millgram:class $ mypy cls_Book.py
+# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Book.py
 
-# dantopa@Lax-Millgram:class $ date
-# Tue Dec  4 20:26:53 MST 2018
+# l127914@pn1249300.lanl.gov:bourbaki $ date
+# Thu Dec  6 15:56:44 MST 2018
 
-# dantopa@Lax-Millgram:class $ pwd
-# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/class
+# l127914@pn1249300.lanl.gov:bourbaki $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki

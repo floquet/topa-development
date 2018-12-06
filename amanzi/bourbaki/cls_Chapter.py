@@ -61,10 +61,10 @@ class Chapter( object ):
     def list_optional( self ):
         del self._list_optional
 
-#  l127914@pn1249300.lanl.gov:bourbaki $ python cls_Chapter.py
+# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Chapter.py
 
 # l127914@pn1249300.lanl.gov:bourbaki $ date
-# Thu Dec  6 15:40:36 MST 2018
+# Thu Dec  6 15:43:26 MST 2018
 
 # l127914@pn1249300.lanl.gov:bourbaki $ pwd
 # /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki

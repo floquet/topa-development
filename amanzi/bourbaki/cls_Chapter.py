@@ -25,25 +25,25 @@ class Chapter( object ):
         """Chapter title."""
         return self._title
     def key( self ):
-        """Chapter title."""
+        """Key to distinguish chapter."""
         return self._key
     def loc_start( self ):
-        """Chapter title."""
+        """Line number where chapter starts in source document."""
         return self._loc_start
     def num_sections( self ):
-        """Chapter title."""
+        """Number of sections within."""
         return self._num_sections
     def num_required( self ):
-        """Chapter title."""
+        """Count of required."""
         return self._num_required
     def num_optional( self ):
-        """Chapter title."""
+        """Count of optional."""
         return self._num_optional
     def list_required( self ):
-        """Chapter title."""
+        """List of keys for required."""
         return self._list_required
     def list_optional( self ):
-        """Chapter title."""
+        """List of keys for optional."""
         return self._list_optional
 
     @title.setter

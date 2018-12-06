@@ -215,6 +215,8 @@ class Source_file( object ):
                 loc_candidate_header0.append( lineNum )
             # header 1 blocks ----------
             elif line.find( header1 ) != -1:
+                if line.find( "+" ) != -1:
+                    continue
                 loc_candidate_header1.append( lineNum )
             # header 2 blocks __________
             elif line.find( header2 ) != -1:
@@ -223,7 +225,7 @@ class Source_file( object ):
         print ( "{} xml blocks found; locations {}".format( len( loc_xml ), loc_xml ) )
         print ( "{} header0 '===' candidates found; locations {}".format( len( loc_candidate_header0 ), loc_candidate_header0 ) )
         print ( "{} header1 '---' candidates found; locations {}".format( len( loc_candidate_header1 ), loc_candidate_header1 ) )
-        print ( "{} header2 '___' candidates found; locations {}".format( len( loc_candidate_header1 ), loc_candidate_header1 ) )
+        print ( "{} header2 '___' candidates found; locations {}".format( len( loc_candidate_header2 ), loc_candidate_header2 ) )
 
         return ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 );
 

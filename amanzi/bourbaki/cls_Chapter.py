@@ -28,6 +28,20 @@ class Chapter( object ):
     @title.setter
     def title( self, value ):
         self._title = value
+    def key( self, value ):
+        self._key = value
+    def loc_start( self, value ):
+        self._loc_start = value
+    def num_sections( self, value ):
+        self._num_sections = value
+    def num_required( self, value ):
+        self._num_required = value
+    def num_optional( self, value ):
+        self._num_optional = value
+    def list_required( self, value ):
+        self._list_required = value
+    def list_optional( self, value ):
+        self._list_optional = value
 
     @title.deleter
     def title( self ):
@@ -47,7 +61,7 @@ class Chapter( object ):
     def list_optional( self ):
         del self._list_optional
 
-#  l127914@pn1249300.lanl.gov:bourbaki $ python cls_Chapter.py 
+#  l127914@pn1249300.lanl.gov:bourbaki $ python cls_Chapter.py
 
 # l127914@pn1249300.lanl.gov:bourbaki $ date
 # Thu Dec  6 15:40:36 MST 2018

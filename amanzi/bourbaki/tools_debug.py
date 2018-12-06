@@ -26,8 +26,8 @@ def xl_numbered_lines( thisWorkbook, theseLines ):
         myString = '= TEXT( "' + line + '", "=" )'
         #sheet_numbered_lines.write_formula( row, col + 1, myString )
         sheet_numbered_lines.write( row, col + 1, len( line ) )
-        sheet_numbered_lines.write( row, col + 2, "boo:", myText )
-        sheet_numbered_lines.write( row, col + 2, line, myText ); row += 1
+        #sheet_numbered_lines.write( row, col + 2, "boo:", myText )
+        sheet_numbered_lines.write( row, col + 2, myString, myText ); row += 1
         counter += 1;
     # https://stackabuse.com/read-a-file-line-by-line-in-python/
     # with open( thisBook.source_object.full_rst ) as f:

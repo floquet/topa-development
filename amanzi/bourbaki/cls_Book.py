@@ -17,7 +17,7 @@
 # # https://www.openbookproject.net/thinkcs/python/english2e/ch21.html
 
 # Book class
-#  composed of sections
+#  composed of chapters
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

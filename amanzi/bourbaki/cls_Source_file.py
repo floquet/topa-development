@@ -197,10 +197,10 @@ class Source_file( object ):
         header2 = "__"                # subsub heading
 
         ## ## parse source file: pass 1
-        loc_xml               = list()  # xml locations container
-        loc_candidate_header0 = list()  # === locations container
-        loc_candidate_header1 = list()  # --- locations container
-        loc_candidate_header2 = list()  # ___ locations container
+        loc_xml               = list( )  # xml locations container
+        loc_header0           = list( )  # === locations container
+        loc_candidate_header1 = list( )  # --- locations container
+        loc_candidate_header2 = list( )  # ___ locations container
 
         lineNum = 0
         for line in myLines:
@@ -212,7 +212,7 @@ class Source_file( object ):
             elif line.find( header0 ) != -1:
                 if line.find( "+" ) != -1:
                     continue
-                loc_candidate_header0.append( lineNum )
+                loc_header0.append( lineNum )
             # header 1 blocks ----------
             elif line.find( header1 ) != -1:
                 if line.find( "+" ) != -1:
@@ -221,6 +221,8 @@ class Source_file( object ):
             # header 2 blocks __________
             elif line.find( header2 ) != -1:
                 loc_candidate_header2.append( lineNum )
+
+        loc_candidate_header0 = loc_header0[ 4: ] # knock off title block, Overview, Amanzi Input
 
         print ( "{} xml blocks found; locations {}".format( len( loc_xml ), loc_xml ) )
         print ( "{} header0 '===' candidates found; locations {}".format( len( loc_candidate_header0 ), loc_candidate_header0 ) )

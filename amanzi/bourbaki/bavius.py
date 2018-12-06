@@ -48,7 +48,6 @@ if __name__ == "__main__":
     ( numLines, myLines ) = tools_parse.reader( mySource.path_name ) # read file as split lines
     myBook.source_object.title = myLines[ 1 ] # harvest title line
     print( myLines[ 0 ] )
-    print( myLines[ 2 ] )
     myBook.source_object.numLines = numLines
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )

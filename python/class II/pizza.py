@@ -7,11 +7,11 @@ class Pizza:
         return f'Pizza( {self.ingredients!r} )'
 
     @classmethod
-    def margherita(cls):
+    def margherita( cls ):
         return cls( ['mozzarella', 'tomatoes'] )
 
     @classmethod
-    def prosciutto(cls):
+    def prosciutto( cls ):
         return cls( ['mozzarella', 'tomatoes', 'ham'] )
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

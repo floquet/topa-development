@@ -189,41 +189,47 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-def parse1( myLines ):
-    # marker library
-    xml = ".. code-block:: xml"   # xml
-    header0 = "=="                # major heading
-    header1 = "__"                # minor heading
+    def parse1( self, myLines ):
+        # marker library
+        xml = ".. code-block:: xml"   # xml
+        header0 = "=="                # major heading
+        header1 = "--"                # sub heading
+        header2 = "__"                # subsub heading
 
-    ## ## parse source file: pass 1
-    loc_xml = list()                # locations container
-    loc_candidate_header0 = list()  # locations container
-    loc_candidate_header1 = list()  # locations container
+        ## ## parse source file: pass 1
+        loc_xml               = list()  # xml locations container
+        loc_candidate_header0 = list()  # === locations container
+        loc_candidate_header1 = list()  # --- locations container
+        loc_candidate_header2 = list()  # ___ locations container
 
-    numLines = 0
-    for line in myLines:
-        numLines += 1
-        print ( "Line {}: {}".format( numLines, line ) )
-        # xml blocks
-        if line.find( xml ) != -1:
-            print( "xml found in line %s" % numLines )
-            loc_xml.append( numLines )
-        # header 0 blocks ==========
-        elif line.find( header0 ) != -1:
-            if line.find( "+" ) != -1:
-                continue
-            print( "possible header 0 in line %s" % numLines )
-            loc_candidate_header0.append( numLines )
-        # header 1 blocks __________
-        elif line.find( header1 ) != -1:
-            print( "possible header 1 in line %s" % numLines )
-            loc_candidate_header1.append( numLines )
+        lineNum = 0
+        for line in myLines:
+            lineNum += 1
+            print ( "Line {}: {}".format( lineNum, line ) )
+            # xml blocks
+            if line.find( xml ) != -1:
+                print( "xml found in line %s" % lineNum )
+                loc_xml.append( lineNum )
+                # header 0 blocks ==========
+            elif line.find( header0 ) != -1:
+                if line.find( "+" ) != -1:
+                    continue
+                print( "possible header 0 in line %s" % lineNum )
+                loc_candidate_header0.append( lineNum )
+            # header 1 blocks ----------
+            elif line.find( header1 ) != -1:
+                print( "possible header 1 in line %s" % lineNum )
+                loc_candidate_header1.append( lineNum )
+            # header 2 blocks __________
+            elif line.find( header2 ) != -1:
+                print( "possible header 2 in line %s" % lineNum )
+                loc_candidate_header2.append( lineNum )
 
-    print ( "{} xml blocks found; locations {}".format( len( loc_xml ), loc_xml ) )
-    print ( "{} header0 candidates found; locations {}".format( len( loc_candidate_header0 ), loc_candidate_header0 ) )
-    print ( "{} header1 candidates found; locations {}".format( len( loc_candidate_header1 ), loc_candidate_header1 ) )
+        print ( "{} xml blocks found; locations {}".format( len( loc_xml ), loc_xml ) )
+        print ( "{} header0 candidates found; locations {}".format( len( loc_candidate_header0 ), loc_candidate_header0 ) )
+        print ( "{} header1 candidates found; locations {}".format( len( loc_candidate_header1 ), loc_candidate_header1 ) )
 
-    return ( loc_xml, loc_candidate_header0, loc_candidate_header1 );
+        return ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 );
 
 # l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py
 # Traceback (most recent call last):

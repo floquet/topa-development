@@ -36,7 +36,7 @@ def xl_numbered_lines( thisWorkbook, thisBook ):
     with open( thisBook.source_object.full_rst ) as f:
         for cnt, line in enumerate( f ):
             # line number
-            sheet_numbered_lines.write( row, col,     cnt )
+            sheet_numbered_lines.write( row, col, cnt )
             # text
             myString = '= TEXT( "' + line + '", "=" )'
             print( "myString = %s" % myString )

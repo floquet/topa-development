@@ -60,15 +60,15 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-# dantopa@Lax-Millgram:bourbaki $ mypy bavius.py
-# mySource.path_rst = /Users/dantopa/Documents/repos/GitHub/topa-development/data/
-# reading source file /Users/dantopa/Documents/repos/GitHub/topa-development/data/short.rst
+# l127914@pn1249300.lanl.gov:bourbaki $ python bavius.py
+# reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
 # 231 lines found
-
-#  2018-12-04 21:26:37.549842
-# source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/bourbaki/bavius.py
-# python version 3.6.7 (default, Oct 21 2018, 09:26:25)
-# [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+# ====================================================
+# 
+#  2018-12-06 10:28:50.801701
+# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki/bavius.py
+# python version 3.7.0 (default, Jun 28 2018, 07:39:16)
+# [Clang 4.0.1 (tags/RELEASE_401/final)]
 
 # Bavius and Maevius (or Mevius) were two poets in the age of Augustus Caesar,
 # whose names became synonymous with bad verse and malicious criticism of superior writers.

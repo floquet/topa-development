@@ -8,18 +8,29 @@
 #  source:  Amanzi manual to be parsed
 #  sink:    Excel file with test matrix
 
+import uuid                 # Universal Unique IDentifier
+
 class Source_file( object ):
     def __init__( self ):
-        self._title     = None # from *.rst, line 2
-        self._numLines  = None
+        self._title      = None # from *.rst, line 2
+        self._numLines   = None
+        self._uuid       = uuid.uuid4( ) # de facto time stamp
         # source
-        self._input_rst = None # AmanziInputSpec-v2.3.2-draft.rst
-        self._path_rst  = None
-        self._full_rst  = None # path + file name
+        self._input_rst  = None # AmanziInputSpec-v2.3.2-draft.rst
+        self._path_rst   = None
+        self._full_rst   = None # path + file name
         # sink
-        self._output_xl = None # AmanziInputSpec-v2.3.2-draft.xlsx
-        self._path_xl   = None
-        self._full_xl   = None # path + file name
+        self._output_xl  = None # AmanziInputSpec-v2.3.2-draft.xlsx
+        self._path_xl    = None
+        self._full_xl    = None # path + file name
+        # Excel rows
+        self._row_PASS   = 0
+        self._row_FAIL   = 0
+        self._row_NULL   = 0
+        # census
+        self._count_PASS = 0
+        self._count_FAIL = 0
+        self._count_NULL = 0
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -31,6 +42,10 @@ class Source_file( object ):
     def numLines( self ):
         """Number of lines read in source file."""
         return self._numLines
+    @property           # https://docs.python.org/3/library/uuid.html
+    def uuid( self ):   # https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
+        """Universal unique identifier: connects requirements to source document."""
+        return self._uuid
     # source
     @property
     def input_rst( self ):
@@ -57,6 +72,31 @@ class Source_file( object ):
     def full_xl( self ):
         """Path and file name."""
         return self._full_xl
+    # Excel rows
+    @property
+    def row_PASS( self ):
+        """Row for next entry of requirements PASSed."""
+        return self._row_PASS
+    @property
+    def row_FAIL( self ):
+        """Row for next entry of requirements FAILed."""
+        return self._row_FAIL
+    @property
+    def row_NULL( self ):
+        """Row for next entry of requirements NULLed."""
+        return self._row_NULL
+    # census
+    @property
+    def count_PASS( self ):
+        """Number of requirements PASSed."""
+        return self._count_PASS
+    def count_FAIL( self ):
+        """Number of requirements FAILed."""
+        return self._count_FAIL
+    def count_NULL( self ):
+        """Number of requirements NULLed."""
+        return self._count_NULL
+
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -66,8 +106,7 @@ class Source_file( object ):
     @numLines.setter
     def numLines( self, value ):
         self._numLines = value
-    # sink
-    @input_rst.setter
+    # no @uuid.setter - accomplished at instantiation
     def input_rst( self, value ):
         self._input_rst = value
     @path_rst.setter
@@ -86,17 +125,31 @@ class Source_file( object ):
     @full_xl.setter
     def full_xl( self, value ):
         self._full_xl = value
+    @row_PASS.setter
+    def row_PASS( self, value ):
+        self._row_PASS = value
+    @row_FAIL.setter
+    def row_FAIL( self, value ):
+        self._row_FAIL = value
+    @row_NULL.setter
+    def row_NULL( self, value ):
+        self._row_NULL = value
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     @title.deleter
     def title( self ):
         del self._title
+    @numLines.deleter
+    def numLines( self ):
+        del self._numLines
+    @uuid.deleter
+    def uuid( self ):
+        del self._uuid
     # source
-    @input_rst.deleter
-    def input_rst( self ):
-        del self._input_rst
-        #del self._full_rst # delete because file name is no longer valid
+    # @input_rst.deleter
+    # def input_rst( self ):
+    #     del self._input_rst
     @path_rst.deleter
     def path_rst( self ):
         del self._path_rst
@@ -113,11 +166,77 @@ class Source_file( object ):
     @full_xl.deleter
     def full_xl( self ):
         del self._full_xl
+    # Excel rows
+    @row_PASS.deleter
+    def row_PASS( self ):
+        del self._row_PASS
+    @row_FAIL.deleter
+    def row_FAIL( self ):
+        del self._row_FAIL
+    @row_NULL.deleter
+    def row_NULL( self ):
+        del self._row_NULL
+    # census values
+    # @count_PASS.deleter
+    # def count_PASS( self ):
+    #     del self._count_PASS
+    # @count_FAIL.deleter
+    # def count_FAIL( self ):
+    #     del self._count_FAIL
+    # @count_NULL.deleter
+    # def count_NULL( self ):
+    #     del self._count_NULL
 
-# dantopa@Lax-Millgram:class $ mypy cls_Source_file.py
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-# dantopa@Lax-Millgram:class $ pwd
-# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/aqua/class
+def parse1( myLines ):
+    # marker library
+    xml = ".. code-block:: xml"   # xml
+    header0 = "=="                # major heading
+    header1 = "__"                # minor heading
 
-# dantopa@Lax-Millgram:class $ date
-# Tue Dec  4 20:24:14 MST 2018
+    ## ## parse source file: pass 1
+    loc_xml = list()                # locations container
+    loc_candidate_header0 = list()  # locations container
+    loc_candidate_header1 = list()  # locations container
+
+    numLines = 0
+    for line in myLines:
+        numLines += 1
+        print ( "Line {}: {}".format( numLines, line ) )
+        # xml blocks
+        if line.find( xml ) != -1:
+            print( "xml found in line %s" % numLines )
+            loc_xml.append( numLines )
+        # header 0 blocks ==========
+        elif line.find( header0 ) != -1:
+            if line.find( "+" ) != -1:
+                continue
+            print( "possible header 0 in line %s" % numLines )
+            loc_candidate_header0.append( numLines )
+        # header 1 blocks __________
+        elif line.find( header1 ) != -1:
+            print( "possible header 1 in line %s" % numLines )
+            loc_candidate_header1.append( numLines )
+
+    print ( "{} xml blocks found; locations {}".format( len( loc_xml ), loc_xml ) )
+    print ( "{} header0 candidates found; locations {}".format( len( loc_candidate_header0 ), loc_candidate_header0 ) )
+    print ( "{} header1 candidates found; locations {}".format( len( loc_candidate_header1 ), loc_candidate_header1 ) )
+
+    return ( loc_xml, loc_candidate_header0, loc_candidate_header1 );
+
+# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py
+# Traceback (most recent call last):
+#   File "cls_Source_file.py", line 13, in <module>
+#     class Source_file( object ):
+#   File "cls_Source_file.py", line 183, in Source_file
+#     @count_FAIL.deleter
+# AttributeError: 'function' object has no attribute 'deleter'
+
+# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py
+
+# l127914@pn1249300.lanl.gov:bourbaki $ date
+# Thu Dec  6 12:32:47 MST 2018
+
+# l127914@pn1249300.lanl.gov:bourbaki $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki

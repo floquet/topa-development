@@ -8,7 +8,6 @@
 import datetime             # timestamps
 import os                   # opeating system
 import sys                  # python version
-import uuid                 # Universal Unique IDentifier
 from pathlib import Path    # rename file
 import xlsxwriter           # API for Excel
 # home brew
@@ -26,6 +25,7 @@ if __name__ == "__main__":
 
     # # source data
     mySource = cls_Source_file.Source_file( ) # instantiate
+    print( "mySource.uuid = %s" % mySource.uuid )
     mySource.input_rst = "short.rst"    # setter called
     #mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
     mySource.path_rst = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
@@ -39,19 +39,19 @@ if __name__ == "__main__":
     # # start the book
     myBook = cls_Book.Book( ) # instantiate
     myBook.source_object = mySource
-    # https://docs.python.org/3/library/uuid.html
-    # uuid4: random - more secure
-    # print( "uuid = %s" % uuid.uuid4( ) ) # https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
 
     # first read rst
     myWorkbook = tools_xl.xl_new_workbook( mySource.full_xl )
     ( numLines, myLines ) = tools_parse.reader( mySource.path_name ) # read file as split lines
     myBook.source_object.title = myLines[ 1 ] # harvest title line
-    print( myLines[ 0 ] )
     myBook.source_object.numLines = numLines
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )
     tools_debug.xl_numbered_lines( myWorkbook, myLines )
+
+    # continue parsing - compile lists of target locations
+    ( loc_xml, loc_candidate_header0, loc_candidate_header1 ) = parse1( myLines )  # first parse: candidate headers
+    #parse_header_0( myLines, loc_candidate_header0 )
 
     # write workbook
     myWorkbook.close( )

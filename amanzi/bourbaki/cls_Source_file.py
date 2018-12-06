@@ -92,13 +92,16 @@ class Source_file( object ):
     def count_PASS( self ):
         """Number of requirements PASSed."""
         return self._count_PASS
+    @property
     def count_FAIL( self ):
         """Number of requirements FAILed."""
         return self._count_FAIL
+    @property
     def count_NULL( self ):
         """Number of requirements NULLed."""
         return self._count_NULL
     # line numbers
+    @property
     def list_header0( self ):
         """Culled list of === headers."""
         return self._list_header0
@@ -112,6 +115,7 @@ class Source_file( object ):
     def numLines( self, value ):
         self._numLines = value
     # no @uuid.setter - accomplished at instantiation
+    @input_rst.setter
     def input_rst( self, value ):
         self._input_rst = value
     @path_rst.setter
@@ -268,15 +272,9 @@ class Source_file( object ):
         return
 
 # l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py
-# Traceback (most recent call last):
-#   File "cls_Source_file.py", line 13, in <module>
-#     class Source_file( object ):
-#   File "cls_Source_file.py", line 143, in Source_file
-#     @list_header0.setter
-# AttributeError: 'function' object has no attribute 'setter'
 
 # l127914@pn1249300.lanl.gov:bourbaki $ date
-# Thu Dec  6 15:27:50 MST 2018
+# Thu Dec  6 15:59:19 MST 2018
 
 # l127914@pn1249300.lanl.gov:bourbaki $ pwd
 # /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki

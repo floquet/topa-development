@@ -206,12 +206,33 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def parse_master( self, myLines ):
+    def parse_master( self ):
+        myLines = self.read_file( )
+        self.title = myLines[ 1 ]
         ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = self.parse_candidates( myLines )  # first parse: candidate headers
+        # find chapter headings ====
         self.parse_match_lengths( myLines, loc_candidate_header0 )
+        # find chapter headings ---
         self.parse_match_lengths( myLines, loc_candidate_header1 )
+        # find chapter headings ___
         self.parse_match_lengths( myLines, loc_candidate_header2 )
-        return
+
+        return myLines
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def read_file( self ):
+        ## ## read source file
+        print ( "reading source file %s" % self.full_rst )
+        # https://stackoverflow.com/questions/3277503/in-python-how-do-i-read-a-file-line-by-line-into-a-list
+        with open( self.full_rst ) as f:
+            myLines = f.read().splitlines()  # remove \n
+
+            numLines = len( myLines )
+            print ( "%s lines found" % numLines )
+            self.numLines = numLines
+
+            return myLines;
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

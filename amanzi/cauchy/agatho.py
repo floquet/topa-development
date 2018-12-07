@@ -12,11 +12,12 @@ from pathlib import Path    # rename file
 import xlsxwriter           # API for Excel
 # home brew
 # classes
-import cls_Book             # Book (constains sections, contains requirements)
+import cls_Book             # Book (constains chapters, contains requirements)
+import cls_Chapter          # Book (constains sections, contains requirements)
 import cls_Source_file      # e.q. Amanzi XML Input Specification (Version 2.3-draft)
 # tools
 import tools_debug
-import tools_parse          # file parsing tools
+#import tools_parse          # file parsing tools
 import tools_xl             # spreadsheet authoring tools
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
@@ -28,7 +29,7 @@ if __name__ == "__main__":
     print( "mySource.uuid = %s" % mySource.uuid )
     mySource.input_rst = "short.rst"    # setter called
     #mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
-    mySource.path_rst = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
+    mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
     mySource.full_rst  = mySource.path_rst + mySource.input_rst
 
     # # output file
@@ -42,16 +43,12 @@ if __name__ == "__main__":
 
     # open Excel file for results and intermediate data
     myWorkbook = tools_xl.xl_new_workbook( mySource.full_xl )
-    # parse rst file into a collection of text lines
-    ( numLines, myLines ) = tools_parse.reader( mySource.path_name ) # read file as split lines
-    myBook.source_object.title = myLines[ 1 ] # harvest title line
-    myBook.source_object.numLines = numLines
+
+    # compile lists of target locations
+    myLines = mySource.parse_master( )
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )
     tools_debug.xl_numbered_lines( myWorkbook, myLines )
-
-    # finish parsing - compile lists of target locations
-    mySource.parse_master( myLines )
 
     # write workbook
     myWorkbook.close( )
@@ -61,7 +58,7 @@ if __name__ == "__main__":
     print( "python version %s" % sys.version )
 
 # l127914@pn1249300.lanl.gov:cauchy $ python agatho.py
-# mySource.uuid = 5ee9d90a-867f-4b2b-b32d-61a30887dd1b
+# mySource.uuid = c873eacd-62a0-4c5a-9e35-f1e17111ced3
 # reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
 # 231 lines found
 # 16 xml blocks found; locations [28, 38, 56, 81, 101, 113, 122, 128, 134, 140, 149, 162, 170, 185, 198, 207]
@@ -76,11 +73,12 @@ if __name__ == "__main__":
 # header found in line 156: Time_macro
 # header found in line 178: Cycle_macro
 # header found in line 192: Variable_macro
-
-#  2018-12-06 16:12:32.133212
+#
+#  2018-12-06 17:13:07.349708
 # source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/cauchy/agatho.py
 # python version 3.7.0 (default, Jun 28 2018, 07:39:16)
 # [Clang 4.0.1 (tags/RELEASE_401/final)]
+
 
 # Pope Agatho (died January 681) served as the Pope from 27 June 678 until his death in 681.
 # He heard the appeal of Wilfrid of York, who had been displaced from his See by the division

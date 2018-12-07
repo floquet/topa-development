@@ -34,7 +34,7 @@ class Source_file( object ):
         # line numbers
         self._list_header0  = None
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+#  **   **   ** **   **   ** **   **   ** **   **   **  #
 
     @property
     def title( self ):
@@ -106,7 +106,7 @@ class Source_file( object ):
         """Culled list of === headers."""
         return self._list_header0
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+#  **   **   ** **   **   ** **   **   ** **   **   **  #
 
     @title.setter
     def title( self, value ):
@@ -148,7 +148,7 @@ class Source_file( object ):
     def list_header0( self, value ):
         self._list_header0 = value
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+#  **   **   ** **   **   ** **   **   ** **   **   **  #
 
     @title.deleter
     def title( self ):

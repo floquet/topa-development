@@ -206,12 +206,32 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def parse_master( self, myLines ):
+    def parse_master( self ):
+        myLines = self.read_file( )
+        self.title = myLines[ 1 ]
         ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = self.parse_candidates( myLines )  # first parse: candidate headers
+        # find chapter headings ====
         self.parse_match_lengths( myLines, loc_candidate_header0 )
+        # find chapter headings ---
         self.parse_match_lengths( myLines, loc_candidate_header1 )
+        # find chapter headings ___
         self.parse_match_lengths( myLines, loc_candidate_header2 )
         return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def read_file( self ):
+    ## ## read source file
+    print ( "reading source file %s" % self.path_xl )
+    # https://stackoverflow.com/questions/3277503/in-python-how-do-i-read-a-file-line-by-line-into-a-list
+    with open( self.path_xl ) as f:
+        myLines = f.read().splitlines()  # remove \n
+
+        numLines = len( myLines )
+        print ( "%s lines found" % numLines )
+        self.numLines = numLines
+
+    return ( numLines, myLines );
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -271,10 +291,10 @@ class Source_file( object ):
                 print( "header found in line {}: {} ".format( lineNum - 2, myLines[ lineNum - 2 ] ) )
         return
 
-# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py
+# l127914@pn1249300.lanl.gov:cauchy $ python cls_Source_file.py
 
-# l127914@pn1249300.lanl.gov:bourbaki $ date
-# Thu Dec  6 16:03:57 MST 2018
+# l127914@pn1249300.lanl.gov:cauchy $ date
+# Thu Dec  6 16:57:02 MST 2018
 
-# l127914@pn1249300.lanl.gov:bourbaki $ pwd
-# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki
+# l127914@pn1249300.lanl.gov:cauchy $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/cauchy

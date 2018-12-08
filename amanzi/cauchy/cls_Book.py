@@ -77,12 +77,13 @@ class Book( object ):
         ( loc, txt ) = self.source_object.parse_match_lengths( locations )
         count = 0
         for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
+            count += 1
             myChapter = cls_Chapter.Chapter( )
             myChapter.loc_start = myLoc # first line of chapter
             myChapter.title     = myTxt # chapter title
+            myChapter.num       = count # chapter number
             self.collection_chapters.append( myChapter )
             print( "myChapter = %s" % myChapter )
-            count += 1
         self.numChapters = count
         print( "number of chapters = %s" % count )
         return loc
@@ -91,10 +92,18 @@ class Book( object ):
 
     def mark_chapters_stop( self, start_locations ):
         del start_locations[ 0 ] # remove first element
+        print( "1. start_locations = %s" % start_locations )
+        # https://stackoverflow.com/questions/9304408/how-to-add-an-integer-to-each-element-in-a-list
+        # https://nedbatchelder.com/text/names1.html
+        start_locations = [ l - 1 for l in start_locations ]
+        print( "2. start_locations = %s" % start_locations )
         # https://stackoverflow.com/questions/4426663/how-to-remove-the-first-item-from-a-list
         start_locations.append( self.source_object.numLines )
         for ( c, l ) in zip( self.collection_chapters, start_locations ):
             c.loc_stop = l
+        for c in self.collection_chapters:
+            print( "chapter {}: {}".format( c.num, c.title ) )
+            print( "first, last: {}, {}".format( c.loc_start, c.loc_stop ) )
         return
 
 

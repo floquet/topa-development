@@ -13,6 +13,7 @@ class Chapter( object ):
     def __init__(self):
         self._title         = None # chapter title
         self._key           = None # 01-MD
+        self._num           = None # 01-MD
         self._loc_start     = None # starting line in source document
         self._loc_stop      = None # last line in source document
         self._num_sections  = None
@@ -29,6 +30,10 @@ class Chapter( object ):
     def key( self ):
         """Unique key to distinguish chapter."""
         return self._key
+    @property
+    def num( self ):
+        """Chapter number."""
+        return self._num
     @property
     def loc_start( self ):
         """Line number where chapter starts in source document."""
@@ -64,6 +69,9 @@ class Chapter( object ):
     @key.setter
     def key( self, value ):
         self._key = value
+    @num.setter
+    def num( self, value ):
+        self._num = value
     @loc_start.setter
     def loc_start( self, value ):
         self._loc_start = value
@@ -92,6 +100,9 @@ class Chapter( object ):
     @key.deleter
     def key( self ):
         del self._key
+    @num.deleter
+    def num( self ):
+        del self._num
     @loc_start.deleter
     def loc_start( self ):
         del self._loc_start

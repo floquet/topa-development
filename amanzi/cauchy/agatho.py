@@ -13,7 +13,7 @@ import xlsxwriter           # API for Excel
 # home brew
 # classes
 import cls_Book             # Book (constains chapters, contains requirements)
-import cls_Chapter          # Book (constains sections, contains requirements)
+import cls_Chapter          # chapter (constains sections, contains requirements)
 import cls_Source_file      # e.q. Amanzi XML Input Specification (Version 2.3-draft)
 # tools
 import tools_debug

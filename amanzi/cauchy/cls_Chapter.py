@@ -24,24 +24,31 @@ class Chapter( object ):
     def title( self ):
         """Chapter title."""
         return self._title
+    @property
     def key( self ):
-        """Key to distinguish chapter."""
+        """Unique key to distinguish chapter."""
         return self._key
+    @property
     def loc_start( self ):
         """Line number where chapter starts in source document."""
         return self._loc_start
+    @property
     def num_sections( self ):
         """Number of sections within."""
         return self._num_sections
+    @property
     def num_required( self ):
         """Count of required."""
         return self._num_required
+    @property
     def num_optional( self ):
         """Count of optional."""
         return self._num_optional
+    @property
     def list_required( self ):
         """List of keys for required."""
         return self._list_required
+    @property
     def list_optional( self ):
         """List of keys for optional."""
         return self._list_optional
@@ -49,36 +56,50 @@ class Chapter( object ):
     @title.setter
     def title( self, value ):
         self._title = value
+    @key.setter
     def key( self, value ):
         self._key = value
+    @loc_start.setter
     def loc_start( self, value ):
         self._loc_start = value
+    @num_sections.setter
     def num_sections( self, value ):
         self._num_sections = value
+    @num_required.setter
     def num_required( self, value ):
         self._num_required = value
+    @num_optional.setter
     def num_optional( self, value ):
         self._num_optional = value
+    @list_required.setter
     def list_required( self, value ):
         self._list_required = value
+    @list_optional.setter
     def list_optional( self, value ):
         self._list_optional = value
 
     @title.deleter
     def title( self ):
         del self._title
+    @key.deleter
     def key( self ):
         del self._key
+    @loc_start.deleter
     def loc_start( self ):
         del self._loc_start
+    @num_sections.deleter
     def num_sections( self ):
         del self._num_sections
+    @num_required.deleter
     def num_required( self ):
         del self._num_required
+    @num_optional.deleter
     def num_optional( self ):
         del self._num_optional
+    @list_required.deleter
     def list_required( self ):
         del self._list_required
+    @list_optional.deleter
     def list_optional( self ):
         del self._list_optional
 

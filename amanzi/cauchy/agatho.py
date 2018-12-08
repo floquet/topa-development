@@ -47,7 +47,7 @@ if __name__ == "__main__":
     mySource.parse_master( )
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )
-    tools_debug.xl_numbered_lines( myWorkbook, mySource.myLines )
+    tools_debug.xl_numbered_lines( myWorkbook, mySource )
 
     # write workbook
     myWorkbook.close( )

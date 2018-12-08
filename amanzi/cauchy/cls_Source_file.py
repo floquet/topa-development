@@ -13,6 +13,7 @@ import uuid                 # Universal Unique IDentifier
 class Source_file( object ):
     def __init__( self ):
         self._title         = None # from *.rst, line 2
+        self._myLines       = None # text as a collection of lines, \n removed
         self._numLines      = None
         self._uuid          = uuid.uuid4( ) # de facto time stamp
         # source
@@ -34,12 +35,16 @@ class Source_file( object ):
         # line numbers
         self._list_header0  = None
 
-#  **   **   ** **   **   ** **   **   ** **   **   **  #
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     @property
     def title( self ):
         """Title from source file."""
         return self._title
+    @property
+    def myLines( self ):
+        """Text as a collection of lines with \n removed."""
+        return self._myLines
     @property
     def numLines( self ):
         """Number of lines read in source file."""
@@ -106,13 +111,16 @@ class Source_file( object ):
         """Culled list of === headers."""
         return self._list_header0
 
-#  **   **   ** **   **   ** **   **   ** **   **   **  #
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     @title.setter
     def title( self, value ):
         self._title = value
     @numLines.setter
     def numLines( self, value ):
+        self._numLines = value
+    @myLines.setter
+    def myLines( self, value ):
         self._numLines = value
     # no @uuid.setter - accomplished at instantiation
     @input_rst.setter
@@ -148,11 +156,14 @@ class Source_file( object ):
     def list_header0( self, value ):
         self._list_header0 = value
 
-#  **   **   ** **   **   ** **   **   ** **   **   **  #
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     @title.deleter
     def title( self ):
         del self._title
+    @myLines.deleter
+    def myLines( self ):
+        del self._myLines
     @numLines.deleter
     def numLines( self ):
         del self._numLines

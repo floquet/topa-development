@@ -13,7 +13,7 @@ import tools_xl             # spreadsheet authoring tools
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-def xl_numbered_lines( thisWorkbook, theseLines ):
+def xl_numbered_lines( thisWorkbook, thisSource ):
 
     sheet_numbered_lines = tools_xl.xl_sheet_generate( thisWorkbook, "numbered lines" )
 
@@ -22,7 +22,10 @@ def xl_numbered_lines( thisWorkbook, theseLines ):
     col = 0;
     myText = thisWorkbook.add_format({'num_format': '@'})
     counter = 0;
-    for line in theseLines:
+    # Excel treats === and --- as operations, not text
+    # To circumvent, use the TEXT function
+    # which chokes on strings containing double quotes
+    for line in thisSource.myLines:
         sheet_numbered_lines.write( row, col, counter )
         myString = '= TEXT( "' + line + '", "=" )'
         #sheet_numbered_lines.write_formula( row, col + 1, myString )

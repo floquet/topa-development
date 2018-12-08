@@ -56,21 +56,26 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-# dantopa@Lax-Millgram:cauchy $ py agatho.py
+# dantopa@Lax-Millgram:cauchy $ py boniface.py
 # reading source file /Users/dantopa/Documents/repos/GitHub/topa-development/data/short.rst
-# myChapter = <cls_Chapter.Chapter object at 0x101a26198>
-# myChapter = <cls_Chapter.Chapter object at 0x101a261d0>
-# myChapter = <cls_Chapter.Chapter object at 0x101a4ca20>
-# myChapter = <cls_Chapter.Chapter object at 0x101a4cba8>
+# myChapter = <cls_Chapter.Chapter object at 0x106ade3c8>
+# myChapter = <cls_Chapter.Chapter object at 0x106ade2e8>
+# myChapter = <cls_Chapter.Chapter object at 0x106b58c88>
+# myChapter = <cls_Chapter.Chapter object at 0x106b58e48>
 # number of chapters = 4
+# 1. start_locations = [16, 32, 95]
+# 2. start_locations = [15, 31, 94]
+# chapter 1: Overview
+# first, last: 7, 15
+# chapter 2: Amanzi Input
+# first, last: 16, 31
+# chapter 3: Model Description
+# first, last: 32, 94
+# chapter 4: Definitions
+# first, last: 95, 231
 
-#  2018-12-08 11:29:40.616303
-# source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/agatho.py
-# python version 3.6.7 (default, Oct 21 2018, 09:26:25)
-# [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
-
-#  2018-12-08 10:54:59.515954
-# source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/agatho.py
+#  2018-12-08 11:52:11.316267
+# source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/boniface.py
 # python version 3.6.7 (default, Oct 21 2018, 09:26:25)
 # [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
 

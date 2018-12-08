@@ -24,12 +24,17 @@
 class Book( object ):
     def __init__(self):
         self._source_object       = None # source file, meta data
+        self._numChapters         = None # number of chapters
         self._collection_chapters = None # collection of chapter objects
 
     @property
     def source_object( self ):
         """Source file object."""
         return self._source_object
+    @property
+    def numChapters( self ):
+        """Number of chapter objects."""
+        return self._numChapters
     @property
     def collection_chapters( self ):
         """Collection of chapter objects."""
@@ -38,6 +43,9 @@ class Book( object ):
     @source_object.setter
     def source_object( self, value ):
         self._source_object = value
+    @numChapters.setter
+    def numChapters( self, value ):
+        self._numChapters = value
     @collection_chapters.setter
     def collection_chapters( self, value ):
         self._collection_chapters = value
@@ -45,6 +53,9 @@ class Book( object ):
     @source_object.deleter
     def source_object( self ):
         del self._source_object
+    @numChapters.deleter
+    def numChapters( self ):
+        del self.numChapters
     @collection_chapters.deleter
     def collection_chapters( self ):
         del self.collection_chapters
@@ -54,8 +65,11 @@ class Book( object ):
     def mark_chapters( self ):
         locations = self.source_object.parse_alpha( "===" )
         myResults = self.source_object.parse_match_lengths( locations )
+        count = 0
         for loc, txt in myResults:
             self.collection_chapters.append( Chapter( loc_start = loc, title = txt ) )
+            count += 1
+        self.numChapters = count
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
@@ -66,10 +80,10 @@ class Book( object ):
         return locations
         locations.append( self.source_object.numLines )
 
-# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Book.py
+# dantopa@Lax-Millgram:cauchy $ py cls_Book.py
 
-# l127914@pn1249300.lanl.gov:bourbaki $ date
-# Thu Dec  6 15:56:44 MST 2018
+# dantopa@Lax-Millgram:cauchy $ date
+# Fri Dec  7 20:07:36 MST 2018
 
-# l127914@pn1249300.lanl.gov:bourbaki $ pwd
-# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki
+# dantopa@Lax-Millgram:cauchy $ pwd
+# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy

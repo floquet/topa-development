@@ -25,7 +25,6 @@ if __name__ == "__main__":
 
     # # source data
     mySource = cls_Source_file.Source_file( ) # instantiate
-    print( "mySource.uuid = %s" % mySource.uuid )
     mySource.input_rst = "short.rst"    # setter called
     mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
     #mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
@@ -45,6 +44,7 @@ if __name__ == "__main__":
 
     # compile lists of target locations
     # mySource.parse_master( )
+    myBook.source_object.read_file( )
     myBook.mark_chapters( )
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )

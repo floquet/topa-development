@@ -45,6 +45,7 @@ if __name__ == "__main__":
     # compile lists of target locations
     # mySource.parse_master( )
     myBook.source_object.read_file( )
+    # myChapter = cls_Chapter.Chapter( loc_start = 1, title = "boo" )
     myBook.mark_chapters( )
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )
@@ -58,18 +59,24 @@ if __name__ == "__main__":
     print( "python version %s" % sys.version )
 
 # dantopa@Lax-Millgram:cauchy $ py agatho.py
-# mySource.uuid = b61d3c57-5c6c-49eb-9383-ecd9255c0f89
-# self.source_object.parse_alpha
+# reading source file /Users/dantopa/Documents/repos/GitHub/topa-development/data/short.rst
 # in parse_alpha
-# self.myLines = None
-# Traceback (most recent call last):
-#   File "agatho.py", line 48, in <module>
-#     myBook.mark_chapters( )
-#   File "/Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/cls_Book.py", line 67, in mark_chapters
-#     locations = self.source_object.parse_alpha( "===" )
-#   File "/Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/cls_Source_file.py", line 254, in parse_alpha
-#     for line in self.myLines:
-# TypeError: 'NoneType' object is not iterable
+# locations = [1, 3, 9, 18, 34, 97]
+# header found in line 7: Overview
+# header found in line 16: Amanzi Input
+# header found in line 32: Model Description
+# header found in line 95: Definitions
+# ( loc, txt ) = [7, 16, 32, 95]['Overview', 'Amanzi Input', 'Model Description', 'Definitions']
+# ( loc, txt ) = ([7, 16, 32, 95], ['Overview', 'Amanzi Input', 'Model Description', 'Definitions'])
+# ( myLoc, myTxt ) = 7, Overview
+# ( myLoc, myTxt ) = 16, Amanzi Input
+# ( myLoc, myTxt ) = 32, Model Description
+# ( myLoc, myTxt ) = 95, Definitions
+
+#  2018-12-08 10:54:59.515954
+# source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/agatho.py
+# python version 3.6.7 (default, Oct 21 2018, 09:26:25)
+# [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
 
 
 # Pope Agatho (died January 681) served as the Pope from 27 June 678 until his death in 681.

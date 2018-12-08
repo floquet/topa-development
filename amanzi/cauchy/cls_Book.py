@@ -19,13 +19,16 @@
 # Book class
 #  composed of chapters
 
+# classes
+import cls_Chapter          # chapter (constains sections, contains requirements)
+
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 class Book( object ):
     def __init__(self):
         self._source_object       = None # source file, meta data
         self._numChapters         = None # number of chapters
-        self._collection_chapters = None # collection of chapter objects
+        self._collection_chapters = list( ) # collection of chapter objects
 
     @property
     def source_object( self ):
@@ -70,7 +73,10 @@ class Book( object ):
         count = 0
         for myLoc, myTxt in zip( loc, txt ):
             print( "( myLoc, myTxt ) = {}, {}".format( myLoc, myTxt ) )
-            self.collection_chapters.append( Chapter( loc_start = myLoc, title = myTxt ) )
+            myChapter = cls_Chapter.Chapter( )
+            myChapter.loc_start = myLoc
+            myChapter.title     = myTxt
+            self.collection_chapters.append( myChapter )
             count += 1
         # for loc, txt in myResults:
         #     self.collection_chapters.append( Chapter( loc_start = loc, title = txt ) )

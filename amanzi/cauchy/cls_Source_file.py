@@ -220,15 +220,15 @@ class Source_file( object ):
     def parse_master( self ):
         self.myLines = self.read_file( )
         self.title = self.myLines[ 1 ]
-        ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = self.parse_candidates( myLines )  # first parse: candidate headers
+        ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = self.parse_candidates( self.myLines )  # first parse: candidate headers
         # find chapter headings ====
-        self.parse_match_lengths( myLines, loc_candidate_header0 )
+        self.parse_match_lengths( self.myLines, loc_candidate_header0 )
         # find chapter headings ---
-        self.parse_match_lengths( myLines, loc_candidate_header1 )
+        self.parse_match_lengths( self.myLines, loc_candidate_header1 )
         # find chapter headings ___
-        self.parse_match_lengths( myLines, loc_candidate_header2 )
+        self.parse_match_lengths( self.myLines, loc_candidate_header2 )
 
-        return myLines
+        return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -237,10 +237,11 @@ class Source_file( object ):
         print ( "reading source file %s" % self.full_rst )
         # https://stackoverflow.com/questions/3277503/in-python-how-do-i-read-a-file-line-by-line-into-a-list
         with open( self.full_rst ) as f:
-            self.myLines = f.read().splitlines()  # remove \n
+            self.myLines = f.read( ).splitlines( )  # remove \n
+            print( "self.myLines.myLines = %s" % self.myLines )
             self.numLines = len( self.myLines )
 
-            return
+        return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -258,7 +259,7 @@ class Source_file( object ):
         loc_candidate_header2 = list( )  # ___ locations container
 
         lineNum = 0
-        for line in myLines:
+        for line in self.myLines:
             lineNum += 1
             # xml blocks
             if line.find( xml ) != -1:
@@ -300,10 +301,10 @@ class Source_file( object ):
                 print( "header found in line {}: {} ".format( lineNum - 2, self.myLines[ lineNum - 2 ] ) )
         return
 
-# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py
+# dantopa@Lax-Millgram:cauchy $ py cls_Source_file.py
 
-# l127914@pn1249300.lanl.gov:bourbaki $ date
-# Thu Dec  6 16:03:57 MST 2018
+# dantopa@Lax-Millgram:cauchy $ date
+# Fri Dec  7 18:38:46 MST 2018
 
-# l127914@pn1249300.lanl.gov:bourbaki $ pwd
-# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki
+# dantopa@Lax-Millgram:cauchy $ pwd
+# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy

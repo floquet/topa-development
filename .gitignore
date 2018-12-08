@@ -1,6 +1,6 @@
 .swp
 .DS*
-.pyc
+*.pyc
 *.gz
 ~*
 *.aux

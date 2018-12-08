@@ -43,7 +43,7 @@ class Source_file( object ):
         return self._title
     @property
     def myLines( self ):
-        """Text as a collection of lines with \n removed."""
+        """Text as a collection of lines with EOL removed."""
         return self._myLines
     @property
     def numLines( self ):
@@ -218,8 +218,8 @@ class Source_file( object ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def parse_master( self ):
-        myLines = self.read_file( )
-        self.title = myLines[ 1 ]
+        self.myLines = self.read_file( )
+        self.title = self.myLines[ 1 ]
         ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = self.parse_candidates( myLines )  # first parse: candidate headers
         # find chapter headings ====
         self.parse_match_lengths( myLines, loc_candidate_header0 )
@@ -237,17 +237,14 @@ class Source_file( object ):
         print ( "reading source file %s" % self.full_rst )
         # https://stackoverflow.com/questions/3277503/in-python-how-do-i-read-a-file-line-by-line-into-a-list
         with open( self.full_rst ) as f:
-            myLines = f.read().splitlines()  # remove \n
+            self.myLines = f.read().splitlines()  # remove \n
+            self.numLines = len( self.myLines )
 
-            numLines = len( myLines )
-            print ( "%s lines found" % numLines )
-            self.numLines = numLines
-
-            return myLines;
+            return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def parse_candidates( self, myLines ):
+    def parse_candidates( self ):
         # marker library
         xml = ".. code-block:: xml"   # xml
         header0 = "=="                # major heading
@@ -291,16 +288,16 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def parse_match_lengths( self, myLines, loc_list ): # vet candidates
+    def parse_match_lengths( self, loc_list ): # vet candidates
         loc = list( )  # location
         txt = list( )  # text
         for lineNum in loc_list:
-            lineLengthA = len( myLines[ lineNum - 1 ] )
-            lineLengthB = len( myLines[ lineNum - 2 ] )
+            lineLengthA = len( self.myLines[ lineNum - 1 ] )
+            lineLengthB = len( self.myLines[ lineNum - 2 ] )
             if lineLengthA == lineLengthB:
                 loc.append( lineNum - 2 )
-                txt.append( myLines[ lineNum - 2 ] )
-                print( "header found in line {}: {} ".format( lineNum - 2, myLines[ lineNum - 2 ] ) )
+                txt.append( self.myLines[ lineNum - 2 ] )
+                print( "header found in line {}: {} ".format( lineNum - 2, self.myLines[ lineNum - 2 ] ) )
         return
 
 # l127914@pn1249300.lanl.gov:bourbaki $ python cls_Source_file.py

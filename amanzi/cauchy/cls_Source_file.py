@@ -316,7 +316,7 @@ class Source_file( object ):
                 txt.append( self.myLines[ lineNum - 2 ] )
                 print( "header found in line {}: {} ".format( lineNum - 2, self.myLines[ lineNum - 2 ] ) )
         print( "( loc, txt ) = {}{}".format( loc, txt ) )
-        return ( loc, txt )
+        return ( loc, txt );
 
 # dantopa@Lax-Millgram:cauchy $ py cls_Source_file.py
 

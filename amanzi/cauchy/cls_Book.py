@@ -67,20 +67,14 @@ class Book( object ):
 
     def mark_chapters( self ):
         locations = self.source_object.parse_alpha( "===" )
-        print( "locations = %s" % locations )
         ( loc, txt ) = self.source_object.parse_match_lengths( locations )
-        print( "( loc, txt ) = {}".format( ( loc, txt ) ) )
         count = 0
-        for myLoc, myTxt in zip( loc, txt ):
-            print( "( myLoc, myTxt ) = {}, {}".format( myLoc, myTxt ) )
+        for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
             myChapter = cls_Chapter.Chapter( )
             myChapter.loc_start = myLoc
             myChapter.title     = myTxt
             self.collection_chapters.append( myChapter )
             count += 1
-        # for loc, txt in myResults:
-        #     self.collection_chapters.append( Chapter( loc_start = loc, title = txt ) )
-        #     count += 1
         self.numChapters = count
         return
 

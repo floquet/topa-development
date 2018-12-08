@@ -43,9 +43,7 @@ if __name__ == "__main__":
     myWorkbook = tools_xl.xl_new_workbook( mySource.full_xl )
 
     # compile lists of target locations
-    # mySource.parse_master( )
     myBook.source_object.read_file( )
-    # myChapter = cls_Chapter.Chapter( loc_start = 1, title = "boo" )
     myBook.mark_chapters( )
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )
@@ -72,7 +70,7 @@ if __name__ == "__main__":
 # ( myLoc, myTxt ) = 16, Amanzi Input
 # ( myLoc, myTxt ) = 32, Model Description
 # ( myLoc, myTxt ) = 95, Definitions
-    
+
 #  2018-12-08 10:54:59.515954
 # source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/agatho.py
 # python version 3.6.7 (default, Oct 21 2018, 09:26:25)

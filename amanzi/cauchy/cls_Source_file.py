@@ -249,8 +249,6 @@ class Source_file( object ):
         locations = list( ) # list of line numbers
 
         lineNum = 0
-        print( "in parse_alpha" )
-        #print( "self.myLines = %s" % self.myLines )
         for line in self.myLines:
             lineNum += 1
             if line.find( search_string ) != -1:
@@ -314,8 +312,6 @@ class Source_file( object ):
             if lineLengthA == lineLengthB:
                 loc.append( lineNum - 2 )
                 txt.append( self.myLines[ lineNum - 2 ] )
-                print( "header found in line {}: {} ".format( lineNum - 2, self.myLines[ lineNum - 2 ] ) )
-        print( "( loc, txt ) = {}{}".format( loc, txt ) )
         return ( loc, txt );
 
 # dantopa@Lax-Millgram:cauchy $ py cls_Source_file.py

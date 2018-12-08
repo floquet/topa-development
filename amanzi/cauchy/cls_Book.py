@@ -64,6 +64,7 @@ class Book( object ):
 
     def mark_chapters( self ):
         locations = self.source_object.parse_alpha( "===" )
+        print( "locations = %s" % locations )
         myResults = self.source_object.parse_match_lengths( locations )
         print( "myResults = %s" % myResults )
         count = 0

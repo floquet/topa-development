@@ -249,6 +249,8 @@ class Source_file( object ):
         locations = list( ) # list of line numbers
 
         lineNum = 0
+        print( "in parse_alpha" )
+        print( "self.myLines = %s" % self.myLines )
         for line in self.myLines:
             lineNum += 1
             if line.find( search_string ) != -1:

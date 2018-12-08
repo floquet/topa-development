@@ -57,26 +57,19 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-# dantopa@Lax-Millgram:cauchy $ git commpy agatho.py
-# mySource.uuid = 74faae3c-c914-4bf1-b2d9-5b4055bf4258
-# reading source file /Users/dantopa/Documents/repos/GitHub/topa-development/data/short.rst
-# 16 xml blocks found; locations [28, 38, 56, 81, 101, 113, 122, 128, 134, 140, 149, 162, 170, 185, 198, 207]
-# 2 header0 '===' candidates found; locations [34, 97]
-# 3 header1 '---' candidates found; locations [48, 109, 145]
-# 3 header2 '___' candidates found; locations [158, 180, 194]
-# header found in line 32: Model Description
-# header found in line 95: Definitions
-# header found in line 46: Units
-# header found in line 107: Constants
-# header found in line 143: Macros
-# header found in line 156: Time_macro
-# header found in line 178: Cycle_macro
-# header found in line 192: Variable_macro
-
-#  2018-12-07 18:52:37.153886
-# source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/agatho.py
-# python version 3.6.7 (default, Oct 21 2018, 09:26:25)
-# [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+# dantopa@Lax-Millgram:cauchy $ py agatho.py
+# mySource.uuid = b61d3c57-5c6c-49eb-9383-ecd9255c0f89
+# self.source_object.parse_alpha
+# in parse_alpha
+# self.myLines = None
+# Traceback (most recent call last):
+#   File "agatho.py", line 48, in <module>
+#     myBook.mark_chapters( )
+#   File "/Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/cls_Book.py", line 67, in mark_chapters
+#     locations = self.source_object.parse_alpha( "===" )
+#   File "/Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/cls_Source_file.py", line 254, in parse_alpha
+#     for line in self.myLines:
+# TypeError: 'NoneType' object is not iterable
 
 
 # Pope Agatho (died January 681) served as the Pope from 27 June 678 until his death in 681.

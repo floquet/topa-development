@@ -63,8 +63,10 @@ class Book( object ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters( self ):
+        print( "self.source_object.parse_alpha" )
         locations = self.source_object.parse_alpha( "===" )
         myResults = self.source_object.parse_match_lengths( locations )
+        print( "myResults = %s" % myResults )
         count = 0
         for loc, txt in myResults:
             self.collection_chapters.append( Chapter( loc_start = loc, title = txt ) )

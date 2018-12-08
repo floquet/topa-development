@@ -75,8 +75,9 @@ if __name__ == "__main__":
 # [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
 
 
-# Pope Agatho (died January 681) served as the Pope from 27 June 678 until his death in 681.
-# He heard the appeal of Wilfrid of York, who had been displaced from his See by the division
-# of the Archdiocese ordered by Theodore of Canterbury. During Agatho's tenure, the
-# Sixth Ecumenical Council was convened which dealt with the monothelitism controversy. He is
-# venerated as a saint by both the Catholic and Eastern Orthodox Churches.
+# Pope Boniface I (Latin: Bonifatius I; died 4 September 422) was Pope from
+# 28 December 418 to his death in 422. His election was disputed by the supporters
+# of Eulalius, until the dispute was settled by the Emperor. Boniface was active
+# maintaining church discipline and he restored certain privileges to the
+# metropolitical sees of Narbonne and Vienne, exempting them from any subjection
+# to the primacy of Arles.

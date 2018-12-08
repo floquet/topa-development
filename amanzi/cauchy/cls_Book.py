@@ -66,25 +66,37 @@ class Book( object ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters( self ):
+        start_locations = self.mark_chapters_start( )
+        self.mark_chapters_stop( start_locations )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def mark_chapters_start( self ):
         locations = self.source_object.parse_alpha( "===" )
         ( loc, txt ) = self.source_object.parse_match_lengths( locations )
         count = 0
         for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
             myChapter = cls_Chapter.Chapter( )
-            myChapter.loc_start = myLoc
-            myChapter.title     = myTxt
+            myChapter.loc_start = myLoc # first line of chapter
+            myChapter.title     = myTxt # chapter title
             self.collection_chapters.append( myChapter )
+            print( "myChapter = %s" % myChapter )
             count += 1
         self.numChapters = count
-        return
+        print( "number of chapters = %s" % count )
+        return loc
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def create_chapters( self, locations ):
-        locations = self.source_object.parse_alpha( "===" )
-        locations.append( self.source_object.numLines )
-        return locations
-        locations.append( self.source_object.numLines )
+    def mark_chapters_stop( self, start_locations ):
+        del start_locations[ 0 ] # remove first element
+        # https://stackoverflow.com/questions/4426663/how-to-remove-the-first-item-from-a-list
+        start_locations.append( self.source_object.numLines )
+        for ( c, l ) in zip( self.collection_chapters, start_locations ):
+            c.loc_stop = l
+        return
+
 
 # dantopa@Lax-Millgram:cauchy $ py cls_Book.py
 

@@ -244,6 +244,21 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+    def parse_alpha( self, search_string ):
+
+        locations = list( ) # list of line numbers
+
+        lineNum = 0
+        for line in self.myLines:
+            lineNum += 1
+            if line.find( search_string ) != -1:
+                if line.find( "+" ) != -1:
+                    continue
+                locations.append( lineNum )
+        return locations
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
     def parse_candidates( self ):
         # marker library
         xml = ".. code-block:: xml"   # xml
@@ -298,7 +313,7 @@ class Source_file( object ):
                 loc.append( lineNum - 2 )
                 txt.append( self.myLines[ lineNum - 2 ] )
                 print( "header found in line {}: {} ".format( lineNum - 2, self.myLines[ lineNum - 2 ] ) )
-        return
+        return ( loc, txt )
 
 # dantopa@Lax-Millgram:cauchy $ py cls_Source_file.py
 

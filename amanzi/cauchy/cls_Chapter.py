@@ -14,6 +14,7 @@ class Chapter( object ):
         self._title         = None # chapter title
         self._key           = None # 01-MD
         self._loc_start     = None # starting line in source document
+        self._loc_stop      = None # last line in source document
         self._num_sections  = None
         self._num_required  = None
         self._num_optional  = None
@@ -32,6 +33,10 @@ class Chapter( object ):
     def loc_start( self ):
         """Line number where chapter starts in source document."""
         return self._loc_start
+    @property
+    def loc_stop( self ):
+        """Line number where chapter end in source document."""
+        return self._loc_stop
     @property
     def num_sections( self ):
         """Number of sections within."""
@@ -62,6 +67,9 @@ class Chapter( object ):
     @loc_start.setter
     def loc_start( self, value ):
         self._loc_start = value
+    @loc_stop.setter
+    def loc_stop( self, value ):
+        self._loc_stop = value
     @num_sections.setter
     def num_sections( self, value ):
         self._num_sections = value
@@ -87,6 +95,9 @@ class Chapter( object ):
     @loc_start.deleter
     def loc_start( self ):
         del self._loc_start
+    @loc_stop.deleter
+    def loc_stop( self ):
+        del self._loc_stop
     @num_sections.deleter
     def num_sections( self ):
         del self._num_sections
@@ -103,10 +114,10 @@ class Chapter( object ):
     def list_optional( self ):
         del self._list_optional
 
-# l127914@pn1249300.lanl.gov:bourbaki $ python cls_Chapter.py
+# dantopa@Lax-Millgram:cauchy $ py cls_Chapter.py
 
-# l127914@pn1249300.lanl.gov:bourbaki $ date
-# Thu Dec  6 15:46:44 MST 2018
+# dantopa@Lax-Millgram:cauchy $ date
+# Fri Dec  7 19:41:36 MST 2018
 
-# l127914@pn1249300.lanl.gov:bourbaki $ pwd
-# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/bourbaki
+# dantopa@Lax-Millgram:cauchy $ pwd
+# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy

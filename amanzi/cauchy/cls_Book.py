@@ -51,6 +51,21 @@ class Book( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+    def mark_chapters( self ):
+        locations = self.source_object.parse_alpha( "===" )
+        myResults = self.source_object.parse_match_lengths( locations )
+        for loc, txt in myResults:
+            self.collection_chapters.append( Chapter( loc_start = loc, title = txt ) )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def create_chapters( self, locations ):
+        locations = self.source_object.parse_alpha( "===" )
+        locations.append( self.source_object.numLines )
+        return locations
+        locations.append( self.source_object.numLines )
+
 # l127914@pn1249300.lanl.gov:bourbaki $ python cls_Book.py
 
 # l127914@pn1249300.lanl.gov:bourbaki $ date

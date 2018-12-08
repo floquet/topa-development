@@ -121,7 +121,7 @@ class Source_file( object ):
         self._numLines = value
     @myLines.setter
     def myLines( self, value ):
-        self._numLines = value
+        self._myLines = value
     # no @uuid.setter - accomplished at instantiation
     @input_rst.setter
     def input_rst( self, value ):
@@ -218,15 +218,15 @@ class Source_file( object ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def parse_master( self ):
-        self.myLines = self.read_file( )
+        self.read_file( )
         self.title = self.myLines[ 1 ]
-        ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = self.parse_candidates( self.myLines )  # first parse: candidate headers
+        ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = self.parse_candidates( )  # first parse: candidate headers
         # find chapter headings ====
-        self.parse_match_lengths( self.myLines, loc_candidate_header0 )
+        self.parse_match_lengths( loc_candidate_header0 )
         # find chapter headings ---
-        self.parse_match_lengths( self.myLines, loc_candidate_header1 )
+        self.parse_match_lengths( loc_candidate_header1 )
         # find chapter headings ___
-        self.parse_match_lengths( self.myLines, loc_candidate_header2 )
+        self.parse_match_lengths( loc_candidate_header2 )
 
         return
 
@@ -237,8 +237,7 @@ class Source_file( object ):
         print ( "reading source file %s" % self.full_rst )
         # https://stackoverflow.com/questions/3277503/in-python-how-do-i-read-a-file-line-by-line-into-a-list
         with open( self.full_rst ) as f:
-            self.myLines = f.read( ).splitlines( )  # remove \n
-            print( "self.myLines.myLines = %s" % self.myLines )
+            self.myLines = f.read( ).splitlines( )
             self.numLines = len( self.myLines )
 
         return

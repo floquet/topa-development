@@ -44,7 +44,7 @@ if __name__ == "__main__":
     myWorkbook = tools_xl.xl_new_workbook( mySource.full_xl )
 
     # compile lists of target locations
-    mySource.parse_master( myBook )
+    mySource.parse_master( )
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )
     tools_debug.xl_numbered_lines( myWorkbook, mySource.myLines )

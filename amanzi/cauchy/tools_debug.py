@@ -5,7 +5,8 @@
 # # Daniel Topa     LANL/CCS-2    dantopa@lanl.gov  505 667 0817
 
 # # Debug tools
-# reader( file_source )
+# xl_numbered_lines( thisWorkbook, theseLines )
+# xl_dramatis_personae( thisWorkbook, thisBook )
 
 # # imports
 import tools_xl             # spreadsheet authoring tools

@@ -13,6 +13,7 @@ import uuid                 # Universal Unique IDentifier
 class Source_file( object ):
     def __init__( self ):
         self._title         = None # from *.rst, line 2
+        self._myLines       = None # text as a collection of lines, \n removed
         self._numLines      = None
         self._uuid          = uuid.uuid4( ) # de facto time stamp
         # source
@@ -40,6 +41,10 @@ class Source_file( object ):
     def title( self ):
         """Title from source file."""
         return self._title
+    @property
+    def myLines( self ):
+        """Text as a collection of lines with \n removed."""
+        return self._myLines
     @property
     def numLines( self ):
         """Number of lines read in source file."""
@@ -114,6 +119,9 @@ class Source_file( object ):
     @numLines.setter
     def numLines( self, value ):
         self._numLines = value
+    @myLines.setter
+    def myLines( self, value ):
+        self._numLines = value
     # no @uuid.setter - accomplished at instantiation
     @input_rst.setter
     def input_rst( self, value ):
@@ -153,6 +161,9 @@ class Source_file( object ):
     @title.deleter
     def title( self ):
         del self._title
+    @myLines.deleter
+    def myLines( self ):
+        del self._myLines
     @numLines.deleter
     def numLines( self ):
         del self._numLines
@@ -206,17 +217,18 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def parse_master( self ):
-        myLines = self.read_file( )
-        self.title = myLines[ 1 ]
+    def parse_master( self, thisBook ):
+        self.read_file( )
+        self.title = self.myLines[ 1 ]  # document title
+        # list of line locations
         ( loc_xml, loc_candidate_header0, loc_candidate_header1, loc_candidate_header2 ) = self.parse_candidates( myLines )  # first parse: candidate headers
         # find chapter headings ====
-        self.parse_match_lengths( myLines, loc_candidate_header0 )
+        ( loc0, txt0 ) = self.parse_match_lengths( loc_candidate_header0 )
         # find chapter headings ---
-        self.parse_match_lengths( myLines, loc_candidate_header1 )
+        ( loc1, txt1 ) = self.parse_match_lengths( loc_candidate_header1 )
         # find chapter headings ___
-        self.parse_match_lengths( myLines, loc_candidate_header2 )
-        return
+        ( loc2, txt2 ) = self.parse_match_lengths( loc_candidate_header2 )
+        return ( ( loc0, txt0 ), ( loc1, txt1 ), ( loc2, txt2 ) )
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -225,13 +237,11 @@ class Source_file( object ):
     print ( "reading source file %s" % self.path_xl )
     # https://stackoverflow.com/questions/3277503/in-python-how-do-i-read-a-file-line-by-line-into-a-list
     with open( self.path_xl ) as f:
-        myLines = f.read().splitlines()  # remove \n
+        self.myLines = f.read( ).splitlines( )  # remove \n
+        print ( "%s lines found" % self.numLines )
+        self.numLines = len( self.myLines )
 
-        numLines = len( myLines )
-        print ( "%s lines found" % numLines )
-        self.numLines = numLines
-
-    return ( numLines, myLines );
+    return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -279,22 +289,22 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def parse_match_lengths( self, myLines, loc_list ): # vet candidates
+    def parse_match_lengths( self, loc_list ): # vet candidates
         loc = list( )  # location
         txt = list( )  # text
         for lineNum in loc_list:
-            lineLengthA = len( myLines[ lineNum - 1 ] )
-            lineLengthB = len( myLines[ lineNum - 2 ] )
+            lineLengthA = len( self.myLines[ lineNum - 1 ] )
+            lineLengthB = len( self.myLines[ lineNum - 2 ] )
             if lineLengthA == lineLengthB:
                 loc.append( lineNum - 2 )
-                txt.append( myLines[ lineNum - 2 ] )
+                txt.append( self.myLines[ lineNum - 2 ] )
                 print( "header found in line {}: {} ".format( lineNum - 2, myLines[ lineNum - 2 ] ) )
-        return
+        return ( loc, txt )
 
-# l127914@pn1249300.lanl.gov:cauchy $ python cls_Source_file.py
+# dantopa@Lax-Millgram:cauchy $ py cls_Source_file.py
 
-# l127914@pn1249300.lanl.gov:cauchy $ date
-# Thu Dec  6 16:57:02 MST 2018
+# dantopa@Lax-Millgram:cauchy $ date
+# Fri Dec  7 17:48:29 MST 2018
 
-# l127914@pn1249300.lanl.gov:cauchy $ pwd
-# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/cauchy
+# dantopa@Lax-Millgram:cauchy $ pwd
+# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy

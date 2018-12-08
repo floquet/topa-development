@@ -27,8 +27,8 @@ if __name__ == "__main__":
     mySource = cls_Source_file.Source_file( ) # instantiate
     print( "mySource.uuid = %s" % mySource.uuid )
     mySource.input_rst = "short.rst"    # setter called
-    #mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
-    mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
+    mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
+    #mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
     mySource.full_rst  = mySource.path_rst + mySource.input_rst
 
     # # output file
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     myWorkbook = tools_xl.xl_new_workbook( mySource.full_xl )
 
     # compile lists of target locations
-    myLines = mySource.parse_master( )
+    mySource.parse_master( myBook )
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( myWorkbook, myBook )
     tools_debug.xl_numbered_lines( myWorkbook, myLines )
@@ -56,9 +56,9 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-# l127914@pn1249300.lanl.gov:cauchy $ python agatho.py
-# mySource.uuid = c873eacd-62a0-4c5a-9e35-f1e17111ced3
-# reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
+# dantopa@Lax-Millgram:cauchy $ py agatho.py
+# mySource.uuid = 6bc925db-51ce-47c2-acbd-a79b1d9b3d76
+# reading source file /Users/dantopa/Documents/repos/GitHub/topa-development/data/short.rst
 # 231 lines found
 # 16 xml blocks found; locations [28, 38, 56, 81, 101, 113, 122, 128, 134, 140, 149, 162, 170, 185, 198, 207]
 # 2 header0 '===' candidates found; locations [34, 97]
@@ -72,11 +72,11 @@ if __name__ == "__main__":
 # header found in line 156: Time_macro
 # header found in line 178: Cycle_macro
 # header found in line 192: Variable_macro
-#
-#  2018-12-06 17:13:07.349708
-# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/cauchy/agatho.py
-# python version 3.7.0 (default, Jun 28 2018, 07:39:16)
-# [Clang 4.0.1 (tags/RELEASE_401/final)]
+
+#  2018-12-07 17:36:16.973970
+# source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/agatho.py
+# python version 3.6.7 (default, Oct 21 2018, 09:26:25)
+# [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
 
 
 # Pope Agatho (died January 681) served as the Pope from 27 June 678 until his death in 681.

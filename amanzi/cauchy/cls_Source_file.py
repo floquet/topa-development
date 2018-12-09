@@ -247,14 +247,16 @@ class Source_file( object ):
     def parse_alpha( self, search_string, alpha, omega ):
 
         locations = list( ) # list of line numbers
-        print( "alpha, omega = {},{}".format( alpha, omega ) )
         for lineNum in range( alpha, omega ):
-            print( "lineNum = %s" % lineNum )
+            #print( "lineNum = %s" % lineNum )
             line = self.myLines[ lineNum ]
+            #print( "line = %s" % line )
             if line.find( search_string ) != -1:
                 if line.find( "+" ) != -1:
                     continue
                 locations.append( lineNum )
+                print( "line {}: {}".format( lineNum, line))
+        #print( "locations = %s" % locations)
         return locations
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
@@ -306,12 +308,17 @@ class Source_file( object ):
     def parse_match_lengths( self, loc_list ): # vet candidates
         loc = list( )  # location
         txt = list( )  # text
+        print( "in: locations, text = {}, {}".format( loc, txt ))
         for lineNum in loc_list:
-            lineLengthA = len( self.myLines[ lineNum - 1 ] )
-            lineLengthB = len( self.myLines[ lineNum - 2 ] )
+            print( "lineNum = %s" % lineNum )
+            print( "B = %s" % self.myLines[ lineNum - 1 ] )
+            print( "A = %s" % self.myLines[ lineNum     ] )
+            lineLengthA = len( self.myLines[ lineNum    ] )
+            lineLengthB = len( self.myLines[ lineNum - 1 ] )
             if lineLengthA == lineLengthB:
                 loc.append( lineNum - 2 )
                 txt.append( self.myLines[ lineNum - 2 ] )
+        print( "out: locations, text = {}, {}".format( loc, txt ))
         return ( loc, txt );
 
 # dantopa@Lax-Millgram:cauchy $ py cls_Source_file.py

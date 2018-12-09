@@ -84,23 +84,23 @@ if __name__ == "__main__":
 # A = ===========
 # B = Definitions
 # out: locations, text = [9, 18, 34, 97], ['Overview', 'Amanzi Input', 'Model Description', 'Definitions']
-# myChapter = <cls_Chapter.Chapter object at 0x108e71550>
-# myChapter = <cls_Chapter.Chapter object at 0x108e71320>
-# myChapter = <cls_Chapter.Chapter object at 0x108e94fd0>
-# myChapter = <cls_Chapter.Chapter object at 0x108e94f98>
+# myChapter = <cls_Chapter.Chapter object at 0x107103860>
+# myChapter = <cls_Chapter.Chapter object at 0x107103390>
+# myChapter = <cls_Chapter.Chapter object at 0x10717ed30>
+# myChapter = <cls_Chapter.Chapter object at 0x10717ef60>
 # number of chapters = 4
 # 1. start_locations = [18, 34, 97]
-# 2. start_locations = [17, 33, 96]
+# 2. start_locations = [15, 31, 94]
 # chapter 1: Overview
-# first, last: 9, 17
+# first, last: 9, 15
 # chapter 2: Amanzi Input
-# first, last: 18, 33
+# first, last: 18, 31
 # chapter 3: Model Description
-# first, last: 34, 96
+# first, last: 34, 94
 # chapter 4: Definitions
 # first, last: 97, 231
 
-#  2018-12-08 20:58:50.546321
+#  2018-12-08 21:12:12.607041
 # source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/boniface.py
 # python version 3.6.7 (default, Oct 21 2018, 09:26:25)
 # [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]

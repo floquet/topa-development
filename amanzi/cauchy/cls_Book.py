@@ -96,7 +96,7 @@ class Book( object ):
         print( "1. start_locations = %s" % start_locations )
         # https://stackoverflow.com/questions/9304408/how-to-add-an-integer-to-each-element-in-a-list
         # https://nedbatchelder.com/text/names1.html
-        start_locations = [ l - 1 for l in start_locations ]
+        start_locations = [ l - 3 for l in start_locations ]
         print( "2. start_locations = %s" % start_locations )
         # https://stackoverflow.com/questions/4426663/how-to-remove-the-first-item-from-a-list
         start_locations.append( self.source_object.numLines )

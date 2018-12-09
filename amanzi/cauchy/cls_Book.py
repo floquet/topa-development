@@ -73,7 +73,7 @@ class Book( object ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters_start( self ):
-        locations = self.source_object.parse_alpha( "===" )
+        locations = self.source_object.parse_alpha( "===", 1, self.source_object.numLines )
         ( loc, txt ) = self.source_object.parse_match_lengths( locations )
         count = 0
         for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description

@@ -244,7 +244,7 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def parse_alpha( self, search_string, alpha, omemga ):
+    def parse_alpha( self, search_string, alpha, omega ):
 
         locations = list( ) # list of line numbers
         for lineNum in range( alpha, omega):

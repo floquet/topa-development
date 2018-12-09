@@ -125,6 +125,10 @@ class Chapter( object ):
     def list_optional( self ):
         del self._list_optional
 
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def find_sections():
+        return
 # dantopa@Lax-Millgram:cauchy $ py cls_Chapter.py
 
 # dantopa@Lax-Millgram:cauchy $ date

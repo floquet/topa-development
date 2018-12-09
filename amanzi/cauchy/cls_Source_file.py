@@ -244,13 +244,11 @@ class Source_file( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def parse_alpha( self, search_string ):
+    def parse_alpha( self, search_string, alpha, omemga ):
 
         locations = list( ) # list of line numbers
-
-        lineNum = 0
-        for line in self.myLines:
-            lineNum += 1
+        for lineNum in range( alpha, omega):
+            line = myLines[ lineNum ]
             if line.find( search_string ) != -1:
                 if line.find( "+" ) != -1:
                     continue

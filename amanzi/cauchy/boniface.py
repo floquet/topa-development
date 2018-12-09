@@ -58,27 +58,52 @@ if __name__ == "__main__":
 
 # dantopa@Lax-Millgram:cauchy $ py boniface.py
 # reading source file /Users/dantopa/Documents/repos/GitHub/topa-development/data/short.rst
-# myChapter = <cls_Chapter.Chapter object at 0x106ade3c8>
-# myChapter = <cls_Chapter.Chapter object at 0x106ade2e8>
-# myChapter = <cls_Chapter.Chapter object at 0x106b58c88>
-# myChapter = <cls_Chapter.Chapter object at 0x106b58e48>
+# line 0: ====================================================
+# line 2: ====================================================
+# line 8: ========
+# line 17: ============
+# line 33: =================
+# line 96: ===========
+# in: locations, text = [], []
+# lineNum = 0
+# A = ====================================================
+# B =   </definitions>
+# lineNum = 2
+# A = ====================================================
+# B = Amanzi XML Input Specification (Version 2.3-draft)
+# lineNum = 8
+# A = ========
+# B = Overview
+# lineNum = 17
+# A = ============
+# B = Amanzi Input
+# lineNum = 33
+# A = =================
+# B = Model Description
+# lineNum = 96
+# A = ===========
+# B = Definitions
+# out: locations, text = [9, 18, 34, 97], ['Overview', 'Amanzi Input', 'Model Description', 'Definitions']
+# myChapter = <cls_Chapter.Chapter object at 0x108e71550>
+# myChapter = <cls_Chapter.Chapter object at 0x108e71320>
+# myChapter = <cls_Chapter.Chapter object at 0x108e94fd0>
+# myChapter = <cls_Chapter.Chapter object at 0x108e94f98>
 # number of chapters = 4
-# 1. start_locations = [16, 32, 95]
-# 2. start_locations = [15, 31, 94]
+# 1. start_locations = [18, 34, 97]
+# 2. start_locations = [17, 33, 96]
 # chapter 1: Overview
-# first, last: 7, 15
+# first, last: 9, 17
 # chapter 2: Amanzi Input
-# first, last: 16, 31
+# first, last: 18, 33
 # chapter 3: Model Description
-# first, last: 32, 94
+# first, last: 34, 96
 # chapter 4: Definitions
-# first, last: 95, 231
+# first, last: 97, 231
 
-#  2018-12-08 11:52:11.316267
+#  2018-12-08 20:58:50.546321
 # source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/cauchy/boniface.py
 # python version 3.6.7 (default, Oct 21 2018, 09:26:25)
 # [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
-
 
 # Pope Boniface I (Latin: Bonifatius I; died 4 September 422) was Pope from
 # 28 December 418 to his death in 422. His election was disputed by the supporters

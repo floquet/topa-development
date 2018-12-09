@@ -311,13 +311,13 @@ class Source_file( object ):
         print( "in: locations, text = {}, {}".format( loc, txt ))
         for lineNum in loc_list:
             print( "lineNum = %s" % lineNum )
-            print( "B = %s" % self.myLines[ lineNum - 1 ] )
-            print( "A = %s" % self.myLines[ lineNum     ] )
-            lineLengthA = len( self.myLines[ lineNum    ] )
+            print( "A = %s" % self.myLines[ lineNum ] ) # ===
+            print( "B = %s" % self.myLines[ lineNum - 1 ] ) # Definitions
+            lineLengthA = len( self.myLines[ lineNum ] )
             lineLengthB = len( self.myLines[ lineNum - 1 ] )
             if lineLengthA == lineLengthB:
-                loc.append( lineNum - 2 )
-                txt.append( self.myLines[ lineNum - 2 ] )
+                loc.append( lineNum + 1 ) # first line after ===
+                txt.append( self.myLines[ lineNum - 1 ] ) # title string
         print( "out: locations, text = {}, {}".format( loc, txt ))
         return ( loc, txt );
 

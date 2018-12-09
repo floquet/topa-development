@@ -11,16 +11,17 @@
 
 class Chapter( object ):
     def __init__(self):
-        self._title         = None # chapter title
-        self._key           = None # 01-MD
-        self._num           = None # 01-MD
-        self._loc_start     = None # starting line in source document
-        self._loc_stop      = None # last line in source document
-        self._num_sections  = None
-        self._num_required  = None
-        self._num_optional  = None
-        self._list_required = None
-        self._list_optional = None
+        self._title               = None # chapter title
+        self._key                 = None # 01-MD
+        self._num                 = None # 1
+        self._loc_start           = None # starting line in source document
+        self._loc_stop            = None # last line in source document
+        self._num_sections        = None
+        self._num_required        = None
+        self._num_optional        = None
+        self._list_required       = None
+        self._list_optional       = None
+        self._collection_sections = list( ) # collection of sections
 
     @property
     def title( self ):
@@ -127,8 +128,11 @@ class Chapter( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def find_sections():
+    def mark_sections( self ):
+        locations = self.source_object.parse_alpha( "---", 0, self.loc_start, self.loc_stop )
+        print( "section markers for chapter {}: {}".format( self.num, locations ) )
         return
+
 # dantopa@Lax-Millgram:cauchy $ py cls_Chapter.py
 
 # dantopa@Lax-Millgram:cauchy $ date

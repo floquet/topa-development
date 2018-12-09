@@ -18,7 +18,7 @@ class Section( object ):
         self._loc_start              = None # starting line in source document
         self._loc_stop               = None # last line in source document
         self._num_sections           = None # number of subsections
-        self._collection_subsections = list( ) # collection of chapter objects
+        self._collection_subsections = list( ) # collection of subsections
 
     @property
     def title( self ):

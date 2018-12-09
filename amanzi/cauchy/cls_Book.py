@@ -82,6 +82,7 @@ class Book( object ):
             myChapter.loc_start = myLoc # first line of chapter
             myChapter.title     = myTxt # chapter title
             myChapter.num       = count # chapter number
+            myChapter.key       = str( count ).zfill( 2 ) + "-" + chap_initials
             self.collection_chapters.append( myChapter )
             print( "myChapter = %s" % myChapter )
         self.numChapters = count

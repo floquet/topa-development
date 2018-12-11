@@ -23,6 +23,8 @@ class Chapter( object ):
         self._list_optional       = None
         self._collection_sections = list( ) # collection of sections
 
+#   P R O P E R T I E S   #
+
     @property
     def title( self ):
         """Chapter title."""
@@ -64,6 +66,8 @@ class Chapter( object ):
         """List of keys for optional."""
         return self._list_optional
 
+#   S E T T E R S   #
+
     @title.setter
     def title( self, value ):
         self._title = value
@@ -94,6 +98,8 @@ class Chapter( object ):
     @list_optional.setter
     def list_optional( self, value ):
         self._list_optional = value
+
+#   D E L E T E R S   #
 
     @title.deleter
     def title( self ):

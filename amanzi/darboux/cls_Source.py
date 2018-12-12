@@ -11,6 +11,7 @@
 
 import uuid                 # Universal Unique IDentifier
 from pathlib import Path    # rename file
+import cls_Source_property  # list of properties for class
 
 class Source( object ):
     def __init__( self ):
@@ -28,57 +29,57 @@ class Source( object ):
         self._path_xl         = None    # absolute path
         self._full_xl         = None    # path + file name
 
-#   P R O P E R T I E S   #
-
-    @property
-    def title( self ):
-        """Title from source file"""
-        return self._title
-
-    @property
-    def col_lines( self ):
-        """text as a collection of lines, EOL removed"""
-        return self._col_lines
-
-    @property
-    def numLines( self ):
-        """Number of lines read in source file"""
-        return self._numLines
-
-    @property
-    def uuid( self ):
-        """Universal unique identifier: connects requirements to source document"""
-        return self._uuid
-
-    @property
-    def input_rst( self ):
-        """Name of source file"""
-        return self._input_rst
-
-    @property
-    def path_rst( self ):
-        """Path (absolute) to source file"""
-        return self._path_rst
-
-    @property
-    def full_rst( self ):
-        """Path + Name"""
-        return self._full_rst
-
-    @property
-    def input_xl( self ):
-        """Name of source file"""
-        return self._input_xl
-
-    @property
-    def path_xl( self ):
-        """Path (absolute) to output file"""
-        return self._path_xl
-
-    @property
-    def full_xl( self ):
-        """Path + Name"""
-        return self._full_xl
+##   P R O P E R T I E S   #
+#
+#    @property
+#    def title( self ):
+#        """Title from source file"""
+#        return self._title
+#
+#    @property
+#    def col_lines( self ):
+#        """text as a collection of lines, EOL removed"""
+#        return self._col_lines
+#
+#    @property
+#    def numLines( self ):
+#        """Number of lines read in source file"""
+#        return self._numLines
+#
+#    @property
+#    def uuid( self ):
+#        """Universal unique identifier: connects requirements to source document"""
+#        return self._uuid
+#
+#    @property
+#    def input_rst( self ):
+#        """Name of source file"""
+#        return self._input_rst
+#
+#    @property
+#    def path_rst( self ):
+#        """Path (absolute) to source file"""
+#        return self._path_rst
+#
+#    @property
+#    def full_rst( self ):
+#        """Path + Name"""
+#        return self._full_rst
+#
+#    @property
+#    def input_xl( self ):
+#        """Name of source file"""
+#        return self._input_xl
+#
+#    @property
+#    def path_xl( self ):
+#        """Path (absolute) to output file"""
+#        return self._path_xl
+#
+#    @property
+#    def full_xl( self ):
+#        """Path + Name"""
+#        return self._full_xl
 
 #   S E T T E R S   #
 
@@ -193,10 +194,10 @@ class Source( object ):
 # date: Dec 10, 2018, time: 18:24:50
 # nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-02.nb
 
-# l127914@pn1249300.lanl.gov:darboux $ python cls_Source.py
+#dantopa@Mittag-Leffler.local:darboux $ python cls_Source.py 
 
-# l127914@pn1249300.lanl.gov:darboux $ date
-# Mon Dec 10 18:25:48 MST 2018
+#dantopa@Mittag-Leffler.local:darboux $ date
+#Tue Dec 11 19:40:02 MST 2018
 
-# l127914@pn1249300.lanl.gov:darboux $ pwd
-# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux
+#dantopa@Mittag-Leffler.local:darboux $ pwd
+#/Volumes/Tethys/repos/GitHub/topa-development/amanzi/darboux

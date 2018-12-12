@@ -32,6 +32,7 @@ if __name__ == "__main__":
 
     source.setup_io( )
     source.read_file( )
+    print( "length col_lines = %s" % len( source.col_lines ) )
 
     # # # start the book
     # myBook = cls_Book.Book( ) # instantiate

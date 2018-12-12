@@ -33,7 +33,7 @@ if __name__ == "__main__":
     source.setup_io( )
     source.read_file( )
     print( "length col_lines = %s" % len( source.col_lines ) )
-    source.search_elements_crude( )
+    ( l_reqd, l_optl ) = source.search_elements_crude( )
     
 
     # # # start the book

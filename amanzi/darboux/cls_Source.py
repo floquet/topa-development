@@ -192,27 +192,34 @@ class Source( object ):
         # containers for line numbers
         l_reqd = list( )
         l_optl = list( )
-        # sweep through each line look for required or optional elements
-        k_line = 0
+        
+        # required elements
+        k_line = 1
         for line in self.col_lines:
             # required
             if line.find( "Required Elements:" ) != -1:
+                print( "line {} = {}".format( k_line, line ) )
                 if line.find( "NONE" ) != -1:
                     continue
                 l_reqd.append( k_lines )
+            k_line += 1
+            
+        # optional elements
+        k_line = 1
+        for line in self.col_lines:
             # optional
-            elif line.find( "Optional Elements:" ) != -1:
+            if line.find( "Optional Elements:" ) != -1:
+                print( "line {} = {}".format( k_line, line ) )
                 if line.find( "NONE" ) != -1:
                     continue
-                l_optl.append( k_line )
+                l_optl.append( k_lines )
             k_line += 1
             
 
         print ( "{} lines with required elements found; locations {}".format( len( l_reqd ), l_reqd ) )
-        
         print ( "{} lines with optional elements found; locations {}".format( len( l_optl ), l_optl ) )
 
-        return
+        return ( l_reqd, l_optl )
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

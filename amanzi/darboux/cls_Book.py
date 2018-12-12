@@ -8,7 +8,7 @@
 # Book class
 #  commentary
 
-class Book( class ):
+class Book( object ):
     def __init__( self ):
 
         self._title           = None    # Model Description

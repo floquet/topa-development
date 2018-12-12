@@ -199,10 +199,20 @@ class Element( object ):
     def xl_col( self ):
         del self._xl_col
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+# user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86,
+# date: Dec 12, 2018, time: 16:03:48,
+# nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
 
-# user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86, date: Dec 12, 2018, time: 16:03:48, nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def build_tail_key():
         self.tail_key = self.flavor + str( self.k_index ).zfill( 2 )
         return
+
+# dantopa@Lax-Millgram:darboux $ py cls_Elements.py
+
+# dantopa@Lax-Millgram:darboux $ date
+# Wed Dec 12 16:09:21 MST 2018
+
+# dantopa@Lax-Millgram:darboux $ pwd
+# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/darboux

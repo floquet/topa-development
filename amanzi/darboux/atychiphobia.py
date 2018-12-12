@@ -26,8 +26,9 @@ if __name__ == "__main__":
     # # source data
     source = cls_Source.Source( ) # instantiate
     source.input_rst = "short.rst"    # setter called
-    #mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
-    source.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
+    #source.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
+    source.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
+    #source.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
 
     source.setup_io( )
     source.read_file( )
@@ -53,12 +54,12 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-# l127914@pn1249300.lanl.gov:darboux $ python atychiphobia.py
-# reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
+#dantopa@Mittag-Leffler.local:darboux $ python atychiphobia.py 
+#reading source file /Volumes/Tethys/repos/GitHub/topa-development/data/short.rst
 
-#  2018-12-10 18:35:19.791441
-# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux/atychiphobia.py
-# python version 3.7.0 (default, Jun 28 2018, 07:39:16)
-# [Clang 4.0.1 (tags/RELEASE_401/final)]
+# 2018-12-11 19:33:49.233919
+#source: /Volumes/Tethys/repos/GitHub/topa-development/amanzi/darboux/atychiphobia.py
+#python version 3.6.7 (default, Oct 21 2018, 08:02:39) 
+#[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)]
 
 # Atychiphobia	Fear of failure

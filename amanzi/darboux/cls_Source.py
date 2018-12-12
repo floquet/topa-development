@@ -77,7 +77,7 @@ class Source( object ):
 
     @property
     def full_xl( self ):
-        """CPath + Name"""
+        """Path + Name"""
         return self._full_xl
 
 #   S E T T E R S   #
@@ -173,18 +173,18 @@ class Source( object ):
         with open( self.full_rst ) as f:
             self.col_lines = f.read( ).splitlines( )
             self.numLines = len( self.col_lines )
-
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def setup_io( self ):
+        # combine path and file name
         self.full_rst  = self.path_rst + self.input_rst
-
-        # # output file
+        # # output file: same directory
         self.output_xl = Path( self.input_rst ).stem + ".xlsx" # https://stackoverflow.com/questions/2900035/changing-file-extension-in-python
         self.path_xl   = self.path_rst
         self.full_xl   = self.path_xl + self.output_xl
+        return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

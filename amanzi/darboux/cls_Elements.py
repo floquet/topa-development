@@ -5,18 +5,7 @@
 # # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
 # # Daniel Topa LANL/CCS-2 dantopa@lanl.gov 505 667 0817
 
-# Source class
-#  source:  Amanzi manual to be parsed
-#  sink:    Excel file with test matrix
-
-import uuid                 # Universal Unique IDentifier
-
-#!/usr/bin/python
-
-# # Amanzi: The Multi-Process HPC Simulator
-# #   https://github.com/amanzi/amanzi
-# # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
-# # Daniel Topa LANL/CCS-2 dantopa@lanl.gov 505 667 0817
+import       uuid
 
 # Element class
 #  commentary
@@ -39,7 +28,7 @@ class Element( object ):
         self._xl_col          = None    # 3
 
 
-#   P R O P E R T I E S   #\:f3b5
+#   P R O P E R T I E S   #
 
     @property
     def name( self ):
@@ -106,7 +95,7 @@ class Element( object ):
         """Col address for test status in spreadsheet"""
         return self._xl_col
 
-#   S E T T E R S   #\:f3b5
+#   S E T T E R S   #
 
     @name.setter
     def name( self, value ):
@@ -123,10 +112,6 @@ class Element( object ):
     @k_index.setter
     def k_index( self, value ):
         self._k_index = value
-
-    @my_uuid.setter
-    def my_uuid( self, value ):
-        self._my_uuid = value
 
     @k_line.setter
     def k_line( self, value ):
@@ -160,7 +145,7 @@ class Element( object ):
     def xl_col( self, value ):
         self._xl_col = value
 
-#   D E L E T E R S   #\:f3b5
+#   D E L E T E R S   #
 
     @name.deleter
     def name( self ):
@@ -214,9 +199,9 @@ class Element( object ):
     def xl_col( self ):
         del self._xl_col
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #\:f3b5
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-# user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86, date: Dec 12, 2018, time: 15:59:32, nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
+# user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86, date: Dec 12, 2018, time: 16:03:48, nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
 
     def build_tail_key():
         self.tail_key = self.flavor + str( self.k_index ).zfill( 2 )

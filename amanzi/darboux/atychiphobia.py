@@ -59,10 +59,29 @@ if __name__ == "__main__":
 
 #dantopa@Mittag-Leffler.local:darboux $ python atychiphobia.py 
 #reading source file /Volumes/Tethys/repos/GitHub/topa-development/data/short.rst
+#length col_lines = 231
+#line 41 =       Required Elements: NONE
+#line 58 =       Required Elements: NONE
+#line 102 =       Required Elements: NONE
+#line 113 =       Required Elements: NONE
+#line 148 =       Required Elements: NONE
+#line 42 =       Optional Elements: comment, author, created, modified, model_id, description, purpose, units
+#line 60 =       Optional Elements: length_unit, time_unit, mass_unit, conc_unit
+#line 105 =       Optional Elements: constants, macros
+#line 117 =       Optional Elements: constant, time_constant, numerical_constant, area_mass_flux_constant
+#line 153 =       Optional Elements: time_macro, cycle_macro, variable_macro [S]
+#0 lines with required elements found; locations []
+#5 lines with optional elements found; locations [42, 60, 105, 117, 153]
 
-# 2018-12-11 19:33:49.233919
+# 2018-12-11 20:29:37.376458
 #source: /Volumes/Tethys/repos/GitHub/topa-development/amanzi/darboux/atychiphobia.py
 #python version 3.6.7 (default, Oct 21 2018, 08:02:39) 
 #[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)]
+
+#dantopa@Mittag-Leffler.local:darboux $ date
+#Tue Dec 11 20:32:46 MST 2018
+
+#dantopa@Mittag-Leffler.local:darboux $ pwd
+#/Volumes/Tethys/repos/GitHub/topa-development/amanzi/darboux
 
 # Atychiphobia	Fear of failure

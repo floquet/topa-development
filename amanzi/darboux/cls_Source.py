@@ -201,7 +201,7 @@ class Source( object ):
                 print( "line {} = {}".format( k_line, line ) )
                 if line.find( "NONE" ) != -1:
                     continue
-                l_reqd.append( k_lines )
+                l_reqd.append( k_line )
             k_line += 1
             
         # optional elements
@@ -212,7 +212,7 @@ class Source( object ):
                 print( "line {} = {}".format( k_line, line ) )
                 if line.find( "NONE" ) != -1:
                     continue
-                l_optl.append( k_lines )
+                l_optl.append( k_line )
             k_line += 1
             
 

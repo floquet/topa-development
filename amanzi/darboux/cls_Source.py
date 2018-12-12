@@ -11,7 +11,6 @@
 
 import uuid                 # Universal Unique IDentifier
 from pathlib import Path    # rename file
-import cls_Source_property  # list of properties for class
 
 class Source( object ):
     def __init__( self ):
@@ -29,57 +28,57 @@ class Source( object ):
         self._path_xl         = None    # absolute path
         self._full_xl         = None    # path + file name
 
-##   P R O P E R T I E S   #
-#
-#    @property
-#    def title( self ):
-#        """Title from source file"""
-#        return self._title
-#
-#    @property
-#    def col_lines( self ):
-#        """text as a collection of lines, EOL removed"""
-#        return self._col_lines
-#
-#    @property
-#    def numLines( self ):
-#        """Number of lines read in source file"""
-#        return self._numLines
-#
-#    @property
-#    def uuid( self ):
-#        """Universal unique identifier: connects requirements to source document"""
-#        return self._uuid
-#
-#    @property
-#    def input_rst( self ):
-#        """Name of source file"""
-#        return self._input_rst
-#
-#    @property
-#    def path_rst( self ):
-#        """Path (absolute) to source file"""
-#        return self._path_rst
-#
-#    @property
-#    def full_rst( self ):
-#        """Path + Name"""
-#        return self._full_rst
-#
-#    @property
-#    def input_xl( self ):
-#        """Name of source file"""
-#        return self._input_xl
-#
-#    @property
-#    def path_xl( self ):
-#        """Path (absolute) to output file"""
-#        return self._path_xl
-#
-#    @property
-#    def full_xl( self ):
-#        """Path + Name"""
-#        return self._full_xl
+#   P R O P E R T I E S   #
+
+    @property
+    def title( self ):
+        """Title from source file"""
+        return self._title
+
+    @property
+    def col_lines( self ):
+        """text as a collection of lines, EOL removed"""
+        return self._col_lines
+
+    @property
+    def numLines( self ):
+        """Number of lines read in source file"""
+        return self._numLines
+
+    @property
+    def uuid( self ):
+        """Universal unique identifier: connects requirements to source document"""
+        return self._uuid
+
+    @property
+    def input_rst( self ):
+        """Name of source file"""
+        return self._input_rst
+
+    @property
+    def path_rst( self ):
+        """Path (absolute) to source file"""
+        return self._path_rst
+
+    @property
+    def full_rst( self ):
+        """Path + Name"""
+        return self._full_rst
+
+    @property
+    def input_xl( self ):
+        """Name of source file"""
+        return self._input_xl
+
+    @property
+    def path_xl( self ):
+        """Path (absolute) to output file"""
+        return self._path_xl
+
+    @property
+    def full_xl( self ):
+        """Path + Name"""
+        return self._full_xl
 
 #   S E T T E R S   #
 
@@ -185,6 +184,34 @@ class Source( object ):
         self.output_xl = Path( self.input_rst ).stem + ".xlsx" # https://stackoverflow.com/questions/2900035/changing-file-extension-in-python
         self.path_xl   = self.path_rst
         self.full_xl   = self.path_xl + self.output_xl
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def search_elements_crude( self ):
+        # containers for line numbers
+        l_reqd = list( )
+        l_optl = list( )
+        # sweep through each line look for required or optional elements
+        k_line = 0
+        for line in self.col_lines:
+            # required
+            if line.find( "Required Elements:" ) != -1:
+                if line.find( "NONE" ) != -1:
+                    continue
+                l_reqd.append( k_lines )
+            # optional
+            elif line.find( "Optional Elements:" ) != -1:
+                if line.find( "NONE" ) != -1:
+                    continue
+                l_optl.append( k_line )
+            k_line += 1
+            
+
+        print ( "{} lines with required elements found; locations {}".format( len( l_reqd ), l_reqd ) )
+        
+        print ( "{} lines with optional elements found; locations {}".format( len( l_optl ), l_optl ) )
+
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

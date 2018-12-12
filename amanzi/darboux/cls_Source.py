@@ -192,9 +192,6 @@ class Source( object ):
         # containers for line numbers
         l_reqd = list( )
         l_optl = list( )
-        # containers for elements
-        l_elements_reqd = list( )
-        l_elements_optl = list( )
       
         # required elements
         k_line = 1
@@ -205,7 +202,6 @@ class Source( object ):
                 if line.find( "NONE" ) != -1:
                     continue
                 l_reqd.append( k_line )
-                l_elements_reqd.append( line.split( "," ) )
             k_line += 1
             
         # optional elements
@@ -216,15 +212,11 @@ class Source( object ):
                 print( "line {} = {}".format( k_line, line ) )
                 if line.find( "NONE" ) != -1:
                     continue
-                l_elements_optl.append( line.split( "," ) )
                 l_optl.append( k_line )
             k_line += 1    
 
         print ( "{} lines with required elements found; locations {}".format( len( l_reqd ), l_reqd ) )
         print ( "{} lines with optional elements found; locations {}".format( len( l_optl ), l_optl ) )
-
-        print ( "{} required elements found: {}".format( len( l_elements_reqd ), l_elements_reqd ) )
-        print ( "{} optional elements found: {}".format( len( l_elements_optl ), l_elements_optl ) )
 
         return ( l_reqd, l_optl )
 

@@ -9,6 +9,7 @@
 #  source:  Amanzi manual to be parsed
 #  sink:    Excel file with test matrix
 
+import re
 import uuid                 # Universal Unique IDentifier
 from pathlib import Path    # rename file
 
@@ -188,6 +189,26 @@ class Source( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+    def search_elements_refine( self, list_search, flavor ):
+        print( "looking for %s elements" % flavor )
+        # remove first 25 characters
+        for k_line in list_search:
+            # print( "k_line %s" % k_line )
+            # drop first 25 characters: "      Optional Elements:"
+            line = self.col_lines[ k_line - 1 ][25:]
+            # https://stackoverflow.com/questions/14596884/remove-text-between-and-in-python
+            line = re.sub( "[\(\[].*?[\)\]]", "", line )
+            print( "line {} = {}".format( k_line, line ) )
+            # clean up spaces, '
+            # https://stackoverflow.com/questions/3939361/remove-specific-characters-from-a-string-in-python
+            for char in "' ":
+                line = line.replace( char, "" )
+            print( "elements = {}".format( line.split(",") ) )
+            # print( "line {} = {}".format( k_line, line ) )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
     def search_elements_crude( self ):
         # containers for line numbers
         l_reqd = list( )
@@ -198,7 +219,7 @@ class Source( object ):
         for line in self.col_lines:
             # required
             if line.find( "Required Elements:" ) != -1:
-                print( "line {} = {}".format( k_line, line ) )
+                # print( "line {} = {}".format( k_line, line ) )
                 if line.find( "NONE" ) != -1:
                     continue
                 l_reqd.append( k_line )
@@ -209,14 +230,14 @@ class Source( object ):
         for line in self.col_lines:
             # optional
             if line.find( "Optional Elements:" ) != -1:
-                print( "line {} = {}".format( k_line, line ) )
+                # print( "line {} = {}".format( k_line, line ) )
                 if line.find( "NONE" ) != -1:
                     continue
                 l_optl.append( k_line )
             k_line += 1    
 
-        print ( "{} lines with required elements found; locations {}".format( len( l_reqd ), l_reqd ) )
-        print ( "{} lines with optional elements found; locations {}".format( len( l_optl ), l_optl ) )
+        # print ( "{} lines with required elements found; locations {}".format( len( l_reqd ), l_reqd ) )
+        # print ( "{} lines with optional elements found; locations {}".format( len( l_optl ), l_optl ) )
 
         return ( l_reqd, l_optl )
 

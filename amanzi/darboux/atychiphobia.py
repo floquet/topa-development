@@ -34,6 +34,7 @@ if __name__ == "__main__":
     source.read_file( )
     print( "length col_lines = %s" % len( source.col_lines ) )
     ( l_reqd, l_optl ) = source.search_elements_crude( )
+    source.search_elements_refine( l_optl, "optional" )
     
 
     # # # start the book

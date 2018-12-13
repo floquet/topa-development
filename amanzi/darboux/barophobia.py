@@ -24,21 +24,21 @@ import tools_xl             # spreadsheet authoring tools
 if __name__ == "__main__":
 
     # fundamental object: a book
-    book = cls_Book.Book()
+    book = cls_Book.Book( )
 
     # # source data
-    source = cls_Source.Source( ) # instantiate
-    source.input_rst = "short.rst"    # setter called
-    source.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
-    # source.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
+    book.source = cls_Source.Source( ) # instantiate
+    book.source.input_rst = "short.rst"    # setter called
+    book.source.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
+        # source.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
     # source.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
 
     # read source file
-    source.setup_io( )
-    source.read_file( )
-    print( "length col_lines = %s" % len( source.col_lines ) )
-    ( l_reqd, l_optl ) = source.search_elements_crude( )
-    source.search_elements_refine( l_optl, "optional" )
+    book.source.setup_io( )
+    book.source.read_file( )
+    print( "length col_lines = %s" % len( book.source.col_lines ) )
+    ( l_reqd, l_optl ) = book.source.search_elements_crude( )
+    book.source.search_elements_refine( l_optl, "optional" )
 
 
     # # # start the book
@@ -77,7 +77,7 @@ if __name__ == "__main__":
 # line 153 = time_macro, cycle_macro, variable_macro
 # elements = ['time_macro', 'cycle_macro', 'variable_macro']
 
-#  2018-12-12 16:15:34.808252
+#  2018-12-12 17:00:03.776078
 # source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/darboux/barophobia.py
 # python version 3.6.7 (default, Oct 21 2018, 09:26:25)
 # [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]

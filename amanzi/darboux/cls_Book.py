@@ -2,8 +2,9 @@
 
 # # Amanzi: The Multi-Process HPC Simulator
 # #   https://github.com/amanzi/amanzi
+
 # # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
-# # Daniel Topa LANL/CCS-2 dantopa@lanl.gov 505 667 0817
+# # Daniel Topa   LANL/CCS-2   dantopa@lanl.gov 505 667 0817
 
 import        cls_Chapter # chapter (constains sections)
 
@@ -16,7 +17,9 @@ class Book( object ):
         self._title           = None    # Amanzi XML Input Specification (Version 2.3-draft)
         self._k_start         = None    # 5
         self._k_stop          = None    # 231
-        self._col_chapter     = list( ) # collection of chapters
+        self._source          = None    # input source
+        self._xl_file         = None    # output
+        self._col_chapters    = list( ) # collection of chapters
 
 
 #   P R O P E R T I E S   #
@@ -37,9 +40,19 @@ class Book( object ):
         return self._k_stop
 
     @property
-    def col_chapter( self ):
+    def source( self ):
+        """Source file"""
+        return self._source
+
+    @property
+    def xl_file( self ):
+        """Excel spreadsheet"""
+        return self._xl_file
+
+    @property
+    def col_chapters( self ):
         """Collection of chapter objects"""
-        return self._col_chapter
+        return self._col_chapters
 
 #   S E T T E R S   #
 
@@ -55,9 +68,17 @@ class Book( object ):
     def k_stop( self, value ):
         self._k_stop = value
 
-    @col_chapter.setter
-    def col_chapter( self, value ):
-        self._col_chapter = value
+    @source.setter
+    def source( self, value ):
+        self._source = value
+
+    @xl_file.setter
+    def xl_file( self, value ):
+        self._xl_file = value
+
+    @col_chapters.setter
+    def col_chapters( self, value ):
+        self._col_chapters = value
 
 #   D E L E T E R S   #
 
@@ -73,20 +94,18 @@ class Book( object ):
     def k_stop( self ):
         del self._k_stop
 
-    @col_chapter.deleter
-    def col_chapter( self ):
-        del self._col_chapter
+    @source.deleter
+    def source( self ):
+        del self._source
+
+    @xl_file.deleter
+    def xl_file( self ):
+        del self._xl_file
+
+    @col_chapters.deleter
+    def col_chapters( self ):
+        del self._col_chapters
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-# user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86,
-# date: Dec 12, 2018, time: 16:37:20,
-# nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
-
-# dantopa@Lax-Millgram:darboux $ py cls_Book.py 
-
-# dantopa@Lax-Millgram:darboux $ date
-# Wed Dec 12 16:42:40 MST 2018
-
-# dantopa@Lax-Millgram:darboux $ pwd
-# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/darboux
+# user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86, date: Dec 12, 2018, time: 16:53:13, nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb

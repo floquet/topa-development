@@ -28,7 +28,6 @@ class Element( object ):
         self._xl_row          = None    # 5
         self._xl_col          = None    # 3
 
-
 #   P R O P E R T I E S   #
 
     @property
@@ -209,6 +208,7 @@ class Element( object ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def print_element( self ):
+        print( '\nElement attributes:')
         print( 'name = %s' % self.name )
         print( 'flavor = %s' % self.flavor )
         print( 'status = %s' % self.status )

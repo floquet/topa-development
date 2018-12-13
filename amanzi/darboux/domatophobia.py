@@ -40,7 +40,9 @@ if __name__ == "__main__":
     mySource.setup_io( )
     mySource.read_file( )
     print( "length col_lines = %s" % len( mySource.col_lines ) )
+    # mark candidate elements
     ( l_reqd, l_optl ) = mySource.search_elements_crude( )
+    # harvest optional elements
     myflavor = "optional";
     Qreqd = "OPTL"
     elements = mySource.search_elements_refine( l_optl, myflavor )
@@ -54,7 +56,7 @@ if __name__ == "__main__":
         e.status = "NULL"
         e.k_index = count
         book.col_elements.append( e )
-    for k in range( 1, count ):
+    for k in range( 0, count ):
         book.col_elements[ k ].print_element( )
 
 
@@ -84,17 +86,58 @@ if __name__ == "__main__":
 # length col_lines = 231
 # looking for optional elements
 # line 42 = comment, author, created, modified, model_id, description, purpose, units
-# elements = ['comment', 'author', 'created', 'modified', 'model_id', 'description', 'purpose', 'units']
 # line 60 = length_unit, time_unit, mass_unit, conc_unit
-# elements = ['length_unit', 'time_unit', 'mass_unit', 'conc_unit']
 # line 105 = constants, macros
-# elements = ['constants', 'macros']
 # line 117 = constant, time_constant, numerical_constant, area_mass_flux_constant
-# elements = ['constant', 'time_constant', 'numerical_constant', 'area_mass_flux_constant']
 # line 153 = time_macro, cycle_macro, variable_macro
 # elements = ['time_macro', 'cycle_macro', 'variable_macro']
 
-#  2018-12-12 18:05:50.840657
+# Element attributes:
+# name = time_macro
+# flavor = OPTL
+# status = NULL
+# k_index = 1
+# uuid = 837c9d47-321c-457b-9afa-2f5cf5c0dc44
+# k_line = None
+# key_head = None
+# key_tail = None
+# k_chapter = None
+# k_section = None
+# k_subsection = None
+# xl_row = None
+# xl_col = None
+
+# Element attributes:
+# name = cycle_macro
+# flavor = OPTL
+# status = NULL
+# k_index = 2
+# uuid = a4cbb4e0-9aaf-4c88-83f9-8b9583cf0853
+# k_line = None
+# key_head = None
+# key_tail = None
+# k_chapter = None
+# k_section = None
+# k_subsection = None
+# xl_row = None
+# xl_col = None
+
+# Element attributes:
+# name = variable_macro
+# flavor = OPTL
+# status = NULL
+# k_index = 3
+# uuid = 4af71765-2c14-4a7e-b6f3-035303bf39dc
+# k_line = None
+# key_head = None
+# key_tail = None
+# k_chapter = None
+# k_section = None
+# k_subsection = None
+# xl_row = None
+# xl_col = None
+
+#  2018-12-12 19:45:01.022169
 # source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux/domatophobia.py
 # python version 3.7.0 (default, Jun 28 2018, 07:39:16)
 # [Clang 4.0.1 (tags/RELEASE_401/final)]

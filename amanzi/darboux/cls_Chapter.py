@@ -17,7 +17,6 @@ class Chapter( object ):
         self._k_stop          = None    # 231
         self._col_sections    = list( ) # collection of sections
 
-
 #   P R O P E R T I E S   #
 
     @property

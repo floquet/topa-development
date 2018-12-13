@@ -205,8 +205,8 @@ class Source( object ):
             for char in "' ":
                 line = line.replace( char, "" )
             # separate elements into list
-            elements = line.split(",")
-            print( "elements = {}".format( elements ) )
+            elements = line.split( "," )
+            # print( "elements = {}".format( elements ) )
             # print( "line {} = {}".format( k_line, line ) )
         return elements
 

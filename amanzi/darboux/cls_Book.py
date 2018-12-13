@@ -2,17 +2,9 @@
 
 # # Amanzi: The Multi-Process HPC Simulator
 # #   https://github.com/amanzi/amanzi
+
 # # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
-# # Daniel Topa LANL/CCS-2 dantopa@lanl.gov 505 667 0817
-
-import<>indentt<>cls_Element # required or optional
-
-#!/usr/bin/python
-
-# # Amanzi: The Multi-Process HPC Simulator
-# #   https://github.com/amanzi/amanzi
-# # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
-# # Daniel Topa LANL/CCS-2 dantopa@lanl.gov 505 667 0817
+# # Daniel Topa   LANL/CCS-2   dantopa@lanl.gov 505 667 0817
 
 # Book class
 #  commentary
@@ -28,8 +20,7 @@ class Book( object ):
         self._col_chapters    = list( ) # collection of chapters
         self._col_elements    = list( ) # collection of elements
 
-
-#   P R O P E R T I E S   #source_object
+#   P R O P E R T I E S   #
 
     @property
     def title( self ):
@@ -66,7 +57,7 @@ class Book( object ):
         """Collection of element objects"""
         return self._col_elements
 
-#   S E T T E R S   #source_object
+#   S E T T E R S   #
 
     @title.setter
     def title( self, value ):
@@ -96,7 +87,7 @@ class Book( object ):
     def col_elements( self, value ):
         self._col_elements = value
 
-#   D E L E T E R S   #source_object
+#   D E L E T E R S   #
 
     @title.deleter
     def title( self ):
@@ -126,6 +117,10 @@ class Book( object ):
     def col_elements( self ):
         del self._col_elements
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #source_object
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-# user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86, date: Dec 10, 2018, time: 18:28:42, nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
+# user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86
+
+# date: Dec 12, 2018, time: 18:55:09
+
+# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-04.nb

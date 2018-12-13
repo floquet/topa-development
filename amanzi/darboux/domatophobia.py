@@ -41,9 +41,21 @@ if __name__ == "__main__":
     mySource.read_file( )
     print( "length col_lines = %s" % len( mySource.col_lines ) )
     ( l_reqd, l_optl ) = mySource.search_elements_crude( )
-    elements = mySource.search_elements_refine( l_optl, "optional" )
-    with e in elements:
-        book.col_elements
+    myflavor = "optional";
+    Qreqd = "OPTL"
+    elements = mySource.search_elements_refine( l_optl, myflavor )
+    print( "elements = {}".format( elements ) )
+    count = 0
+    for t in elements: # titles
+        e = cls_Element.Element( )
+        count += 1
+        e.name = t
+        e.flavor = Qreqd
+        e.status = "NULL"
+        e.k_index = count
+        book.col_elements.append( e )
+    for k in range( 1, count ):
+        book.col_elements[ k ].print_element( )
 
 
     # # # start the book

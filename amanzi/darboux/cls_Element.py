@@ -2,8 +2,9 @@
 
 # # Amanzi: The Multi-Process HPC Simulator
 # #   https://github.com/amanzi/amanzi
+
 # # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
-# # Daniel Topa LANL/CCS-2 dantopa@lanl.gov 505 667 0817
+# # Daniel Topa   LANL/CCS-2   dantopa@lanl.gov 505 667 0817
 
 import       uuid
 
@@ -17,7 +18,7 @@ class Element( object ):
         self._flavor          = None    # REQD or OPTL
         self._status          = None    # PASS | FAIL | NULL
         self._k_index         = None    # counter
-        self._my_uuid         = uuid.uuid4( )
+        self._uuid            = uuid.uuid4( ) # element uuid
         self._k_line          = None    # 205
         self._key_head        = None    # 08-BC.S01.SS02.
         self._key_tail        = None    # OPTL-02
@@ -51,9 +52,9 @@ class Element( object ):
         return self._k_index
 
     @property
-    def my_uuid( self ):
+    def uuid( self ):
         """Universal Unique IDentifier for element"""
-        return self._my_uuid
+        return self._uuid
 
     @property
     def k_line( self ):
@@ -163,9 +164,9 @@ class Element( object ):
     def k_index( self ):
         del self._k_index
 
-    @my_uuid.deleter
-    def my_uuid( self ):
-        del self._my_uuid
+    @uuid.deleter
+    def uuid( self ):
+        del self._uuid
 
     @k_line.deleter
     def k_line( self ):
@@ -199,20 +200,40 @@ class Element( object ):
     def xl_col( self ):
         del self._xl_col
 
-# user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86,
-# date: Dec 12, 2018, time: 16:03:48,
-# nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
-
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def build_tail_key():
+    def build_tail_key( self ):
         self.tail_key = self.flavor + str( self.k_index ).zfill( 2 )
         return
 
-# dantopa@Lax-Millgram:darboux $ py cls_Elements.py
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-# dantopa@Lax-Millgram:darboux $ date
-# Wed Dec 12 16:09:21 MST 2018
+    def print_element( self ):
+        print( 'name = %s' % self.name )
+        print( 'flavor = %s' % self.flavor )
+        print( 'status = %s' % self.status )
+        print( 'k_index = %s' % self.k_index )
+        print( 'uuid = %s' % self.uuid )
+        print( 'k_line = %s' % self.k_line )
+        print( 'key_head = %s' % self.key_head )
+        print( 'key_tail = %s' % self.key_tail )
+        print( 'k_chapter = %s' % self.k_chapter )
+        print( 'k_section = %s' % self.k_section )
+        print( 'k_subsection = %s' % self.k_subsection )
+        print( 'xl_row = %s' % self.xl_row )
+        print( 'xl_col = %s' % self.xl_col )
+        return
 
-# dantopa@Lax-Millgram:darboux $ pwd
-# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/darboux
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+# user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86
+# date: Dec 12, 2018, time: 19:19:15
+# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-04.nb
+
+# l127914@pn1249300.lanl.gov:darboux $ python cls_Element.py
+
+# l127914@pn1249300.lanl.gov:darboux $ date
+# Wed Dec 12 19:31:18 MST 2018
+
+# l127914@pn1249300.lanl.gov:darboux $ pwd
+#/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux

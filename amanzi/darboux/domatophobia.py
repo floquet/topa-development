@@ -31,19 +31,17 @@ if __name__ == "__main__":
     mySource = book.source
 
     # # source data
-    #book.source.input_rst = "short.rst"    # setter called
     mySource.input_rst = "short.rst"    # setter called
-    # book.source.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
-    # source.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
-    #source.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
+    # mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
+    # mySource.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
     mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
 
     # read source file
-    book.source.setup_io( )
-    book.source.read_file( )
-    print( "length col_lines = %s" % len( book.source.col_lines ) )
-    ( l_reqd, l_optl ) = book.source.search_elements_crude( )
-    book.source.search_elements_refine( l_optl, "optional" )
+    mySource.setup_io( )
+    mySource.read_file( )
+    print( "length col_lines = %s" % len( mySource.col_lines ) )
+    ( l_reqd, l_optl ) = mySource.search_elements_crude( )
+    mySource.search_elements_refine( l_optl, "optional" )
 
 
     # # # start the book
@@ -67,8 +65,8 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-# dantopa@Lax-Millgram:darboux $ py barophobia.py
-# reading source file /Users/dantopa/Documents/repos/GitHub/topa-development/data/short.rst
+# l127914@pn1249300.lanl.gov:darboux $ python domatophobia.py
+# reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
 # length col_lines = 231
 # looking for optional elements
 # line 42 = comment, author, created, modified, model_id, description, purpose, units
@@ -82,9 +80,9 @@ if __name__ == "__main__":
 # line 153 = time_macro, cycle_macro, variable_macro
 # elements = ['time_macro', 'cycle_macro', 'variable_macro']
 
-#  2018-12-12 17:00:03.776078
-# source: /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/darboux/barophobia.py
-# python version 3.6.7 (default, Oct 21 2018, 09:26:25)
-# [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+#  2018-12-12 18:05:50.840657
+# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux/domatophobia.py
+# python version 3.7.0 (default, Jun 28 2018, 07:39:16)
+# [Clang 4.0.1 (tags/RELEASE_401/final)]
 
 # Domatophobia	Fear of houses

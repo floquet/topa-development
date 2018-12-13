@@ -196,6 +196,7 @@ class Source( object ):
             # print( "k_line %s" % k_line )
             # drop first 25 characters: "      Optional Elements:"
             line = self.col_lines[ k_line - 1 ][25:]
+            # purge arguments inside parentheses, braces
             # https://stackoverflow.com/questions/14596884/remove-text-between-and-in-python
             line = re.sub( "[\(\[].*?[\)\]]", "", line )
             print( "line {} = {}".format( k_line, line ) )
@@ -203,9 +204,11 @@ class Source( object ):
             # https://stackoverflow.com/questions/3939361/remove-specific-characters-from-a-string-in-python
             for char in "' ":
                 line = line.replace( char, "" )
-            print( "elements = {}".format( line.split(",") ) )
+            # separate elements into list
+            elements = line.split(",")
+            print( "elements = {}".format( elements ) )
             # print( "line {} = {}".format( k_line, line ) )
-        return
+        return elements
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -213,7 +216,7 @@ class Source( object ):
         # containers for line numbers
         l_reqd = list( )
         l_optl = list( )
-      
+
         # required elements
         k_line = 1
         for line in self.col_lines:
@@ -224,7 +227,7 @@ class Source( object ):
                     continue
                 l_reqd.append( k_line )
             k_line += 1
-            
+
         # optional elements
         k_line = 1
         for line in self.col_lines:
@@ -234,7 +237,7 @@ class Source( object ):
                 if line.find( "NONE" ) != -1:
                     continue
                 l_optl.append( k_line )
-            k_line += 1    
+            k_line += 1
 
         # print ( "{} lines with required elements found; locations {}".format( len( l_reqd ), l_reqd ) )
         # print ( "{} lines with optional elements found; locations {}".format( len( l_optl ), l_optl ) )
@@ -248,7 +251,7 @@ class Source( object ):
 # date: Dec 10, 2018, time: 18:24:50
 # nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-02.nb
 
-#dantopa@Mittag-Leffler.local:darboux $ python cls_Source.py 
+#dantopa@Mittag-Leffler.local:darboux $ python cls_Source.py
 
 #dantopa@Mittag-Leffler.local:darboux $ date
 #Tue Dec 11 19:40:02 MST 2018

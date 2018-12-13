@@ -2,11 +2,17 @@
 
 # # Amanzi: The Multi-Process HPC Simulator
 # #   https://github.com/amanzi/amanzi
-
 # # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
-# # Daniel Topa   LANL/CCS-2   dantopa@lanl.gov 505 667 0817
+# # Daniel Topa LANL/CCS-2 dantopa@lanl.gov 505 667 0817
 
-import        cls_Chapter # chapter (constains sections)
+import<>indentt<>cls_Element # required or optional
+
+#!/usr/bin/python
+
+# # Amanzi: The Multi-Process HPC Simulator
+# #   https://github.com/amanzi/amanzi
+# # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
+# # Daniel Topa LANL/CCS-2 dantopa@lanl.gov 505 667 0817
 
 # Book class
 #  commentary
@@ -20,9 +26,10 @@ class Book( object ):
         self._source          = None    # input source
         self._xl_file         = None    # output
         self._col_chapters    = list( ) # collection of chapters
+        self._col_elements    = list( ) # collection of elements
 
 
-#   P R O P E R T I E S   #
+#   P R O P E R T I E S   #source_object
 
     @property
     def title( self ):
@@ -54,7 +61,12 @@ class Book( object ):
         """Collection of chapter objects"""
         return self._col_chapters
 
-#   S E T T E R S   #
+    @property
+    def col_elements( self ):
+        """Collection of element objects"""
+        return self._col_elements
+
+#   S E T T E R S   #source_object
 
     @title.setter
     def title( self, value ):
@@ -80,7 +92,11 @@ class Book( object ):
     def col_chapters( self, value ):
         self._col_chapters = value
 
-#   D E L E T E R S   #
+    @col_elements.setter
+    def col_elements( self, value ):
+        self._col_elements = value
+
+#   D E L E T E R S   #source_object
 
     @title.deleter
     def title( self ):
@@ -106,6 +122,10 @@ class Book( object ):
     def col_chapters( self ):
         del self._col_chapters
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+    @col_elements.deleter
+    def col_elements( self ):
+        del self._col_elements
 
-# user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86, date: Dec 12, 2018, time: 16:53:13, nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #source_object
+
+# user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86, date: Dec 10, 2018, time: 18:28:42, nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-03.nb

@@ -17,7 +17,7 @@ class Element( object ):
         self._flavor          = None    # REQD or OPTL
         self._status          = None    # PASS | FAIL | NULL
         self._k_index         = None    # counter
-        self._my_uuid         = None    # element uuid
+        self._my_uuid         = uuid.uuid4( )
         self._k_line          = None    # 205
         self._key_head        = None    # 08-BC.S01.SS02.
         self._key_tail        = None    # OPTL-02

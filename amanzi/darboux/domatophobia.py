@@ -16,7 +16,7 @@ import xlsxwriter           # API for Excel
 import cls_Book             # Book (constains chapters, contains requirements)
 import cls_Chapter          # chapter (constains sections)
 import cls_Element          # elements (required, optional)
-import cls_Source            # e.q. Amanzi XML Input Specification (Version 2.3-draft)
+import cls_Source           # e.q. Amanzi XML Input Specification (Version 2.3-draft)
 # tools
 import tools_debug
 import tools_xl             # spreadsheet authoring tools
@@ -41,7 +41,9 @@ if __name__ == "__main__":
     mySource.read_file( )
     print( "length col_lines = %s" % len( mySource.col_lines ) )
     ( l_reqd, l_optl ) = mySource.search_elements_crude( )
-    mySource.search_elements_refine( l_optl, "optional" )
+    elements = mySource.search_elements_refine( l_optl, "optional" )
+    with e in elements:
+        book.col_elements
 
 
     # # # start the book

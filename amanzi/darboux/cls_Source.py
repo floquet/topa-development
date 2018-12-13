@@ -191,6 +191,7 @@ class Source( object ):
 
     def search_elements_refine( self, list_search, flavor ):
         print( "looking for %s elements" % flavor )
+        all_elements = list( );
         # remove first 25 characters
         for k_line in list_search:
             # print( "k_line %s" % k_line )
@@ -206,9 +207,10 @@ class Source( object ):
                 line = line.replace( char, "" )
             # separate elements into list
             elements = line.split( "," )
+            all_elements.append( elements )
             # print( "elements = {}".format( elements ) )
             # print( "line {} = {}".format( k_line, line ) )
-        return elements
+        return all_elements
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

@@ -32,9 +32,9 @@ if __name__ == "__main__":
 
     # # source data
     mySource.input_rst = "short.rst"    # setter called
-    # mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
+    mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
     # mySource.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
-    mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
+    # mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
 
     # read source file
     mySource.setup_io( )
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-# l127914@pn1249300.lanl.gov:darboux $ python domatophobia.py 
+# l127914@pn1249300.lanl.gov:darboux $ python domatophobia.py
 # reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
 # length col_lines = 231
 # looking for optional elements

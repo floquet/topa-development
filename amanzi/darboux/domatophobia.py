@@ -45,19 +45,19 @@ if __name__ == "__main__":
     # harvest optional elements
     myflavor = "optional";
     Qreqd = "OPTL"
-    all_elements = mySource.search_elements_refine( l_optl, myflavor )
+    all_elements = mySource.search_elements_refine( l_optl, myflavor, book )
     #print( "elements = {}".format( elements ) )
-    count = 0
-    for elist in all_elements:
-        for t in elist:
-            e = cls_Element.Element( )
-            count += 1
-            e.name = t
-            e.flavor = Qreqd
-            e.status = "NULL"
-            e.k_index = count
-            book.col_elements.append( e )
-    for k in range( 0, count ):
+    # count = 0
+    # for elist in all_elements:
+    #     for t in elist:
+    #         e = cls_Element.Element( )
+    #         count += 1
+    #         e.name = t
+    #         e.flavor = Qreqd
+    #         e.status = "NULL"
+    #         e.k_index = count
+    #         book.col_elements.append( e )
+    for k in range( 0, len( book.col_elements ) ):
         book.col_elements[ k ].print_element( )
 
 
@@ -93,12 +93,12 @@ if __name__ == "__main__":
 # line 153 = time_macro, cycle_macro, variable_macro
 #
 # Element attributes:
-# name = comment
+# name = <cls_Element.Element object at 0x103f2f470>
 # flavor = OPTL
 # status = NULL
 # k_index = 1
-# uuid = b3eedc01-b2c2-427a-bfee-edf6db9cfdc5
-# k_line = None
+# uuid = 9f149fc0-0bf6-4ac7-9fd8-f2d517ff8c4c
+# k_line = 42
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -108,12 +108,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = author
+# name = <cls_Element.Element object at 0x103f2f4a8>
 # flavor = OPTL
 # status = NULL
 # k_index = 2
-# uuid = 99efae96-eb55-4399-8b9c-9d4ae8a84159
-# k_line = None
+# uuid = 73601091-7d57-45a3-847b-ed22b4ed5fc4
+# k_line = 42
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -123,12 +123,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = created
+# name = <cls_Element.Element object at 0x103f2f518>
 # flavor = OPTL
 # status = NULL
 # k_index = 3
-# uuid = 4588b7dc-6e01-4556-887f-60ad829b7060
-# k_line = None
+# uuid = d113bed2-f9c4-41c1-814a-4741ebef5a58
+# k_line = 42
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -138,12 +138,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = modified
+# name = <cls_Element.Element object at 0x103f2f588>
 # flavor = OPTL
 # status = NULL
 # k_index = 4
-# uuid = c5f65d3b-2583-4b85-b6bf-82f71eeb1397
-# k_line = None
+# uuid = b3d2194c-f0ba-4cc3-bc55-e149191b7c69
+# k_line = 42
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -153,12 +153,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = model_id
+# name = <cls_Element.Element object at 0x103f2f5f8>
 # flavor = OPTL
 # status = NULL
 # k_index = 5
-# uuid = b425e017-cad1-473e-a99b-f38f85b5d3fd
-# k_line = None
+# uuid = 6304c284-9e3f-4861-89c7-3d721b6e077e
+# k_line = 42
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -168,12 +168,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = description
+# name = <cls_Element.Element object at 0x103f2f668>
 # flavor = OPTL
 # status = NULL
 # k_index = 6
-# uuid = fd78533e-7350-4bbe-9d84-e612f8e40673
-# k_line = None
+# uuid = 3600fa1e-71ab-42db-8352-33dc2dbbeef6
+# k_line = 42
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -183,12 +183,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = purpose
+# name = <cls_Element.Element object at 0x103f2f6d8>
 # flavor = OPTL
 # status = NULL
 # k_index = 7
-# uuid = aca89323-ff30-45af-afc7-06fc5829926d
-# k_line = None
+# uuid = 7a503ad8-64fd-44e9-bc50-abdf5a241493
+# k_line = 42
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -198,12 +198,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = units
+# name = <cls_Element.Element object at 0x103f2f748>
 # flavor = OPTL
 # status = NULL
 # k_index = 8
-# uuid = b2046214-4a45-41d2-81c7-425a90a3f629
-# k_line = None
+# uuid = bcd4fe0f-2781-4fa8-b13c-a30a9e714b6f
+# k_line = 42
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -213,12 +213,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = length_unit
+# name = <cls_Element.Element object at 0x103f27d68>
 # flavor = OPTL
 # status = NULL
 # k_index = 9
-# uuid = 805f5dc0-7c82-4939-a76d-f9e3613c5268
-# k_line = None
+# uuid = 13e0bb3b-473c-48d4-a82d-0ad2f9ec7dae
+# k_line = 60
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -228,12 +228,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = time_unit
+# name = <cls_Element.Element object at 0x103f2f390>
 # flavor = OPTL
 # status = NULL
 # k_index = 10
-# uuid = 4ecd25d4-5826-44fa-81d3-1deb6eaf989a
-# k_line = None
+# uuid = 52d19abe-7f99-4049-ac63-7f5e089166a0
+# k_line = 60
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -243,12 +243,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = mass_unit
+# name = <cls_Element.Element object at 0x103f2f438>
 # flavor = OPTL
 # status = NULL
 # k_index = 11
-# uuid = 9ea668db-0420-498e-8c6c-2bbad81156a1
-# k_line = None
+# uuid = bd261391-9d28-4b9b-a220-97ac0c9afc80
+# k_line = 60
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -258,12 +258,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = conc_unit
+# name = <cls_Element.Element object at 0x103f2f7b8>
 # flavor = OPTL
 # status = NULL
 # k_index = 12
-# uuid = 7cdad8c9-1c2d-4432-80db-893028be54cb
-# k_line = None
+# uuid = 10b72850-dfca-4b61-abdb-75f5553b21df
+# k_line = 60
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -273,12 +273,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = constants
+# name = <cls_Element.Element object at 0x103f2f8d0>
 # flavor = OPTL
 # status = NULL
 # k_index = 13
-# uuid = 4aa75565-4086-45b2-8ea6-f401a2286f8b
-# k_line = None
+# uuid = 85888891-0c17-44e3-bded-ba80baec7468
+# k_line = 105
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -288,12 +288,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = macros
+# name = <cls_Element.Element object at 0x103f2f908>
 # flavor = OPTL
 # status = NULL
 # k_index = 14
-# uuid = 597cd734-da20-4cd9-ae81-f54c2929d567
-# k_line = None
+# uuid = 5d105773-a84c-4a7d-bd28-998a55c3a10e
+# k_line = 105
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -303,12 +303,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = constant
+# name = <cls_Element.Element object at 0x103f2f860>
 # flavor = OPTL
 # status = NULL
 # k_index = 15
-# uuid = 4cf054f4-2f1c-43c1-822d-9cd7bcae5e2d
-# k_line = None
+# uuid = 6e54c4f2-b980-4c09-9384-35164e5e8e7a
+# k_line = 117
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -318,12 +318,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = time_constant
+# name = <cls_Element.Element object at 0x103f2f978>
 # flavor = OPTL
 # status = NULL
 # k_index = 16
-# uuid = 3f54219d-6936-477d-a317-383c0718c561
-# k_line = None
+# uuid = 72090504-b2f2-4b45-a286-e431bc114147
+# k_line = 117
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -333,12 +333,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = numerical_constant
+# name = <cls_Element.Element object at 0x103f2fa20>
 # flavor = OPTL
 # status = NULL
 # k_index = 17
-# uuid = 65eed8ac-4c3f-491e-a595-8b9567103bf6
-# k_line = None
+# uuid = c5fa0c9c-3dbb-4626-ab8d-22a23466f35b
+# k_line = 117
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -348,12 +348,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = area_mass_flux_constant
+# name = <cls_Element.Element object at 0x103f2fa90>
 # flavor = OPTL
 # status = NULL
 # k_index = 18
-# uuid = c439e663-6b95-404d-b970-e2d2e5e6cbb6
-# k_line = None
+# uuid = d30ce5c2-d840-4ec2-a725-d22a5cba8b58
+# k_line = 117
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -363,12 +363,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = time_macro
+# name = <cls_Element.Element object at 0x103f2fb00>
 # flavor = OPTL
 # status = NULL
 # k_index = 19
-# uuid = b511ceab-b22f-473f-a7de-82b278527b33
-# k_line = None
+# uuid = f14bd718-dda8-45a3-ab28-b11d8d0c644d
+# k_line = 153
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -378,12 +378,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = cycle_macro
+# name = <cls_Element.Element object at 0x103f2fb70>
 # flavor = OPTL
 # status = NULL
 # k_index = 20
-# uuid = bf7955c2-b393-42fb-87be-33aad0322c6a
-# k_line = None
+# uuid = dab70fe4-1937-4bae-a5e4-0f43ea5e125a
+# k_line = 153
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -393,12 +393,12 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = variable_macro
+# name = <cls_Element.Element object at 0x103f2fbe0>
 # flavor = OPTL
 # status = NULL
 # k_index = 21
-# uuid = da8f878c-f2d2-4bd3-bd6c-223e5e7a9c95
-# k_line = None
+# uuid = 233b0cb8-8bf1-4597-817b-05ab6b30464e
+# k_line = 153
 # key_head = None
 # key_tail = None
 # k_chapter = None
@@ -407,9 +407,10 @@ if __name__ == "__main__":
 # xl_row = None
 # xl_col = None
 #
-#  2018-12-12 19:58:47.541296
+#  2018-12-18 12:14:57.182633
 # source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux/domatophobia.py
 # python version 3.7.0 (default, Jun 28 2018, 07:39:16)
 # [Clang 4.0.1 (tags/RELEASE_401/final)]
+
 
 # Domatophobia	Fear of houses

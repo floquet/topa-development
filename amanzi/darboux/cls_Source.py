@@ -12,6 +12,9 @@
 import re
 import uuid                 # Universal Unique IDentifier
 from pathlib import Path    # rename file
+# home brew
+# classes
+import cls_Element          # elements (required, optional)
 
 class Source( object ):
     def __init__( self ):
@@ -189,28 +192,41 @@ class Source( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def search_elements_refine( self, list_search, flavor ):
+    def search_elements_refine( self, list_search, flavor, myBook ):
         print( "looking for %s elements" % flavor )
         all_elements = list( );
+        Qreqd = "REQD"
+        if flavor == "optional":
+           Qreqd = "OPTL"
+        count = 0
         # remove first 25 characters
-        for k_line in list_search:
+        for k in list_search: # sweep line numbers
             # print( "k_line %s" % k_line )
             # drop first 25 characters: "      Optional Elements:"
-            line = self.col_lines[ k_line - 1 ][25:]
+            line = self.col_lines[ k - 1 ][25:]
             # purge arguments inside parentheses, braces
             # https://stackoverflow.com/questions/14596884/remove-text-between-and-in-python
             line = re.sub( "[\(\[].*?[\)\]]", "", line )
-            print( "line {} = {}".format( k_line, line ) )
+            print( "line {} = {}".format( k, line ) )
             # clean up spaces, '
             # https://stackoverflow.com/questions/3939361/remove-specific-characters-from-a-string-in-python
             for char in "' ":
                 line = line.replace( char, "" )
             # separate elements into list
             elements = line.split( "," )
-            all_elements.append( elements )
+            for myElement in elements:
+                myElement = cls_Element.Element( )
+                count += 1
+                myElement.name    = myElement
+                myElement.flavor  = Qreqd
+                myElement.status  = "NULL"
+                myElement.k_index = count
+                myElement.k_line  = k
+                myBook.col_elements.append( myElement )
+            #all_elements.append( elements )
             # print( "elements = {}".format( elements ) )
             # print( "line {} = {}".format( k_line, line ) )
-        return all_elements
+        return # all_elements
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -243,7 +259,7 @@ class Source( object ):
 
         # print ( "{} lines with required elements found; locations {}".format( len( l_reqd ), l_reqd ) )
         # print ( "{} lines with optional elements found; locations {}".format( len( l_optl ), l_optl ) )
-
+        # return list of lines numbers which may have elements
         return ( l_reqd, l_optl )
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

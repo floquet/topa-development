@@ -22,7 +22,7 @@ class Source( object ):
         self._title           = None    # from *.rst, line 2
         self._col_lines       = list( ) # text as a collection of lines, EOL removed
         self._numLines        = None    # census
-        self._uuid            = None    # de facto time stamp
+        self._uuid            = uuid.uuid4( ) # element uuid
         # source
         self._input_rst       = None    # AmanziInputSpec-v2.3.2-draft.rst
         self._path_rst        = None    # absolute path
@@ -97,10 +97,6 @@ class Source( object ):
     @numLines.setter
     def numLines( self, value ):
         self._numLines = value
-
-    @uuid.setter
-    def uuid( self, value ):
-        self._uuid = value
 
     @input_rst.setter
     def input_rst( self, value ):
@@ -185,7 +181,8 @@ class Source( object ):
         # combine path and file name
         self.full_rst  = self.path_rst + self.input_rst
         # # output file: same directory
-        self.output_xl = Path( self.input_rst ).stem + ".xlsx" # https://stackoverflow.com/questions/2900035/changing-file-extension-in-python
+        # https://stackoverflow.com/questions/2900035/changing-file-extension-in-python
+        self.output_xl = Path( self.input_rst ).stem + ".xlsx"
         self.path_xl   = self.path_rst
         self.full_xl   = self.path_xl + self.output_xl
         return

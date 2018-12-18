@@ -45,9 +45,8 @@ if __name__ == "__main__":
     # harvest optional elements
     all_elements = mySource.search_elements_refine( l_optl, "optional", book )
     all_elements = mySource.search_elements_refine( l_reqd, "required", book )
-    for k in range( 0, len( book.col_elements ) ):
-        book.col_elements[ k ].print_element( )
-
+    for e in book.col_elements:
+        e.print_element( )
 
     # # # start the book
     # myBook = cls_Book.Book( ) # instantiate

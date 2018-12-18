@@ -213,7 +213,7 @@ class Source( object ):
             elements = line.split( "," )
             #print ( "elements = %s" % elements )
             for myElement in elements:
-                e = cls_Element.Element( )
+                e         = cls_Element.Element( )
                 count    += 1
                 e.name    = myElement
                 e.flavor  = Qreqd

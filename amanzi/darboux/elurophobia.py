@@ -32,9 +32,9 @@ if __name__ == "__main__":
 
     # # source data
     mySource.input_rst = "short.rst"    # setter called
-    mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
+    # mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
     # mySource.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
-    # mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
+    mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
 
     # read source file
     mySource.setup_io( )
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-# l127914@pn1249300.lanl.gov:darboux $ python domatophobia.py
+# l127914@pn1249300.lanl.gov:darboux $ python elurophobia.py
 # reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
 # length col_lines = 231
 # looking for optional elements
@@ -91,13 +91,13 @@ if __name__ == "__main__":
 # line 105 = constants, macros
 # line 117 = constant, time_constant, numerical_constant, area_mass_flux_constant
 # line 153 = time_macro, cycle_macro, variable_macro
-#
+
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f470>
+# name = comment
 # flavor = OPTL
 # status = NULL
 # k_index = 1
-# uuid = 9f149fc0-0bf6-4ac7-9fd8-f2d517ff8c4c
+# uuid = 77fd213f-bccc-424b-99a3-54d92fdb2a5f
 # k_line = 42
 # key_head = None
 # key_tail = None
@@ -108,11 +108,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f4a8>
+# name = author
 # flavor = OPTL
 # status = NULL
 # k_index = 2
-# uuid = 73601091-7d57-45a3-847b-ed22b4ed5fc4
+# uuid = 46851554-0b1f-459e-81f9-4541113314d3
 # k_line = 42
 # key_head = None
 # key_tail = None
@@ -123,11 +123,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f518>
+# name = created
 # flavor = OPTL
 # status = NULL
 # k_index = 3
-# uuid = d113bed2-f9c4-41c1-814a-4741ebef5a58
+# uuid = bbf177c2-7881-427d-a9c0-a40b9cdffec8
 # k_line = 42
 # key_head = None
 # key_tail = None
@@ -138,11 +138,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f588>
+# name = modified
 # flavor = OPTL
 # status = NULL
 # k_index = 4
-# uuid = b3d2194c-f0ba-4cc3-bc55-e149191b7c69
+# uuid = 346bcad7-33f4-46b0-a20d-928f4c79b6c0
 # k_line = 42
 # key_head = None
 # key_tail = None
@@ -153,11 +153,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f5f8>
+# name = model_id
 # flavor = OPTL
 # status = NULL
 # k_index = 5
-# uuid = 6304c284-9e3f-4861-89c7-3d721b6e077e
+# uuid = 098b3cbd-c9a5-4a1f-932e-7fbb29d218c4
 # k_line = 42
 # key_head = None
 # key_tail = None
@@ -168,11 +168,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f668>
+# name = description
 # flavor = OPTL
 # status = NULL
 # k_index = 6
-# uuid = 3600fa1e-71ab-42db-8352-33dc2dbbeef6
+# uuid = c2fd4a76-641a-4ca3-93c5-b78196190659
 # k_line = 42
 # key_head = None
 # key_tail = None
@@ -183,11 +183,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f6d8>
+# name = purpose
 # flavor = OPTL
 # status = NULL
 # k_index = 7
-# uuid = 7a503ad8-64fd-44e9-bc50-abdf5a241493
+# uuid = 49da8446-b262-41c6-8a2d-6198eb157d89
 # k_line = 42
 # key_head = None
 # key_tail = None
@@ -198,11 +198,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f748>
+# name = units
 # flavor = OPTL
 # status = NULL
 # k_index = 8
-# uuid = bcd4fe0f-2781-4fa8-b13c-a30a9e714b6f
+# uuid = b3ed511a-b945-4c1a-af9e-f0bc5abebd47
 # k_line = 42
 # key_head = None
 # key_tail = None
@@ -213,11 +213,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f27d68>
+# name = length_unit
 # flavor = OPTL
 # status = NULL
 # k_index = 9
-# uuid = 13e0bb3b-473c-48d4-a82d-0ad2f9ec7dae
+# uuid = 0db4ae1d-6f31-4714-8e39-c379fe0f40fb
 # k_line = 60
 # key_head = None
 # key_tail = None
@@ -228,11 +228,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f390>
+# name = time_unit
 # flavor = OPTL
 # status = NULL
 # k_index = 10
-# uuid = 52d19abe-7f99-4049-ac63-7f5e089166a0
+# uuid = 20b7dc21-2392-4087-944a-14aedff865b5
 # k_line = 60
 # key_head = None
 # key_tail = None
@@ -243,11 +243,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f438>
+# name = mass_unit
 # flavor = OPTL
 # status = NULL
 # k_index = 11
-# uuid = bd261391-9d28-4b9b-a220-97ac0c9afc80
+# uuid = 9bb41610-d492-4439-93af-ccc6d9943bca
 # k_line = 60
 # key_head = None
 # key_tail = None
@@ -258,11 +258,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f7b8>
+# name = conc_unit
 # flavor = OPTL
 # status = NULL
 # k_index = 12
-# uuid = 10b72850-dfca-4b61-abdb-75f5553b21df
+# uuid = 2a458e48-39ad-479e-be2d-0f50384fa1f6
 # k_line = 60
 # key_head = None
 # key_tail = None
@@ -273,11 +273,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f8d0>
+# name = constants
 # flavor = OPTL
 # status = NULL
 # k_index = 13
-# uuid = 85888891-0c17-44e3-bded-ba80baec7468
+# uuid = 77f3c157-1f91-41a9-a906-857fd9a3351f
 # k_line = 105
 # key_head = None
 # key_tail = None
@@ -288,11 +288,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f908>
+# name = macros
 # flavor = OPTL
 # status = NULL
 # k_index = 14
-# uuid = 5d105773-a84c-4a7d-bd28-998a55c3a10e
+# uuid = b8b5f41e-4924-452b-a1f8-7ab9f5581a6b
 # k_line = 105
 # key_head = None
 # key_tail = None
@@ -303,11 +303,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f860>
+# name = constant
 # flavor = OPTL
 # status = NULL
 # k_index = 15
-# uuid = 6e54c4f2-b980-4c09-9384-35164e5e8e7a
+# uuid = ecbf2b15-5a8d-43be-950a-998080f3a46e
 # k_line = 117
 # key_head = None
 # key_tail = None
@@ -318,11 +318,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2f978>
+# name = time_constant
 # flavor = OPTL
 # status = NULL
 # k_index = 16
-# uuid = 72090504-b2f2-4b45-a286-e431bc114147
+# uuid = f5da6e87-c1b0-4f03-b85a-6381e21a8835
 # k_line = 117
 # key_head = None
 # key_tail = None
@@ -333,11 +333,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2fa20>
+# name = numerical_constant
 # flavor = OPTL
 # status = NULL
 # k_index = 17
-# uuid = c5fa0c9c-3dbb-4626-ab8d-22a23466f35b
+# uuid = 3e76f870-1e09-4a3e-8cb0-3419757e302c
 # k_line = 117
 # key_head = None
 # key_tail = None
@@ -348,11 +348,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2fa90>
+# name = area_mass_flux_constant
 # flavor = OPTL
 # status = NULL
 # k_index = 18
-# uuid = d30ce5c2-d840-4ec2-a725-d22a5cba8b58
+# uuid = 51b2774c-e454-4c01-8eaf-625cd11c56e0
 # k_line = 117
 # key_head = None
 # key_tail = None
@@ -363,11 +363,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2fb00>
+# name = time_macro
 # flavor = OPTL
 # status = NULL
 # k_index = 19
-# uuid = f14bd718-dda8-45a3-ab28-b11d8d0c644d
+# uuid = 76d64c58-fc03-4bd8-836f-f8ec8a710f7d
 # k_line = 153
 # key_head = None
 # key_tail = None
@@ -378,11 +378,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2fb70>
+# name = cycle_macro
 # flavor = OPTL
 # status = NULL
 # k_index = 20
-# uuid = dab70fe4-1937-4bae-a5e4-0f43ea5e125a
+# uuid = a309717d-aa5e-4c03-af84-a769b4be4f57
 # k_line = 153
 # key_head = None
 # key_tail = None
@@ -393,11 +393,11 @@ if __name__ == "__main__":
 # xl_col = None
 #
 # Element attributes:
-# name = <cls_Element.Element object at 0x103f2fbe0>
+# name = variable_macro
 # flavor = OPTL
 # status = NULL
 # k_index = 21
-# uuid = 233b0cb8-8bf1-4597-817b-05ab6b30464e
+# uuid = 1d3fd771-b5cc-4c56-85a3-81c0e1f87ded
 # k_line = 153
 # key_head = None
 # key_tail = None
@@ -407,10 +407,9 @@ if __name__ == "__main__":
 # xl_row = None
 # xl_col = None
 #
-#  2018-12-18 12:14:57.182633
-# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux/domatophobia.py
+#  2018-12-18 12:24:52.928932
+# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux/elurophobia.py
 # python version 3.7.0 (default, Jun 28 2018, 07:39:16)
 # [Clang 4.0.1 (tags/RELEASE_401/final)]
-
 
 # Elurophobia	Fear of cats

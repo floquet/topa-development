@@ -212,14 +212,14 @@ class Source( object ):
             # separate elements into list
             elements = line.split( "," )
             for myElement in elements:
-                myElement = cls_Element.Element( )
+                e = cls_Element.Element( )
                 count += 1
-                myElement.name    = myElement
-                myElement.flavor  = Qreqd
-                myElement.status  = "NULL"
-                myElement.k_index = count
-                myElement.k_line  = k
-                myBook.col_elements.append( myElement )
+                e.name    = myElement
+                e.flavor  = Qreqd
+                e.status  = "NULL"
+                e.k_index = count
+                e.k_line  = k
+                myBook.col_elements.append( e )
             #all_elements.append( elements )
             # print( "elements = {}".format( elements ) )
             # print( "line {} = {}".format( k_line, line ) )

@@ -43,20 +43,8 @@ if __name__ == "__main__":
     # mark candidate elements
     ( l_reqd, l_optl ) = mySource.search_elements_crude( )
     # harvest optional elements
-    myflavor = "optional";
-    Qreqd = "OPTL"
-    all_elements = mySource.search_elements_refine( l_optl, myflavor, book )
-    #print( "elements = {}".format( elements ) )
-    # count = 0
-    # for elist in all_elements:
-    #     for t in elist:
-    #         e = cls_Element.Element( )
-    #         count += 1
-    #         e.name = t
-    #         e.flavor = Qreqd
-    #         e.status = "NULL"
-    #         e.k_index = count
-    #         book.col_elements.append( e )
+    all_elements = mySource.search_elements_refine( l_optl, "optional", book )
+    all_elements = mySource.search_elements_refine( l_reqd, "required", book )
     for k in range( 0, len( book.col_elements ) ):
         book.col_elements[ k ].print_element( )
 

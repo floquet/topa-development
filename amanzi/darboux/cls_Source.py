@@ -195,7 +195,7 @@ class Source( object ):
         Qreqd = "REQD"
         if flavor == "optional":
            Qreqd = "OPTL"
-        count = 0
+        count = len( myBook.col_elements )
         # remove first 25 characters
         for k in list_search: # sweep line numbers
             # print( "k_line %s" % k_line )
@@ -207,13 +207,14 @@ class Source( object ):
             print( "line {} = {}".format( k, line ) )
             # clean up spaces, '
             # https://stackoverflow.com/questions/3939361/remove-specific-characters-from-a-string-in-python
-            for char in "' ":
-                line = line.replace( char, "" )
+            #for char in "' ":
+                #line = line.replace( char, "" ) # constants, macros
             # separate elements into list
             elements = line.split( "," )
+            #print ( "elements = %s" % elements )
             for myElement in elements:
                 e = cls_Element.Element( )
-                count += 1
+                count    += 1
                 e.name    = myElement
                 e.flavor  = Qreqd
                 e.status  = "NULL"

@@ -16,7 +16,7 @@ import xlsxwriter           # API for Excel
 # classes
 import cls_Book             # Book (constains chapters, contains requirements)
 import cls_Chapter          # chapter (constains sections)
-#import cls_Element          # elements (required, optional)
+import cls_Element          # elements (required, optional)
 import cls_Source           # e.q. Amanzi XML Input Specification (Version 2.3-draft)
 # tools
 import tools_debug
@@ -47,14 +47,15 @@ if __name__ == "__main__":
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( workbook, book )
     tools_debug.xl_numbered_lines( workbook, book.source.col_lines )
+
     # delineate chapters
     book.mark_chapters( )
+    tools_debug.xl_chapter_attributes( workbook, book.col_chapters )
 
     # delineate sections
     #for c in book.col_chapters:
         # mark sections
         #c.mark_sections( )
-    tools_debug.xl_chapter_attributes( workbook, book.col_chapters )
 
     print( "* * * searching chapters for elements" )
     for c in book.col_chapters:
@@ -63,10 +64,10 @@ if __name__ == "__main__":
         c.print_attributes( )
 
     # harvest optional elements
-    # all_elements = mySource.search_elements_refine( l_optl, "optional", book )
-    # all_elements = mySource.search_elements_refine( l_reqd, "required", book )
-    # for e in book.col_elements:
-    #     e.print_attributes( )
+    all_elements = source.search_elements_refine( l_optl, "optional", book )
+    all_elements = source.search_elements_refine( l_reqd, "required", book )
+    for e in book.col_elements:
+        e.print_attributes( )
 
     # write workbook
     workbook.close( )

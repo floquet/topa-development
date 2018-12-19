@@ -6,10 +6,10 @@
 # # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
 # # Daniel Topa   LANL/CCS-2   dantopa@lanl.gov 505 667 0817
 
-import       uuid
+import       uuid                # Universal Unique IDentifier
 
 # Element class
-#  commentary
+#  optional or required
 
 class Element( object ):
     def __init__( self ):
@@ -28,7 +28,8 @@ class Element( object ):
         self._xl_row          = None    # 5
         self._xl_col          = None    # 3
 
-#   P R O P E R T I E S   #
+
+#   P R O P E R T I E S   #\:f3b5
 
     @property
     def name( self ):
@@ -95,7 +96,7 @@ class Element( object ):
         """Col address for test status in spreadsheet"""
         return self._xl_col
 
-#   S E T T E R S   #
+#   S E T T E R S   #\:f3b5
 
     @name.setter
     def name( self, value ):
@@ -145,7 +146,7 @@ class Element( object ):
     def xl_col( self, value ):
         self._xl_col = value
 
-#   D E L E T E R S   #
+#   D E L E T E R S   #\:f3b5
 
     @name.deleter
     def name( self ):
@@ -199,37 +200,36 @@ class Element( object ):
     def xl_col( self ):
         del self._xl_col
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+#   M E T H O D S   #\:f3b5
+
+    def print_attributes( self ):
+        print('\nElement attributes:')
+        print( 'name = %s' % self.name )
+        print( 'flavor = %s' % self.flavor )
+        print( 'status = %s' % self.status )
+        print( 'k_index = %s' % self.k_index )
+        print( 'uuid = %s' % self.uuid )
+        print( 'k_line = %s' % self.k_line )
+        print( 'key_head = %s' % self.key_head )
+        print( 'key_tail = %s' % self.key_tail )
+        print( 'k_chapter = %s' % self.k_chapter )
+        print( 'k_section = %s' % self.k_section )
+        print( 'k_subsection = %s' % self.k_subsection )
+        print( 'xl_row = %s' % self.xl_row )
+        print( 'xl_col = %s' % self.xl_col )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #\:f3b5
 
     def build_tail_key( self ):
         self.tail_key = self.flavor + str( self.k_index ).zfill( 2 )
         return
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
-
-    def print_element( self ):
-        print( '\nElement attributes:')
-        print( 'name         = %s' % self.name )
-        print( 'flavor       = %s' % self.flavor )
-        print( 'status       = %s' % self.status )
-        print( 'k_index      = %s' % self.k_index )
-        print( 'uuid         = %s' % self.uuid )
-        print( 'k_line       = %s' % self.k_line )
-        print( 'key_head     = %s' % self.key_head )
-        print( 'key_tail     = %s' % self.key_tail )
-        print( 'k_chapter    = %s' % self.k_chapter )
-        print( 'k_section    = %s' % self.k_section )
-        print( 'k_subsection = %s' % self.k_subsection )
-        print( 'xl_row       = %s' % self.xl_row )
-        print( 'xl_col       = %s' % self.xl_col )
-        return
-
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #\:f3b5
 
 # user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86
-# date: Dec 12, 2018, time: 19:19:15
-# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-04.nb
-
+# date: Dec 19, 2018, time: 12:31:26
+# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-06.nb
 # l127914@pn1249300.lanl.gov:darboux $ python cls_Element.py
 
 # l127914@pn1249300.lanl.gov:darboux $ date

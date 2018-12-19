@@ -13,6 +13,7 @@ from pathlib import Path   # rename file
 # home brew
 # classes
 import cls_Chapter         # chapter (constains sections)
+import cls_Element         # elements (required, optional)
 
 # Source class
 #  source:  Amanzi manual to be parsed

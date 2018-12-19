@@ -90,6 +90,14 @@ class Chapter( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+    def mark_sections( self ):
+        print( "& & & chapter.mark_sections" )
+        for c in rcol_chapterss:
+            source.parse_alpha( self, "---", self.k_start, self.k_stop )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
     def print_element( self ):
         print( '\nChapter attributes:')
         print( 'title              = %s' % self.title )

@@ -119,6 +119,51 @@ class Book( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+    def mark_chapters( self ):
+        start_locations = self.mark_chapters_start( )
+        self.mark_chapters_stop( start_locations )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def mark_chapters_start( self ):
+        locations = self.source.parse_alpha( "===", 0, self.source.numLines )
+        ( loc, txt ) = self.source.parse_match_lengths( locations )
+        count = 0
+        for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
+            myChapter           = cls_Chapter.Chapter( )
+            count              += 1
+            myChapter.loc_start = myLoc # first line of chapter
+            myChapter.title     = myTxt # chapter title
+            myChapter.num       = count # chapter number
+            myChapter.key       = str( count ).zfill( 2 )
+            self.collection_chapters.append( myChapter )
+            print( "myChapter = %s" % myChapter )
+        self.numChapters = count
+        print( "number of chapters = %s" % count )
+        return loc
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def mark_chapters_stop( self, start_locations ):
+        del start_locations[ 0 ] # remove first element
+        print( "1. start_locations = %s" % start_locations )
+        # https://stackoverflow.com/questions/9304408/how-to-add-an-integer-to-each-element-in-a-list
+        # https://nedbatchelder.com/text/names1.html
+        start_locations = [ l - 3 for l in start_locations ]
+        print( "2. start_locations = %s" % start_locations )
+        # https://stackoverflow.com/questions/4426663/how-to-remove-the-first-item-from-a-list
+        start_locations.append( self.source.numLines )
+        for ( c, l ) in zip( self.collection_chapters, start_locations ):
+            c.loc_stop = l
+        for c in self.collection_chapters:
+            print( "chapter {}: {}".format( c.num, c.title ) )
+            print( "first, last: {}, {}".format( c.loc_start, c.loc_stop ) )
+        return
+
+    #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+
 # user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86
 
 # date: Dec 12, 2018, time: 18:55:09

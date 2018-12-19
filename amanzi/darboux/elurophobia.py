@@ -33,13 +33,16 @@ if __name__ == "__main__":
     # # source data
     mySource.input_rst = "short.rst"    # setter called
     # mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
-    # mySource.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
-    mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
+    mySource.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
+    # mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"    # setter called
 
     # read source file
     mySource.setup_io( )
     mySource.read_file( )
     print( "length col_lines = %s" % len( mySource.col_lines ) )
+    
+    book.mark_chapters( )
+    
     # mark candidate elements
     ( l_reqd, l_optl ) = mySource.search_elements_crude( )
     # harvest optional elements
@@ -48,22 +51,6 @@ if __name__ == "__main__":
     for e in book.col_elements:
         e.print_element( )
 
-    # # # start the book
-    # myBook = cls_Book.Book( ) # instantiate
-    # myBook.source_object = mySource
-    #
-    # # open Excel file for results and intermediate data
-    # myWorkbook = tools_xl.xl_new_workbook( mySource.full_xl )
-    #
-    # # compile lists of target locations
-    # myBook.source_object.read_file( )
-    # myBook.mark_chapters( )
-    # # worksheets for debugging
-    # tools_debug.xl_dramatis_personae( myWorkbook, myBook )
-    # tools_debug.xl_numbered_lines( myWorkbook, mySource.myLines )
-    #
-    # # write workbook
-    # myWorkbook.close( )
 
     print( "\n", datetime.datetime.now( ) )
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )

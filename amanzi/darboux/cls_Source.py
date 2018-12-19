@@ -191,14 +191,15 @@ class Source( object ):
 
     def search_elements_refine( self, list_search, flavor, myBook ):
         print( "looking for %s elements" % flavor )
-        all_elements = list( );
+        all_elements = list( ); # empty container
+        # REQD or OPTL
         Qreqd = "REQD"
         if flavor == "optional":
            Qreqd = "OPTL"
+        # adjust counter to track both reqd and optl elements
         count = len( myBook.col_elements )
         # remove first 25 characters
         for k in list_search: # sweep line numbers
-            # print( "k_line %s" % k_line )
             # drop first 25 characters: "      Optional Elements:"
             line = self.col_lines[ k - 1 ][25:]
             # purge arguments inside parentheses, braces
@@ -259,6 +260,40 @@ class Source( object ):
         # print ( "{} lines with optional elements found; locations {}".format( len( l_optl ), l_optl ) )
         # return list of lines numbers which may have elements
         return ( l_reqd, l_optl )
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def parse_alpha( self, search_string, alpha, omega ):
+
+        locations = list( ) # list of line numbers
+        for lineNum in range( alpha, omega ):
+            #print( "lineNum = %s" % lineNum )
+            line = self.col_lines[ lineNum ]
+            #print( "line = %s" % line )
+            if line.find( search_string ) != -1:
+                if line.find( "+" ) != -1:
+                    continue
+                locations.append( lineNum )
+                print( "line {}: {}".format( lineNum, line))
+        #print( "locations = %s" % locations)
+        return locations
+    #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def parse_match_lengths( self, loc_list ): # vet candidates
+        loc = list( )  # location
+        txt = list( )  # text
+        print( "in: locations, text = {}, {}".format( loc, txt ))
+        for lineNum in loc_list:
+            print( "lineNum = %s" % lineNum )
+            print( "A = %s" % self.col_lines[ lineNum ] ) # ===
+            print( "B = %s" % self.col_lines[ lineNum - 1 ] ) # Definitions
+            lineLengthA = len( self.col_lines[ lineNum ] )
+            lineLengthB = len( self.col_lines[ lineNum - 1 ] )
+            if lineLengthA == lineLengthB:
+                loc.append( lineNum + 1 ) # first line after ===
+                txt.append( self.col_lines[ lineNum - 1 ] ) # title string
+        print( "out: locations, text = {}, {}".format( loc, txt ))
+        return ( loc, txt );
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

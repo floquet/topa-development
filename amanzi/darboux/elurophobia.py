@@ -42,6 +42,7 @@ if __name__ == "__main__":
     print( "length col_lines = %s" % len( mySource.col_lines ) )
     
     book.mark_chapters( )
+    print( "* * * searching chapters for elements" )
     for c in book.col_chapters:
         # mark candidate elements
         ( l_reqd, l_optl ) = mySource.search_elements_crude( c.k_start, c.k_stop )

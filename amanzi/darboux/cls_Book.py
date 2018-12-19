@@ -139,13 +139,14 @@ class Book( object ):
 
     def mark_chapters( self ):
         start_locations = self.mark_chapters_start( )
+        print( "chapter starts found: %s" % start_locations )
         self.mark_chapters_stop( start_locations )
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters_start( self ):
-        locations = self.source.parse_alpha( "===", 0, self.source.numLines )
+        locations    = self.source.parse_alpha( "===", 0, self.source.numLines )
         ( loc, txt ) = self.source.parse_match_lengths( locations )
         count = 0
         for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
@@ -154,18 +155,23 @@ class Book( object ):
             c.title     = myTxt # chapter title
             c.k_start   = myLoc # first line of chapter
             c.k_index   = count # chapter number
-            c.key       = str( count ).zfill( 2 )
+            c.key       = str( count ).zfill( 2 ) + "-"
             self.col_chapters.append( c )
+        print( "@ @ @ mark_chapters_start:" )
+        print( "( loc, txt ) {} - {}".format( loc, txt) )
         return loc
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters_stop( self, start_locations ):
-        del start_locations[ 2 ] # remove first element
+        print( "# # # mark_chapters_stop:" )
+        print( "start_locations: %s" % start_locations )
+
+        del start_locations[ 0 ] # remove first element
         print( "1. start_locations = %s" % start_locations )
         # https://stackoverflow.com/questions/9304408/how-to-add-an-integer-to-each-element-in-a-list
         # https://nedbatchelder.com/text/names1.html
-        start_locations = [ l - 3 for l in start_locations ]
+        start_locations = [ l - 1 for l in start_locations ]
         print( "2. start_locations = %s" % start_locations )
         # https://stackoverflow.com/questions/4426663/how-to-remove-the-first-item-from-a-list
         start_locations.append( self.source.numLines )

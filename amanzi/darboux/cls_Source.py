@@ -274,7 +274,7 @@ class Source( object ):
                 if line.find( "+" ) != -1:
                     continue
                 locations.append( lineNum )
-                print( "line {}: {}".format( lineNum, line))
+                # print( "line {}: {}".format( lineNum, line))
         #print( "locations = %s" % locations)
         return locations
     #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
@@ -284,9 +284,9 @@ class Source( object ):
         txt = list( )  # text
         print( "in: locations, text = {}, {}".format( loc, txt ))
         for lineNum in loc_list:
-            print( "lineNum = %s" % lineNum )
-            print( "A = %s" % self.col_lines[ lineNum ] ) # ===
-            print( "B = %s" % self.col_lines[ lineNum - 1 ] ) # Definitions
+            # print( "lineNum = %s" % lineNum )
+            # print( "A = %s" % self.col_lines[ lineNum ] ) # ===
+            # print( "B = %s" % self.col_lines[ lineNum - 1 ] ) # Definitions
             lineLengthA = len( self.col_lines[ lineNum ] )
             lineLengthB = len( self.col_lines[ lineNum - 1 ] )
             if lineLengthA == lineLengthB:

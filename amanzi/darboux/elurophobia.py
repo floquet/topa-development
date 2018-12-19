@@ -42,14 +42,14 @@ if __name__ == "__main__":
     print( "length col_lines = %s" % len( mySource.col_lines ) )
     
     book.mark_chapters( )
-    for e in book.col_chapters:
+    for c in book.col_chapters:
         # mark candidate elements
-        ( l_reqd, l_optl ) = mySource.search_elements_crude( e.k_start, e.k_stop )
-        e.print_element( )
+        ( l_reqd, l_optl ) = mySource.search_elements_crude( c.k_start, c.k_stop )
+        c.print_element( )
     
     # harvest optional elements
-    all_elements = mySource.search_elements_refine( l_optl, "optional", book )
-    all_elements = mySource.search_elements_refine( l_reqd, "required", book )
+    # all_elements = mySource.search_elements_refine( l_optl, "optional", book )
+    # all_elements = mySource.search_elements_refine( l_reqd, "required", book )
     # for e in book.col_elements:
     #     e.print_element( )
 

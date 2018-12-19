@@ -149,13 +149,13 @@ class Book( object ):
         ( loc, txt ) = self.source.parse_match_lengths( locations )
         count = 0
         for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
-            myChapter           = cls_Chapter.Chapter( )
-            count              += 1
-            myChapter.title     = myTxt # chapter title
-            myChapter.k_start   = myLoc # first line of chapter
-            myChapter.k_index   = count # chapter number
-            myChapter.key       = str( count ).zfill( 2 )
-            self.col_chapters.append( myChapter )
+            c           = cls_Chapter.Chapter( )
+            count      += 1
+            c.title     = myTxt # chapter title
+            c.k_start   = myLoc # first line of chapter
+            c.k_index   = count # chapter number
+            c.key       = str( count ).zfill( 2 )
+            self.col_chapters.append( c )
         return loc
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

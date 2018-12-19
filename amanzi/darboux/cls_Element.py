@@ -29,7 +29,7 @@ class Element( object ):
         self._xl_col          = None    # 3
 
 
-#   P R O P E R T I E S   #\:f3b5
+#   P R O P E R T I E S   #
 
     @property
     def name( self ):
@@ -96,7 +96,7 @@ class Element( object ):
         """Col address for test status in spreadsheet"""
         return self._xl_col
 
-#   S E T T E R S   #\:f3b5
+#   S E T T E R S   #
 
     @name.setter
     def name( self, value ):
@@ -146,7 +146,7 @@ class Element( object ):
     def xl_col( self, value ):
         self._xl_col = value
 
-#   D E L E T E R S   #\:f3b5
+#   D E L E T E R S   #
 
     @name.deleter
     def name( self ):
@@ -200,7 +200,7 @@ class Element( object ):
     def xl_col( self ):
         del self._xl_col
 
-#   M E T H O D S   #\:f3b5
+#   M E T H O D S   #
 
     def print_attributes( self ):
         print('\nElement attributes:')
@@ -219,13 +219,13 @@ class Element( object ):
         print( 'xl_col = %s' % self.xl_col )
         return
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #\:f3b5
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #s
 
     def build_tail_key( self ):
         self.tail_key = self.flavor + str( self.k_index ).zfill( 2 )
         return
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #\:f3b5
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #s
 
 # user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86
 # date: Dec 19, 2018, time: 12:31:26

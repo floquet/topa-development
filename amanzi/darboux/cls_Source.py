@@ -218,7 +218,7 @@ class Source( object ):
         # remove first 25 characters
         for k in list_search: # sweep line numbers
             # drop first 25 characters: "      Optional Elements:"
-            line = self.col_lines[ k - 1 ][25:]
+            line = self.col_lines[ k ][25:]
             # purge arguments inside parentheses, braces
             # https://stackoverflow.com/questions/14596884/remove-text-between-and-in-python
             line = re.sub( "[\(\[].*?[\)\]]", "", line )
@@ -229,7 +229,7 @@ class Source( object ):
                 #line = line.replace( char, "" ) # constants, macros
             # separate elements into list
             elements = line.split( "," )
-            #print ( "elements = %s" % elements )
+            print ( "+  +  +  line {} elements = {}".format( k, elements ) )
             for myElement in elements:
                 e           = cls_Element.Element( )
                 count      += 1

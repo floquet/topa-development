@@ -13,6 +13,50 @@ import tools_xl             # spreadsheet authoring tools
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+def xl_print_elements( thisWorkbook, col_elements ):
+    # create sheet
+    s = tools_xl.xl_sheet_generate( thisWorkbook, "elements" )
+
+    # address worksheet in row, col form
+    row = 0;
+    col = 0;
+
+    for e in col_elements:
+        s.write( row, col, "name" )
+        s.write( row, col + 1, e.name ); row += 1
+
+        s.write( row, col, "flavor" )
+        s.write( row, col + 1, e.flavor ); row += 1
+
+        s.write( row, col, "status" )
+        s.write( row, col + 1, e.status ); row += 1
+
+        s.write( row, col, "index" )
+        s.write( row, col + 1, e.k_index ); row += 1
+
+        #s.write( row, col, "uuid" )
+        #s.write( row, col + 1, e.uuid ); row += 1
+
+        s.write( row, col, "source line" )
+        s.write( row, col + 1, e.k_line ); row += 1
+
+        s.write( row, col, "key: head" )
+        s.write( row, col + 1, e.key_head ); row += 1
+
+        s.write( row, col, "key: tail" )
+        s.write( row, col + 1, e.key_tail ); row += 1
+
+        s.write( row, col, "chapter" )
+        s.write( row, col + 1, e.k_chapter ); row += 1
+
+        row += 1
+        
+    return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
 def xl_chapter_attributes( thisWorkbook, col_chapters ):
     # create sheet
     s = tools_xl.xl_sheet_generate( thisWorkbook, "chapters" )

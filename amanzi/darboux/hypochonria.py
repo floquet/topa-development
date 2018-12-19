@@ -59,6 +59,7 @@ if __name__ == "__main__":
 
     print( "* * * searching chapters for elements" )
     for c in book.col_chapters:
+        print( "... searching chapter %s" % c.title )
         # mark candidate elements
         ( l_reqd, l_optl ) = source.search_elements_crude( c.k_start, c.k_stop )
         #c.print_attributes( )
@@ -67,8 +68,7 @@ if __name__ == "__main__":
         all_elements = source.search_elements_refine( l_optl, "optional", book, c.k_index )
         all_elements = source.search_elements_refine( l_reqd, "required", book, c.k_index )
 
-    for e in book.col_elements:
-        e.print_attributes( )
+    tools_debug.xl_print_elements( workbook, book.col_elements )
 
     # write workbook
     workbook.close( )
@@ -109,94 +109,28 @@ if __name__ == "__main__":
 # chapter 3: Definitions 95 to 231
 # =  =  = xl_sheet_generate: chapters
 # * * * searching chapters for elements
+# ... searching chapter Amanzi Input
 # looking for optional elements
 # looking for required elements
+# ... searching chapter Model Description
 # looking for optional elements
-# line 41 = NONE
-# line 59 = NONE
+# line 41 = comment, author, created, modified, model_id, description, purpose, units
+# +  +  +  line 41 elements = ['comment', ' author', ' created', ' modified', ' model_id', ' description', ' purpose', ' units']
+# line 59 = length_unit, time_unit, mass_unit, conc_unit
+# +  +  +  line 59 elements = ['length_unit', ' time_unit', ' mass_unit', ' conc_unit']
 # looking for required elements
+# ... searching chapter Definitions
 # looking for optional elements
-# line 104 = NONE
-# line 116 = NONE
-# line 152 = NONE
+# line 104 = constants, macros
+# +  +  +  line 104 elements = ['constants', ' macros']
+# line 116 = constant, time_constant, numerical_constant, area_mass_flux_constant
+# +  +  +  line 116 elements = ['constant', ' time_constant', ' numerical_constant', ' area_mass_flux_constant']
+# line 152 = time_macro, cycle_macro, variable_macro
+# +  +  +  line 152 elements = ['time_macro', ' cycle_macro', ' variable_macro ']
 # looking for required elements
+# =  =  = xl_sheet_generate: elements
 #
-# Element attributes:
-# name = NONE
-# flavor = OPTL
-# status = NULL
-# k_index = 1
-# uuid = dca1bf63-65dc-4423-8ed1-7c04aa551478
-# k_line = 41
-# key_head = None
-# key_tail = None
-# k_chapter = 2
-# k_section = None
-# k_subsection = None
-# xl_row = None
-# xl_col = None
-#
-# Element attributes:
-# name = NONE
-# flavor = OPTL
-# status = NULL
-# k_index = 2
-# uuid = ea706fe1-ca84-48f9-b6fe-cd42412ef720
-# k_line = 59
-# key_head = None
-# key_tail = None
-# k_chapter = 2
-# k_section = None
-# k_subsection = None
-# xl_row = None
-# xl_col = None
-#
-# Element attributes:
-# name = NONE
-# flavor = OPTL
-# status = NULL
-# k_index = 3
-# uuid = 2d477268-ab51-41b4-9690-c93ac01eb7c6
-# k_line = 104
-# key_head = None
-# key_tail = None
-# k_chapter = 3
-# k_section = None
-# k_subsection = None
-# xl_row = None
-# xl_col = None
-#
-# Element attributes:
-# name = NONE
-# flavor = OPTL
-# status = NULL
-# k_index = 4
-# uuid = c14e2061-752c-4475-9bb4-d4ff90a18abb
-# k_line = 116
-# key_head = None
-# key_tail = None
-# k_chapter = 3
-# k_section = None
-# k_subsection = None
-# xl_row = None
-# xl_col = None
-#
-# Element attributes:
-# name = NONE
-# flavor = OPTL
-# status = NULL
-# k_index = 5
-# uuid = 36c0411e-49ec-49d4-a0cd-f6c11e483f6b
-# k_line = 152
-# key_head = None
-# key_tail = None
-# k_chapter = 3
-# k_section = None
-# k_subsection = None
-# xl_row = None
-# xl_col = None
-#
-#  2018-12-19 12:41:51.331447
+#  2018-12-19 13:03:58.652084
 # source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux/hypochonria.py
 # python version 3.6.6 (default, Jun 28 2018, 05:53:46)
 # [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.39.2)]

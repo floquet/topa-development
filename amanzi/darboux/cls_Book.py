@@ -9,10 +9,15 @@
 # Book class
 #  commentary
 
+# home brew
+# classes
+import cls_Chapter          # chapter (constains sections)
+
 class Book( object ):
     def __init__( self ):
 
         self._title           = None    # Amanzi XML Input Specification (Version 2.3-draft)
+        self._k_index         = None    # chapter number
         self._k_start         = None    # 5
         self._k_stop          = None    # 231
         self._source          = None    # input source
@@ -26,6 +31,11 @@ class Book( object ):
     def title( self ):
         """Title of book"""
         return self._title
+ 
+    @property
+    def k_index( self ):
+        """Chapter number"""
+        return self._k_start
 
     @property
     def k_start( self ):
@@ -63,6 +73,10 @@ class Book( object ):
     def title( self, value ):
         self._title = value
 
+    @k_index.setter
+    def k_index( self, value ):
+        self._k_index = value
+
     @k_start.setter
     def k_start( self, value ):
         self._k_start = value
@@ -92,6 +106,10 @@ class Book( object ):
     @title.deleter
     def title( self ):
         del self._title
+
+    @k_index.deleter
+    def k_index( self ):
+        del self._k_index
 
     @k_start.deleter
     def k_start( self ):
@@ -133,14 +151,13 @@ class Book( object ):
         for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
             myChapter           = cls_Chapter.Chapter( )
             count              += 1
-            myChapter.loc_start = myLoc # first line of chapter
             myChapter.title     = myTxt # chapter title
-            myChapter.num       = count # chapter number
+            myChapter.k_start   = myLoc # first line of chapter
+            myChapter.k_index   = count # chapter number
             myChapter.key       = str( count ).zfill( 2 )
-            self.collection_chapters.append( myChapter )
+            self.col_chapters.append( myChapter )
             print( "myChapter = %s" % myChapter )
-        self.numChapters = count
-        print( "number of chapters = %s" % count )
+        print( "number of chapters = %s" % len( self.col_chapters ) )
         return loc
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
@@ -154,11 +171,11 @@ class Book( object ):
         print( "2. start_locations = %s" % start_locations )
         # https://stackoverflow.com/questions/4426663/how-to-remove-the-first-item-from-a-list
         start_locations.append( self.source.numLines )
-        for ( c, l ) in zip( self.collection_chapters, start_locations ):
-            c.loc_stop = l
-        for c in self.collection_chapters:
-            print( "chapter {}: {}".format( c.num, c.title ) )
-            print( "first, last: {}, {}".format( c.loc_start, c.loc_stop ) )
+        for ( c, l ) in zip( self.col_chapters, start_locations ):
+            c.k_stop = l
+        for c in self.col_chapters:
+            print( "chapter {}: {}".format( c.k_index, c.title ) )
+            print( "first, last: {}, {}".format( c.k_start, c.k_stop ) )
         return
 
     #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

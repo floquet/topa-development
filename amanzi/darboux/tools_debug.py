@@ -14,7 +14,7 @@ import tools_xl             # spreadsheet authoring tools
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 def xl_numbered_lines( thisWorkbook, theseLines ):
-
+    print( "=  =  = xl_numbered_lines:" )
     sheet_numbered_lines = tools_xl.xl_sheet_generate( thisWorkbook, "numbered lines" )
 
     # address worksheet in row, col form

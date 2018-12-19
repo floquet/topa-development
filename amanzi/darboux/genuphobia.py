@@ -47,17 +47,21 @@ if __name__ == "__main__":
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( workbook, book )
     tools_debug.xl_numbered_lines( workbook, book.source.col_lines )
+
+    # write workbook
+    workbook.close( )
+    # delineate chapters
     book.mark_chapters( )
 
-    # delineate chapters
-    for c in book.col_chapters:
+    # delineate sections
+    #for c in book.col_chapters:
         # mark sections
-        c.mark_sections( )
+        #c.mark_sections( )
 
     print( "* * * searching chapters for elements" )
     for c in book.col_chapters:
         # mark candidate elements
-        ( l_reqd, l_optl ) = mySource.search_elements_crude( c.k_start, c.k_stop )
+        ( l_reqd, l_optl ) = source.search_elements_crude( c.k_start, c.k_stop )
         c.print_attributes( )
 
     # harvest optional elements

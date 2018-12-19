@@ -139,7 +139,7 @@ class Book( object ):
 
     def mark_chapters( self ):
         ptr_locations = self.mark_chapters_start( )
-        print( "\nchapter starts found: %s" % ptr_locations )
+        print( "\nchapter title lines found: %s" % ptr_locations )
         self.mark_chapters_stop( ptr_locations )
         return
 
@@ -158,7 +158,7 @@ class Book( object ):
             c           = cls_Chapter.Chapter( )
             count      += 1
             c.title     = myTxt # chapter title
-            c.k_start   = myLoc # first line of chapter
+            c.k_start   = myLoc # title line of chapter
             c.k_index   = count # chapter number
             c.key       = str( count ).zfill( 2 ) + "-"
             self.col_chapters.append( c )
@@ -175,13 +175,12 @@ class Book( object ):
         # skip 2 lines: title line, =====
         # https://stackoverflow.com/questions/9304408/how-to-add-an-integer-to-each-element-in-a-list
         # https://nedbatchelder.com/text/names1.html
-        ptr_locations = [ l + 2 for l in ptr_locations ]
-        print( "1. ptr_locations = %s" % ptr_locations )
         # https://stackoverflow.com/questions/4426663/how-to-remove-the-first-item-from-a-list
-        ptr_locations.append( self.source.numLines )
+        ptr_locations.append( self.source.numLines + 1 )
+        ptr_locations = ptr_locations[ 1: ]
         print( "2. ptr_locations = %s" % ptr_locations )
         for ( c, l ) in zip( self.col_chapters, ptr_locations ):
-            c.k_stop = l
+            c.k_stop = l - 1
         for c in self.col_chapters:
             print( "chapter {}: {} {} to {}".format( c.k_index, c.title, c.k_start, c.k_stop  ) )
         return

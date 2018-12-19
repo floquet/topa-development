@@ -6,18 +6,19 @@
 # # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
 # # Daniel Topa   LANL/CCS-2   dantopa@lanl.gov 505 667 0817
 
-# Chapter class
-#  composed of sections (Constants,Macros,etc)
+# Section class
+#  composed of sections (Constants, Macros, etc)
 
-class Chapter( object ):
+class Section( object ):
     def __init__( self ):
 
         self._title           = None    # Model Description
-        self._k_index         = None    # chapter number
-        self._key             = None    # 08-MD
+        self._k_index         = None    # section number
+        self._key             = None    # S-03
         self._k_start         = None    # 5
         self._k_stop          = None    # 231
-        self._col_sections    = list( ) # collection of sections
+        self._col_sections    = list( ) # collection of subsections
+
 
 #   P R O P E R T I E S   #
 
@@ -28,12 +29,12 @@ class Chapter( object ):
 
     @property
     def k_index( self ):
-        """Chapter number"""
+        """Section number"""
         return self._k_index
 
     @property
     def key( self ):
-        """Unique key to tag chapter"""
+        """Unique key to tag section"""
         return self._key
 
     @property
@@ -48,7 +49,7 @@ class Chapter( object ):
 
     @property
     def col_sections( self ):
-        """Collection of section objects"""
+        """Collection of subsection objects"""
         return self._col_sections
 
 #   S E T T E R S   #
@@ -106,29 +107,25 @@ class Chapter( object ):
 #   M E T H O D S   #
 
     def print_attributes( self ):
-        print('\nChapter attributes:')
+        print('\nSection attributes:')
         print( 'title = %s' % self.title )
         print( 'k_index = %s' % self.k_index )
         print( 'key = %s' % self.key )
         print( 'k_start = %s' % self.k_start )
         print( 'k_stop = %s' % self.k_stop )
-        print( 'col_sections = %s' % self.col_sections )
+        print( 'col_sections contains %s objects' % len( self.col_sections ) )
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 # user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86
-# date: Dec 19, 2018, time: 11:37:23
-# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-06.nb#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+# date: Dec 19, 2018, time: 14:56:36
+# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-06.nb
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+# l127914@pn1249300.lanl.gov:darboux $ py cls_Section.py
 
-# user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86, date: Dec 12, 2018, time: 16:40:24, nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
+# l127914@pn1249300.lanl.gov:darboux $ date
+# Wed Dec 19 15:01:14 MST 2018
 
-# dantopa@Lax-Millgram:darboux $ py cls_Chapter.py
-
-# dantopa@Lax-Millgram:darboux $ date
-# Wed Dec 12 16:43:28 MST 2018
-
-# dantopa@Lax-Millgram:darboux $ pwd
-# /Users/dantopa/Documents/repos/GitHub/topa-development/amanzi/darboux
+# l127914@pn1249300.lanl.gov:darboux $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux

@@ -26,7 +26,7 @@ class Book( object ):
         self._col_elements    = list( ) # collection of elements
 
 
-#   P R O P E R T I E S   #\:f3b5
+#   P R O P E R T I E S   #
 
     @property
     def title( self ):
@@ -68,7 +68,7 @@ class Book( object ):
         """Collection of element objects"""
         return self._col_elements
 
-#   S E T T E R S   #\:f3b5
+#   S E T T E R S   #
 
     @title.setter
     def title( self, value ):
@@ -102,7 +102,7 @@ class Book( object ):
     def col_elements( self, value ):
         self._col_elements = value
 
-#   D E L E T E R S   #\:f3b5
+#   D E L E T E R S   #
 
     @title.deleter
     def title( self ):
@@ -136,7 +136,7 @@ class Book( object ):
     def col_elements( self ):
         del self._col_elements
 
-#   M E T H O D S   #\:f3b5
+#   M E T H O D S   #
 
     def print_attributes( self ):
         print('\nBook attributes:')
@@ -150,7 +150,24 @@ class Book( object ):
         print( 'col_elements = %s' % self.col_elements )
         return
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #\:f3b5
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def mark_sections( self ):
+        print( "& & & chapter.mark_sections" )
+        for c in col_chapters:
+            source.parse_alpha( "---", self.k_start, self.k_stop )
+            ( loc, txt ) = self.source.parse_match_lengths( ptr_locations )
+            for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
+                s           = cls_Section.Section( )
+                count      += 1
+                c.title     = myTxt # chapter title
+                c.k_start   = myLoc # title line of chapter
+                c.k_index   = count # chapter number
+                c.key       = str( count ).zfill( 2 ) + "-"
+                self.col_chapters.append( c )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters( self ):
         ptr_locations = self.mark_chapters_start( )

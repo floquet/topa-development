@@ -138,17 +138,21 @@ class Book( object ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters( self ):
-        start_locations = self.mark_chapters_start( )
-        print( "chapter starts found: %s" % start_locations )
-        self.mark_chapters_stop( start_locations )
+        ptr_locations = self.mark_chapters_start( )
+        print( "\nchapter starts found: %s" % ptr_locations )
+        self.mark_chapters_stop( ptr_locations )
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters_start( self ):
         print( "@ @ @ book.mark_chapters_start:" )
-        locations    = self.source.parse_alpha( "===", 0, self.source.numLines )
-        ( loc, txt ) = self.source.parse_match_lengths( locations )
+        ptr_locations = self.source.parse_alpha( "===", 0, self.source.numLines )
+        print( "ptr_locations = %s" % ptr_locations )
+        # remove Overview pointer
+        ptr_locations = ptr_locations[ 3: ]
+        print( "after del: ptr_locations = %s" % ptr_locations )
+        ( loc, txt )  = self.source.parse_match_lengths( ptr_locations )
         count = 0
         for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
             c           = cls_Chapter.Chapter( )
@@ -163,23 +167,23 @@ class Book( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def mark_chapters_stop( self, start_locations ):
+    def mark_chapters_stop( self, ptr_locations ):
         print( "# # # book.mark_chapters_stop:" )
-        print( "start_locations: %s" % start_locations )
+        print( "ptr_locations: %s" % ptr_locations )
 
-        del start_locations[ 0 ] # remove first element
-        print( "1. start_locations = %s" % start_locations )
+        #del start_locations[ 0 ] # remove first element
+        # skip 2 lines: title line, =====
         # https://stackoverflow.com/questions/9304408/how-to-add-an-integer-to-each-element-in-a-list
         # https://nedbatchelder.com/text/names1.html
-        start_locations = [ l - 1 for l in start_locations ]
-        print( "2. start_locations = %s" % start_locations )
+        ptr_locations = [ l + 2 for l in ptr_locations ]
+        print( "1. ptr_locations = %s" % ptr_locations )
         # https://stackoverflow.com/questions/4426663/how-to-remove-the-first-item-from-a-list
-        start_locations.append( self.source.numLines )
-        for ( c, l ) in zip( self.col_chapters, start_locations ):
+        ptr_locations.append( self.source.numLines )
+        print( "2. ptr_locations = %s" % ptr_locations )
+        for ( c, l ) in zip( self.col_chapters, ptr_locations ):
             c.k_stop = l
         for c in self.col_chapters:
-            print( "chapter {}: {}".format( c.k_index, c.title ) )
-            print( "first, last: {}, {}".format( c.k_start, c.k_stop ) )
+            print( "chapter {}: {} {} to {}".format( c.k_index, c.title, c.k_start, c.k_stop  ) )
         return
 
     #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

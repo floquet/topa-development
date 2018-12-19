@@ -280,12 +280,11 @@ class Source( object ):
     
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def parse_match_lengths( self, locations ): # vet candidates
-        print( "$ $ $ source.parse_match_lengths locations = %s" % locations)
+    def parse_match_lengths( self, ptr_locations ): # vet candidates
+        print( "$ $ $ source.parse_match_lengths locations = %s" % ptr_locations)
         loc = list( )  # location
         txt = list( )  # text
-        print( "empty: locations, text = {}, {}".format( loc, txt ))
-        for lineNum in locations:
+        for lineNum in ptr_locations:
             # print( "lineNum = %s" % lineNum )
             print( "\n{} B = {}".format( lineNum - 1, self.col_lines[ lineNum - 1 ] ) ) # text
             print(   "{} A = {}".format( lineNum, self.col_lines[ lineNum ] ) ) # ===

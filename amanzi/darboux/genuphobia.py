@@ -52,6 +52,7 @@ if __name__ == "__main__":
     workbook.close( )
     # delineate chapters
     book.mark_chapters( )
+    tools_debug.xl_chapter_attributes( workbook, book.col_chapters )
 
     # delineate sections
     #for c in book.col_chapters:

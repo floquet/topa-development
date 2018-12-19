@@ -2,16 +2,18 @@
 
 # # Amanzi: The Multi-Process HPC Simulator
 # #   https://github.com/amanzi/amanzi
+
 # # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
 # # Daniel Topa   LANL/CCS-2   dantopa@lanl.gov 505 667 0817
 
 # Chapter class
-#  commentary
+#  composed of sections (Constants,Macros,etc)
 
 class Chapter( object ):
     def __init__( self ):
 
         self._title           = None    # Model Description
+        self._k_index         = None    # chapter number
         self._key             = None    # 08-MD
         self._k_start         = None    # 5
         self._k_stop          = None    # 231
@@ -23,6 +25,11 @@ class Chapter( object ):
     def title( self ):
         """Chapter title"""
         return self._title
+
+    @property
+    def k_index( self ):
+        """Chapter number"""
+        return self._k_index
 
     @property
     def key( self ):
@@ -50,6 +57,10 @@ class Chapter( object ):
     def title( self, value ):
         self._title = value
 
+    @k_index.setter
+    def k_index( self, value ):
+        self._k_index = value
+
     @key.setter
     def key( self, value ):
         self._key = value
@@ -72,6 +83,10 @@ class Chapter( object ):
     def title( self ):
         del self._title
 
+    @k_index.deleter
+    def k_index( self ):
+        del self._k_index
+
     @key.deleter
     def key( self ):
         del self._key
@@ -88,7 +103,23 @@ class Chapter( object ):
     def col_sections( self ):
         del self._col_sections
 
+#   M E T H O D S   #
+
+    def print_attributes( self ):
+        print('\nChapter attributes:')
+        print( 'title = %s' % self.title )
+        print( 'k_index = %s' % self.k_index )
+        print( 'key = %s' % self.key )
+        print( 'k_start = %s' % self.k_start )
+        print( 'k_stop = %s' % self.k_stop )
+        print( 'col_sections = %s' % self.col_sections )
+        return
+
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+# user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86
+# date: Dec 19, 2018, time: 11:37:23
+# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-06.nb#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_sections( self ):
         print( "& & & chapter.mark_sections" )
@@ -108,6 +139,10 @@ class Chapter( object ):
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+# user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86
+# date: Dec 19, 2018, time: 11:35:58
+# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-06.nb
 
 # user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86, date: Dec 12, 2018, time: 16:40:24, nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
 

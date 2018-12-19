@@ -13,9 +13,33 @@ import tools_xl             # spreadsheet authoring tools
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+def xl_chapter_attributes( thisWorkbook, col_chapters ):
+    # create sheet
+    s = tools_xl.xl_sheet_generate( thisWorkbook, "chapters" )
+    return
+
+    # address worksheet in row, col form
+    row = 0;
+    col = 0;
+    counter = 0;
+
+    for c in col_chapters:
+        s.write( row, col, c.k_index )
+        s.write( row, col + 1, c.title ); row += 1
+
+        s.write( row, col, "range of lines:" )
+        s.write( row, col + 1, c.k_start )
+        s.write( row, col + 2, c.k_stop ); row += 1
+
+        s.write( row, col, "key:" )
+        s.write( row, col + 1, c.key ); row += 1
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
 def xl_numbered_lines( thisWorkbook, theseLines ):
-    print( "=  =  = xl_numbered_lines:" )
-    sheet_numbered_lines = tools_xl.xl_sheet_generate( thisWorkbook, "numbered lines" )
+    # print( "=  =  = xl_numbered_lines:" )
+    sheet_numbered_lines = tools_xl.xl_sheet_generate( thisWorkbook, "text lines" )
 
     # address worksheet in row, col form
     row = 0;
@@ -25,6 +49,10 @@ def xl_numbered_lines( thisWorkbook, theseLines ):
     # To circumvent, use the TEXT function
     # which chokes on strings containing double quotes
     myText = thisWorkbook.add_format({'num_format': '@'})
+    sheet_numbered_lines.write( row, col, "index" )
+    sheet_numbered_lines.write( row, col + 1, "length" )
+    sheet_numbered_lines.write( row, col + 2, "text" ); row += 1
+
     for line in theseLines:
         sheet_numbered_lines.write( row, col, counter )
         myString = '= TEXT( "' + line + '", "=" )'
@@ -55,6 +83,7 @@ def xl_numbered_lines( thisWorkbook, theseLines ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 def xl_dramatis_personae( thisWorkbook, thisBook ):
+    # print( "=  =  = xl_dramatis_personae:" )
 
     sheet_dramatis_personae = tools_xl.xl_sheet_generate( thisWorkbook, "dramatis personae" )
     # widen first column

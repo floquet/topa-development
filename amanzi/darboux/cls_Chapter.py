@@ -90,6 +90,17 @@ class Chapter( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+    def print_element( self ):
+        print( '\nChapter attributes:')
+        print( 'title              = %s' % self.title )
+        print( 'key                = %s' % self.key )
+        print( 'k_start            = %s' % self.k_start )
+        print( 'k_stop             = %s' % self.k_stop )
+        print( 'number of sections = %s' % len( self.col_sections ) )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
 # user: dantopa, CPU: Lax-Millgram, MM v. 11.3.0 for Mac OS X x86, date: Dec 12, 2018, time: 16:40:24, nb: /Users/dantopa/Mathematica_files/nb/lanl/python/author/class-structures-03.nb
 
 # dantopa@Lax-Millgram:darboux $ py cls_Chapter.py

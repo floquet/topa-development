@@ -46,7 +46,7 @@ if __name__ == "__main__":
     workbook = tools_xl.xl_new_workbook( source.full_xl )
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( workbook, book )
-    #tools_debug.xl_numbered_lines( workbook, book.source.col_lines )
+    tools_debug.xl_numbered_lines( workbook, book.source.col_lines )
     # delineate chapters
     book.mark_chapters( )
 
@@ -55,7 +55,6 @@ if __name__ == "__main__":
         # mark sections
         #c.mark_sections( )
     tools_debug.xl_chapter_attributes( workbook, book.col_chapters )
-    tools_debug.xl_numbered_lines( workbook, book.source.col_lines )
 
     print( "* * * searching chapters for elements" )
     for c in book.col_chapters:
@@ -75,59 +74,65 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-#dantopa@Mittag-Leffler.local:darboux $ pp
-#reading source file /Volumes/Tethys/repos/GitHub/topa-development/data/short.rst
-#length col_lines = 231
-#@ @ @ book.mark_chapters_start:
-#! ! ! source.parse_alpha: search_string, alpha, omega - === 0 231
-#ptr_locations = [0, 2, 8, 17, 33, 96]
-#after del: ptr_locations = [17, 33, 96]
-#$ $ $ source.parse_match_lengths locations = [17, 33, 96]
+# l127914@pn1249300.lanl.gov:darboux $ py genuphobia.py 
+# reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
+# length col_lines = 231
+# =  =  = xl_sheet_generate: provenance
+# =  =  = xl_sheet_generate: dramatis personae
+# =  =  = xl_numbered_lines:
+# =  =  = xl_sheet_generate: text lines
+# @ @ @ book.mark_chapters_start:
+# ! ! ! source.parse_alpha: search_string, alpha, omega - === 0 231
+# ptr_locations = [0, 2, 8, 17, 33, 96]
+# after del: ptr_locations = [17, 33, 96]
+# $ $ $ source.parse_match_lengths locations = [17, 33, 96]
 #
-#16 B = Amanzi Input
-#17 A = ============
+# 16 B = Amanzi Input
+# 17 A = ============
 #
-#32 B = Model Description
-#33 A = =================
+# 32 B = Model Description
+# 33 A = =================
 #
-#95 B = Definitions
-#96 A = ===========
-#out: locations, text = [16, 32, 95], ['Amanzi Input', 'Model Description', 'Definitions']
-#( loc, txt ) [16, 32, 95] - ['Amanzi Input', 'Model Description', 'Definitions']
+# 95 B = Definitions
+# 96 A = ===========
+# out: locations, text = [16, 32, 95], ['Amanzi Input', 'Model Description', 'Definitions']
+# ( loc, txt ) [16, 32, 95] - ['Amanzi Input', 'Model Description', 'Definitions']
 #
-#chapter title lines found: [16, 32, 95]
-## # # book.mark_chapters_stop:
-#ptr_locations: [16, 32, 95]
-#2. ptr_locations = [32, 95, 232]
-#chapter 1: Amanzi Input 16 to 31
-#chapter 2: Model Description 32 to 94
-#chapter 3: Definitions 95 to 231
-#* * * searching chapters for elements
+# chapter title lines found: [16, 32, 95]
+# # # # book.mark_chapters_stop:
+# ptr_locations: [16, 32, 95]
+# 2. ptr_locations = [32, 95, 232]
+# chapter 1: Amanzi Input 16 to 31
+# chapter 2: Model Description 32 to 94
+# chapter 3: Definitions 95 to 231
+# =  =  = xl_sheet_generate: chapters
+# * * * searching chapters for elements
 #
-#Chapter attributes:
-#title              = Amanzi Input
-#key                = 01-
-#k_start            = 16
-#k_stop             = 31
-#number of sections = 0
+# Chapter attributes:
+# title              = Amanzi Input
+# key                = 01-
+# k_start            = 16
+# k_stop             = 31
+# number of sections = 0
 #
-#Chapter attributes:
-#title              = Model Description
-#key                = 02-
-#k_start            = 32
-#k_stop             = 94
-#number of sections = 0
+# Chapter attributes:
+# title              = Model Description
+# key                = 02-
+# k_start            = 32
+# k_stop             = 94
+# number of sections = 0
 #
-#Chapter attributes:
-#title              = Definitions
-#key                = 03-
-#k_start            = 95
-#k_stop             = 231
-#number of sections = 0
+# Chapter attributes:
+# title              = Definitions
+# key                = 03-
+# k_start            = 95
+# k_stop             = 231
+# number of sections = 0
 #
-# 2018-12-18 21:17:20.533134
-#source: /Volumes/Tethys/repos/GitHub/topa-development/amanzi/darboux/elurophobia.py
-#python version 3.6.7 (default, Oct 21 2018, 08:02:39)
-#[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)]
+#  2018-12-19 12:13:39.412764
+# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux/genuphobia.py
+# python version 3.6.6 (default, Jun 28 2018, 05:53:46)
+# [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.39.2)]
+
 
 # Genuphobia	Fear of knees

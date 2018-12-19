@@ -14,27 +14,25 @@ import tools_xl             # spreadsheet authoring tools
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 def xl_chapter_attributes( thisWorkbook, col_chapters ):
-    print( "=  =  = xl_chapter_attributes: %s" % len( col_chapters ) )
+    #print( "=  =  = xl_chapter_attributes: %s" % len( col_chapters ) )
     # create sheet
-    sheet = tools_xl.xl_sheet_generate( thisWorkbook, "chapters" )
+    s = tools_xl.xl_sheet_generate( thisWorkbook, "chapters" )
 
     # address worksheet in row, col form
-    row = 1;
-    col = 1;
+    row = 0;
+    col = 0;
 
     for c in col_chapters:
-        print( "chapter number %s" % c.k_index )
-        sheet.write( row, col, c.k_index )
-        sheet.write( row, col + 1, c.title ); row += 1
+        s.write( row, col, c.k_index )
+        s.write( row, col + 1, c.title ); row += 1
 
-        sheet.write( row, col, "range of lines:" )
-        sheet.write( row, col + 1, c.k_start )
-        sheet.write( row, col + 2, c.k_stop ); row += 1
+        s.write( row, col + 1, "range of lines:" )
+        s.write( row, col + 2, c.k_start )
+        s.write( row, col + 3, c.k_stop ); row += 1
 
-        sheet.write( row, col, "key:" )
-        sheet.write( row, col + 1, c.key ); row += 1
+        s.write( row, col, "key:" )
+        s.write( row, col + 1, c.key ); row += 2
 
-    print( "return" )
     return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

@@ -14,9 +14,9 @@ import tools_xl             # spreadsheet authoring tools
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 def xl_chapter_attributes( thisWorkbook, col_chapters ):
+    print( "=  =  = xl_chapter_attributes:" )
     # create sheet
     s = tools_xl.xl_sheet_generate( thisWorkbook, "chapters" )
-    return
 
     # address worksheet in row, col form
     row = 0;
@@ -38,7 +38,7 @@ def xl_chapter_attributes( thisWorkbook, col_chapters ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 def xl_numbered_lines( thisWorkbook, theseLines ):
-    # print( "=  =  = xl_numbered_lines:" )
+    print( "=  =  = xl_numbered_lines:" )
     sheet_numbered_lines = tools_xl.xl_sheet_generate( thisWorkbook, "text lines" )
 
     # address worksheet in row, col form

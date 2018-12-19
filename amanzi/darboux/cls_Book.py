@@ -156,14 +156,12 @@ class Book( object ):
             myChapter.k_index   = count # chapter number
             myChapter.key       = str( count ).zfill( 2 )
             self.col_chapters.append( myChapter )
-            print( "myChapter = %s" % myChapter )
-        print( "number of chapters = %s" % len( self.col_chapters ) )
         return loc
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters_stop( self, start_locations ):
-        del start_locations[ 0 ] # remove first element
+        del start_locations[ 2 ] # remove first element
         print( "1. start_locations = %s" % start_locations )
         # https://stackoverflow.com/questions/9304408/how-to-add-an-integer-to-each-element-in-a-list
         # https://nedbatchelder.com/text/names1.html

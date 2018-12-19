@@ -15,7 +15,7 @@ import xlsxwriter           # API for Excel
 # classes
 import cls_Book             # Book (constains chapters, contains requirements)
 import cls_Chapter          # chapter (constains sections)
-import cls_Element          # elements (required, optional)
+#import cls_Element          # elements (required, optional)
 import cls_Source           # e.q. Amanzi XML Input Specification (Version 2.3-draft)
 # tools
 import tools_debug
@@ -43,13 +43,13 @@ if __name__ == "__main__":
     
     book.mark_chapters( )
     for e in book.col_chapters:
+        # mark candidate elements
+        ( l_reqd, l_optl ) = mySource.search_elements_crude( e.k_start, e.k_stop )
         e.print_element( )
     
-    # mark candidate elements
-    ( l_reqd, l_optl ) = mySource.search_elements_crude( e.k_start, e.k_stop )
     # harvest optional elements
-    all_elements = mySource.search_elements_refine( l_optl, "optional", book, e.k_start, e.k_stop )
-    all_elements = mySource.search_elements_refine( l_reqd, "required", book, e.k_start, e.k_stop )
+    all_elements = mySource.search_elements_refine( l_optl, "optional", book )
+    all_elements = mySource.search_elements_refine( l_reqd, "required", book )
     # for e in book.col_elements:
     #     e.print_element( )
 

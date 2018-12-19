@@ -229,14 +229,14 @@ class Source( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def search_elements_crude( self ):
+    def search_elements_crude( self, alpha, omega ):
         # containers for line numbers
         l_reqd = list( )
         l_optl = list( )
 
         # required elements
-        k_line = 1
-        for line in self.col_lines:
+        k_line = alpha
+        for line in self.col_lines[ alpha : omega ]:
             # required
             if line.find( "Required Elements:" ) != -1:
                 # print( "line {} = {}".format( k_line, line ) )
@@ -246,8 +246,8 @@ class Source( object ):
             k_line += 1
 
         # optional elements
-        k_line = 1
-        for line in self.col_lines:
+        k_line = alpha
+        for line in self.col_lines[ alpha : omega ]:
             # optional
             if line.find( "Optional Elements:" ) != -1:
                 # print( "line {} = {}".format( k_line, line ) )

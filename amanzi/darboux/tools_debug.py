@@ -24,6 +24,7 @@ def xl_chapter_attributes( thisWorkbook, col_chapters ):
     counter = 0;
 
     for c in col_chapters:
+        print( "chapter number %s" % c.k_index )
         s.write( row, col, c.k_index )
         s.write( row, col + 1, c.title ); row += 1
 
@@ -33,7 +34,7 @@ def xl_chapter_attributes( thisWorkbook, col_chapters ):
 
         s.write( row, col, "key:" )
         s.write( row, col + 1, c.key ); row += 1
-        return
+    return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -49,9 +50,14 @@ def xl_numbered_lines( thisWorkbook, theseLines ):
     # To circumvent, use the TEXT function
     # which chokes on strings containing double quotes
     myText = thisWorkbook.add_format({'num_format': '@'})
-    sheet_numbered_lines.write( row, col, "index" )
-    sheet_numbered_lines.write( row, col + 1, "length" )
-    sheet_numbered_lines.write( row, col + 2, "text" ); row += 1
+    # restablish (?) formats
+    format_title = thisWorkbook.add_format( )
+    format_title.set_bold( )
+    format_title.set_font_color( "blue" )
+
+    sheet_numbered_lines.write( row, col,     "index",  format_title )
+    sheet_numbered_lines.write( row, col + 1, "length", format_title )
+    sheet_numbered_lines.write( row, col + 2, "text",   format_title ); row += 1
 
     for line in theseLines:
         sheet_numbered_lines.write( row, col, counter )

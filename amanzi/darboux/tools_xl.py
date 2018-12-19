@@ -59,7 +59,7 @@ def xl_sheet_requirements( this_workbook ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 def xl_sheet_generate( this_workbook, title_sheet ):
-
+    print( "=  =  = xl_sheet_generate: %s" % title_sheet )
     # insure every worksheet has a header and footer
     mySheet = this_workbook.add_worksheet( title_sheet )
     xl_sheet_header_footer( mySheet )

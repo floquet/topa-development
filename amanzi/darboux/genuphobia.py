@@ -45,19 +45,19 @@ if __name__ == "__main__":
     # create xl notebook
     workbook = tools_xl.xl_new_workbook( source.full_xl )
     # worksheets for debugging
-    tools_debug.xl_dramatis_personae( workbook, book )
-    tools_debug.xl_numbered_lines( workbook, book.source.col_lines )
+    #tools_debug.xl_dramatis_personae( workbook, book )
+    #tools_debug.xl_numbered_lines( workbook, book.source.col_lines )
 
     # write workbook
     workbook.close( )
     # delineate chapters
     book.mark_chapters( )
-    tools_debug.xl_chapter_attributes( workbook, book.col_chapters )
 
     # delineate sections
     #for c in book.col_chapters:
         # mark sections
         #c.mark_sections( )
+    tools_debug.xl_chapter_attributes( workbook, book.col_chapters )
 
     print( "* * * searching chapters for elements" )
     for c in book.col_chapters:
@@ -71,7 +71,8 @@ if __name__ == "__main__":
     # for e in book.col_elements:
     #     e.print_attributes( )
 
-
+    # write workbook
+    workbook.close( )
     print( "\n", datetime.datetime.now( ) )
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )

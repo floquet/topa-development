@@ -183,6 +183,13 @@ class Source( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
+    def read_source( self ):
+        self.setup_io( ) # establish outut file
+        self.read_file( )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
     def read_file( self ):
         ## ## read source file
         print ( "reading source file %s" % self.full_rst )

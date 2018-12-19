@@ -29,16 +29,15 @@ if __name__ == "__main__":
     # fundamental object: a book
     book        = cls_Book.Book( )     # instantiate book
     book.source = cls_Source.Source( ) # instantiate source
-    source = book.source
 
-    # # source data
-    source.input_rst = "short.rst"    # setter called
+    # # source data file and path
+    book.source.input_rst = "short.rst"    # setter called
     # source.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
     # source.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
-    source.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"
+    book.source.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"
 
     # read source file
-    source.read_source( )
+    book.source.read_source( )
 
     # create xl notebook for results
     workbook = tools_xl.xl_new_workbook( source.full_xl )
@@ -77,4 +76,4 @@ if __name__ == "__main__":
 # python version 3.6.6 (default, Jun 28 2018, 05:53:46)
 # [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.39.2)]
 
-# Hypochonria 	Fear of illness
+# Iatrophobia	Fear of doctors

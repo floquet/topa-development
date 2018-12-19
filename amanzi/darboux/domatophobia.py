@@ -73,7 +73,7 @@ if __name__ == "__main__":
     # myBook.mark_chapters( )
     # # worksheets for debugging
     # tools_debug.xl_dramatis_personae( myWorkbook, myBook )
-    # tools_debug.xl_numbered_lines( myWorkbook, mySource.myLines )
+    # tools_debug.xl_numbered_lines( myWorkbook, mySource.col_lines )
     #
     # # write workbook
     # myWorkbook.close( )

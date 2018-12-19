@@ -181,6 +181,7 @@ class Book( object ):
         print( "2. ptr_locations = %s" % ptr_locations )
         for ( c, l ) in zip( self.col_chapters, ptr_locations ):
             c.k_stop = l - 1
+            
         for c in self.col_chapters:
             print( "chapter {}: {} {} to {}".format( c.k_index, c.title, c.k_start, c.k_stop  ) )
         return

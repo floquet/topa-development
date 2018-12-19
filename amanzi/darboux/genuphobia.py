@@ -44,8 +44,8 @@ if __name__ == "__main__":
 
     book.mark_chapters( )
     for c in book.col_chapters:
-        # mark candidate elements
-        book.mark_sections( )
+        # mark sections
+        c.mark_sections( )
 
     print( "* * * searching chapters for elements" )
     for c in book.col_chapters:
@@ -119,6 +119,4 @@ if __name__ == "__main__":
 #python version 3.6.7 (default, Oct 21 2018, 08:02:39) 
 #[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)]
 
-
-
-# Elurophobia	Fear of cats
+# Genuphobia	Fear of knees

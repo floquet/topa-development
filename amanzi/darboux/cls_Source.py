@@ -266,7 +266,7 @@ class Source( object ):
     def parse_alpha( self, search_string, alpha, omega ):
 
         print( "! ! ! source.parse_alpha: search_string, alpha, omega - {} {} {}".format( search_string, alpha, omega ) )        
-        locations = list( ) # list of line numbers
+        ptr_locations = list( ) # list of line numbers
         for lineNum in range( alpha, omega ):
             #print( "lineNum = %s" % lineNum )
             line = self.col_lines[ lineNum ]
@@ -274,9 +274,9 @@ class Source( object ):
             if line.find( search_string ) != -1:
                 if line.find( "+" ) != -1:
                     continue
-                locations.append( lineNum )
+                ptr_locations.append( lineNum )
                 # print( "line {}: {}".format( lineNum, line))
-        return locations
+        return ptr_locations
     
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

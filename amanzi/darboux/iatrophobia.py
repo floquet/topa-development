@@ -40,7 +40,7 @@ if __name__ == "__main__":
     book.source.read_source( )
 
     # create xl notebook for results
-    workbook = tools_xl.xl_new_workbook( source.full_xl )
+    workbook = tools_xl.xl_new_workbook( book.source.full_xl )
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( workbook, book )
     tools_debug.xl_numbered_lines( workbook, book.source.col_lines )
@@ -52,10 +52,10 @@ if __name__ == "__main__":
     for c in book.col_chapters:
         print( "... searching chapter %s for elements" % c.title )
         # mark candidate elements: return lists of candidate lines
-        ( l_reqd, l_optl ) = source.search_elements_crude( c.k_start, c.k_stop )
+        ( l_reqd, l_optl ) = book.source.search_elements_crude( c.k_start, c.k_stop )
         # harvest optional elements
-        all_elements = source.search_elements_refine( l_optl, "optional", book, c.k_index )
-        all_elements = source.search_elements_refine( l_reqd, "required", book, c.k_index )
+        all_elements = book.source.search_elements_refine( l_optl, "optional", book, c.k_index )
+        all_elements = book.source.search_elements_refine( l_reqd, "required", book, c.k_index )
 
     tools_debug.xl_print_elements( workbook, book.col_elements )
 

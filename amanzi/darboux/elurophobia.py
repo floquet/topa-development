@@ -46,12 +46,12 @@ if __name__ == "__main__":
         e.print_element( )
     
     # mark candidate elements
-    ( l_reqd, l_optl ) = mySource.search_elements_crude( )
+    ( l_reqd, l_optl ) = mySource.search_elements_crude( e.k_start, e.k_stop )
     # harvest optional elements
-    all_elements = mySource.search_elements_refine( l_optl, "optional", book )
-    all_elements = mySource.search_elements_refine( l_reqd, "required", book )
-    for e in book.col_elements:
-        e.print_element( )
+    all_elements = mySource.search_elements_refine( l_optl, "optional", book, e.k_start, e.k_stop )
+    all_elements = mySource.search_elements_refine( l_reqd, "required", book, e.k_start, e.k_stop )
+    # for e in book.col_elements:
+    #     e.print_element( )
 
 
     print( "\n", datetime.datetime.now( ) )

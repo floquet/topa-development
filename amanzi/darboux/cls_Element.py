@@ -209,19 +209,19 @@ class Element( object ):
 
     def print_element( self ):
         print( '\nElement attributes:')
-        print( 'name = %s' % self.name )
-        print( 'flavor = %s' % self.flavor )
-        print( 'status = %s' % self.status )
-        print( 'k_index = %s' % self.k_index )
-        print( 'uuid = %s' % self.uuid )
-        print( 'k_line = %s' % self.k_line )
-        print( 'key_head = %s' % self.key_head )
-        print( 'key_tail = %s' % self.key_tail )
-        print( 'k_chapter = %s' % self.k_chapter )
-        print( 'k_section = %s' % self.k_section )
+        print( 'name         = %s' % self.name )
+        print( 'flavor       = %s' % self.flavor )
+        print( 'status       = %s' % self.status )
+        print( 'k_index      = %s' % self.k_index )
+        print( 'uuid         = %s' % self.uuid )
+        print( 'k_line       = %s' % self.k_line )
+        print( 'key_head     = %s' % self.key_head )
+        print( 'key_tail     = %s' % self.key_tail )
+        print( 'k_chapter    = %s' % self.k_chapter )
+        print( 'k_section    = %s' % self.k_section )
         print( 'k_subsection = %s' % self.k_subsection )
-        print( 'xl_row = %s' % self.xl_row )
-        print( 'xl_col = %s' % self.xl_col )
+        print( 'xl_row       = %s' % self.xl_row )
+        print( 'xl_col       = %s' % self.xl_col )
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

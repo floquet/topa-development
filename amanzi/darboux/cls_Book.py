@@ -6,12 +6,12 @@
 # # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
 # # Daniel Topa   LANL/CCS-2   dantopa@lanl.gov 505 667 0817
 
-# Book class
-#  commentary
-
 # home brew
 # classes
-import cls_Chapter          # chapter (constains sections)
+import        cls_Chapter # chapter (constains sections)
+
+# Book class
+#  Contains source and chapters
 
 class Book( object ):
     def __init__( self ):
@@ -25,17 +25,18 @@ class Book( object ):
         self._col_chapters    = list( ) # collection of chapters
         self._col_elements    = list( ) # collection of elements
 
-#   P R O P E R T I E S   #
+
+#   P R O P E R T I E S   #\:f3b5
 
     @property
     def title( self ):
         """Title of book"""
         return self._title
- 
+
     @property
     def k_index( self ):
         """Chapter number"""
-        return self._k_start
+        return self._k_index
 
     @property
     def k_start( self ):
@@ -67,7 +68,7 @@ class Book( object ):
         """Collection of element objects"""
         return self._col_elements
 
-#   S E T T E R S   #
+#   S E T T E R S   #\:f3b5
 
     @title.setter
     def title( self, value ):
@@ -101,7 +102,7 @@ class Book( object ):
     def col_elements( self, value ):
         self._col_elements = value
 
-#   D E L E T E R S   #
+#   D E L E T E R S   #\:f3b5
 
     @title.deleter
     def title( self ):
@@ -135,23 +136,33 @@ class Book( object ):
     def col_elements( self ):
         del self._col_elements
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+#   M E T H O D S   #\:f3b5
+
+    def print_attributes( self ):
+        print('\nBook attributes:')
+        print( 'title = %s' % self.title )
+        print( 'k_index = %s' % self.k_index )
+        print( 'k_start = %s' % self.k_start )
+        print( 'k_stop = %s' % self.k_stop )
+        print( 'source = %s' % self.source )
+        print( 'xl_file = %s' % self.xl_file )
+        print( 'col_chapters = %s' % self.col_chapters )
+        print( 'col_elements = %s' % self.col_elements )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #\:f3b5
 
     def mark_chapters( self ):
         ptr_locations = self.mark_chapters_start( )
-        print( "\nchapter title lines found: %s" % ptr_locations )
         self.mark_chapters_stop( ptr_locations )
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters_start( self ):
-        print( "@ @ @ book.mark_chapters_start:" )
         ptr_locations = self.source.parse_alpha( "===", 0, self.source.numLines )
-        print( "ptr_locations = %s" % ptr_locations )
         # remove Overview pointer
         ptr_locations = ptr_locations[ 3: ]
-        print( "after del: ptr_locations = %s" % ptr_locations )
         ( loc, txt )  = self.source.parse_match_lengths( ptr_locations )
         count = 0
         for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
@@ -162,14 +173,11 @@ class Book( object ):
             c.k_index   = count # chapter number
             c.key       = str( count ).zfill( 2 ) + "-"
             self.col_chapters.append( c )
-        print( "( loc, txt ) {} - {}".format( loc, txt) )
         return loc
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters_stop( self, ptr_locations ):
-        print( "# # # book.mark_chapters_stop:" )
-        print( "ptr_locations: %s" % ptr_locations )
 
         #del start_locations[ 0 ] # remove first element
         # skip 2 lines: title line, =====
@@ -178,19 +186,20 @@ class Book( object ):
         # https://stackoverflow.com/questions/4426663/how-to-remove-the-first-item-from-a-list
         ptr_locations.append( self.source.numLines + 1 )
         ptr_locations = ptr_locations[ 1: ]
-        print( "2. ptr_locations = %s" % ptr_locations )
         for ( c, l ) in zip( self.col_chapters, ptr_locations ):
             c.k_stop = l - 1
-            
-        for c in self.col_chapters:
-            print( "chapter {}: {} {} to {}".format( c.k_index, c.title, c.k_start, c.k_stop  ) )
-        return
 
-    #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
-
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 # user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86
+# date: Dec 19, 2018, time: 13:10:34
+# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-06.nb
 
-# date: Dec 12, 2018, time: 18:55:09
 
-# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-04.nb
+# l127914@pn1249300.lanl.gov:darboux $ py cls_Chapter.py
+
+# l127914@pn1249300.lanl.gov:darboux $ date
+# Wed Dec 19 13:08:50 MST 2018
+
+# l127914@pn1249300.lanl.gov:darboux $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux

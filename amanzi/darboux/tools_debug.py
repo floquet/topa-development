@@ -50,10 +50,8 @@ def xl_print_elements( thisWorkbook, col_elements ):
         s.write( row, col + 1, e.k_chapter ); row += 1
 
         row += 1
-        
-    return
 
-#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+    return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -81,7 +79,6 @@ def xl_chapter_attributes( thisWorkbook, col_chapters ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 def xl_numbered_lines( thisWorkbook, theseLines ):
-    print( "=  =  = xl_numbered_lines:" )
     s = tools_xl.xl_sheet_generate( thisWorkbook, "text lines" )
 
     # address worksheet in row, col form
@@ -104,34 +101,15 @@ def xl_numbered_lines( thisWorkbook, theseLines ):
     for line in theseLines:
         s.write( row, col, counter )
         myString = '= TEXT( "' + line + '", "=" )'
-        #s.write_formula( row, col + 1, myString )
         s.write( row, col + 1, len( line ) )
         s.write( row, col + 2, "boo:", myText )
         s.write( row, col + 2, line, myText ); row += 1
-        #s.write( row, col + 2, myString, myText ); row += 1
         counter += 1;
-    # https://stackabuse.com/read-a-file-line-by-line-in-python/
-    # with open( thisBook.source.full_rst ) as f:
-    #     for cnt, line in enumerate( f ):
-    #         # line number
-    #         s.write( row, col,     cnt )
-    #         # text
-    #         s.write( row, col + 1, "{}".format( line ) ); row += 1
-    # https://stackabuse.com/read-a-file-line-by-line-in-python/
-    # with open( thisBook.source.full_rst ) as f:
-    #     for cnt, line in enumerate( f ):
-    #         # line number
-    #         s.write( row, col, cnt )
-    #         # text
-    #         myString = '= TEXT( "' + line + '", "=" )'
-    #         print( "myString = %s" % myString )
-    #         s.write_formula( row, col + 1, myString ); row += 1
     return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 def xl_dramatis_personae( thisWorkbook, thisBook ):
-    # print( "=  =  = xl_dramatis_personae:" )
 
     s = tools_xl.xl_sheet_generate( thisWorkbook, "dramatis personae" )
     # widen first column
@@ -174,3 +152,11 @@ def xl_dramatis_personae( thisWorkbook, thisBook ):
     return;
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+# l127914@pn1249300.lanl.gov:darboux $ py tools_debug.py
+
+# l127914@pn1249300.lanl.gov:darboux $ date
+# Wed Dec 19 13:13:39 MST 2018
+
+# l127914@pn1249300.lanl.gov:darboux $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux

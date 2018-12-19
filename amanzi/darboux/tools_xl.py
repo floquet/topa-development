@@ -22,7 +22,7 @@ def xl_new_workbook( workbook_title ):
 
     my_workbook = xlsxwriter.Workbook( workbook_title )
 
-    xl_s( my_workbook ) # provenance sheet
+    xl_sheet_provenance( my_workbook ) # provenance sheet
     xl_sheet_requirements( my_workbook ) # summarize requirements by type
 
     return my_workbook;
@@ -59,7 +59,6 @@ def xl_sheet_requirements( this_workbook ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
 def xl_sheet_generate( this_workbook, title_sheet ):
-    print( "=  =  = xl_sheet_generate: %s" % title_sheet )
     # insure every worksheet has a header and footer
     mySheet = this_workbook.add_worksheet( title_sheet )
     xl_sheet_header_footer( mySheet )
@@ -68,7 +67,7 @@ def xl_sheet_generate( this_workbook, title_sheet ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-def xl_s( this_workbook ):
+def xl_sheet_provenance( this_workbook ):
 
     # forensic info
     s = xl_sheet_generate( this_workbook, "provenance" )
@@ -154,7 +153,7 @@ def xl_s( this_workbook ):
     s.write( row, col, "operating systems" ) # Macintosh (Intel) Version 10.13.3 (Build 17D47)
     s.write_formula( row, col + 1, '= INFO( "osversion" )' ); row += 1
 
-    return;
+    return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -169,4 +168,12 @@ def xl_sheet_header_footer( this_worksheet ):
     this_worksheet.set_header( myheader )
     this_worksheet.set_footer( myfooter )
 
-    return;
+    return
+
+# l127914@pn1249300.lanl.gov:darboux $ py tools_xl.py
+
+# l127914@pn1249300.lanl.gov:darboux $ date
+# Wed Dec 19 13:15:42 MST 2018
+
+# l127914@pn1249300.lanl.gov:darboux $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux

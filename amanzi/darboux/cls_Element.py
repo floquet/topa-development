@@ -232,8 +232,10 @@ class Element( object ):
 # nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-06.nb
 # l127914@pn1249300.lanl.gov:darboux $ python cls_Element.py
 
+# l127914@pn1249300.lanl.gov:darboux $ py cls_Element.py
+
 # l127914@pn1249300.lanl.gov:darboux $ date
-# Wed Dec 12 19:31:18 MST 2018
+# Wed Dec 19 13:11:53 MST 2018
 
 # l127914@pn1249300.lanl.gov:darboux $ pwd
-#/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux

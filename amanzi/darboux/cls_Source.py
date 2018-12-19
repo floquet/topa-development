@@ -207,7 +207,6 @@ class Source( object ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def search_elements_refine( self, list_search, flavor, myBook, chapter_number ):
-        print( "looking for %s elements" % flavor )
         all_elements = list( ); # empty container
         # REQD or OPTL
         Qreqd = "REQD"
@@ -222,14 +221,12 @@ class Source( object ):
             # purge arguments inside parentheses, braces
             # https://stackoverflow.com/questions/14596884/remove-text-between-and-in-python
             line = re.sub( "[\(\[].*?[\)\]]", "", line )
-            print( "line {} = {}".format( k, line ) )
             # clean up spaces, '
             # https://stackoverflow.com/questions/3939361/remove-specific-characters-from-a-string-in-python
             #for char in "' ":
                 #line = line.replace( char, "" ) # constants, macros
             # separate elements into list
             elements = line.split( "," )
-            print ( "+  +  +  line {} elements = {}".format( k, elements ) )
             for myElement in elements:
                 e           = cls_Element.Element( )
                 count      += 1
@@ -240,10 +237,7 @@ class Source( object ):
                 e.k_index   = count
                 e.k_line    = k
                 myBook.col_elements.append( e )
-            #all_elements.append( elements )
-            # print( "elements = {}".format( elements ) )
-            # print( "line {} = {}".format( k_line, line ) )
-        return # all_elements
+        return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -257,7 +251,6 @@ class Source( object ):
         for line in self.col_lines[ alpha : omega ]:
             # required
             if line.find( "Required Elements:" ) != -1:
-                # print( "line {} = {}".format( k_line, line ) )
                 if line.find( "NONE" ) != -1:
                     continue
                 l_reqd.append( k_line )
@@ -268,14 +261,11 @@ class Source( object ):
         for line in self.col_lines[ alpha : omega ]:
             # optional
             if line.find( "Optional Elements:" ) != -1:
-                # print( "line {} = {}".format( k_line, line ) )
                 if line.find( "NONE" ) != -1:
                     continue
                 l_optl.append( k_line )
             k_line += 1
 
-        # print ( "{} lines with required elements found; locations {}".format( len( l_reqd ), l_reqd ) )
-        # print ( "{} lines with optional elements found; locations {}".format( len( l_optl ), l_optl ) )
         # return list of lines numbers which may have elements
         return ( l_reqd, l_optl )
 
@@ -283,35 +273,26 @@ class Source( object ):
 
     def parse_alpha( self, search_string, alpha, omega ):
 
-        print( "! ! ! source.parse_alpha: search_string, alpha, omega - {} {} {}".format( search_string, alpha, omega ) )
         ptr_locations = list( ) # list of line numbers
         for lineNum in range( alpha, omega ):
-            #print( "lineNum = %s" % lineNum )
             line = self.col_lines[ lineNum ]
-            #print( "line = %s" % line )
             if line.find( search_string ) != -1:
                 if line.find( "+" ) != -1:
                     continue
                 ptr_locations.append( lineNum )
-                # print( "line {}: {}".format( lineNum, line))
         return ptr_locations
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def parse_match_lengths( self, ptr_locations ): # vet candidates
-        print( "$ $ $ source.parse_match_lengths locations = %s" % ptr_locations)
         loc = list( )  # location
         txt = list( )  # text
         for lineNum in ptr_locations:
-            # print( "lineNum = %s" % lineNum )
-            print( "\n{} B = {}".format( lineNum - 1, self.col_lines[ lineNum - 1 ] ) ) # text
-            print(   "{} A = {}".format( lineNum, self.col_lines[ lineNum ] ) ) # ===
             lineLengthA = len( self.col_lines[ lineNum ] )
             lineLengthB = len( self.col_lines[ lineNum - 1 ] )
             if lineLengthA == lineLengthB:
                 loc.append( lineNum - 1 ) # title line number
                 txt.append( self.col_lines[ lineNum - 1 ] ) # title string
-        print( "out: locations, text = {}, {}".format( loc, txt ))
         return ( loc, txt );
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
@@ -320,10 +301,10 @@ class Source( object ):
 # date: Dec 19, 2018, time: 10:59:16
 # nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-06.nb
 
-#dantopa@Mittag-Leffler.local:darboux $ python cls_Source.py
+# l127914@pn1249300.lanl.gov:darboux $ py cls_Source.py
 
-#dantopa@Mittag-Leffler.local:darboux $ date
-#Tue Dec 11 19:40:02 MST 2018
+# l127914@pn1249300.lanl.gov:darboux $ date
+# Wed Dec 19 13:07:28 MST 2018
 
-#dantopa@Mittag-Leffler.local:darboux $ pwd
-#/Volumes/Tethys/repos/GitHub/topa-development/amanzi/darboux
+# l127914@pn1249300.lanl.gov:darboux $ pwd
+# /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux

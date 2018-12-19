@@ -157,14 +157,15 @@ class Book( object ):
         for c in col_chapters:
             source.parse_alpha( "---", self.k_start, self.k_stop )
             ( loc, txt ) = self.source.parse_match_lengths( ptr_locations )
+            count = 0 # count sections
             for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
                 s           = cls_Section.Section( )
                 count      += 1
-                c.title     = myTxt # chapter title
-                c.k_start   = myLoc # title line of chapter
-                c.k_index   = count # chapter number
-                c.key       = str( count ).zfill( 2 ) + "-"
-                self.col_chapters.append( c )
+                s.title     = myTxt # section title
+                s.k_start   = myLoc # title line of chapter
+                s.k_index   = count # section number
+                s.key       = "S-" + str( count ).zfill( 2 )
+                self.col_sections.append( s )
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #

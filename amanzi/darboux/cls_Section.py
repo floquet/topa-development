@@ -19,12 +19,11 @@ class Section( object ):
         self._k_stop          = None    # 231
         self._col_sections    = list( ) # collection of subsections
 
-
 #   P R O P E R T I E S   #
 
     @property
     def title( self ):
-        """Chapter title"""
+        """Section title"""
         return self._title
 
     @property

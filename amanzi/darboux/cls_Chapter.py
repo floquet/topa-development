@@ -92,13 +92,13 @@ class Chapter( object ):
 
     def mark_sections( self ):
         print( "& & & chapter.mark_sections" )
-        for c in rcol_chapterss:
+        for c in col_chapters:
             source.parse_alpha( self, "---", self.k_start, self.k_stop )
         return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def print_element( self ):
+    def print_attributes( self ):
         print( '\nChapter attributes:')
         print( 'title              = %s' % self.title )
         print( 'key                = %s' % self.key )

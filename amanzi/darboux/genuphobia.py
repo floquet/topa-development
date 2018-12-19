@@ -29,20 +29,27 @@ if __name__ == "__main__":
     # fundamental object: a book
     book        = cls_Book.Book( )     # instantiate book
     book.source = cls_Source.Source( ) # instantiate source
-    mySource = book.source
+    source = book.source
 
     # # source data
-    mySource.input_rst = "short.rst"    # setter called
-    # mySource.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
-    mySource.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
-    # mySource.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"
+    source.input_rst = "short.rst"    # setter called
+    # source.path_rst  = "/Users/dantopa/Documents/repos/GitHub/topa-development/data/"
+    # source.path_rst = "/Volumes/Tethys/repos/GitHub/topa-development/data/"
+    source.path_rst  = "/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/"
 
     # read source file
-    mySource.setup_io( )
-    mySource.read_file( )
-    print( "length col_lines = %s" % len( mySource.col_lines ) )
+    source.setup_io( )
+    source.read_file( )
+    print( "length col_lines = %s" % len( source.col_lines ) )
 
+    # create xl notebook
+    workbook = tools_xl.xl_new_workbook( source.full_xl )
+    # worksheets for debugging
+    tools_debug.xl_dramatis_personae( workbook, book )
+    tools_debug.xl_numbered_lines( workbook, book.source.col_lines )
     book.mark_chapters( )
+
+    # delineate chapters
     for c in book.col_chapters:
         # mark sections
         c.mark_sections( )
@@ -51,13 +58,13 @@ if __name__ == "__main__":
     for c in book.col_chapters:
         # mark candidate elements
         ( l_reqd, l_optl ) = mySource.search_elements_crude( c.k_start, c.k_stop )
-        c.print_element( )
+        c.print_attributes( )
 
     # harvest optional elements
     # all_elements = mySource.search_elements_refine( l_optl, "optional", book )
     # all_elements = mySource.search_elements_refine( l_reqd, "required", book )
     # for e in book.col_elements:
-    #     e.print_element( )
+    #     e.print_attributes( )
 
 
     print( "\n", datetime.datetime.now( ) )
@@ -116,7 +123,7 @@ if __name__ == "__main__":
 #
 # 2018-12-18 21:17:20.533134
 #source: /Volumes/Tethys/repos/GitHub/topa-development/amanzi/darboux/elurophobia.py
-#python version 3.6.7 (default, Oct 21 2018, 08:02:39) 
+#python version 3.6.7 (default, Oct 21 2018, 08:02:39)
 #[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)]
 
 # Genuphobia	Fear of knees

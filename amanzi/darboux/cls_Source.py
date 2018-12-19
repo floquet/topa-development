@@ -2,19 +2,21 @@
 
 # # Amanzi: The Multi-Process HPC Simulator
 # #   https://github.com/amanzi/amanzi
+
 # # David Moulton DGL LANL/T-5 moulton@lanl.gov 505 665 4712
-# # Daniel Topa LANL/CCS-2 dantopa@lanl.gov 505 667 0817
+# # Daniel Topa   LANL/CCS-2   dantopa@lanl.gov 505 667 0817
+
+# imports
+import re                  # substitution
+import uuid                # Universal Unique IDentifier
+from pathlib import Path   # rename file
+# home brew
+# classes
+import cls_Chapter         # chapter (constains sections)
 
 # Source class
 #  source:  Amanzi manual to be parsed
 #  sink:    Excel file with test matrix
-
-import re 
-import uuid                 # Universal Unique IDentifier
-from pathlib import Path    # rename file
-# home brew
-# classes
-import cls_Element          # elements (required, optional)
 
 class Source( object ):
     def __init__( self ):
@@ -22,12 +24,10 @@ class Source( object ):
         self._title           = None    # from *.rst, line 2
         self._col_lines       = list( ) # text as a collection of lines, EOL removed
         self._numLines        = None    # census
-        self._uuid            = uuid.uuid4( ) # element uuid
-        # source
+        self._uuid            = uuid.uuid4( ) # de facto time stamp
         self._input_rst       = None    # AmanziInputSpec-v2.3.2-draft.rst
         self._path_rst        = None    # absolute path
         self._full_rst        = None    # path + file name
-        # sink
         self._input_xl        = None    # AmanziInputSpec-v2.3.2-draft.xlsx
         self._path_xl         = None    # absolute path
         self._full_xl         = None    # path + file name
@@ -66,12 +66,12 @@ class Source( object ):
 
     @property
     def full_rst( self ):
-        """Path + Name"""
+        """Path + Name for input file"""
         return self._full_rst
 
     @property
     def input_xl( self ):
-        """Name of source file"""
+        """Name of output file"""
         return self._input_xl
 
     @property
@@ -81,7 +81,7 @@ class Source( object ):
 
     @property
     def full_xl( self ):
-        """Path + Name"""
+        """Path + Name for output file"""
         return self._full_xl
 
 #   S E T T E R S   #
@@ -163,6 +163,22 @@ class Source( object ):
     @full_xl.deleter
     def full_xl( self ):
         del self._full_xl
+
+#   M E T H O D S   #
+
+    def print_attributes( self ):
+        print('\nSource attributes:')
+        print( 'title = %s' % self.title )
+        print( 'col_lines = %s' % self.col_lines )
+        print( 'numLines = %s' % self.numLines )
+        print( 'uuid = %s' % self.uuid )
+        print( 'input_rst = %s' % self.input_rst )
+        print( 'path_rst = %s' % self.path_rst )
+        print( 'full_rst = %s' % self.full_rst )
+        print( 'input_xl = %s' % self.input_xl )
+        print( 'path_xl = %s' % self.path_xl )
+        print( 'full_xl = %s' % self.full_xl )
+        return
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
@@ -265,7 +281,7 @@ class Source( object ):
 
     def parse_alpha( self, search_string, alpha, omega ):
 
-        print( "! ! ! source.parse_alpha: search_string, alpha, omega - {} {} {}".format( search_string, alpha, omega ) )        
+        print( "! ! ! source.parse_alpha: search_string, alpha, omega - {} {} {}".format( search_string, alpha, omega ) )
         ptr_locations = list( ) # list of line numbers
         for lineNum in range( alpha, omega ):
             #print( "lineNum = %s" % lineNum )
@@ -277,7 +293,7 @@ class Source( object ):
                 ptr_locations.append( lineNum )
                 # print( "line {}: {}".format( lineNum, line))
         return ptr_locations
-    
+
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def parse_match_lengths( self, ptr_locations ): # vet candidates
@@ -298,10 +314,9 @@ class Source( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-
 # user: l127914, CPU: pn1249300, MM v. 11.3.0 for Mac OS X x86
-# date: Dec 10, 2018, time: 18:24:50
-# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-02.nb
+# date: Dec 19, 2018, time: 10:59:16
+# nb: /Users/l127914/Mathematica_files/nb/lanl/python/author/class-structures-06.nb
 
 #dantopa@Mittag-Leffler.local:darboux $ python cls_Source.py
 

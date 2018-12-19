@@ -35,14 +35,14 @@ def xl_numbered_lines( thisWorkbook, theseLines ):
         #sheet_numbered_lines.write( row, col + 2, myString, myText ); row += 1
         counter += 1;
     # https://stackabuse.com/read-a-file-line-by-line-in-python/
-    # with open( thisBook.source_object.full_rst ) as f:
+    # with open( thisBook.source.full_rst ) as f:
     #     for cnt, line in enumerate( f ):
     #         # line number
     #         sheet_numbered_lines.write( row, col,     cnt )
     #         # text
     #         sheet_numbered_lines.write( row, col + 1, "{}".format( line ) ); row += 1
     # https://stackabuse.com/read-a-file-line-by-line-in-python/
-    # with open( thisBook.source_object.full_rst ) as f:
+    # with open( thisBook.source.full_rst ) as f:
     #     for cnt, line in enumerate( f ):
     #         # line number
     #         sheet_numbered_lines.write( row, col, cnt )
@@ -73,26 +73,26 @@ def xl_dramatis_personae( thisWorkbook, thisBook ):
     sheet_dramatis_personae.write( row, col, "Source file", format_title ); row += 1
 
     sheet_dramatis_personae.write( row, col, "Title" )
-    sheet_dramatis_personae.write( row, col + 1, thisBook.source_object.title ); row += 1
+    sheet_dramatis_personae.write( row, col + 1, thisBook.source.title ); row += 1
 
     sheet_dramatis_personae.write( row, col, "Data file" )
-    sheet_dramatis_personae.write( row, col + 1, thisBook.source_object.input_rst ); row += 1
+    sheet_dramatis_personae.write( row, col + 1, thisBook.source.input_rst ); row += 1
 
     sheet_dramatis_personae.write( row, col, "Data path" )
-    sheet_dramatis_personae.write( row, col + 1, thisBook.source_object.path_rst ); row += 1
+    sheet_dramatis_personae.write( row, col + 1, thisBook.source.path_rst ); row += 1
 
     sheet_dramatis_personae.write( row, col, "Lines read" )
-    sheet_dramatis_personae.write( row, col + 1, thisBook.source_object.numLines ); row += 1
+    sheet_dramatis_personae.write( row, col + 1, thisBook.source.numLines ); row += 1
 
     # sink
     row += 1
     sheet_dramatis_personae.write( row, col, "Output file", format_title ); row += 1
 
     sheet_dramatis_personae.write( row, col, "Output file" )
-    sheet_dramatis_personae.write( row, col + 1, thisBook.source_object.output_xl ); row += 1
+    sheet_dramatis_personae.write( row, col + 1, thisBook.source.output_xl ); row += 1
 
     sheet_dramatis_personae.write( row, col, "Output path" )
-    sheet_dramatis_personae.write( row, col + 1, thisBook.source_object.path_xl ); row += 1
+    sheet_dramatis_personae.write( row, col + 1, thisBook.source.path_xl ); row += 1
 
     return;
 

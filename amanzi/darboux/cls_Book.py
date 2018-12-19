@@ -146,6 +146,7 @@ class Book( object ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters_start( self ):
+        print( "@ @ @ book.mark_chapters_start:" )
         locations    = self.source.parse_alpha( "===", 0, self.source.numLines )
         ( loc, txt ) = self.source.parse_match_lengths( locations )
         count = 0
@@ -157,14 +158,13 @@ class Book( object ):
             c.k_index   = count # chapter number
             c.key       = str( count ).zfill( 2 ) + "-"
             self.col_chapters.append( c )
-        print( "@ @ @ mark_chapters_start:" )
         print( "( loc, txt ) {} - {}".format( loc, txt) )
         return loc
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_chapters_stop( self, start_locations ):
-        print( "# # # mark_chapters_stop:" )
+        print( "# # # book.mark_chapters_stop:" )
         print( "start_locations: %s" % start_locations )
 
         del start_locations[ 0 ] # remove first element

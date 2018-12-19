@@ -265,6 +265,7 @@ class Source( object ):
 
     def parse_alpha( self, search_string, alpha, omega ):
 
+        print( "! ! ! source.parse_alpha: search_string, alpha, omega - {} {} {}".format( search_string, alpha, omega ) )        
         locations = list( ) # list of line numbers
         for lineNum in range( alpha, omega ):
             #print( "lineNum = %s" % lineNum )
@@ -275,23 +276,23 @@ class Source( object ):
                     continue
                 locations.append( lineNum )
                 # print( "line {}: {}".format( lineNum, line))
-        print( "parse_alpha locations = %s" % locations)
         return locations
     
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def parse_match_lengths( self, locations ): # vet candidates
+        print( "$ $ $ source.parse_match_lengths locations = %s" % locations)
         loc = list( )  # location
         txt = list( )  # text
         print( "empty: locations, text = {}, {}".format( loc, txt ))
         for lineNum in locations:
             # print( "lineNum = %s" % lineNum )
-            print( "{} A = {}".format( lineNum, self.col_lines[ lineNum ] ) ) # ===
-            print( "{} B = {}".format( lineNum - 1, self.col_lines[ lineNum - 1 ] ) ) # text
+            print( "\n{} B = {}".format( lineNum - 1, self.col_lines[ lineNum - 1 ] ) ) # text
+            print(   "{} A = {}".format( lineNum, self.col_lines[ lineNum ] ) ) # ===
             lineLengthA = len( self.col_lines[ lineNum ] )
             lineLengthB = len( self.col_lines[ lineNum - 1 ] )
             if lineLengthA == lineLengthB:
-                loc.append( lineNum + 1 ) # first line after ===
+                loc.append( lineNum - 1 ) # title line number
                 txt.append( self.col_lines[ lineNum - 1 ] ) # title string
         print( "out: locations, text = {}, {}".format( loc, txt ))
         return ( loc, txt );

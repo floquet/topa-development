@@ -42,7 +42,7 @@ if __name__ == "__main__":
     source.read_file( )
     print( "length col_lines = %s" % len( source.col_lines ) )
 
-    # create xl notebook
+    # create xl notebook for results
     workbook = tools_xl.xl_new_workbook( source.full_xl )
     # worksheets for debugging
     tools_debug.xl_dramatis_personae( workbook, book )
@@ -61,11 +61,12 @@ if __name__ == "__main__":
     for c in book.col_chapters:
         # mark candidate elements
         ( l_reqd, l_optl ) = source.search_elements_crude( c.k_start, c.k_stop )
-        c.print_attributes( )
+        #c.print_attributes( )
 
-    # harvest optional elements
-    all_elements = source.search_elements_refine( l_optl, "optional", book )
-    all_elements = source.search_elements_refine( l_reqd, "required", book )
+        # harvest optional elements
+        all_elements = source.search_elements_refine( l_optl, "optional", book, c.k_index )
+        all_elements = source.search_elements_refine( l_reqd, "required", book, c.k_index )
+
     for e in book.col_elements:
         e.print_attributes( )
 
@@ -75,7 +76,7 @@ if __name__ == "__main__":
     print( "source: %s/%s" % ( os.getcwd( ), os.path.basename( __file__ ) ) )
     print( "python version %s" % sys.version )
 
-# l127914@pn1249300.lanl.gov:darboux $ py genuphobia.py
+# l127914@pn1249300.lanl.gov:darboux $ py hypochonria.py 
 # reading source file /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/data/short.rst
 # length col_lines = 231
 # =  =  = xl_sheet_generate: provenance
@@ -108,32 +109,96 @@ if __name__ == "__main__":
 # chapter 3: Definitions 95 to 231
 # =  =  = xl_sheet_generate: chapters
 # * * * searching chapters for elements
+# looking for optional elements
+# looking for required elements
+# looking for optional elements
+# line 41 = NONE
+# line 59 = NONE
+# looking for required elements
+# looking for optional elements
+# line 104 = NONE
+# line 116 = NONE
+# line 152 = NONE
+# looking for required elements
 #
-# Chapter attributes:
-# title              = Amanzi Input
-# key                = 01-
-# k_start            = 16
-# k_stop             = 31
-# number of sections = 0
+# Element attributes:
+# name = NONE
+# flavor = OPTL
+# status = NULL
+# k_index = 1
+# uuid = dca1bf63-65dc-4423-8ed1-7c04aa551478
+# k_line = 41
+# key_head = None
+# key_tail = None
+# k_chapter = 2
+# k_section = None
+# k_subsection = None
+# xl_row = None
+# xl_col = None
 #
-# Chapter attributes:
-# title              = Model Description
-# key                = 02-
-# k_start            = 32
-# k_stop             = 94
-# number of sections = 0
+# Element attributes:
+# name = NONE
+# flavor = OPTL
+# status = NULL
+# k_index = 2
+# uuid = ea706fe1-ca84-48f9-b6fe-cd42412ef720
+# k_line = 59
+# key_head = None
+# key_tail = None
+# k_chapter = 2
+# k_section = None
+# k_subsection = None
+# xl_row = None
+# xl_col = None
 #
-# Chapter attributes:
-# title              = Definitions
-# key                = 03-
-# k_start            = 95
-# k_stop             = 231
-# number of sections = 0
+# Element attributes:
+# name = NONE
+# flavor = OPTL
+# status = NULL
+# k_index = 3
+# uuid = 2d477268-ab51-41b4-9690-c93ac01eb7c6
+# k_line = 104
+# key_head = None
+# key_tail = None
+# k_chapter = 3
+# k_section = None
+# k_subsection = None
+# xl_row = None
+# xl_col = None
 #
-#  2018-12-19 12:13:39.412764
-# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux/genuphobia.py
+# Element attributes:
+# name = NONE
+# flavor = OPTL
+# status = NULL
+# k_index = 4
+# uuid = c14e2061-752c-4475-9bb4-d4ff90a18abb
+# k_line = 116
+# key_head = None
+# key_tail = None
+# k_chapter = 3
+# k_section = None
+# k_subsection = None
+# xl_row = None
+# xl_col = None
+#
+# Element attributes:
+# name = NONE
+# flavor = OPTL
+# status = NULL
+# k_index = 5
+# uuid = 36c0411e-49ec-49d4-a0cd-f6c11e483f6b
+# k_line = 152
+# key_head = None
+# key_tail = None
+# k_chapter = 3
+# k_section = None
+# k_subsection = None
+# xl_row = None
+# xl_col = None
+#
+#  2018-12-19 12:41:51.331447
+# source: /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/amanzi/darboux/hypochonria.py
 # python version 3.6.6 (default, Jun 28 2018, 05:53:46)
 # [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.39.2)]
-
 
 # Hypochonria 	Fear of illness

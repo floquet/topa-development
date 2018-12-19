@@ -206,7 +206,7 @@ class Source( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def search_elements_refine( self, list_search, flavor, myBook ):
+    def search_elements_refine( self, list_search, flavor, myBook, chapter_number ):
         print( "looking for %s elements" % flavor )
         all_elements = list( ); # empty container
         # REQD or OPTL
@@ -231,13 +231,14 @@ class Source( object ):
             elements = line.split( "," )
             #print ( "elements = %s" % elements )
             for myElement in elements:
-                e         = cls_Element.Element( )
-                count    += 1
-                e.name    = myElement
-                e.flavor  = Qreqd
-                e.status  = "NULL"
-                e.k_index = count
-                e.k_line  = k
+                e           = cls_Element.Element( )
+                count      += 1
+                e.name      = myElement
+                e.flavor    = Qreqd
+                e.status    = "NULL"
+                e.k_chapter = chapter_number
+                e.k_index   = count
+                e.k_line    = k
                 myBook.col_elements.append( e )
             #all_elements.append( elements )
             # print( "elements = {}".format( elements ) )

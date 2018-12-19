@@ -152,21 +152,37 @@ class Book( object ):
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
-    def mark_sections( self ):
-        print( "& & & chapter.mark_sections" )
-        for c in col_chapters:
-            source.parse_alpha( "---", self.k_start, self.k_stop )
-            ( loc, txt ) = self.source.parse_match_lengths( ptr_locations )
-            count = 0 # count sections
-            for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
-                s           = cls_Section.Section( )
-                count      += 1
-                s.title     = myTxt # section title
-                s.k_start   = myLoc # title line of chapter
-                s.k_index   = count # section number
-                s.key       = "S-" + str( count ).zfill( 2 )
-                self.col_sections.append( s )
+    def mark_sections( self, chapter ):
+        ptr_locations = self.mark_sections_start( chapter )
+        self.mark_sections_stop( chapter, ptr_locations )
         return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def mark_sections_start( self, chapter ):
+        print( "& & & chapter.mark_sections" )
+        ptr_locations = self.source.parse_alpha( "---", chapter.k_start, chapter.k_stop )
+        ( loc, txt )  = self.source.parse_match_lengths( ptr_locations )
+
+        count = 0 # count sections
+        for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
+            s           = cls_Section.Section( )
+            count      += 1
+            s.title     = myTxt # section title
+            s.k_start   = myLoc # title line of chapter
+            s.k_index   = count # section number
+            s.key       = "S-" + str( count ).zfill( 2 )
+            self.col_sections.append( s )
+        return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+    def mark_sections_stop( self, chapter, ptr_locations ):
+
+        ptr_locations.append( chapter.k_stop )
+        ptr_locations = ptr_locations[ 1: ]
+        for ( s, l ) in zip( chapter.col_sections, ptr_locations ):
+            s.k_stop = l
 
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 

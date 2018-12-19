@@ -50,6 +50,7 @@ if __name__ == "__main__":
     tools_debug.xl_chapter_attributes( workbook, book.col_chapters )
 
     for c in book.col_chapters:
+        book.mark_sections( c.k_start, c.k_stop )
         print( "... searching chapter %s for elements" % c.title )
         # mark candidate elements: return lists of candidate lines
         ( l_reqd, l_optl ) = book.source.search_elements_crude( c.k_start, c.k_stop )
@@ -76,4 +77,4 @@ if __name__ == "__main__":
 # python version 3.6.6 (default, Jun 28 2018, 05:53:46)
 # [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.39.2)]
 
-# Iatrophobia	Fear of doctors
+# Iatrophobia: Fear of doctors

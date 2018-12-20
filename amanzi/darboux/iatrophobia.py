@@ -50,7 +50,7 @@ if __name__ == "__main__":
     tools_debug.xl_chapter_attributes( workbook, book.col_chapters )
 
     for c in book.col_chapters:
-        book.mark_sections( c.k_start, c.k_stop )
+        book.mark_sections( c )
         print( "... searching chapter %s for elements" % c.title )
         # mark candidate elements: return lists of candidate lines
         ( l_reqd, l_optl ) = book.source.search_elements_crude( c.k_start, c.k_stop )

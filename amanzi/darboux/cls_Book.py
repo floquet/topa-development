@@ -163,7 +163,8 @@ class Book( object ):
         print( "& & & chapter.mark_sections" )
         ptr_locations = self.source.parse_alpha( "---", chapter.k_start, chapter.k_stop )
         ( loc, txt )  = self.source.parse_match_lengths( ptr_locations )
-
+        if len( ptr_locations ) == 0:
+            return
         count = 0 # count sections
         for myLoc, myTxt in zip( loc, txt ): # ( myLoc, myTxt ) = 32, Model Description
             s           = cls_Section.Section( )
@@ -178,7 +179,8 @@ class Book( object ):
 #  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
 
     def mark_sections_stop( self, chapter, ptr_locations ):
-
+        if len( ptr_locations ) == 0:
+            return
         ptr_locations.append( chapter.k_stop )
         ptr_locations = ptr_locations[ 1: ]
         for ( s, l ) in zip( chapter.col_sections, ptr_locations ):

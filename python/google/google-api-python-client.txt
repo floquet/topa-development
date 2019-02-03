@@ -1,0 +1,164 @@
+l127914@pn1249300.lanl.gov:google $ pip install --upgrade google-api-python-client
+Collecting google-api-python-client
+  Downloading https://files.pythonhosted.org/packages/4e/92/e4746e646585c8c359781c19984fe8b6b8794a6cfe382cd481329d5252ac/google-api-python-client-1.7.4.tar.gz (141kB)
+    100% |████████████████████████████████| 143kB 1.5MB/s
+Collecting httplib2<1dev,>=0.9.2 (from google-api-python-client)
+  Downloading https://files.pythonhosted.org/packages/fd/ce/aa4a385e3e9fd351737fd2b07edaa56e7a730448465aceda6b35086a0d9b/httplib2-0.11.3.tar.gz (215kB)
+    100% |████████████████████████████████| 225kB 3.3MB/s
+Collecting google-auth>=1.4.1 (from google-api-python-client)
+  Downloading https://files.pythonhosted.org/packages/58/cb/96dbb4e50e7a9d856e89cc9c8e36ab1055f9774f7d85f37e2156c1d79d9f/google_auth-1.5.1-py2.py3-none-any.whl (65kB)
+    100% |████████████████████████████████| 71kB 5.4MB/s
+Collecting google-auth-httplib2>=0.0.3 (from google-api-python-client)
+  Downloading https://files.pythonhosted.org/packages/33/49/c814d6d438b823441552198f096fcd0377fd6c88714dbed34f1d3c8c4389/google_auth_httplib2-0.0.3-py2.py3-none-any.whl
+Requirement already up-to-date: six<2dev,>=1.6.1 in /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages (from google-api-python-client)
+Collecting uritemplate<4dev,>=3.0.0 (from google-api-python-client)
+  Downloading https://files.pythonhosted.org/packages/f6/25/66a49231b44409d7f07cfcf2506a8b070ce3c99fc47cc256bea833f24791/uritemplate-3.0.0-py2-none-any.whl
+Collecting pyasn1-modules>=0.2.1 (from google-auth>=1.4.1->google-api-python-client)
+  Downloading https://files.pythonhosted.org/packages/19/02/fa63f7ba30a0d7b925ca29d034510fc1ffde53264b71b4155022ddf3ab5d/pyasn1_modules-0.2.2-py2.py3-none-any.whl (62kB)
+    100% |████████████████████████████████| 71kB 6.1MB/s
+Collecting cachetools>=2.0.0 (from google-auth>=1.4.1->google-api-python-client)
+  Downloading https://files.pythonhosted.org/packages/0a/58/cbee863250b31d80f47401d04f34038db6766f95dea1cc909ea099c7e571/cachetools-2.1.0-py2.py3-none-any.whl
+Collecting rsa>=3.1.4 (from google-auth>=1.4.1->google-api-python-client)
+  Downloading https://files.pythonhosted.org/packages/02/e5/38518af393f7c214357079ce67a317307936896e961e35450b70fad2a9cf/rsa-4.0-py2.py3-none-any.whl
+Collecting pyasn1<0.5.0,>=0.4.1 (from pyasn1-modules>=0.2.1->google-auth>=1.4.1->google-api-python-client)
+  Downloading https://files.pythonhosted.org/packages/d1/a1/7790cc85db38daa874f6a2e6308131b9953feb1367f2ae2d1123bb93a9f5/pyasn1-0.4.4-py2.py3-none-any.whl (72kB)
+    100% |████████████████████████████████| 81kB 1.1MB/s
+Installing collected packages: httplib2, pyasn1, pyasn1-modules, cachetools, rsa, google-auth, google-auth-httplib2, uritemplate, google-api-python-client
+  Running setup.py install for httplib2 ... error
+    Complete output from command /opt/local/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -u -c "import setuptools, tokenize;__file__='/private/var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-build-HoJFAW/httplib2/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-6HFtjR-record/install-record.txt --single-version-externally-managed --compile:
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib
+    creating build/lib/httplib2
+    copying python2/httplib2/__init__.py -> build/lib/httplib2
+    copying python2/httplib2/iri2uri.py -> build/lib/httplib2
+    copying python2/httplib2/socks.py -> build/lib/httplib2
+    copying python2/httplib2/cacerts.txt -> build/lib/httplib2
+    running install_lib
+    creating /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/httplib2
+    error: could not create '/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/httplib2': Permission denied
+
+    ----------------------------------------
+Command "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -u -c "import setuptools, tokenize;__file__='/private/var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-build-HoJFAW/httplib2/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-6HFtjR-record/install-record.txt --single-version-externally-managed --compile" failed with error code 1 in /private/var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-build-HoJFAW/httplib2/
+You are using pip version 9.0.1, however version 18.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+l127914@pn1249300.lanl.gov:google $ pip install --upgrade pip
+Cache entry deserialization failed, entry ignored
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/c2/d7/90f34cb0d83a6c5631cf71dfe64cc1054598c843a92b400e55675cc2ac37/pip-18.1-py2.py3-none-any.whl (1.3MB)
+    100% |████████████████████████████████| 1.3MB 699kB/s
+Installing collected packages: pip
+  Found existing installation: pip 9.0.1
+    Uninstalling pip-9.0.1:
+Exception:
+Traceback (most recent call last):
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pip/basecommand.py", line 215, in main
+    status = self.run(options, args)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pip/commands/install.py", line 342, in run
+    prefix=options.prefix_path,
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pip/req/req_set.py", line 778, in install
+    requirement.uninstall(auto_confirm=True)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pip/req/req_install.py", line 754, in uninstall
+    paths_to_remove.remove(auto_confirm)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pip/req/req_uninstall.py", line 115, in remove
+    renames(path, new_path)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pip/utils/__init__.py", line 267, in renames
+    shutil.move(old, new)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py", line 317, in move
+    os.unlink(src)
+OSError: [Errno 13] Permission denied: '/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/pip'
+You are using pip version 9.0.1, however version 18.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+l127914@pn1249300.lanl.gov:google $ date
+Wed Oct 31 13:33:03 MDT 2018
+l127914@pn1249300.lanl.gov:google $ pwd
+/Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/google
+
+
+l127914@pn1249300.lanl.gov:google $ sudo toupip install --upgrade google-api-python-client
+Collecting google-api-python-client
+  Using cached https://files.pythonhosted.org/packages/4e/92/e4746e646585c8c359781c19984fe8b6b8794a6cfe382cd481329d5252ac/google-api-python-client-1.7.4.tar.gz
+Collecting httplib2<1dev,>=0.9.2 (from google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/fd/ce/aa4a385e3e9fd351737fd2b07edaa56e7a730448465aceda6b35086a0d9b/httplib2-0.11.3.tar.gz
+Collecting google-auth>=1.4.1 (from google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/58/cb/96dbb4e50e7a9d856e89cc9c8e36ab1055f9774f7d85f37e2156c1d79d9f/google_auth-1.5.1-py2.py3-none-any.whl
+Collecting google-auth-httplib2>=0.0.3 (from google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/33/49/c814d6d438b823441552198f096fcd0377fd6c88714dbed34f1d3c8c4389/google_auth_httplib2-0.0.3-py2.py3-none-any.whl
+Requirement already up-to-date: six<2dev,>=1.6.1 in /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages (from google-api-python-client)
+Collecting uritemplate<4dev,>=3.0.0 (from google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/f6/25/66a49231b44409d7f07cfcf2506a8b070ce3c99fc47cc256bea833f24791/uritemplate-3.0.0-py2-none-any.whl
+Collecting pyasn1-modules>=0.2.1 (from google-auth>=1.4.1->google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/19/02/fa63f7ba30a0d7b925ca29d034510fc1ffde53264b71b4155022ddf3ab5d/pyasn1_modules-0.2.2-py2.py3-none-any.whl
+Collecting cachetools>=2.0.0 (from google-auth>=1.4.1->google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/0a/58/cbee863250b31d80f47401d04f34038db6766f95dea1cc909ea099c7e571/cachetools-2.1.0-py2.py3-none-any.whl
+Collecting rsa>=3.1.4 (from google-auth>=1.4.1->google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/02/e5/38518af393f7c214357079ce67a317307936896e961e35450b70fad2a9cf/rsa-4.0-py2.py3-none-any.whl
+Collecting pyasn1<0.5.0,>=0.4.1 (from pyasn1-modules>=0.2.1->google-auth>=1.4.1->google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/d1/a1/7790cc85db38daa874f6a2e6308131b9953feb1367f2ae2d1123bb93a9f5/pyasn1-0.4.4-py2.py3-none-any.whl
+Installing collected packages: httplib2, pyasn1, pyasn1-modules, cachetools, rsa, google-auth, google-auth-httplib2, uritemplate, google-api-python-client
+  Running setup.py install for httplib2 ... error
+    Complete output from command /opt/local/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -u -c "import setuptools, tokenize;__file__='/private/var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-build-v48t3L/httplib2/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-8asn1E-record/install-record.txt --single-version-externally-managed --compile:
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib
+    creating build/lib/httplib2
+    copying python2/httplib2/__init__.py -> build/lib/httplib2
+    copying python2/httplib2/iri2uri.py -> build/lib/httplib2
+    copying python2/httplib2/socks.py -> build/lib/httplib2
+    copying python2/httplib2/cacerts.txt -> build/lib/httplib2
+    running install_lib
+    copying build/lib/httplib2/iri2uri.py -> /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/httplib2
+    error: [Errno 13] Permission denied: '/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/httplib2/iri2uri.py'
+
+    ----------------------------------------
+Command "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -u -c "import setuptools, tokenize;__file__='/private/var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-build-v48t3L/httplib2/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-8asn1E-record/install-record.txt --single-version-externally-managed --compile" failed with error code 1 in /private/var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-build-v48t3L/httplib2/
+You are using pip version 9.0.1, however version 18.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+l127914@pn1249300.lanl.gov:google $ sudo touch /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/httplib2/iri2uri.py
+Password:
+l127914@pn1249300.lanl.gov:google $ sudo tou
+l127914@pn1249300.lanl.gov:google $ pip install --upgrade google-api-python-client
+Collecting google-api-python-client
+  Using cached https://files.pythonhosted.org/packages/4e/92/e4746e646585c8c359781c19984fe8b6b8794a6cfe382cd481329d5252ac/google-api-python-client-1.7.4.tar.gz
+Collecting httplib2<1dev,>=0.9.2 (from google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/fd/ce/aa4a385e3e9fd351737fd2b07edaa56e7a730448465aceda6b35086a0d9b/httplib2-0.11.3.tar.gz
+Collecting google-auth>=1.4.1 (from google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/58/cb/96dbb4e50e7a9d856e89cc9c8e36ab1055f9774f7d85f37e2156c1d79d9f/google_auth-1.5.1-py2.py3-none-any.whl
+Collecting google-auth-httplib2>=0.0.3 (from google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/33/49/c814d6d438b823441552198f096fcd0377fd6c88714dbed34f1d3c8c4389/google_auth_httplib2-0.0.3-py2.py3-none-any.whl
+Requirement already up-to-date: six<2dev,>=1.6.1 in /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages (from google-api-python-client)
+Collecting uritemplate<4dev,>=3.0.0 (from google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/f6/25/66a49231b44409d7f07cfcf2506a8b070ce3c99fc47cc256bea833f24791/uritemplate-3.0.0-py2-none-any.whl
+Collecting pyasn1-modules>=0.2.1 (from google-auth>=1.4.1->google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/19/02/fa63f7ba30a0d7b925ca29d034510fc1ffde53264b71b4155022ddf3ab5d/pyasn1_modules-0.2.2-py2.py3-none-any.whl
+Collecting cachetools>=2.0.0 (from google-auth>=1.4.1->google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/0a/58/cbee863250b31d80f47401d04f34038db6766f95dea1cc909ea099c7e571/cachetools-2.1.0-py2.py3-none-any.whl
+Collecting rsa>=3.1.4 (from google-auth>=1.4.1->google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/02/e5/38518af393f7c214357079ce67a317307936896e961e35450b70fad2a9cf/rsa-4.0-py2.py3-none-any.whl
+Collecting pyasn1<0.5.0,>=0.4.1 (from pyasn1-modules>=0.2.1->google-auth>=1.4.1->google-api-python-client)
+  Using cached https://files.pythonhosted.org/packages/d1/a1/7790cc85db38daa874f6a2e6308131b9953feb1367f2ae2d1123bb93a9f5/pyasn1-0.4.4-py2.py3-none-any.whl
+Installing collected packages: httplib2, pyasn1, pyasn1-modules, cachetools, rsa, google-auth, google-auth-httplib2, uritemplate, google-api-python-client
+  Running setup.py install for httplib2 ... error
+    Complete output from command /opt/local/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -u -c "import setuptools, tokenize;__file__='/private/var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-build-bii43B/httplib2/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-cRPjGg-record/install-record.txt --single-version-externally-managed --compile:
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib
+    creating build/lib/httplib2
+    copying python2/httplib2/__init__.py -> build/lib/httplib2
+    copying python2/httplib2/iri2uri.py -> build/lib/httplib2
+    copying python2/httplib2/socks.py -> build/lib/httplib2
+    copying python2/httplib2/cacerts.txt -> build/lib/httplib2
+    running install_lib
+    copying build/lib/httplib2/socks.py -> /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/httplib2
+    error: [Errno 13] Permission denied: '/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/httplib2/socks.py'
+
+    ----------------------------------------
+Command "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -u -c "import setuptools, tokenize;__file__='/private/var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-build-bii43B/httplib2/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-cRPjGg-record/install-record.txt --single-version-externally-managed --compile" failed with error code 1 in /private/var/folders/ww/skzg3xhj4y1fhgltv4st2_br0000gq/T/pip-build-bii43B/httplib2/
+You are using pip version 9.0.1, however version 18.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.

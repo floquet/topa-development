@@ -1,0 +1,19 @@
+File: sample.txt
+
+Titles found:
+
+A TITLE in line 1; length = 7 characters
+Another title in line 13; length = 14 characters
+
+Loop through 2 titles and list subtitles:
+
+Subtitles for title 1:
+
+alpha in line 4, length = 5 characters
+beta in line 7, length = 4 characters
+gamma in line 10, length = 5 characters
+
+Subtitles for title 2:
+
+zeus in line 16; length = 4 characters
+jupiter in line 21; length = 7 characters

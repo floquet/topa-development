@@ -1,0 +1,441 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amsmath, amssymb}
+\usepackage{multirow}
+
+
+\title{Review Problems\\Calculus AB -- 2019}
+\author{Daniel Topa}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section{Algebraic Laws}
+Statement of laws for the field of real numbers.
+
+\subsection{Associative Law}
+\noindent Multiplication is associative:
+$$(a b)c=a(bc)$$
+\noindent Addition is associative:
+$$(a+b)+c = a + (b+c)$$
+
+\subsection{Commutative Law}
+\noindent Multiplication is commutative:
+$$ab=ba$$
+\noindent Addition is commutative:
+$$a+b=b+a$$
+
+\subsection{Distributive Law}
+\noindent Distributivity of multiplication over addtion:
+$$a(b+c)=ab+ac$$
+
+\subsection{Identity Operators}
+\noindent Multiplicative identity is $1$:
+$$1\cdot x = x$$
+
+\noindent Additive identity is $0$:
+$$0 + x = x$$
+
+\subsection{Inverse Operators}
+\noindent For $x\ne0$, the multiplicative inverse of $x$ is $\frac{1}{x}$:
+$$x\cdot \frac{1}{x} = 1$$
+
+\noindent Additive inverse of $x$ is $-x$:
+$$x-x = 0$$
+
+
+\section{Expand and Simplify}
+Problems marked with an asterisk $(*)$ are stated in the simplest form and no further simplification is needed.
+
+\subsection{Problem 1}
+$$(-6ab)(0.5ac)=-3a^{2}bc$$
+
+\subsection{Problem 3*}
+$$2 x (x - 5)=2 x^2-10 x$$
+
+\subsection{Problem 5}
+$$-2 (4 - 3 a) = 6 a -8 $$
+Simplest form: $2 (3 a - 4)$
+
+\subsection{Problem 7}
+$$4 \left(x^2-x+2\right)-5 \left(x^2-2 x+1\right)=-x^2+6 x+3$$
+
+\subsection{Problem 9*}
+$$(4 x - 1) (3 x + 7) = 12 x^2+25 x-7$$
+
+\subsection{Problem 11*}
+$$(2 x - 1)^2=4 x^2-4 x+1$$
+
+\subsection{Problem 13*}
+$$y^6 (6 - y) (5 + y)=-y^8+y^7+30 y^6$$
+
+\subsection{Problem 15*}
+$$(1 + 2 x) (x^2 - 3 x + 1)=2 x^3-5 x^2-x+1$$
+
+
+\section{Expand and Simplify}
+Problems marked with an asterisk $(*)$ are stated in the simplest form and no further simplification is needed.
+
+\subsection{Problem 17}
+$$\frac{2+8x}{2} = \frac{1}{2} (8 x+2)= 4 x + 1$$
+
+\subsection{Problem 19}
+$$\frac{1}{x+5}+\frac{2}{x-3}
+= \frac{1}{x+5} \left(\frac{x-3}{x-3}\right) + \frac{2}{x-3} \left(\frac{x+5}{x+5}\right) 
+= \frac{x-3+2(x+5)}{(x-3) (x+5)}
+= \frac{3 x+7}{(x-3) (x+5)}$$
+Restriction: $x\notin\left\{3,-5\right\}$
+
+\subsection{Problem 21*}
+$$u + 1 + \frac{u}{u+1} = u\left(\frac{u+1}{u+1}\right) + 1\left(\frac{u+1}{u+1}\right) + \frac{u}{u+1} = \frac{u^2+3 u+1}{u+1}$$
+Restriction: $u\ne-1$
+
+\subsection{Problem 23}
+$$\frac{x/y}{z}
+ = \frac{x\cdot \frac{1}{y}}{z}
+ = \frac{x}{z}\cdot\frac{1}{y}
+ = \frac{x}{y z}$$
+Restrictions: $y\ne0, z\ne0$
+
+\subsection{Problem 25}
+$$\left(\frac{-2 r}{ s}\right) \left(\frac{s^2}{-6 t}\right) = \frac{r s}{3 t}$$
+Restriction: $t\ne0$
+
+\subsection{Problem 27}
+$$\frac{1 + \frac{1}{c-1}}{1 - \frac{1}{c-1}} 
+= \frac{1 + \frac{1}{c-1}}{1 - \frac{1}{c-1}} \left( \frac{c-1}{c-1}\right)
+= \frac{c-1 + 1}{c-1 - 1}
+= \frac{c}{c-2}$$
+Restriction: $c\ne2$
+
+
+\section{Factor the expression}
+
+\subsection{Problem 29}
+$$2 x + 12 x^3 = 2 x \left(6 x^2+1\right)$$
+
+\subsection{Problem 31}
+$$x^2+7 x+6 = (x+1) (x+6)$$
+
+Method: Look at \emph{constant} term $6$. Factors are either $(a)\ 6 = 6 \cdot 1$ or $(b)\ 6 = 3 \cdot 2$.
+
+Use these factors to check \emph{linear} term: $(a)\ 6 + 1 = 7$ (winner), $(b)\ 3 + 2 = 5$.
+
+\subsection{Problem 33}
+$$x^2-2 x-8=(x-4) (x+2)$$
+Look at \emph{constant} term $-8$. Factors are either $(a)\ -8 = \pm8 \cdot \mp1$ or $(b)\ -8 = \pm4 \cdot \mp2$.
+Check \emph{linear} term: $(a)\ \pm8 + \mp1 = \pm7 $, $(b)\ \pm4 + \mp2 = \pm2$,
+
+\subsection{Problem 35}
+$$9 x^2-36
+=9(x^2-4)
+=9 (x-2) (x+2)$$
+
+\subsection{Problem 37}
+$$6 x^2-5 x-6=(2 x-3) (3 x+2)$$
+
+Method: Look for integer roots $a$ and $b$.
+
+\noindent I. Try $6 x^2-5 x-6 = (6x+a)(x+b)$ (Does not work.)
+
+\noindent II. Try $6 x^2-5 x-6 = (3x-a)(2x+b)=6 x^2 +x(3b-2a)-ab$. The choices $(a,b)=(6,1)$ and $(a,b)=(1,6)$ do not work. The choice $(a,b)=(3,2)$ does not work. But the choice $(a,b)=(2,3)$ works. Linear term $(3b-2a)=9-4=5$.
+
+Your teach may want to see synthetic division.
+
+\subsection{Problem 39}
+$$4 t^2-12 t+9 = (2 t-3)^2$$
+
+Method: Memorization of special cases
+$$t^3+1=(t+1) \left(t^2-t+1\right)$$
+$$t^3-1=(t-1) \left(t^2+t+1\right)$$
+
+\subsection{Problem 41}
+$$4 t^2-12 t+9 = (2 t-3)^2$$
+
+Method: Try two cases after observing roots are both negative (constant term is positive, linear term is negative).
+
+\noindent I. $4 t^2-12 t+9 = (4t+a)(t+b) = 4 t^2 + t(4b+a) + 9$. Choices $(a,b) = (-9,-1)$, $(a,b) = (-3,-3)$ do not work.
+
+\noindent II. Try $4 t^2-12 t+9 = (2t+a)(2t+b) = 4 t^2 + 2t(a+b) + 9$. Choice $(a,b) = (-9,-1)$ does not work. Choice $(a,b) = (-3,-3)$ does work.
+
+\subsection{Problem 43}
+$$x^3+2 x^2+x = x\left( x^2 + 2 x + 1 \right)=x (x+1)^2$$
+
+Method: Memorization of special cases
+$$(x+1)^2 = x^2+2x+1 $$
+$$(x-1)^2 = x^2+1$$
+
+\subsection{Problem 45}
+$$x^3+3 x^2-x-3=(x-1) (x+1) (x+3)$$
+
+Method: Hope for simple problem where roots are $\pm3$ and $1$ and $-1$ to match constant term. 
+$$x^3+3 x^2-x-3 = (x + a) (x + b) (x + c) = x^{3} + x^{2}(a+b+c) + x (ab+ac+bc) + abc$$ where
+$$a+b+c = 3, \ ab+ac+bc=-1, abc = 3 $$
+
+\subsection{Problem 47}
+$$x^3+5 x^2-2 x-24 = (x-2) (x+3) (x+4)$$
+
+Method: $x^3+5 x^2-2 x-24 = (x+a) (x+b) (x+c) = x^{3} + x^{2}(a+b+c) + x (ab+ac+bc) + abc$ such that $abc=24$. 
+
+Again, try simplest case first with the triplet
+$(a,b,c)=(4,3,2)$ where one is negative or two are negative. Constraints are
+$$a+b+c = 5, \ ab+ac+bc=-2, abc = 24 $$
+From $a+b+c = 5$ we must have $\pm(a,b,c)=\mp(4,-3,2)$.
+
+\section{Simplify the expression}
+
+\subsection{Problem 49}
+$$\frac{x^2+x-2}{x^2-3 x+2}
+=\frac{(x-1) (x+2)}{(x-1) (x-2)}
+=\frac{x+2}{x-2}$$
+Restriction: $x\ne2$
+
+\subsection{Problem 51}
+$$\frac{x^2-1}{x^2-9 x+8} 
+= \frac{(x-1)(x+1)}{(x-1)(x-8)}
+= \frac{x+1}{x-8}$$
+Restriction: $x\notin\left\{8,-1\right\}$
+
+\subsection{Problem 53}
+$$\frac{1}{x^2-9}+\frac{1}{x+3}
+=\frac{1}{(x-3) (x+3)}+\frac{1}{x+3}
+=\frac{1}{(x-3) (x+3)}+\frac{1}{x+3} \left(\frac{x-3}{x-3}\right)
+=\frac{x-2}{(x-3) (x+3)}$$
+Restriction: $x\notin\left\{3,-3\right\}$
+
+
+\section{Complete the square}
+General method:
+$$ax^2 + bx + c = a(x+d)^2 + e, \qquad d = \frac{b}{2a}, \ e = c - \frac{b^2}{4a}$$
+
+\subsection{Problem 55}
+$$x^2+2 x+5 = \left(x+1\right)^{2}+4$$
+$$\{a,b,c\}=\{1,-5,10\} \implies \left\{d,e\right\} = \left\{1, 4\right\}$$
+
+\subsection{Problem 57}
+$$x^2 - 5 x + 10 = \left(x-\frac{5}{2}\right)^2+\frac{15}{4}$$
+$$\{a,b,c\}=\{1,-5,10\} \implies \left\{d,e\right\} = \left\{-\frac{5}{2},\frac{15}{4}\right\}$$
+
+\subsection{Problem 59}
+$$4 x^2 + 4 x - 2 = 4 \left(x+\frac{1}{2}\right)^2-3$$
+$$\{a,b,c\}=\{4, 4, -2\} \implies \left\{d,e\right\} = \left\{\frac{1}{2}, -3\right\}$$
+
+
+\section{Solve the equation}
+Find the roots of the expression.
+
+\subsection{Problem 61}
+$$x^2+9 x-10 = (x-10)(x+1)$$
+The quadratic function is $0$ when $x=10$ and $x=-1$.
+
+\subsection{Problem 63}
+Complete the square:
+$$x^2+9 x-1 = \left(x+\frac{9}{2}\right)^2 -\frac{85}{4}$$
+
+$$\{a,b,c\}=\{1, 9, -1\} \implies \left\{d,e\right\} = \left\{\frac{9}{2},-\frac{85}{4}\right\}$$
+
+\noindent The quadratic function is $0$ when $x=-\frac{9}{2}\pm\sqrt{\frac{85}{4}} = \frac{1}{2}\left(-9\pm\sqrt{85}\right)$.
+
+\subsection{Problem 65}
+Complete the square:
+$$3 x^2+5 x+1 = \left(x+\frac{5}{6}\right)^2 -\frac{13}{12}$$
+
+$$\{a,b,c\}=\{3, 5, 1\} \implies \left\{d,e\right\} = \left\{\frac{5}{6},-\frac{13}{12}\right\}$$
+
+\noindent The quadratic function is $0$ when $x=-\frac{5}{6}\pm\sqrt{\frac{13}{3\cdot12}} = \frac{1}{6}\left(-5\pm\sqrt{13}\right)$.
+
+\subsection{Problem 67}
+$$x^3-2 x+1 = (x-1) \left(x^2+x-1\right)$$
+
+Complete the square for the quadratic term $x^2+x-1$:
+$$\{a,b,c\}=\{1, 1, -1\} \implies \left\{d,e\right\} = \left\{\frac{1}{2},-\frac{5}{4}\right\}$$
+
+$$3 x^2+5 x+1 = (x-1) \left( 3\left(x+\frac{1}{2}\right)^2 -\frac{5}{4} \right)$$
+
+\noindent The cubic function is $x^3-2 x+1=0$ when $x=1$ and when $x=-\frac{1}{2}\pm\sqrt{\frac{5}{4}} = -\frac{1}{2}\left(1\pm\sqrt{5}\right)$.
+
+
+\section{Which of the quadratics are irreducible?}
+Complete the square. If the term $e$ is positive, there are no real roots, and the function is not reducible over the field of real numbers.
+
+\subsection{Problem 69}
+$$2 x^2+ 3 x -4 = 2 \left(x+\frac{3}{4}\right)^2-\frac{41}{8}$$ 
+$$\{a,b,c\}=\{2, 3, -4\} \implies \left\{d,e\right\} = \left\{\frac{3}{4},-\frac{41}{8}\right\}$$
+\noindent Because $e=-\frac{41}{8} \le0$ this quadratic function is reducible.
+
+\subsection{Problem 71}
+$$3 x^2+x-6 = 2 \left(x+\frac{3}{4}\right)^2-\frac{41}{8}$$ 
+
+$$\{a,b,c\}=\{3, 1, -6\} \implies \left\{d,e\right\} = \left\{\frac{1}{6},-\frac{73}{12}\right\}$$
+
+\noindent Because $e=-\frac{73}{12} \le0$ this quadratic function is reducible.
+
+
+\section{Use the Binomial Theorem to expand the expression}
+The binomial theorem states
+$$
+(x+y)^{n} = \sum_{k=0}^{n} \binom{n}{k}x^{n-k}yY^{k}
+$$
+where 
+$$
+\binom{n}{k} = \frac{n!} {k!(n-k)!}
+$$
+Example:
+$$
+\binom{6}{3} = \frac{6!} {3!(3)!} = \frac{6\cdot 5 \cdot 4 \cdot 3\cdot 2 \cdot 1} {(3\cdot 2 \cdot 1)(3\cdot 2 \cdot 1)} = 20
+$$
+
+Or use $\dots$
+\begin{table}[htp]
+\caption{Pascal's triangle}
+\begin{center}
+\begin{tabular}{cccccccccccccc}
+	degree & \multicolumn{13}{c}{coefficients}\\\hline
+	0 &&&&&&& 1\\
+	1 &&&&&& 1 && 1\\
+	2 &&&&& 1 && 2 && 1\\
+	3 &&&& 1 && 3 && 3 && 1\\
+	4 &&& 1 && 4 && 6 && 4 && 1\\
+	5 && 1 && 5 && 10 && 10 && 5 && 1\\
+	6 & 1 && 6 && 15 && 20 && 15 && 6 && 1
+\end{tabular}
+\end{center}
+\label{tab:pascal}
+\end{table}%
+
+\subsection{Problem 73}
+$$(a + b)^6 = a^6 + 6 a^5 b + 15 a^4 b^2 + 20 a^3 b^3 + 15 a^2 b^4 + 6 a b^5 + b^6$$
+
+\subsection{Problem 75}
+Start with 
+$$(a + b)^4 = a^4 + 4 a^3 b + 6 a^2 b^2 + 4 a b^3 + b^4$$
+
+\noindent Let $b\to-1:$
+$$a^4 + 4 a^3 b + 6 a^2 b^2 + 4 a b^3 + b^4 \to a^4-4 a^3+6 a^2-4 a+1$$
+
+\noindent Let $a\to x^2:$
+$$a^4-4 a^3+6 a^2-4 a+1 \to x^8-4 x^6+6 x^4-4 x^2+1$$
+
+\noindent Therefore,
+$$(x^2 - 1)^4 = x^8-4 x^6+6 x^4-4 x^2+1$$
+
+\section{Simplify the radicals}
+
+\subsection{Problem 77}
+$$\sqrt{32}\sqrt{2} = \sqrt{64} = 8$$
+
+\subsection{Problem 79}
+
+$$\frac{\sqrt[4]{32 x^4}}{\sqrt[4]{2}} 
+= \sqrt[4]{\frac{32 x^4}{2}}
+= \sqrt[4]{16 x^{4}}
+= \sqrt[4]{16}\sqrt[4]{x^{4}}
+= 2 \left| x \right|
+$$
+
+\subsection{Problem 81}
+$$\sqrt{16a^{4}b^{3}} = 4a^{2}\sqrt{b^{3}}$$
+To stay in the field of reals $b\ge0$.
+
+
+\section{Laws of exponents}
+
+\subsection{Problem 83}
+$$3^{10}\times 9^{8} 
+= 3^{10}\times (3\times3)^{8}
+= 3^{10}\times 3^{8}\times 3^{8}
+= 3^{10+8+8} = 3^{26}$$
+
+\subsection{Problem 85}
+$$\frac{x^9 (2 x)^{4}}{x^3} 
+= \frac{x^9 \cdot 2^{4}x^{4}} {x^3}
+= 16\frac{x^{9+4}} {x^3}
+= 16 x^{9+4-3}
+= 16 x^{10}$$
+
+\subsection{Problem 87}
+$$\frac{a^{-3}b^{4}} {a^{-5}b^{5}} 
+= a^{-3-(-5)}b^{4-5}
+= a^{2}b^{-1}
+= \frac{a^2}{b}$$
+Restrictions: $b\ne0$
+
+\subsection{Problem 89}
+$$3^{-\frac{1}{2}} = \frac{1}{\sqrt{3}}$$
+
+\subsection{Problem 91}
+$$125^{\frac{2}{3}} = \left(\sqrt[3]{125}\right)^{2} = 5^{2} = 25$$
+
+\subsection{Problem 93}
+$$\left( 2x^{2}y^{4} \right)^{\frac{3}{2}} 
+=\left( \sqrt{2} \left| x \right| y^{2} \right)^{3}
+= 2 \sqrt{2} \left| x \right|^{3} y^{6}$$
+
+\subsection{Problem 95}
+$$\sqrt[5]{y^{6}} = y^{\frac{5}{6}}$$
+
+\subsection{Problem 97}
+$$\frac{1} {\left( \sqrt{t} \right)^{5}} = \frac{1}{t^{-\frac{5}{2}}} = t^{-\frac{5}{2}}$$
+Restrictions: $t\ge0$
+
+\subsection{Problem 99}
+$$
+ \sqrt[4]{ \frac{t^{\frac{1}{2}}\sqrt{st}} {s^{\frac{2}{3}}} }
+=\sqrt[4]{ \frac{t^{\frac{1}{2}}s^{\frac{1}{2}}t^{\frac{1}{2}}} {s^{\frac{2}{3}}} }
+=\sqrt[4]{ \frac{t s^{\frac{1}{2}}} {s^{\frac{2}{3}}} } 
+=\sqrt[4]{ t s^{\frac{1}{2}-\frac{2}{3}} } 
+=\sqrt[4]{ t s^{-\frac{1}{6}} }
+= t^{\frac{1}{4}}s^{-\frac{1}{24}}
+$$
+Restrictions: $s>0, \ t>0$
+
+\section{Rationalize the expression}
+Not clear on the context. Making a guess and rationalizing either numerator or denominator depending upon where the radical is.
+
+\subsection{Problem 101}
+$$\frac{\sqrt{x} - 3} {x - 9} 
+=\frac{\sqrt{x} - 3} {x - 9} \frac{\sqrt{x} + 3} {\sqrt{x} + 3}
+=\frac{x-9} {(x-9) \left(\sqrt{x} + 3\right)}
+=\frac{1} {\sqrt{x} + 3}$$
+
+\subsection{Problem 103}
+$$\frac{x\sqrt{x} - 8} {x - 4} 
+= \frac{x\sqrt{x} - 8} {x - 4} \frac{x\sqrt{x} + 8} {x\sqrt{x} + 8}
+= \frac{x^{3}-64} {x^{5/2}-4 x^{3/2}+8 x-32}
+=\frac{x+2 \sqrt{x}+4}{\sqrt{x}+2}
+$$
+
+\subsection{Problem 105}
+$$\frac{2} {3-\sqrt{5}} 
+= \frac{2} {3-\sqrt{5}} \frac{3+\sqrt{5}} {3+\sqrt{5}} 
+= \frac{6 + 2 \sqrt{5}} {4}
+= \frac{3+\sqrt{5}} {2}$$
+
+\subsection{Problem 107}
+$$\sqrt{x^2+3 x+4}-x 
+= \left(\sqrt{x^2+3 x+4}-x\right) \frac{\sqrt{x^2+3 x+4}+x} {\sqrt{x^2+3 x+4}+x}
+= \frac{3x+4} {\sqrt{x^2+3 x+4}+x}$$
+
+\section{State whether or not the expression is true for all values of the variable}
+
+\subsection{Problem 109}
+$$\sqrt{x^{2}}=x$$
+\noindent No. Only true when $x>0$. 
+
+\subsection{Problem 111}
+$$\frac{16+a}{16} = 1+\frac{a}{16}$$
+\noindent Yes. Valid for all real numbers $a$.
+
+\subsection{Problem 113}
+$$\frac{x}{x+y} = \frac{1}{1+y}$$
+\noindent Hell no. Only valid when $x=1$ and $y\ne-1$.
+
+\subsection{Problem 115}
+$$\left( x^{3} \right)^{4} = x^{7}$$
+\noindent Hell no. Only valid when $x=1$. The power law for exponents reveals $\left( x^{3} \right)^{4} = x^{12}$.
+
+\end{document}  
